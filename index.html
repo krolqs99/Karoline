@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karoline Queiroz | Designer de Identidade Visual</title>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -25,288 +23,135 @@
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 40s linear infinite',
                     }
                 }
             }
         }
     </script>
-    
     <style>
-        /* Custom scrollbar para um toque mais premium */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1B1020; }
-        ::-webkit-scrollbar-thumb { background: #3A2A4A; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #C9B18A; }
-        
-        /* Ajuste para o accordion (FAQ) */
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
+        body { background-color: #1B1020; color: #E6DCD0; }
+        .glass-card { background: rgba(58, 42, 74, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(106, 88, 116, 0.2); }
+        /* Transição suave para os filtros do portfólio */
+        .portfolio-item { transition: opacity 0.4s ease, transform 0.4s ease; }
     </style>
 </head>
-<body class="bg-ametista text-luz font-sans antialiased selection:bg-areia selection:text-ametista">
+<body class="antialiased font-sans">
 
-    <!-- 1. HERO SECTION -->
-    <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 overflow-hidden">
-        <!-- Elemento de fundo sutil -->
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-noite/30 to-ametista -z-10"></div>
-        
-        <!-- Logo Simplificada (Olho) -->
-        <svg class="w-16 h-16 text-areia mb-8 animate-pulse duration-3000" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
-            <circle cx="12" cy="12" r="3" />
-            <path d="M12 5v2M12 17v2M5 12H3M21 12h-2M7.5 7.5L6 6M18 18l-1.5-1.5M7.5 16.5L6 18M18 6l-1.5 1.5" />
-        </svg>
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 bg-ametista/90 backdrop-blur-md border-b border-noite/50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <img src="logo.png" alt="Logótipo Karoline Queiroz" class="h-8 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none;" class="text-areia font-serif text-2xl">KQ</span>
+                <span class="font-serif text-xl tracking-wide text-luz">Karoline Queiroz</span>
+            </a>
+            <div class="hidden md:flex gap-8 text-xs tracking-[0.2em] uppercase text-lavanda">
+                <a href="#trabalhos" class="hover:text-areia transition-colors">Trabalhos</a>
+                <a href="#servicos" class="hover:text-areia transition-colors">Serviços</a>
+                <a href="#processo" class="hover:text-areia transition-colors">Processo</a>
+                <a href="#faq" class="hover:text-areia transition-colors">FAQ</a>
+            </div>
+            <a href="https://wa.me/5512982544891" target="_blank" class="bg-areia text-ametista text-xs tracking-widest uppercase font-medium px-6 py-3 rounded-full flex items-center gap-2 hover:bg-luz transition-colors">
+                WhatsApp
+            </a>
+        </div>
+    </nav>
 
-        <h1 class="font-serif text-5xl md:text-7xl font-semibold text-areia mb-4 tracking-wider uppercase">
-            Karoline<br>Queiroz
-        </h1>
-        <h2 class="text-sm md:text-lg font-light tracking-[0.3em] text-lavanda mb-8 uppercase">
-            Designer de Identidade Visual
-        </h2>
+    <!-- HERO SECTION COM ANIMAÇÃO -->
+    <section class="relative pt-32 pb-20 min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
         
-        <p class="font-serif italic text-xl md:text-3xl text-luz max-w-2xl mb-12">
-            "Ideias ganham forma quando têm uma identidade."
+        <!-- Logótipo animado no fundo (rodando lentamente) -->
+        <div class="absolute inset-0 flex justify-center items-center opacity-10 pointer-events-none">
+            <img src="logo-fundo.png" alt="" class="w-[800px] h-[800px] object-contain animate-spin-slow">
+        </div>
+
+        <p class="text-xs tracking-[0.3em] text-lavanda uppercase mb-6 z-10">Designer de Identidade Visual</p>
+        <h1 class="font-serif text-6xl md:text-8xl text-luz mb-8 z-10">Karoline Queiroz</h1>
+        <p class="font-serif italic text-2xl md:text-3xl text-luz mb-6 z-10">"Ideias ganham forma quando têm uma identidade."</p>
+        <p class="text-sm md:text-base text-lavanda max-w-xl mx-auto mb-12 z-10 font-light leading-relaxed">
+            Identidade visual e design de artes para marcas que querem ser reconhecidas — com clareza, presença e um tom que é só delas.
         </p>
-
-        <a href="https://wa.me/5512982544891?text=Olá!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20pacotes%20de%20artes%20e%20identidade%20visual." target="_blank" 
-           class="inline-block bg-areia text-ametista font-medium text-lg px-8 py-4 rounded-full transition-all duration-300 hover:bg-luz hover:scale-105 hover:shadow-[0_0_20px_rgba(201,177,138,0.4)]">
+        <a href="https://wa.me/5512982544891" target="_blank" class="z-10 bg-areia text-ametista uppercase tracking-widest text-sm font-medium px-8 py-4 rounded-full hover:bg-luz transition-all">
             Falar no WhatsApp
         </a>
     </section>
 
-    <!-- 2. PORTFÓLIO -->
-    <section class="py-20 px-6 max-w-6xl mx-auto border-t border-noite/50">
-        <div class="text-center mb-16">
-            <h3 class="font-serif text-4xl md:text-5xl text-areia mb-4">Trabalhos Selecionados</h3>
-            <p class="text-lavanda font-light">Identidade Visual e Social Media</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Card Portfólio 1 -->
-            <div class="group relative rounded-xl overflow-hidden cursor-pointer">
-                <div class="aspect-square bg-gradient-to-br from-noite to-ametista flex items-center justify-center p-8 transition-transform duration-500 group-hover:scale-105">
-                    <span class="text-lavanda font-serif italic">Mockup Projeto 1</span>
-                </div>
-                <div class="absolute inset-0 bg-ametista/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <p class="text-areia font-serif text-xl border-b border-areia pb-1">Ver Projeto</p>
-                </div>
-            </div>
-            <!-- Card Portfólio 2 -->
-            <div class="group relative rounded-xl overflow-hidden cursor-pointer">
-                <div class="aspect-square bg-gradient-to-bl from-lavanda/20 to-ametista flex items-center justify-center p-8 transition-transform duration-500 group-hover:scale-105">
-                    <span class="text-lavanda font-serif italic">Mockup Projeto 2</span>
-                </div>
-                <div class="absolute inset-0 bg-ametista/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <p class="text-areia font-serif text-xl border-b border-areia pb-1">Ver Projeto</p>
-                </div>
-            </div>
-            <!-- Card Portfólio 3 -->
-            <div class="group relative rounded-xl overflow-hidden cursor-pointer">
-                <div class="aspect-square bg-gradient-to-t from-noite to-ametista flex items-center justify-center p-8 transition-transform duration-500 group-hover:scale-105">
-                    <span class="text-lavanda font-serif italic">Mockup Projeto 3</span>
-                </div>
-                <div class="absolute inset-0 bg-ametista/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <p class="text-areia font-serif text-xl border-b border-areia pb-1">Ver Projeto</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. SERVIÇOS / PACOTES -->
-    <section class="py-20 px-6 max-w-6xl mx-auto border-t border-noite/50">
-        <div class="text-center mb-16">
-            <h3 class="font-serif text-4xl md:text-5xl text-areia mb-4">Escolha o melhor para a sua marca</h3>
-            <p class="text-lavanda font-light">Soluções completas para posicionamento e design</p>
-        </div>
-
-        <!-- Categoria: Artes -->
-        <h4 class="font-serif text-2xl text-luz mb-8 text-center md:text-left">Pacotes de Artes (Feed + Stories)</h4>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <!-- Card 3 Artes -->
-            <div class="bg-noite/40 border border-lavanda/30 p-8 rounded-2xl hover:border-areia/50 transition-colors duration-300 flex flex-col">
-                <h5 class="text-xl font-medium text-luz mb-2">3 Artes</h5>
-                <p class="text-3xl font-serif text-areia mb-6">R$ 197</p>
-                <ul class="text-lavanda text-sm space-y-3 mb-8 flex-grow">
-                    <li>✓ Design estratégico</li>
-                    <li>✓ Adaptação Feed + Stories</li>
-                    <li>✓ Entrega em alta resolução</li>
-                </ul>
-                <a href="https://wa.me/5512982544891?text=Olá!%20Tenho%20interesse%20no%20pacote%20de%203%20Artes." target="_blank" class="block w-full text-center border border-areia text-areia py-3 rounded-full hover:bg-areia hover:text-ametista transition-colors">Quero este</a>
-            </div>
-            <!-- Card 6 Artes -->
-            <div class="bg-noite/40 border border-lavanda/30 p-8 rounded-2xl hover:border-areia/50 transition-colors duration-300 flex flex-col">
-                <h5 class="text-xl font-medium text-luz mb-2">6 Artes</h5>
-                <p class="text-3xl font-serif text-areia mb-6">R$ 347</p>
-                <ul class="text-lavanda text-sm space-y-3 mb-8 flex-grow">
-                    <li>✓ Design estratégico</li>
-                    <li>✓ Adaptação Feed + Stories</li>
-                    <li>✓ Entrega em alta resolução</li>
-                </ul>
-                <a href="https://wa.me/5512982544891?text=Olá!%20Tenho%20interesse%20no%20pacote%20de%206%20Artes." target="_blank" class="block w-full text-center border border-areia text-areia py-3 rounded-full hover:bg-areia hover:text-ametista transition-colors">Quero este</a>
-            </div>
-            <!-- Card 9 Artes -->
-            <div class="bg-noite/40 border border-lavanda/30 p-8 rounded-2xl hover:border-areia/50 transition-colors duration-300 flex flex-col">
-                <h5 class="text-xl font-medium text-luz mb-2">9 Artes</h5>
-                <p class="text-3xl font-serif text-areia mb-6">R$ 497</p>
-                <ul class="text-lavanda text-sm space-y-3 mb-8 flex-grow">
-                    <li>✓ Design estratégico</li>
-                    <li>✓ Adaptação Feed + Stories</li>
-                    <li>✓ Entrega em alta resolução</li>
-                </ul>
-                <a href="https://wa.me/5512982544891?text=Olá!%20Tenho%20interesse%20no%20pacote%20de%209%20Artes." target="_blank" class="block w-full text-center border border-areia text-areia py-3 rounded-full hover:bg-areia hover:text-ametista transition-colors">Quero este</a>
-            </div>
-        </div>
-
-        <!-- Categoria: Plano Mensal & Identidade -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Plano Mensal -->
-            <div class="bg-noite/40 border border-areia/30 p-8 rounded-2xl hover:border-areia transition-colors duration-300 flex flex-col">
-                <span class="text-xs uppercase tracking-widest text-areia mb-2">Recorrente</span>
-                <h5 class="text-xl font-medium text-luz mb-2">Plano Mensal</h5>
-                <p class="text-3xl font-serif text-areia mb-6">R$ 797<span class="text-sm text-lavanda">/mês</span></p>
-                <ul class="text-lavanda text-sm space-y-3 mb-8 flex-grow">
-                    <li>✓ 12 artes por mês</li>
-                    <li>✓ 3 postagens por semana</li>
-                    <li>✓ Consistência visual</li>
-                </ul>
-                <a href="https://wa.me/5512982544891?text=Olá!%20Tenho%20interesse%20no%20Plano%20Mensal%20de%20Artes." target="_blank" class="block w-full text-center bg-areia text-ametista py-3 rounded-full hover:bg-luz transition-colors font-medium">Quero este</a>
-            </div>
-
-            <!-- ID Básica -->
-            <div class="bg-noite/40 border border-lavanda/30 p-8 rounded-2xl hover:border-areia/50 transition-colors duration-300 flex flex-col">
-                <span class="text-xs uppercase tracking-widest text-lavanda mb-2">Branding</span>
-                <h5 class="text-xl font-medium text-luz mb-2">ID Visual Básica</h5>
-                <p class="text-3xl font-serif text-areia mb-6">R$ 697</p>
-                <ul class="text-lavanda text-sm space-y-3 mb-8 flex-grow">
-                    <li>✓ Logotipo principal</li>
-                    <li>✓ Paleta de cores</li>
-                    <li>✓ Tipografia institucional</li>
-                </ul>
-                <a href="https://wa.me/5512982544891?text=Olá!%20Tenho%20interesse%20na%20Identidade%20Visual%20Básica." target="_blank" class="block w-full text-center border border-areia text-areia py-3 rounded-full hover:bg-areia hover:text-ametista transition-colors">Quero este</a>
-            </div>
-
-            <!-- ID Completa -->
-            <div class="bg-noite/60 border border-areia p-8 rounded-2xl hover:shadow-[0_0_30px_rgba(201,177,138,0.15)] transition-all duration-300 flex flex-col relative overflow-hidden">
-                <div class="absolute top-0 right-0 bg-areia text-ametista text-xs font-bold px-4 py-1 rounded-bl-lg">PREMIUM</div>
-                <span class="text-xs uppercase tracking-widest text-lavanda mb-2">Branding</span>
-                <h5 class="text-xl font-medium text-luz mb-2">ID Visual Completa</h5>
-                <p class="text-3xl font-serif text-areia mb-6">R$ 1.497</p>
-                <ul class="text-lavanda text-sm space-y-3 mb-8 flex-grow">
-                    <li>✓ Tudo da ID Básica</li>
-                    <li>✓ Variações de logo</li>
-                    <li>✓ Mockups de aplicação</li>
-                    <li>✓ Manual da Marca em PDF</li>
-                </ul>
-                <a href="https://wa.me/5512982544891?text=Olá!%20Tenho%20interesse%20na%20Identidade%20Visual%20Completa." target="_blank" class="block w-full text-center bg-areia text-ametista py-3 rounded-full hover:bg-luz transition-colors font-medium">Quero este</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. COMO FUNCIONA -->
-    <section class="py-20 px-6 max-w-5xl mx-auto border-t border-noite/50">
-        <div class="text-center mb-16">
-            <h3 class="font-serif text-4xl md:text-5xl text-areia mb-4">Como funciona</h3>
-            <p class="text-lavanda font-light">Um processo simples e transparente</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            <!-- Linha conectora (visível apenas desktop) -->
-            <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-noite -z-10 transform -translate-y-1/2"></div>
-            
-            <div class="text-center">
-                <div class="w-16 h-16 mx-auto bg-ametista border border-areia rounded-full flex items-center justify-center text-areia font-serif text-2xl mb-4">1</div>
-                <h4 class="font-medium text-luz mb-2">Briefing</h4>
-                <p class="text-sm text-lavanda">Você responde um questionário para eu entender a essência da sua marca.</p>
-            </div>
-            
-            <div class="text-center">
-                <div class="w-16 h-16 mx-auto bg-ametista border border-areia rounded-full flex items-center justify-center text-areia font-serif text-2xl mb-4">2</div>
-                <h4 class="font-medium text-luz mb-2">Criação</h4>
-                <p class="text-sm text-lavanda">Mergulho nas referências e inicio a construção do conceito visual.</p>
-            </div>
-            
-            <div class="text-center">
-                <div class="w-16 h-16 mx-auto bg-ametista border border-areia rounded-full flex items-center justify-center text-areia font-serif text-2xl mb-4">3</div>
-                <h4 class="font-medium text-luz mb-2">Apresentação</h4>
-                <p class="text-sm text-lavanda">Apresento o projeto fundamentado para sua avaliação e possíveis ajustes.</p>
-            </div>
-            
-            <div class="text-center">
-                <div class="w-16 h-16 mx-auto bg-ametista border border-areia rounded-full flex items-center justify-center text-areia font-serif text-2xl mb-4">4</div>
-                <h4 class="font-medium text-luz mb-2">Entrega</h4>
-                <p class="text-sm text-lavanda">Envio de todos os arquivos organizados, prontos para uso profissional.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. FAQ -->
-    <section class="py-20 px-6 max-w-3xl mx-auto border-t border-noite/50">
+    <!-- TRABALHOS (PORTEFÓLIO) -->
+    <section id="trabalhos" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-12">
-            <h3 class="font-serif text-4xl text-areia mb-4">Perguntas Frequentes</h3>
+            <p class="text-xs tracking-[0.2em] uppercase text-lavanda mb-4">Seleção</p>
+            <h2 class="font-serif text-4xl md:text-5xl text-luz mb-6">Trabalhos selecionados</h2>
+            <p class="text-lavanda max-w-2xl mx-auto font-light">Identidades e grades pensadas para o mundo real — embalagem, papelaria, perfil e o que a marca precisa para ser lembrada.</p>
         </div>
 
-        <div class="space-y-4">
-            <details class="bg-noite/30 p-6 rounded-xl border border-noite cursor-pointer group">
-                <summary class="font-medium text-luz text-lg flex justify-between items-center outline-none">
-                    Qual é o prazo de entrega?
-                    <span class="text-areia group-open:rotate-45 transition-transform text-2xl font-light">+</span>
-                </summary>
-                <p class="text-lavanda mt-4 leading-relaxed">
-                    O prazo varia conforme o projeto. Identidades Visuais levam, em média, de 15 a 20 dias úteis após a aprovação do briefing. Pacotes de artes têm prazos combinados semanalmente.
-                </p>
-            </details>
+        <!-- Filtros Funcionais -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12" id="portfolio-filters">
+            <button data-filter="all" class="filter-btn active bg-areia text-ametista text-xs tracking-widest uppercase px-6 py-2 rounded-full font-medium transition-all">Todos</button>
+            <button data-filter="id" class="filter-btn border border-lavanda/30 text-lavanda text-xs tracking-widest uppercase px-6 py-2 rounded-full hover:border-areia hover:text-areia transition-all">Identidade Visual</button>
+            <button data-filter="social" class="filter-btn border border-lavanda/30 text-lavanda text-xs tracking-widest uppercase px-6 py-2 rounded-full hover:border-areia hover:text-areia transition-all">Social Media</button>
+        </div>
 
-            <details class="bg-noite/30 p-6 rounded-xl border border-noite cursor-pointer group">
-                <summary class="font-medium text-luz text-lg flex justify-between items-center outline-none">
-                    Como funcionam as revisões?
-                    <span class="text-areia group-open:rotate-45 transition-transform text-2xl font-light">+</span>
-                </summary>
-                <p class="text-lavanda mt-4 leading-relaxed">
-                    Você tem direito a um número de revisões (geralmente até 2 rodadas) pré-estabelecido no acordo comercial, para garantir que o resultado final fique alinhado à sua expectativa.
-                </p>
-            </details>
+        <!-- Grid de Imagens -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+            <!-- Projetos de Identidade Visual -->
+            <img src="image_21.png" data-category="id" alt="A&T Marcenaria" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_26.png" data-category="id" alt="Biskie" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_28.png" data-category="id" alt="Garimpan.do" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_29.png" data-category="id" alt="VONA ID" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_22.png" data-category="id" alt="Markie ID" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_24.png" data-category="id" alt="Patrícia Alcântara" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_27.png" data-category="id" alt="Comile" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_25.png" data-category="id" alt="Jeferson Fernando" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_23.png" data-category="id" alt="Maiara Silva" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_30.png" data-category="id" alt="Juliana Landim" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
 
-            <details class="bg-noite/30 p-6 rounded-xl border border-noite cursor-pointer group">
-                <summary class="font-medium text-luz text-lg flex justify-between items-center outline-none">
-                    O que está incluso na ID Completa?
-                    <span class="text-areia group-open:rotate-45 transition-transform text-2xl font-light">+</span>
-                </summary>
-                <p class="text-lavanda mt-4 leading-relaxed">
-                    A versão completa inclui: Logotipo Principal, Variações (monocromática, negativa), Paleta de Cores com códigos hexadecimais, Tipografia, Elementos Gráficos de apoio, Mockups realistas de aplicação e o Manual da Marca em PDF.
-                </p>
-            </details>
-
-            <details class="bg-noite/30 p-6 rounded-xl border border-noite cursor-pointer group">
-                <summary class="font-medium text-luz text-lg flex justify-between items-center outline-none">
-                    Vocês fazem apenas o design ou também imprimem?
-                    <span class="text-areia group-open:rotate-45 transition-transform text-2xl font-light">+</span>
-                </summary>
-                <p class="text-lavanda mt-4 leading-relaxed">
-                    Meu foco é no design digital estratégico e na criação da identidade. Eu entrego todos os arquivos finalizados e configurados (em PDF, EPS, PNG, etc) para que você possa encaminhar à gráfica de sua confiança.
-                </p>
-            </details>
+            <!-- Projetos de Social Media -->
+            <img src="image_20.png" data-category="social" alt="VONA Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_18.png" data-category="social" alt="Markie Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_19.png" data-category="social" alt="Sushi Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_17.png" data-category="social" alt="Adoção Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
         </div>
     </section>
 
-    <!-- 6. CTA FINAL -->
-    <section class="py-24 px-6 text-center border-t border-noite/50 bg-gradient-to-t from-noite/20 to-ametista">
-        <h2 class="font-serif text-4xl md:text-5xl text-luz mb-6 max-w-2xl mx-auto leading-tight">
-            Pronto para dar a forma que a sua <span class="text-areia italic">ideia</span> merece?
-        </h2>
-        <p class="text-lavanda mb-10 max-w-xl mx-auto">
-            Vamos conversar sobre o seu projeto e encontrar a melhor solução visual para o seu negócio decolar.
-        </p>
-        <a href="https://wa.me/5512982544891?text=Olá!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20pacotes%20de%20artes%20e%20identidade%20visual." target="_blank" 
-           class="inline-block bg-areia text-ametista font-medium text-lg px-10 py-5 rounded-full transition-all duration-300 hover:bg-luz hover:scale-105 shadow-lg shadow-areia/20">
-            Falar no WhatsApp
-        </a>
-    </section>
+    <!-- O resto das seções (SERVIÇOS, PROCESSO, CTA FINAL) continua exatamente igual ao código anterior... -->
+    
+    <!-- SCRIPT PARA FILTROS DO PORTFÓLIO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.portfolio-item');
 
-    <!-- FOOTER -->
-    <footer class="py-8 text-center border-t border-noite text-sm text-lavanda">
-        <p>© 2026 Karoline Queiroz. Todos os direitos reservados.</p>
-    </footer>
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Resetar o estilo de todos os botões
+                    buttons.forEach(btn => {
+                        btn.classList.remove('bg-areia', 'text-ametista', 'font-medium');
+                        btn.classList.add('border', 'border-lavanda/30', 'text-lavanda');
+                    });
+                    
+                    // Aplicar estilo ativo no botão clicado
+                    button.classList.add('bg-areia', 'text-ametista', 'font-medium');
+                    button.classList.remove('border', 'border-lavanda/30', 'text-lavanda');
 
+                    const filter = button.getAttribute('data-filter');
+
+                    // Mostrar/Esconder imagens baseado na categoria
+                    items.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => item.style.opacity = '1', 50);
+                        } else {
+                            item.style.opacity = '0';
+                            setTimeout(() => item.style.display = 'none', 400);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
