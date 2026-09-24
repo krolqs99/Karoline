@@ -40,6 +40,32 @@
         .orbit-2 {
             transform-box: view-box;
             transform-origin: 100px 100px;
+            will-change: transform;
+        }
+
+        .orbit-1 {
+            animation: orbit-spin-1 26s linear infinite;
+        }
+
+        .orbit-2 {
+            animation: orbit-spin-2 34s linear infinite;
+        }
+
+        @keyframes orbit-spin-1 {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes orbit-spin-2 {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .orbit-1,
+            .orbit-2 {
+                animation: none;
+            }
         }
     </style>
 </head>
@@ -81,6 +107,19 @@
         <div class="absolute inset-0 flex justify-center items-center opacity-10 pointer-events-none">
             <img src="logo.png" alt="" class="w-[800px] h-[800px] object-contain">
         </div>
+
+        <!-- Arcos orbitais decorativos: viewBox 0 0 200 200, centro em 100px 100px. -->
+        <svg class="absolute z-0 w-[min(90vw,900px)] h-[min(90vw,900px)] opacity-60 pointer-events-none select-none" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+            <circle cx="100" cy="100" r="3" fill="#C9B18A" opacity="0.65"></circle>
+            <g class="orbit-1">
+                <ellipse cx="100" cy="100" rx="82" ry="42" stroke="#C9B18A" stroke-width="0.7" stroke-dasharray="150 365" stroke-linecap="round" vector-effect="non-scaling-stroke"></ellipse>
+                <circle cx="182" cy="100" r="1.8" fill="#E6DCD0"></circle>
+            </g>
+            <g class="orbit-2">
+                <ellipse cx="100" cy="100" rx="66" ry="30" transform="rotate(62 100 100)" stroke="#6A5874" stroke-width="0.8" stroke-dasharray="115 300" stroke-linecap="round" vector-effect="non-scaling-stroke"></ellipse>
+                <circle cx="166" cy="100" r="1.4" fill="#C9B18A"></circle>
+            </g>
+        </svg>
 
         <p class="text-xs tracking-[0.3em] text-lavanda uppercase mb-6 z-10">Designer de Identidade Visual</p>
         
