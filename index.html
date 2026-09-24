@@ -33,6 +33,14 @@
     <style>
         body { background-color: #1B1020; color: #E6DCD0; }
         .glass-card { background: rgba(58, 42, 74, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(106, 88, 116, 0.2); }
+
+        /* Safari/iOS: SVGs animados precisam de uma origem numérica explícita.
+           Este viewBox assume 0 0 200 200, portanto o centro é 100px 100px. */
+        .orbit-1,
+        .orbit-2 {
+            transform-box: view-box;
+            transform-origin: 100px 100px;
+        }
     </style>
 </head>
 <body class="antialiased font-sans">
@@ -71,7 +79,7 @@
         
         <!-- Marca de água do logótipo no fundo -->
         <div class="absolute inset-0 flex justify-center items-center opacity-10 pointer-events-none">
-            <img src="logo-fundo.png" alt="" class="w-[800px] h-[800px] object-contain">
+            <img src="logo.png" alt="" class="w-[800px] h-[800px] object-contain">
         </div>
 
         <p class="text-xs tracking-[0.3em] text-lavanda uppercase mb-6 z-10">Designer de Identidade Visual</p>
@@ -111,12 +119,21 @@
 
         <!-- Grid de Imagens -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- As imagens mantêm os cantos arredondados do protótipo -->
-            <img src="image_4.png" alt="VONA" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_2.png" alt="Markie" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_3.png" alt="Adoção" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image.png" alt="Sushi" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_5.png" alt="Karoline Queiroz ID" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <!-- Nomes correspondem exatamente aos PNGs rastreados no Git. -->
+            <img src="image_21.png" alt="A&T Marcenaria" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_26.png" alt="Biskie" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_28.png" alt="Garimpan.do" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_29.png" alt="VONA ID" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_22.png" alt="Markie ID" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_24.png" alt="Patrícia Alcântara" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_27.png" alt="Comile" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_25.png" alt="Jeferson Fernando" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_23.png" alt="Maiara Silva" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_30.png" alt="Juliana Landim" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_20.png" alt="VONA Social" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_18.png" alt="Markie Social" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_19.png" alt="Sushi Social" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_17.png" alt="Adoção Social" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
         </div>
     </section>
 
