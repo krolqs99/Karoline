@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-PT" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karoline Queiroz | Designer de Identidade Visual</title>
     
+    <!-- Tipografia: Cormorant Garamond para o toque elegante e serifado do seu protótipo, e Montserrat para textos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -24,9 +25,6 @@
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
                         serif: ['"Cormorant Garamond"', 'serif'],
-                    },
-                    animation: {
-                        'spin-slow': 'spin 40s linear infinite',
                     }
                 }
             }
@@ -35,8 +33,6 @@
     <style>
         body { background-color: #1B1020; color: #E6DCD0; }
         .glass-card { background: rgba(58, 42, 74, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(106, 88, 116, 0.2); }
-        /* Transição suave para os filtros do portfólio */
-        .portfolio-item { transition: opacity 0.4s ease, transform 0.4s ease; }
     </style>
 </head>
 <body class="antialiased font-sans">
@@ -44,38 +40,56 @@
     <!-- NAVBAR -->
     <nav class="fixed top-0 w-full z-50 bg-ametista/90 backdrop-blur-md border-b border-noite/50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <!-- Logo e Nome -->
             <a href="#" class="flex items-center gap-3">
+                <!-- AQUI ENTRA O SEU LOGÓTIPO REAL -->
                 <img src="logo.png" alt="Logótipo Karoline Queiroz" class="h-8 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <!-- Fallback em texto caso a imagem não carregue -->
                 <span style="display:none;" class="text-areia font-serif text-2xl">KQ</span>
                 <span class="font-serif text-xl tracking-wide text-luz">Karoline Queiroz</span>
             </a>
+
+            <!-- Links Centro -->
             <div class="hidden md:flex gap-8 text-xs tracking-[0.2em] uppercase text-lavanda">
                 <a href="#trabalhos" class="hover:text-areia transition-colors">Trabalhos</a>
                 <a href="#servicos" class="hover:text-areia transition-colors">Serviços</a>
                 <a href="#processo" class="hover:text-areia transition-colors">Processo</a>
                 <a href="#faq" class="hover:text-areia transition-colors">FAQ</a>
             </div>
+
+            <!-- Botão WhatsApp -->
             <a href="https://wa.me/5512982544891" target="_blank" class="bg-areia text-ametista text-xs tracking-widest uppercase font-medium px-6 py-3 rounded-full flex items-center gap-2 hover:bg-luz transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 WhatsApp
             </a>
         </div>
     </nav>
 
-    <!-- HERO SECTION COM ANIMAÇÃO -->
+    <!-- HERO SECTION -->
     <section class="relative pt-32 pb-20 min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
         
-        <!-- Logótipo animado no fundo (rodando lentamente) -->
+        <!-- Marca de água do logótipo no fundo -->
         <div class="absolute inset-0 flex justify-center items-center opacity-10 pointer-events-none">
-            <img src="logo-fundo.png" alt="" class="w-[800px] h-[800px] object-contain animate-spin-slow">
+            <img src="logo-fundo.png" alt="" class="w-[800px] h-[800px] object-contain">
         </div>
 
         <p class="text-xs tracking-[0.3em] text-lavanda uppercase mb-6 z-10">Designer de Identidade Visual</p>
-        <h1 class="font-serif text-6xl md:text-8xl text-luz mb-8 z-10">Karoline Queiroz</h1>
-        <p class="font-serif italic text-2xl md:text-3xl text-luz mb-6 z-10">"Ideias ganham forma quando têm uma identidade."</p>
+        
+        <h1 class="font-serif text-6xl md:text-8xl text-luz mb-8 z-10">
+            Karoline Queiroz
+        </h1>
+        
+        <p class="font-serif italic text-2xl md:text-3xl text-luz mb-6 z-10">
+            "Ideias ganham forma quando têm uma identidade."
+        </p>
+        
         <p class="text-sm md:text-base text-lavanda max-w-xl mx-auto mb-12 z-10 font-light leading-relaxed">
             Identidade visual e design de artes para marcas que querem ser reconhecidas — com clareza, presença e um tom que é só delas.
         </p>
-        <a href="https://wa.me/5512982544891" target="_blank" class="z-10 bg-areia text-ametista uppercase tracking-widest text-sm font-medium px-8 py-4 rounded-full hover:bg-luz transition-all">
+
+        <a href="https://wa.me/5512982544891" target="_blank" class="z-10 bg-areia text-ametista uppercase tracking-widest text-sm font-medium px-8 py-4 rounded-full hover:bg-luz transition-all flex items-center gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Falar no WhatsApp
         </a>
     </section>
@@ -88,70 +102,186 @@
             <p class="text-lavanda max-w-2xl mx-auto font-light">Identidades e grades pensadas para o mundo real — embalagem, papelaria, perfil e o que a marca precisa para ser lembrada.</p>
         </div>
 
-        <!-- Filtros Funcionais -->
-        <div class="flex flex-wrap justify-center gap-4 mb-12" id="portfolio-filters">
-            <button data-filter="all" class="filter-btn active bg-areia text-ametista text-xs tracking-widest uppercase px-6 py-2 rounded-full font-medium transition-all">Todos</button>
-            <button data-filter="id" class="filter-btn border border-lavanda/30 text-lavanda text-xs tracking-widest uppercase px-6 py-2 rounded-full hover:border-areia hover:text-areia transition-all">Identidade Visual</button>
-            <button data-filter="social" class="filter-btn border border-lavanda/30 text-lavanda text-xs tracking-widest uppercase px-6 py-2 rounded-full hover:border-areia hover:text-areia transition-all">Social Media</button>
+        <!-- Filtros -->
+        <div class="flex justify-center gap-4 mb-12">
+            <button class="bg-areia text-ametista text-xs tracking-widest uppercase px-6 py-2 rounded-full font-medium">Todos</button>
+            <button class="border border-lavanda/30 text-lavanda text-xs tracking-widest uppercase px-6 py-2 rounded-full hover:border-areia hover:text-areia transition-colors">Identidade Visual</button>
+            <button class="border border-lavanda/30 text-lavanda text-xs tracking-widest uppercase px-6 py-2 rounded-full hover:border-areia hover:text-areia transition-colors">Social Media</button>
         </div>
 
         <!-- Grid de Imagens -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
-            <!-- Projetos de Identidade Visual -->
-            <img src="image_21.png" data-category="id" alt="A&T Marcenaria" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_26.png" data-category="id" alt="Biskie" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_28.png" data-category="id" alt="Garimpan.do" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_29.png" data-category="id" alt="VONA ID" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_22.png" data-category="id" alt="Markie ID" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_24.png" data-category="id" alt="Patrícia Alcântara" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_27.png" data-category="id" alt="Comile" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_25.png" data-category="id" alt="Jeferson Fernando" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_23.png" data-category="id" alt="Maiara Silva" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_30.png" data-category="id" alt="Juliana Landim" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-
-            <!-- Projetos de Social Media -->
-            <img src="image_20.png" data-category="social" alt="VONA Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_18.png" data-category="social" alt="Markie Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_19.png" data-category="social" alt="Sushi Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_17.png" data-category="social" alt="Adoção Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- As imagens mantêm os cantos arredondados do protótipo -->
+            <img src="image_4.png" alt="VONA" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_2.png" alt="Markie" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_3.png" alt="Adoção" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image.png" alt="Sushi" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_5.png" alt="Karoline Queiroz ID" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
         </div>
     </section>
 
-    <!-- O resto das seções (SERVIÇOS, PROCESSO, CTA FINAL) continua exatamente igual ao código anterior... -->
-    
-    <!-- SCRIPT PARA FILTROS DO PORTFÓLIO -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.filter-btn');
-            const items = document.querySelectorAll('.portfolio-item');
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-24 px-6 max-w-6xl mx-auto border-t border-noite/30">
+        <div class="text-center mb-16">
+            <p class="text-xs tracking-[0.2em] uppercase text-lavanda mb-4">Investimento</p>
+            <h2 class="font-serif text-4xl md:text-5xl text-luz mb-6">Escolha o melhor para a sua marca</h2>
+            <p class="text-lavanda max-w-2xl mx-auto font-light">Pacotes claros, sem letra miúda. Cada um leva para uma conversa no WhatsApp já com o pedido pronto.</p>
+        </div>
 
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Resetar o estilo de todos os botões
-                    buttons.forEach(btn => {
-                        btn.classList.remove('bg-areia', 'text-ametista', 'font-medium');
-                        btn.classList.add('border', 'border-lavanda/30', 'text-lavanda');
-                    });
-                    
-                    // Aplicar estilo ativo no botão clicado
-                    button.classList.add('bg-areia', 'text-ametista', 'font-medium');
-                    button.classList.remove('border', 'border-lavanda/30', 'text-lavanda');
+        <!-- Pacotes de Artes -->
+        <h3 class="text-xl font-serif text-luz mb-8 border-b border-noite/50 pb-4">Pacotes de artes</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+            
+            <div class="glass-card p-8 rounded-3xl flex flex-col">
+                <p class="text-xs tracking-widest uppercase text-lavanda mb-4">Artes</p>
+                <h4 class="text-2xl font-serif text-luz mb-2">3 artes</h4>
+                <p class="text-4xl font-serif text-areia mb-6">R$ 197</p>
+                <p class="text-sm text-lavanda font-light mb-8 h-12">Para um recado pontual, com presença no feed e nos stories.</p>
+                <ul class="text-sm text-luz space-y-3 mb-10 flex-grow font-light">
+                    <li class="flex gap-2"><span class="text-areia">✓</span> 3 artes originais</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Adaptação para Feed + Stories</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Alinhado à sua identidade</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> 1 rodada de revisão</li>
+                </ul>
+                <a href="#" class="w-full block text-center border border-lavanda/50 text-luz rounded-full py-3 text-xs tracking-widest uppercase hover:border-areia hover:text-areia transition-colors">Quero este</a>
+            </div>
 
-                    const filter = button.getAttribute('data-filter');
+            <div class="glass-card p-8 rounded-3xl flex flex-col">
+                <p class="text-xs tracking-widest uppercase text-lavanda mb-4">Artes</p>
+                <h4 class="text-2xl font-serif text-luz mb-2">6 artes</h4>
+                <p class="text-4xl font-serif text-areia mb-6">R$ 347</p>
+                <p class="text-sm text-lavanda font-light mb-8 h-12">Uma sequência visual com mais fôlego para a sua marca.</p>
+                <ul class="text-sm text-luz space-y-3 mb-10 flex-grow font-light">
+                    <li class="flex gap-2"><span class="text-areia">✓</span> 6 artes originais</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Adaptação para Feed + Stories</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Direção de arte da grade</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> 2 rodadas de revisão</li>
+                </ul>
+                <a href="#" class="w-full block text-center border border-lavanda/50 text-luz rounded-full py-3 text-xs tracking-widest uppercase hover:border-areia hover:text-areia transition-colors">Quero este</a>
+            </div>
 
-                    // Mostrar/Esconder imagens baseado na categoria
-                    items.forEach(item => {
-                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                            item.style.display = 'block';
-                            setTimeout(() => item.style.opacity = '1', 50);
-                        } else {
-                            item.style.opacity = '0';
-                            setTimeout(() => item.style.display = 'none', 400);
-                        }
-                    });
-                });
-            });
-        });
-    </script>
+            <div class="glass-card p-8 rounded-3xl flex flex-col">
+                <p class="text-xs tracking-widest uppercase text-lavanda mb-4">Artes</p>
+                <h4 class="text-2xl font-serif text-luz mb-2">9 artes</h4>
+                <p class="text-4xl font-serif text-areia mb-6">R$ 497</p>
+                <p class="text-sm text-lavanda font-light mb-8 h-12">Um bloco completo de conteúdo, pronto para publicar.</p>
+                <ul class="text-sm text-luz space-y-3 mb-10 flex-grow font-light">
+                    <li class="flex gap-2"><span class="text-areia">✓</span> 9 artes originais</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Adaptação para Feed + Stories</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Composição harmônica da grade</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> 2 rodadas de revisão</li>
+                </ul>
+                <a href="#" class="w-full block text-center border border-lavanda/50 text-luz rounded-full py-3 text-xs tracking-widest uppercase hover:border-areia hover:text-areia transition-colors">Quero este</a>
+            </div>
+        </div>
+
+        <!-- Identidade Visual -->
+        <h3 class="text-xl font-serif text-luz mb-8 border-b border-noite/50 pb-4">Identidade visual</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+            
+            <div class="glass-card p-8 rounded-3xl flex flex-col">
+                <p class="text-xs tracking-widest uppercase text-lavanda mb-4">Identidade</p>
+                <h4 class="text-2xl font-serif text-luz mb-2">Identidade básica</h4>
+                <p class="text-4xl font-serif text-areia mb-6">R$ 697</p>
+                <p class="text-sm text-lavanda font-light mb-8 h-8">O essencial para a marca nascer com clareza.</p>
+                <ul class="text-sm text-luz space-y-3 mb-10 flex-grow font-light">
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Logo principal</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Paleta de cores</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Tipografia</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Aplicações essenciais</li>
+                </ul>
+                <a href="#" class="w-full block text-center border border-lavanda/50 text-luz rounded-full py-3 text-xs tracking-widest uppercase hover:border-areia hover:text-areia transition-colors">Quero este</a>
+            </div>
+
+            <div class="glass-card p-8 rounded-3xl flex flex-col relative border-areia/30">
+                <div class="absolute -top-3 right-8 bg-areia text-ametista text-[10px] font-bold tracking-widest uppercase px-4 py-1 rounded-full">Mais escolhido</div>
+                <p class="text-xs tracking-widest uppercase text-lavanda mb-4">Identidade</p>
+                <h4 class="text-2xl font-serif text-luz mb-2">Identidade completa</h4>
+                <p class="text-4xl font-serif text-areia mb-6">R$ 1.497</p>
+                <p class="text-sm text-lavanda font-light mb-8 h-8">A marca inteira, documentada e pronta para viver no mundo.</p>
+                <ul class="text-sm text-luz space-y-3 mb-10 flex-grow font-light">
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Tudo da Básica</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Mockups de apresentação</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Manual de marca</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Variações do logo</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Sistema visual expandido</li>
+                </ul>
+                <a href="#" class="w-full block text-center border border-lavanda/50 text-luz rounded-full py-3 text-xs tracking-widest uppercase hover:border-areia hover:text-areia transition-colors">Quero este</a>
+            </div>
+        </div>
+
+        <!-- Plano Mensal -->
+        <h3 class="text-xl font-serif text-luz mb-8 border-b border-noite/50 pb-4">Plano mensal</h3>
+        <div class="max-w-md mx-auto">
+            <div class="glass-card p-8 rounded-3xl flex flex-col relative border-areia/30">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-areia text-ametista text-[10px] font-bold tracking-widest uppercase px-4 py-1 rounded-full whitespace-nowrap">Presença contínua</div>
+                <p class="text-xs tracking-widest uppercase text-lavanda mb-4">Recorrente</p>
+                <h4 class="text-2xl font-serif text-luz mb-2">Plano mensal</h4>
+                <p class="text-4xl font-serif text-areia mb-6">R$ 797</p>
+                <p class="text-sm text-lavanda font-light mb-8">12 artes por mês — 3 por semana — para a marca não sumir.</p>
+                <ul class="text-sm text-luz space-y-3 mb-10 font-light">
+                    <li class="flex gap-2"><span class="text-areia">✓</span> 12 artes/mês (3 por semana)</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Adaptação para Feed + Stories</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Planejamento mensal de conteúdo</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Prioridade no atendimento</li>
+                    <li class="flex gap-2"><span class="text-areia">✓</span> Revisões inclusas no fluxo</li>
+                </ul>
+                <a href="#" class="w-full block text-center bg-areia text-ametista rounded-full py-3 text-xs font-medium tracking-widest uppercase hover:bg-luz transition-colors">Quero este</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESSO -->
+    <section id="processo" class="py-24 px-6 max-w-6xl mx-auto border-t border-noite/30">
+        <div class="text-center mb-16">
+            <p class="text-xs tracking-[0.2em] uppercase text-lavanda mb-4">Caminho</p>
+            <h2 class="font-serif text-4xl md:text-5xl text-luz mb-6">Como funciona</h2>
+            <p class="text-lavanda max-w-2xl mx-auto font-light">Um processo curto, transparente e feito para caber na sua rotina — da primeira conversa aos arquivos finais.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <p class="text-areia font-serif text-xl mb-4">01</p>
+                <h4 class="text-xl font-serif text-luz mb-3">Briefing</h4>
+                <p class="text-sm text-lavanda font-light leading-relaxed">Conversamos sobre a marca, o público e o que precisa ser dito. Você envia referências; eu escuto o que ainda não tem forma.</p>
+            </div>
+            <div>
+                <p class="text-areia font-serif text-xl mb-4">02</p>
+                <h4 class="text-xl font-serif text-luz mb-3">Criação</h4>
+                <p class="text-sm text-lavanda font-light leading-relaxed">Pesquisa, direção e execução. As primeiras propostas chegam alinhadas ao briefing — não ao acaso.</p>
+            </div>
+            <div>
+                <p class="text-areia font-serif text-xl mb-4">03</p>
+                <h4 class="text-xl font-serif text-luz mb-3">Revisões</h4>
+                <p class="text-sm text-lavanda font-light leading-relaxed">Ajustamos juntos. O pacote já prevê rodadas de revisão para chegar no ponto com calma, não no improviso.</p>
+            </div>
+            <div>
+                <p class="text-areia font-serif text-xl mb-4">04</p>
+                <h4 class="text-xl font-serif text-luz mb-3">Entrega</h4>
+                <p class="text-sm text-lavanda font-light leading-relaxed">Arquivos organizados, prontos para usar. A identidade sai do arquivo e começa a circular.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-32 px-6 max-w-4xl mx-auto">
+        <div class="glass-card p-12 md:p-20 rounded-3xl text-center relative overflow-hidden">
+            <!-- Iconzinho de olho centralizado em cima -->
+            <div class="flex justify-center mb-8">
+                 <img src="logo.png" class="h-12 opacity-50" alt="">
+            </div>
+            
+            <p class="text-xs tracking-[0.2em] uppercase text-lavanda mb-6">Próximo passo</p>
+            <h2 class="font-serif text-4xl md:text-5xl text-luz mb-6">Vamos dar forma à sua marca.</h2>
+            <p class="text-lavanda max-w-md mx-auto font-light mb-10 leading-relaxed">
+                Uma conversa no WhatsApp para entender o momento da marca e indicar o pacote certo — artes, plano mensal ou identidade completa.
+            </p>
+            <a href="https://wa.me/5512982544891" target="_blank" class="inline-flex bg-areia text-ametista uppercase tracking-widest text-xs font-medium px-8 py-4 rounded-full hover:bg-luz transition-all items-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Falar no WhatsApp
+            </a>
+        </div>
+    </section>
+
 </body>
 </html>
