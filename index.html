@@ -40,7 +40,6 @@
         .orbit-2 {
             transform-box: view-box;
             transform-origin: 100px 100px;
-            will-change: transform;
         }
 
         .orbit-1 {
@@ -66,6 +65,14 @@
             .orbit-2 {
                 animation: none;
             }
+        }
+
+        .portfolio-item {
+            transition: opacity 220ms ease, transform 220ms ease;
+        }
+
+        .portfolio-item.is-hidden {
+            display: none;
         }
     </style>
 </head>
@@ -103,21 +110,16 @@
     <!-- HERO SECTION -->
     <section class="relative pt-32 pb-20 min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
         
-        <!-- Marca de água do logótipo no fundo -->
-        <div class="absolute inset-0 flex justify-center items-center opacity-10 pointer-events-none">
-            <img src="logo.png" alt="" class="w-[800px] h-[800px] object-contain">
-        </div>
-
-        <!-- Arcos orbitais decorativos: viewBox 0 0 200 200, centro em 100px 100px. -->
-        <svg class="absolute z-0 w-[min(90vw,900px)] h-[min(90vw,900px)] opacity-60 pointer-events-none select-none" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-            <circle cx="100" cy="100" r="3" fill="#C9B18A" opacity="0.65"></circle>
+        <!-- Arcos orbitais inspirados no formato oval do símbolo da marca. -->
+        <svg class="hero-orbits absolute z-0 w-[min(88vw,680px)] h-[min(88vw,680px)] opacity-45 pointer-events-none select-none" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+            <circle cx="100" cy="100" r="2" fill="#C9B18A" opacity="0.55"></circle>
             <g class="orbit-1">
-                <ellipse cx="100" cy="100" rx="82" ry="42" stroke="#C9B18A" stroke-width="0.7" stroke-dasharray="150 365" stroke-linecap="round" vector-effect="non-scaling-stroke"></ellipse>
-                <circle cx="182" cy="100" r="1.8" fill="#E6DCD0"></circle>
+                <ellipse cx="100" cy="100" rx="86" ry="45" stroke="#C9B18A" stroke-width="0.65" stroke-dasharray="170 370" stroke-linecap="round" vector-effect="non-scaling-stroke"></ellipse>
+                <circle cx="186" cy="100" r="1.5" fill="#E6DCD0"></circle>
             </g>
             <g class="orbit-2">
-                <ellipse cx="100" cy="100" rx="66" ry="30" transform="rotate(62 100 100)" stroke="#6A5874" stroke-width="0.8" stroke-dasharray="115 300" stroke-linecap="round" vector-effect="non-scaling-stroke"></ellipse>
-                <circle cx="166" cy="100" r="1.4" fill="#C9B18A"></circle>
+                <ellipse cx="100" cy="100" rx="70" ry="32" transform="rotate(62 100 100)" stroke="#E6DCD0" stroke-width="0.55" stroke-dasharray="125 315" stroke-linecap="round" vector-effect="non-scaling-stroke"></ellipse>
+                <circle cx="170" cy="100" r="1.25" fill="#C9B18A"></circle>
             </g>
         </svg>
 
@@ -150,29 +152,29 @@
         </div>
 
         <!-- Filtros -->
-        <div class="flex justify-center gap-4 mb-12">
-            <button class="bg-areia text-ametista text-xs tracking-widest uppercase px-6 py-2 rounded-full font-medium">Todos</button>
-            <button class="border border-lavanda/30 text-lavanda text-xs tracking-widest uppercase px-6 py-2 rounded-full hover:border-areia hover:text-areia transition-colors">Identidade Visual</button>
-            <button class="border border-lavanda/30 text-lavanda text-xs tracking-widest uppercase px-6 py-2 rounded-full hover:border-areia hover:text-areia transition-colors">Social Media</button>
+        <div class="flex flex-wrap justify-center gap-3 mb-12" role="group" aria-label="Filtrar portfólio">
+            <button type="button" data-filter="all" aria-pressed="true" class="filter-btn bg-areia text-ametista text-xs tracking-widest uppercase px-6 py-2 rounded-full font-medium transition-colors">Todos</button>
+            <button type="button" data-filter="id" aria-pressed="false" class="filter-btn border border-lavanda/30 text-lavanda text-xs tracking-widest uppercase px-6 py-2 rounded-full hover:border-areia hover:text-areia transition-colors">Identidade Visual</button>
+            <button type="button" data-filter="social" aria-pressed="false" class="filter-btn border border-lavanda/30 text-lavanda text-xs tracking-widest uppercase px-6 py-2 rounded-full hover:border-areia hover:text-areia transition-colors">Social Media</button>
         </div>
 
         <!-- Grid de Imagens -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Nomes correspondem exatamente aos PNGs rastreados no Git. -->
-            <img src="image_21.png" alt="A&T Marcenaria" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_26.png" alt="Biskie" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_28.png" alt="Garimpan.do" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_29.png" alt="VONA ID" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_22.png" alt="Markie ID" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_24.png" alt="Patrícia Alcântara" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_27.png" alt="Comile" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_25.png" alt="Jeferson Fernando" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_23.png" alt="Maiara Silva" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_30.png" alt="Juliana Landim" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_20.png" alt="VONA Social" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_18.png" alt="Markie Social" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_19.png" alt="Sushi Social" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_17.png" alt="Adoção Social" class="rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_21.png" data-category="id" alt="A&T Marcenaria" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_26.png" data-category="id" alt="Biskie" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_28.png" data-category="id" alt="Garimpan.do" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_29.png" data-category="id" alt="VONA ID" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_22.png" data-category="id" alt="Markie ID" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_24.png" data-category="id" alt="Patrícia Alcântara" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_27.png" data-category="id" alt="Comile" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_25.png" data-category="id" alt="Jeferson Fernando" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_23.png" data-category="id" alt="Maiara Silva" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_30.png" data-category="id" alt="Juliana Landim" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_20.png" data-category="social" alt="VONA Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_18.png" data-category="social" alt="Markie Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_19.png" data-category="social" alt="Sushi Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
+            <img src="image_17.png" data-category="social" alt="Adoção Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
         </div>
     </section>
 
@@ -338,6 +340,36 @@
             </a>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const selectedFilter = button.dataset.filter;
+
+                    filterButtons.forEach((filterButton) => {
+                        const isActive = filterButton === button;
+                        filterButton.setAttribute('aria-pressed', String(isActive));
+                        filterButton.classList.toggle('bg-areia', isActive);
+                        filterButton.classList.toggle('text-ametista', isActive);
+                        filterButton.classList.toggle('font-medium', isActive);
+                        filterButton.classList.toggle('border', !isActive);
+                        filterButton.classList.toggle('border-lavanda/30', !isActive);
+                        filterButton.classList.toggle('text-lavanda', !isActive);
+                    });
+
+                    portfolioItems.forEach((item) => {
+                        const shouldShow = selectedFilter === 'all' || item.dataset.category === selectedFilter;
+                        item.classList.toggle('is-hidden', !shouldShow);
+                        item.setAttribute('aria-hidden', String(!shouldShow));
+                    });
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
