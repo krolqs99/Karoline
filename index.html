@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karoline Queiroz | Designer de Identidade Visual</title>
+    <title>Karoline Queiroz | Identidade e Sistema Comercial</title>
     
-    <!-- Tipografia: Cormorant Garamond para o toque elegante e serifado do seu protótipo, e Montserrat para textos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FONTES EDITORAIS E BRUTALISTAS -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -17,343 +18,439 @@
                 extend: {
                     colors: {
                         ametista: '#1B1020',
-                        noite: '#3A2A4A',
-                        lavanda: '#6A5874',
+                        noite: '#2A1F2D',
+                        lavanda: '#8A7A94',
                         areia: '#C9B18A',
                         luz: '#E6DCD0',
+                        destaque1: '#D9C8A9',
+                        destaque2: '#3A2A4A',
                     },
                     fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Archivo', 'sans-serif'],
+                        serif: ['Fraunces', 'serif'],
+                        mono: ['"IBM Plex Mono"', 'monospace'], 
+                    },
+                    boxShadow: {
+                        'brutal': '4px 4px 0px 0px rgba(27, 16, 32, 1)',
+                        'brutal-light': '4px 4px 0px 0px rgba(230, 220, 208, 1)',
                     }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #1B1020; color: #E6DCD0; }
-        .glass-card { background: rgba(58, 42, 74, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(106, 88, 116, 0.2); }
+        body { 
+            background-color: #E6DCD0; 
+            color: #1B1020; 
+            overflow-x: hidden;
+        }
+        
+        ::selection { background-color: #1B1020; color: #C9B18A; }
 
-        /* Movimento sutil do próprio símbolo: uma única camada, sem SVG complexo. */
-        .hero-mark {
-            transform-origin: center;
-            animation: hero-mark-breathe 18s ease-in-out infinite;
+        details {
+            border: 2px solid #1B1020;
+            margin-bottom: 1rem;
+            background-color: #E6DCD0;
+            transition: all 0.3s ease;
+        }
+        details[open] {
+            background-color: #C9B18A;
+            box-shadow: 4px 4px 0px 0px rgba(27, 16, 32, 1);
+        }
+        details > summary { 
+            list-style: none; 
+            cursor: pointer; 
+            padding: 1.5rem;
+            font-family: "IBM Plex Mono", monospace;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary { border-bottom: 2px solid #1B1020; }
+        details[open] summary ~ * { animation: slideDown 0.3s ease-out forwards; }
+        
+        @keyframes slideDown { 
+            from { opacity: 0; transform: translateY(-4px); } 
+            to { opacity: 1; transform: translateY(0); } 
         }
 
-        @keyframes hero-mark-breathe {
-            0%,
-            100% {
-                opacity: 0.055;
-                transform: scale(0.96) rotate(-1deg);
-            }
-
-            50% {
-                opacity: 0.095;
-                transform: scale(1.03) rotate(1deg);
-            }
+        .portfolio-item { 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            border: 2px solid #1B1020;
+        }
+        .portfolio-item:hover { 
+            transform: scale(1.03) rotate(-1deg); 
+            box-shadow: 8px 8px 0px 0px rgba(27, 16, 32, 1);
+            z-index: 10;
+            position: relative;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            .hero-mark {
-                animation: none;
-                opacity: 0.07;
-                transform: none;
-            }
+        .shape-tear {
+            clip-path: polygon(0% 5%, 5% 0%, 15% 3%, 25% 0%, 35% 4%, 45% 1%, 55% 5%, 65% 0%, 75% 3%, 85% 1%, 95% 4%, 100% 0%, 100% 100%, 0% 100%);
         }
-
-        .portfolio-item {
-            transition: opacity 220ms ease, transform 220ms ease;
+        .shape-arch {
+            border-radius: 200px 200px 0 0;
         }
-
-        .portfolio-item.is-hidden {
+        
+        .badge-rotate {
+            animation: spin 20s linear infinite;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        
+        .btn-brutal {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1B1020;
+            color: #E6DCD0;
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border: 2px solid #1B1020;
+            box-shadow: 4px 4px 0px 0px rgba(201, 177, 138, 1);
+            transition: all 0.2s ease;
+        }
+        .btn-brutal:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px rgba(201, 177, 138, 1);
+        }
+        .btn-brutal-light {
+            background-color: #C9B18A;
+            color: #1B1020;
+            box-shadow: 4px 4px 0px 0px rgba(27, 16, 32, 1);
+        }
+        .btn-brutal-light:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px rgba(27, 16, 32, 1);
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
             display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
-<body class="antialiased font-sans">
+<body class="antialiased font-sans selection:bg-ametista selection:text-areia relative">
 
-    <!-- NAVBAR -->
-    <nav class="fixed top-0 w-full z-50 bg-ametista/90 backdrop-blur-md border-b border-noite/50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav class="fixed top-4 w-full z-50 px-4 md:px-6 pointer-events-none">
+        <div class="max-w-7xl mx-auto flex justify-between items-center pointer-events-auto">
             
-            <!-- Logo e Nome -->
-            <a href="#" class="flex items-center gap-3">
-                <!-- AQUI ENTRA O SEU LOGÓTIPO REAL -->
+            <a href="#" class="bg-ametista text-luz p-3 border-2 border-ametista flex items-center gap-2 hover:bg-luz hover:text-ametista transition-colors shadow-brutal">
                 <img src="logo.png" alt="Logótipo Karoline Queiroz" class="h-8 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <!-- Fallback em texto caso a imagem não carregue -->
-                <span style="display:none;" class="text-areia font-serif text-2xl">KQ</span>
-                <span class="font-serif text-xl tracking-wide text-luz">Karoline Queiroz</span>
+                <span style="display:none;" class="font-serif font-semibold text-xl tracking-wider">KQ.</span>
             </a>
 
-            <!-- Links Centro -->
-            <div class="hidden md:flex gap-8 text-xs tracking-[0.2em] uppercase text-lavanda">
-                <a href="#trabalhos" class="hover:text-areia transition-colors">Trabalhos</a>
-                <a href="#servicos" class="hover:text-areia transition-colors">Serviços</a>
-                <a href="#processo" class="hover:text-areia transition-colors">Processo</a>
-                <a href="#faq" class="hover:text-areia transition-colors">FAQ</a>
+            <div class="hidden md:flex items-center bg-luz border-2 border-ametista rounded-full px-6 py-2 gap-8 shadow-brutal">
+                <a href="#trabalhos" class="font-mono text-xs uppercase font-semibold hover:text-areia transition-colors">Portfólio</a>
+                <a href="#oferta" class="font-mono text-xs uppercase font-semibold hover:text-areia transition-colors">O Sistema</a>
+                <a href="#garantia" class="font-mono text-xs uppercase font-semibold hover:text-areia transition-colors">Garantia</a>
             </div>
 
-            <!-- Botão WhatsApp -->
-            <a href="https://wa.me/5512982544891" target="_blank" class="bg-areia text-ametista text-xs tracking-widest uppercase font-medium px-6 py-3 rounded-full flex items-center gap-2 hover:bg-luz transition-colors">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <a href="https://wa.me/5512982544891" target="_blank" class="btn-brutal !py-2 !px-4 !text-xs !shadow-[2px_2px_0px_0px_rgba(201,177,138,1)] hover:!shadow-[1px_1px_0px_0px_rgba(201,177,138,1)] pointer-events-auto">
                 WhatsApp
             </a>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-32 pb-20 min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
+    <section class="pt-32 pb-20 px-4 md:px-6 max-w-7xl mx-auto relative min-h-[85vh] flex flex-col justify-center">
         
-        <!-- O símbolo original da marca, em movimento quase imperceptível ao fundo. -->
-        <img src="logo.png" alt="" class="hero-mark absolute z-0 w-[min(78vw,560px)] h-auto object-contain pointer-events-none select-none">
+        <div class="absolute top-20 right-10 md:right-32 w-64 h-64 bg-areia rounded-full blur-3xl opacity-40 -z-10"></div>
+        <div class="absolute bottom-10 left-10 w-72 h-40 bg-lavanda blur-3xl opacity-20 -z-10"></div>
 
-        <p class="text-xs tracking-[0.3em] text-lavanda uppercase mb-6 z-10">Designer de Identidade Visual</p>
-        
-        <h1 class="font-serif text-6xl md:text-8xl text-luz mb-8 z-10">
-            Karoline Queiroz
-        </h1>
-        
-        <p class="font-serif italic text-2xl md:text-3xl text-luz mb-6 z-10">
-            "Ideias ganham forma quando têm uma identidade."
-        </p>
-        
-        <p class="text-sm md:text-base text-lavanda max-w-xl mx-auto mb-12 z-10 font-light leading-relaxed">
-            Identidade visual e design de artes para marcas que querem ser reconhecidas — com clareza, presença e um tom que é só delas.
-        </p>
-
-        <a href="https://wa.me/5512982544891" target="_blank" class="z-10 bg-areia text-ametista uppercase tracking-widest text-sm font-medium px-8 py-4 rounded-full hover:bg-luz transition-all flex items-center gap-2">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Falar no WhatsApp
-        </a>
-    </section>
-
-    <!-- TRABALHOS (PORTEFÓLIO) -->
-    <section id="trabalhos" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-            <p class="text-xs tracking-[0.2em] uppercase text-lavanda mb-4">Seleção</p>
-            <h2 class="font-serif text-4xl md:text-5xl text-luz mb-6">Trabalhos selecionados</h2>
-            <p class="text-lavanda max-w-2xl mx-auto font-light">Identidades e grades pensadas para o mundo real — embalagem, papelaria, perfil e o que a marca precisa para ser lembrada.</p>
-        </div>
-
-        <!-- Filtros -->
-        <div class="flex flex-wrap justify-center gap-3 mb-12" role="group" aria-label="Filtrar portfólio">
-            <button type="button" data-filter="all" aria-pressed="true" class="filter-btn bg-areia text-ametista text-xs tracking-widest uppercase px-6 py-2 rounded-full font-medium transition-colors">Todos</button>
-            <button type="button" data-filter="id" aria-pressed="false" class="filter-btn border border-lavanda/30 text-lavanda text-xs tracking-widest uppercase px-6 py-2 rounded-full hover:border-areia hover:text-areia transition-colors">Identidade Visual</button>
-            <button type="button" data-filter="social" aria-pressed="false" class="filter-btn border border-lavanda/30 text-lavanda text-xs tracking-widest uppercase px-6 py-2 rounded-full hover:border-areia hover:text-areia transition-colors">Social Media</button>
-        </div>
-
-        <!-- Grid de Imagens -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Nomes correspondem exatamente aos PNGs rastreados no Git. -->
-            <img src="image_21.png" data-category="id" alt="A&T Marcenaria" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_26.png" data-category="id" alt="Biskie" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_28.png" data-category="id" alt="Garimpan.do" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_29.png" data-category="id" alt="VONA ID" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_22.png" data-category="id" alt="Markie ID" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_24.png" data-category="id" alt="Patrícia Alcântara" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_27.png" data-category="id" alt="Comile" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_25.png" data-category="id" alt="Jeferson Fernando" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_23.png" data-category="id" alt="Maiara Silva" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_30.png" data-category="id" alt="Juliana Landim" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_20.png" data-category="social" alt="VONA Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_18.png" data-category="social" alt="Markie Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_19.png" data-category="social" alt="Sushi Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-            <img src="image_17.png" data-category="social" alt="Adoção Social" class="portfolio-item rounded-2xl w-full h-auto object-cover aspect-square border border-noite/50">
-        </div>
-    </section>
-
-    <!-- SERVIÇOS -->
-    <section id="servicos" class="py-24 px-6 max-w-6xl mx-auto border-t border-noite/30">
-        <div class="text-center mb-16">
-            <p class="text-xs tracking-[0.2em] uppercase text-lavanda mb-4">Investimento</p>
-            <h2 class="font-serif text-4xl md:text-5xl text-luz mb-6">Escolha o melhor para a sua marca</h2>
-            <p class="text-lavanda max-w-2xl mx-auto font-light">Pacotes claros, sem letra miúda. Cada um leva para uma conversa no WhatsApp já com o pedido pronto.</p>
-        </div>
-
-        <!-- Pacotes de Artes -->
-        <h3 class="text-xl font-serif text-luz mb-8 border-b border-noite/50 pb-4">Pacotes de artes</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            <div class="glass-card p-8 rounded-3xl flex flex-col">
-                <p class="text-xs tracking-widest uppercase text-lavanda mb-4">Artes</p>
-                <h4 class="text-2xl font-serif text-luz mb-2">3 artes</h4>
-                <p class="text-4xl font-serif text-areia mb-6">R$ 197</p>
-                <p class="text-sm text-lavanda font-light mb-8 h-12">Para um recado pontual, com presença no feed e nos stories.</p>
-                <ul class="text-sm text-luz space-y-3 mb-10 flex-grow font-light">
-                    <li class="flex gap-2"><span class="text-areia">✓</span> 3 artes originais</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Adaptação para Feed + Stories</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Alinhado à sua identidade</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> 1 rodada de revisão</li>
-                </ul>
-                <div class="space-y-3"><a href="https://mpago.la/2Ev9ais" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-areia text-ametista rounded-full py-3 text-xs font-medium tracking-widest uppercase hover:bg-luz transition-colors">Pagar agora</a><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Tenho%20interesse%20no%20pacote%20de%203%20artes.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="w-full block text-center border border-lavanda/50 text-luz rounded-full py-3 text-xs tracking-widest uppercase hover:border-areia hover:text-areia transition-colors">Falar no WhatsApp</a></div>
+            <div class="lg:col-span-8 relative z-10">
+                <div class="inline-block bg-ametista text-luz font-mono text-xs uppercase px-3 py-1 mb-6 border border-ametista shadow-[2px_2px_0px_0px_#C9B18A]">
+                    Para quem vende projetos sob medida
+                </div>
+
+                <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-ametista mb-8 font-light">
+                    A sua entrega é impecável. <br>
+                    <span class="italic text-lavanda font-normal">A apresentação da sua empresa também deveria ser.</span>
+                </h1>
+                
+                <p class="font-sans text-noite text-lg md:text-xl max-w-2xl font-light mb-10 border-l-4 border-areia pl-6">
+                    Se o seu cliente percebe improviso no seu orçamento, a desconfiança começa. Sistematizamos a sua comunicação visual para você fechar contratos com a postura, a segurança e a organização de uma grande agência.
+                </p>
+                
+                <a href="https://wa.me/5512982544891?text=Olá%20Karoline!%20Quero%20saber%20mais%20sobre%20o%20Sistema%20Negócio%20Pronto." target="_blank" class="btn-brutal text-sm">
+                    Estruturar minha empresa
+                </a>
             </div>
 
-            <div class="glass-card p-8 rounded-3xl flex flex-col">
-                <p class="text-xs tracking-widest uppercase text-lavanda mb-4">Artes</p>
-                <h4 class="text-2xl font-serif text-luz mb-2">6 artes</h4>
-                <p class="text-4xl font-serif text-areia mb-6">R$ 347</p>
-                <p class="text-sm text-lavanda font-light mb-8 h-12">Uma sequência visual com mais fôlego para a sua marca.</p>
-                <ul class="text-sm text-luz space-y-3 mb-10 flex-grow font-light">
-                    <li class="flex gap-2"><span class="text-areia">✓</span> 6 artes originais</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Adaptação para Feed + Stories</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Direção de arte da grade</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> 2 rodadas de revisão</li>
-                </ul>
-                <div class="space-y-3"><a href="https://mpago.la/25j4eAc" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-areia text-ametista rounded-full py-3 text-xs font-medium tracking-widest uppercase hover:bg-luz transition-colors">Pagar agora</a><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Tenho%20interesse%20no%20pacote%20de%206%20artes.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="w-full block text-center border border-lavanda/50 text-luz rounded-full py-3 text-xs tracking-widest uppercase hover:border-areia hover:text-areia transition-colors">Falar no WhatsApp</a></div>
-            </div>
-
-            <div class="glass-card p-8 rounded-3xl flex flex-col">
-                <p class="text-xs tracking-widest uppercase text-lavanda mb-4">Artes</p>
-                <h4 class="text-2xl font-serif text-luz mb-2">9 artes</h4>
-                <p class="text-4xl font-serif text-areia mb-6">R$ 497</p>
-                <p class="text-sm text-lavanda font-light mb-8 h-12">Um bloco completo de conteúdo, pronto para publicar.</p>
-                <ul class="text-sm text-luz space-y-3 mb-10 flex-grow font-light">
-                    <li class="flex gap-2"><span class="text-areia">✓</span> 9 artes originais</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Adaptação para Feed + Stories</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Composição harmônica da grade</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> 2 rodadas de revisão</li>
-                </ul>
-                <div class="space-y-3"><a href="https://mpago.la/1qbByqM" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-areia text-ametista rounded-full py-3 text-xs font-medium tracking-widest uppercase hover:bg-luz transition-colors">Pagar agora</a><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Tenho%20interesse%20no%20pacote%20de%209%20artes.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="w-full block text-center border border-lavanda/50 text-luz rounded-full py-3 text-xs tracking-widest uppercase hover:border-areia hover:text-areia transition-colors">Falar no WhatsApp</a></div>
+            <div class="lg:col-span-4 relative mt-16 lg:mt-0 hidden md:block">
+                <!-- Imagem de portfólio (Hero) -->
+                <div class="relative w-full aspect-[4/5] bg-noite shape-arch p-2 z-10 shadow-brutal-light border-2 border-ametista">
+                    <img src="image_21.png" alt="A&T Marcenaria" class="w-full h-full object-cover shape-arch opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" onerror="this.style.backgroundColor='#8A7A94'">
+                </div>
+                
+                <div class="absolute -bottom-8 -left-12 z-20 badge-rotate bg-areia text-ametista w-36 h-36 rounded-full border-2 border-ametista flex items-center justify-center p-2 text-center shadow-brutal">
+                    <svg viewBox="0 0 100 100" class="w-full h-full overflow-visible">
+                        <path id="curve" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="transparent" />
+                        <text class="font-mono text-[9.5px] uppercase font-semibold tracking-wider" fill="currentColor">
+                            <textPath href="#curve" startOffset="0%">
+                                • Sistema Negócio Pronto • Zero Burocracia
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+                
+                <div class="absolute -top-6 -right-6 w-full h-full bg-lavanda shape-arch z-0 border-2 border-ametista"></div>
             </div>
         </div>
+    </section>
 
-        <!-- Identidade Visual -->
-        <h3 class="text-xl font-serif text-luz mb-8 border-b border-noite/50 pb-4">Identidade visual</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+    <!-- TRABALHOS - Grid Assimétrico Masonry / Mobile Scroll -->
+    <section id="trabalhos" class="py-24 bg-ametista text-luz border-y-4 border-noite relative z-20">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
             
-            <div class="glass-card p-8 rounded-3xl flex flex-col">
-                <p class="text-xs tracking-widest uppercase text-lavanda mb-4">Identidade</p>
-                <h4 class="text-2xl font-serif text-luz mb-2">Identidade básica</h4>
-                <p class="text-4xl font-serif text-areia mb-6">R$ 697</p>
-                <p class="text-sm text-lavanda font-light mb-8 h-8">O essencial para a marca nascer com clareza.</p>
-                <ul class="text-sm text-luz space-y-3 mb-10 flex-grow font-light">
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Logo principal</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Paleta de cores</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Tipografia</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Aplicações essenciais</li>
-                </ul>
-                <div class="space-y-3"><a href="https://mpago.la/1xQrCxv" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-areia text-ametista rounded-full py-3 text-xs font-medium tracking-widest uppercase hover:bg-luz transition-colors">Pagar agora</a><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Tenho%20interesse%20na%20identidade%20visual%20b%C3%A1sica.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="w-full block text-center border border-lavanda/50 text-luz rounded-full py-3 text-xs tracking-widest uppercase hover:border-areia hover:text-areia transition-colors">Falar no WhatsApp</a></div>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b-2 border-lavanda/30 pb-8">
+                <div>
+                    <h2 class="font-serif text-5xl md:text-6xl mb-4 font-light">Trabalhos<br><span class="italic text-areia">Selecionados</span></h2>
+                </div>
+                <div class="bg-noite p-4 max-w-xs border border-lavanda/30 shadow-[4px_4px_0px_0px_#C9B18A] mt-4 md:mt-0">
+                    <p class="font-mono text-xs uppercase mb-2 text-areia font-semibold">O Fim do Improviso</p>
+                    <p class="text-sm font-light text-lavanda">Identidades construídas para transmitir confiança imediata. Nada de artes soltas, apenas sistemas visuais funcionais.</p>
+                </div>
             </div>
 
-            <div class="glass-card p-8 rounded-3xl flex flex-col relative border-areia/30">
-                <div class="absolute -top-3 right-8 bg-areia text-ametista text-[10px] font-bold tracking-widest uppercase px-4 py-1 rounded-full">Mais escolhido</div>
-                <p class="text-xs tracking-widest uppercase text-lavanda mb-4">Identidade</p>
-                <h4 class="text-2xl font-serif text-luz mb-2">Identidade completa</h4>
-                <p class="text-4xl font-serif text-areia mb-6">R$ 1.497</p>
-                <p class="text-sm text-lavanda font-light mb-8 h-8">A marca inteira, documentada e pronta para viver no mundo.</p>
-                <ul class="text-sm text-luz space-y-3 mb-10 flex-grow font-light">
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Tudo da Básica</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Mockups de apresentação</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Manual de marca</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Variações do logo</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Sistema visual expandido</li>
-                </ul>
-                <div class="space-y-3"><a href="https://mpago.la/1poN9ke" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-areia text-ametista rounded-full py-3 text-xs font-medium tracking-widest uppercase hover:bg-luz transition-colors">Pagar agora</a><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Tenho%20interesse%20na%20identidade%20visual%20completa.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="w-full block text-center border border-lavanda/50 text-luz rounded-full py-3 text-xs tracking-widest uppercase hover:border-areia hover:text-areia transition-colors">Falar no WhatsApp</a></div>
-            </div>
-        </div>
+            <!-- Mobile: Carrossel Horizontal / Desktop: Grid Assimétrico -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar md:grid md:grid-cols-4 gap-4 md:gap-6 auto-rows-[250px]">
+                
+                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[400px] md:h-auto col-span-2 row-span-2 relative group overflow-hidden bg-noite border-2 border-luz/20 p-2 portfolio-item">
+                    <img src="image_21.png" alt="A&T Marcenaria" class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500">
+                    <div class="absolute top-4 left-4 bg-luz text-ametista font-mono text-[10px] px-2 py-1 font-semibold uppercase z-10">A&T Marcenaria</div>
+                </div>
 
-        <!-- Plano Mensal -->
-        <h3 class="text-xl font-serif text-luz mb-8 border-b border-noite/50 pb-4">Plano mensal</h3>
-        <div class="max-w-md mx-auto">
-            <div class="glass-card p-8 rounded-3xl flex flex-col relative border-areia/30">
-                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-areia text-ametista text-[10px] font-bold tracking-widest uppercase px-4 py-1 rounded-full whitespace-nowrap">Presença contínua</div>
-                <p class="text-xs tracking-widest uppercase text-lavanda mb-4">Recorrente</p>
-                <h4 class="text-2xl font-serif text-luz mb-2">Plano mensal</h4>
-                <p class="text-4xl font-serif text-areia mb-6">R$ 797</p>
-                <p class="text-sm text-lavanda font-light mb-8">12 artes por mês — 3 por semana — para a marca não sumir.</p>
-                <ul class="text-sm text-luz space-y-3 mb-10 font-light">
-                    <li class="flex gap-2"><span class="text-areia">✓</span> 12 artes/mês (3 por semana)</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Adaptação para Feed + Stories</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Planejamento mensal de conteúdo</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Prioridade no atendimento</li>
-                    <li class="flex gap-2"><span class="text-areia">✓</span> Revisões inclusas no fluxo</li>
-                </ul>
-                <div class="space-y-3"><a href="https://mpago.la/2ehwDPa" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-areia text-ametista rounded-full py-3 text-xs font-medium tracking-widest uppercase hover:bg-luz transition-colors">Pagar agora</a><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Tenho%20interesse%20no%20plano%20mensal.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="w-full block text-center border border-lavanda/50 text-luz rounded-full py-3 text-xs tracking-widest uppercase hover:border-areia hover:text-areia transition-colors">Falar no WhatsApp</a></div>
+                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[250px] md:h-auto col-span-1 row-span-1 relative group overflow-hidden bg-noite border-2 border-luz/20 p-2 portfolio-item">
+                    <img src="image_26.png" alt="Biskie" class="w-full h-full object-cover">
+                </div>
+                
+                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[350px] md:h-auto col-span-1 row-span-2 relative group overflow-hidden bg-lavanda/20 border-2 border-luz/20 p-2 portfolio-item flex flex-col justify-center items-center text-center p-6">
+                     <p class="font-serif text-2xl mb-4 text-areia italic">"O cliente parou de pechinchar."</p>
+                     <p class="font-mono text-xs uppercase text-lavanda font-semibold">— O poder da organização</p>
+                </div>
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[250px] md:h-auto col-span-1 row-span-1 relative group overflow-hidden bg-noite border-2 border-luz/20 p-2 portfolio-item">
+                    <img src="image_28.png" alt="Garimpan.do" class="w-full h-full object-cover">
+                </div>
+
+                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[250px] md:h-auto col-span-1 row-span-1 relative group overflow-hidden bg-noite border-2 border-luz/20 p-2 portfolio-item">
+                    <img src="image_29.png" alt="VONA ID" class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500">
+                </div>
+                
+                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[250px] md:h-auto col-span-2 row-span-1 relative group overflow-hidden bg-noite border-2 border-luz/20 p-2 portfolio-item">
+                    <img src="image_22.png" alt="Markie ID" class="w-full h-full object-cover object-top mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500">
+                    <div class="absolute top-4 right-4 bg-areia text-ametista font-mono text-[10px] px-2 py-1 font-semibold uppercase z-10">Destaque</div>
+                </div>
+                
+                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[250px] md:h-auto col-span-1 row-span-1 relative group overflow-hidden bg-noite border-2 border-luz/20 p-2 portfolio-item">
+                    <img src="image_24.png" alt="Patrícia Alcântara" class="w-full h-full object-cover">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- PROCESSO -->
-    <section id="processo" class="py-24 px-6 max-w-6xl mx-auto border-t border-noite/30">
-        <div class="text-center mb-16">
-            <p class="text-xs tracking-[0.2em] uppercase text-lavanda mb-4">Caminho</p>
-            <h2 class="font-serif text-4xl md:text-5xl text-luz mb-6">Como funciona</h2>
-            <p class="text-lavanda max-w-2xl mx-auto font-light">Um processo curto, transparente e feito para caber na sua rotina — da primeira conversa aos arquivos finais.</p>
+    <!-- OFERTA (Blocos Limpos e Contornos Destacados) -->
+    <section id="oferta" class="py-24 px-4 md:px-6 max-w-7xl mx-auto">
+        
+        <div class="mb-16">
+            <h2 class="font-serif text-4xl md:text-6xl leading-[1.0] text-ametista mb-6 max-w-4xl font-light">
+                O Sistema <br>
+                <span class="bg-areia px-4 inline-block transform -skew-x-6 font-semibold">Negócio Pronto</span>
+            </h2>
+            <p class="font-mono text-sm uppercase text-lavanda max-w-xl font-semibold">Não vendemos artes soltas. Entregamos a base visual que justifica o seu preço em 15 dias, estruturando todo o seu fluxo comercial.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-                <p class="text-areia font-serif text-xl mb-4">01</p>
-                <h4 class="text-xl font-serif text-luz mb-3">Briefing</h4>
-                <p class="text-sm text-lavanda font-light leading-relaxed">Conversamos sobre a marca, o público e o que precisa ser dito. Você envia referências; eu escuto o que ainda não tem forma.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            
+            <div class="lg:col-span-8 flex flex-col gap-6">
+                
+                <!-- Bloco 1: Identidade Visual -->
+                <div class="bg-ametista text-luz p-8 md:p-10 border-2 border-ametista shadow-[8px_8px_0px_0px_#C9B18A]">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="font-serif text-2xl md:text-3xl font-light">Identidade Visual Completa</h3>
+                        <span class="font-mono text-lavanda line-through">R$ 1.500</span>
+                    </div>
+                    <p class="font-sans font-light text-base md:text-lg mb-4 text-lavanda">Logo principal, paleta de cores estruturada, tipografia e todos os arquivos necessários para qualquer aplicação da sua marca.</p>
+                    <div class="inline-block bg-luz text-ametista font-mono text-[10px] font-semibold uppercase px-2 py-1">O Essencial</div>
+                </div>
+
+                <!-- Bloco 2: O Grande Destaque (Arsenal de Fechamento) -->
+                <div class="bg-noite text-luz p-8 md:p-10 border-2 border-areia shadow-[8px_8px_0px_0px_#8A7A94]">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="font-serif text-2xl md:text-3xl text-areia italic font-normal">Arsenal de Fechamento</h3>
+                        <span class="font-mono text-lavanda line-through">R$ 1.200</span>
+                    </div>
+                    <p class="font-sans font-light text-base md:text-lg mb-4 text-lavanda">Onde o dinheiro mora e o fluxo começa a rodar. Contrato impecável, modelo de orçamento e recibo. <strong class="text-luz font-bold">100% editáveis por você em PDF.</strong> Troque o nome, insira o preço e feche o negócio.</p>
+                    <div class="inline-block bg-areia text-ametista font-mono text-[10px] font-semibold uppercase px-2 py-1">O Diferencial</div>
+                </div>
+
+                <!-- Bônus com Contornos Leves (Sem competir visualmente) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border-2 border-ametista/40 p-6 bg-transparent relative overflow-hidden group hover:border-ametista transition-colors">
+                        <p class="font-mono text-xs font-semibold uppercase text-ametista mb-2">Bônus Expresso</p>
+                        <h4 class="font-serif text-xl text-ametista mb-2 font-light">Orçamento Dia 3</h4>
+                        <p class="text-sm font-light text-ametista/80 mb-4">Modelo de orçamento ágil para você parar de perder clientes por demora na resposta.</p>
+                        <span class="font-mono text-xs text-lavanda line-through">R$ 400</span>
+                    </div>
+                    
+                    <div class="border-2 border-ametista/40 p-6 bg-transparent relative overflow-hidden group hover:border-ametista transition-colors">
+                        <p class="font-mono text-xs font-semibold uppercase text-ametista mb-2">Bônus Setup</p>
+                        <h4 class="font-serif text-xl text-ametista mb-2 font-light">WhatsApp Pró</h4>
+                        <p class="text-sm font-light text-ametista/80 mb-4">Configuração do perfil comercial e script de como enviar valores sem pedir desculpas.</p>
+                        <span class="font-mono text-xs text-lavanda line-through">R$ 700</span>
+                    </div>
+                </div>
+
             </div>
-            <div>
-                <p class="text-areia font-serif text-xl mb-4">02</p>
-                <h4 class="text-xl font-serif text-luz mb-3">Criação</h4>
-                <p class="text-sm text-lavanda font-light leading-relaxed">Pesquisa, direção e execução. As primeiras propostas chegam alinhadas ao briefing — não ao acaso.</p>
+
+            <!-- Coluna de Preço Fixa -->
+            <div class="lg:col-span-4 lg:sticky lg:top-24 mt-8 lg:mt-0">
+                <div class="bg-areia border-4 border-ametista p-8 shadow-[12px_12px_0px_0px_#1B1020] transform md:rotate-1">
+                    
+                    <div class="flex justify-between items-center mb-6 border-b-2 border-ametista pb-4">
+                        <span class="font-mono text-xs font-semibold uppercase text-ametista">Valor de Mercado</span>
+                        <span class="font-mono text-lg font-semibold text-ametista line-through opacity-70">R$ 3.800</span>
+                    </div>
+
+                    <p class="font-mono text-xs font-semibold uppercase text-ametista mb-2">Seu Investimento</p>
+                    <div class="font-serif text-5xl xl:text-6xl text-ametista mb-4 relative inline-block font-semibold">
+                        R$ 1.497
+                        <span class="absolute bottom-1 left-0 w-full h-4 bg-luz opacity-50 -z-10 transform -rotate-2"></span>
+                    </div>
+                    
+                    <p class="font-sans text-xs text-ametista/80 font-bold mb-8">
+                        (Apenas 2 vagas por mês. 50% na reserva, 50% na entrega final).
+                    </p>
+
+                    <a href="https://wa.me/5512982544891?text=Olá%20Karoline!%20Gostaria%20de%20reservar%20uma%20vaga%20para%20o%20Sistema%20Negócio%20Pronto." target="_blank" class="w-full btn-brutal">
+                        Verificar Disponibilidade
+                    </a>
+                </div>
             </div>
-            <div>
-                <p class="text-areia font-serif text-xl mb-4">03</p>
-                <h4 class="text-xl font-serif text-luz mb-3">Revisões</h4>
-                <p class="text-sm text-lavanda font-light leading-relaxed">Ajustamos juntos. O pacote já prevê rodadas de revisão para chegar no ponto com calma, não no improviso.</p>
-            </div>
-            <div>
-                <p class="text-areia font-serif text-xl mb-4">04</p>
-                <h4 class="text-xl font-serif text-luz mb-3">Entrega</h4>
-                <p class="text-sm text-lavanda font-light leading-relaxed">Arquivos organizados, prontos para usar. A identidade sai do arquivo e começa a circular.</p>
-            </div>
+
         </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="py-32 px-6 max-w-4xl mx-auto">
-        <div class="glass-card p-12 md:p-20 rounded-3xl text-center relative overflow-hidden">
-            <!-- Iconzinho de olho centralizado em cima -->
-            <div class="flex justify-center mb-8">
-                 <img src="logo.png" class="h-12 opacity-50" alt="">
+    <!-- GARANTIA & PROCESSO -->
+    <section id="garantia" class="py-24 bg-luz border-t-2 border-ametista relative overflow-hidden">
+        
+        <div class="absolute top-0 left-0 w-full h-16 bg-ametista shape-tear"></div>
+
+        <div class="max-w-7xl mx-auto px-4 md:px-6 pt-16 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            
+            <div class="bg-ametista p-10 border-4 border-areia shadow-[8px_8px_0px_0px_#2A1F2D] relative">
+                <span class="absolute top-4 right-4 font-serif text-[8rem] leading-none text-luz opacity-10 font-bold">G</span>
+                
+                <p class="font-mono text-areia text-xs font-semibold uppercase tracking-widest mb-4 border-b border-areia/30 pb-2 inline-block">Acordo de Responsabilidade</p>
+                <h3 class="font-serif text-3xl md:text-4xl text-luz mb-6 leading-tight font-light">O risco do projeto<br>fica do <span class="italic text-areia font-normal">meu lado.</span></h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-mono font-semibold text-sm text-luz uppercase mb-2">1. Prazo é Lei</h4>
+                        <p class="font-sans text-lavanda text-sm font-light">Se o briefing for preenchido no prazo e eu atrasar a entrega além dos 15 dias úteis, <strong class="text-luz font-semibold">você não paga a segunda parcela.</strong></p>
+                    </div>
+                    <div>
+                        <h4 class="font-mono font-semibold text-sm text-luz uppercase mb-2">2. Satisfação</h4>
+                        <p class="font-sans text-lavanda text-sm font-light">Se após as rodadas de refinamento o caminho criativo estiver desconexo do que alinhamos, devolvo sua entrada.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="font-serif text-4xl md:text-5xl text-ametista mb-10 font-light">Zero burocracia <br><span class="bg-lavanda text-luz px-2 italic font-normal">para você.</span></h2>
+                
+                <div class="border-l-4 border-ametista pl-6 space-y-8 relative">
+                    <div class="relative">
+                        <span class="absolute -left-12 top-0 font-mono font-semibold text-lg text-ametista bg-luz w-8 h-8 flex justify-center items-center border-2 border-ametista rounded-full">1</span>
+                        <h4 class="font-mono font-semibold text-base text-ametista uppercase mb-2">Briefing Direto</h4>
+                        <p class="font-sans text-noite font-light">Você preenche o formulário enxuto pelo celular em poucos minutos. É a única exigência para começarmos.</p>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute -left-12 top-0 font-mono font-semibold text-lg text-ametista bg-luz w-8 h-8 flex justify-center items-center border-2 border-ametista rounded-full">2</span>
+                        <h4 class="font-mono font-semibold text-base text-ametista uppercase mb-2">Execução Silenciosa</h4>
+                        <p class="font-sans text-noite font-light">Sem reuniões intermináveis. Eu crio a identidade e os documentos sem interromper o seu dia a dia.</p>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute -left-12 top-0 font-mono font-semibold text-lg text-ametista bg-areia w-8 h-8 flex justify-center items-center border-2 border-ametista rounded-full shadow-[2px_2px_0px_0px_#1B1020]">3</span>
+                        <h4 class="font-mono font-semibold text-base text-ametista uppercase mb-2">Dia 15: Ferramentas Prontas</h4>
+                        <p class="font-sans text-noite font-light">Você recebe os PDFs configurados e o novo fluxo de vendas pronto para rodar.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-4 md:px-6 max-w-4xl mx-auto">
+        <div class="mb-12 flex justify-between items-end border-b-4 border-ametista pb-4">
+            <h2 class="font-serif text-4xl md:text-5xl text-ametista font-light">Dúvidas<br>Frequentes</h2>
+            <span class="font-mono font-bold text-4xl text-lavanda">?</span>
+        </div>
+
+        <div class="space-y-4">
+            <details>
+                <summary class="flex justify-between items-center group">
+                    <span>O contrato do Arsenal tem validade jurídica?</span>
+                    <span class="text-xl group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="p-6 pt-0 font-sans text-noite font-light text-sm bg-luz border-t-2 border-ametista mt-4">
+                    <p class="mt-4">Meu trabalho é organizar o layout, a tipografia e a hierarquia da informação para que a leitura passe extrema credibilidade. Eu diagramo a estrutura base, mas <strong class="font-semibold text-ametista">não presto consultoria jurídica</strong>. O texto deve sempre ser validado pelo seu advogado.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary class="flex justify-between items-center group">
+                    <span>Ferramentas automáticas ou I.A. não fariam isso?</span>
+                    <span class="text-xl group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="p-6 pt-0 font-sans text-noite font-light text-sm bg-luz border-t-2 border-ametista mt-4">
+                    <p class="mt-4">Elas geram desenhos genéricos, mas não constroem um sistema comercial. O cliente percebe quando o material é improvisado e passa a pechinchar. Nós criamos um ambiente visual onde o seu preço é respeitado por completo.</p>
+                </div>
+            </details>
+            
+            <details>
+                <summary class="flex justify-between items-center group">
+                    <span>É difícil de editar os arquivos entregues?</span>
+                    <span class="text-xl group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div class="p-6 pt-0 font-sans text-noite font-light text-sm bg-luz border-t-2 border-ametista mt-4">
+                    <p class="mt-4">Não. Tudo é entregue em formatos acessíveis e editáveis (como PDF e templates limpos). Você só altera os campos de nome e valor quando fechar com um novo cliente.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-ametista text-luz border-t-4 border-areia py-20 px-4 md:px-6 relative overflow-hidden">
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <h2 class="font-serif text-4xl md:text-[4.5rem] leading-[0.95] mb-8 font-light">Pronto para<br><span class="italic text-areia font-normal">cobrar o que<br>você vale?</span></h2>
+                <a href="https://wa.me/5512982544891" target="_blank" class="btn-brutal-light text-sm inline-flex items-center gap-4">
+                    Falar no WhatsApp
+                    <span class="text-xl font-mono">→</span>
+                </a>
             </div>
             
-            <p class="text-xs tracking-[0.2em] uppercase text-lavanda mb-6">Próximo passo</p>
-            <h2 class="font-serif text-4xl md:text-5xl text-luz mb-6">Vamos dar forma à sua marca.</h2>
-            <p class="text-lavanda max-w-md mx-auto font-light mb-10 leading-relaxed">
-                Uma conversa no WhatsApp para entender o momento da marca e indicar o pacote certo — artes, plano mensal ou identidade completa.
-            </p>
-            <a href="https://wa.me/5512982544891" target="_blank" class="inline-flex bg-areia text-ametista uppercase tracking-widest text-xs font-medium px-8 py-4 rounded-full hover:bg-luz transition-all items-center gap-2">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Falar no WhatsApp
-            </a>
+            <div class="text-left md:text-right font-mono text-xs uppercase text-lavanda space-y-2">
+                <p class="font-semibold text-luz mb-4">Karoline Queiroz</p>
+                <p>Design & Sistemas Comerciais</p>
+                <p>Criando fluxos funcionais, não apenas logotipos.</p>
+                <p class="mt-8 pt-8 border-t border-lavanda/30 inline-block w-full md:w-auto">© 2026. Todos os direitos reservados.</p>
+            </div>
         </div>
-    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-            filterButtons.forEach((button) => {
-                button.addEventListener('click', () => {
-                    const selectedFilter = button.dataset.filter;
-
-                    filterButtons.forEach((filterButton) => {
-                        const isActive = filterButton === button;
-                        filterButton.setAttribute('aria-pressed', String(isActive));
-                        filterButton.classList.toggle('bg-areia', isActive);
-                        filterButton.classList.toggle('text-ametista', isActive);
-                        filterButton.classList.toggle('font-medium', isActive);
-                        filterButton.classList.toggle('border', !isActive);
-                        filterButton.classList.toggle('border-lavanda/30', !isActive);
-                        filterButton.classList.toggle('text-lavanda', !isActive);
-                    });
-
-                    portfolioItems.forEach((item) => {
-                        const shouldShow = selectedFilter === 'all' || item.dataset.category === selectedFilter;
-                        item.classList.toggle('is-hidden', !shouldShow);
-                        item.setAttribute('aria-hidden', String(!shouldShow));
-                    });
-                });
-            });
-        });
-    </script>
+        <span class="absolute -bottom-20 -right-20 font-serif text-[20rem] text-noite opacity-20 font-bold pointer-events-none select-none">KQ</span>
+    </footer>
 
 </body>
 </html>
