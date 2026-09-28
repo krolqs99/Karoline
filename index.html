@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- FONTES EDITORAIS E BRUTALISTAS -->
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- FONTES EDITORAIS E BRUTALISTAS (Fraunces, Archio, IBM Plex Mono) -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -33,6 +33,7 @@
                     boxShadow: {
                         'brutal': '4px 4px 0px 0px rgba(27, 16, 32, 1)',
                         'brutal-light': '4px 4px 0px 0px rgba(230, 220, 208, 1)',
+                        'macos': '0 20px 40px -15px rgba(27, 16, 32, 0.25)',
                     }
                 }
             }
@@ -73,17 +74,6 @@
         @keyframes slideDown { 
             from { opacity: 0; transform: translateY(-4px); } 
             to { opacity: 1; transform: translateY(0); } 
-        }
-
-        .portfolio-item { 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            border: 2px solid #1B1020;
-        }
-        .portfolio-item:hover { 
-            transform: scale(1.03) rotate(-1deg); 
-            box-shadow: 8px 8px 0px 0px rgba(27, 16, 32, 1);
-            z-index: 10;
-            position: relative;
         }
 
         .shape-tear {
@@ -157,162 +147,176 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="pt-32 pb-20 px-4 md:px-6 max-w-7xl mx-auto relative min-h-[85vh] flex flex-col justify-center">
+    <section class="pt-32 pb-20 px-4 md:px-6 max-w-7xl mx-auto relative min-h-[80vh] flex flex-col justify-center">
         
-        <div class="absolute top-20 right-10 md:right-32 w-64 h-64 bg-areia rounded-full blur-3xl opacity-40 -z-10"></div>
-        <div class="absolute bottom-10 left-10 w-72 h-40 bg-lavanda blur-3xl opacity-20 -z-10"></div>
+        <div class="absolute top-20 right-10 md:right-32 w-64 h-64 bg-areia rounded-full blur-3xl opacity-30 -z-10"></div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div class="lg:col-span-8 relative z-10">
+            <div class="lg:col-span-7 relative z-10">
                 <div class="inline-block bg-ametista text-luz font-mono text-xs uppercase px-3 py-1 mb-6 border border-ametista shadow-[2px_2px_0px_0px_#C9B18A]">
                     Para quem vende projetos sob medida
                 </div>
 
-                <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-ametista mb-8 font-light">
+                <h1 class="font-serif text-3xl md:text-5xl leading-[1.1] text-ametista mb-6 font-light">
                     A sua entrega é impecável. <br>
                     <span class="italic text-lavanda font-normal">A apresentação da sua empresa também deveria ser.</span>
                 </h1>
                 
-                <p class="font-sans text-noite text-lg md:text-xl max-w-2xl font-light mb-10 border-l-4 border-areia pl-6">
-                    Se o seu cliente percebe improviso no seu orçamento, a desconfiança começa. Sistematizamos a sua comunicação visual para você fechar contratos com a postura, a segurança e a organização de uma grande agência.
+                <p class="font-sans text-noite text-base md:text-lg max-w-xl font-light mb-8 border-l-4 border-areia pl-4">
+                    Sistematizamos a sua comunicação visual para você fechar contratos com a postura, a segurança e a organização de uma grande agência, sem precisar se preocupar com a burocracia.
                 </p>
                 
-                <a href="https://wa.me/5512982544891?text=Olá%20Karoline!%20Quero%20saber%20mais%20sobre%20o%20Sistema%20Negócio%20Pronto." target="_blank" class="btn-brutal text-sm">
+                <a href="https://wa.me/5512982544891?text=Olá%20Karoline!%20Quero%20saber%20mais%20sobre%20o%20Arsenal%20de%20Fechamento." target="_blank" class="btn-brutal text-sm">
                     Estruturar minha empresa
                 </a>
             </div>
 
-            <div class="lg:col-span-4 relative mt-16 lg:mt-0 hidden md:block">
-                <!-- Imagem de portfólio (Hero) -->
-                <div class="relative w-full aspect-[4/5] bg-noite shape-arch p-2 z-10 shadow-brutal-light border-2 border-ametista">
-                    <img src="image_21.png" alt="A&T Marcenaria" class="w-full h-full object-cover shape-arch opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" onerror="this.style.backgroundColor='#8A7A94'">
+            <div class="lg:col-span-5 relative flex justify-center">
+                <div class="relative w-full max-w-md aspect-[4/5] bg-noite shape-arch p-2 z-10 shadow-brutal-light border-2 border-ametista">
+                    <img src="image_21.png" alt="Projeto Destacado" class="w-full h-full object-cover shape-arch">
                 </div>
                 
-                <div class="absolute -bottom-8 -left-12 z-20 badge-rotate bg-areia text-ametista w-36 h-36 rounded-full border-2 border-ametista flex items-center justify-center p-2 text-center shadow-brutal">
+                <div class="absolute -bottom-8 -left-6 z-20 badge-rotate bg-areia text-ametista w-32 h-32 rounded-full border-2 border-ametista flex items-center justify-center p-2 text-center shadow-brutal">
                     <svg viewBox="0 0 100 100" class="w-full h-full overflow-visible">
                         <path id="curve" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="transparent" />
-                        <text class="font-mono text-[9.5px] uppercase font-semibold tracking-wider" fill="currentColor">
+                        <text class="font-mono text-[9px] uppercase font-semibold tracking-wider" fill="currentColor">
                             <textPath href="#curve" startOffset="0%">
                                 • Sistema Negócio Pronto • Zero Burocracia
                             </textPath>
                         </text>
                     </svg>
                 </div>
-                
-                <div class="absolute -top-6 -right-6 w-full h-full bg-lavanda shape-arch z-0 border-2 border-ametista"></div>
             </div>
         </div>
     </section>
 
-    <!-- TRABALHOS - Grid Assimétrico Masonry / Mobile Scroll -->
-    <section id="trabalhos" class="py-24 bg-ametista text-luz border-y-4 border-noite relative z-20">
-        <div class="max-w-7xl mx-auto px-4 md:px-6">
-            
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b-2 border-lavanda/30 pb-8">
-                <div>
-                    <h2 class="font-serif text-5xl md:text-6xl mb-4 font-light">Trabalhos<br><span class="italic text-areia">Selecionados</span></h2>
-                </div>
-                <div class="bg-noite p-4 max-w-xs border border-lavanda/30 shadow-[4px_4px_0px_0px_#C9B18A] mt-4 md:mt-0">
-                    <p class="font-mono text-xs uppercase mb-2 text-areia font-semibold">O Fim do Improviso</p>
-                    <p class="text-sm font-light text-lavanda">Identidades construídas para transmitir confiança imediata. Nada de artes soltas, apenas sistemas visuais funcionais.</p>
-                </div>
+    <section id="trabalhos" class="py-24 bg-ametista text-luz border-y-4 border-noite relative z-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end">
+            <div>
+                <h2 class="font-serif text-4xl md:text-5xl font-light">Trabalhos <span class="italic text-areia">Selecionados</span></h2>
             </div>
+            <p class="font-mono text-xs uppercase text-lavanda mt-2 md:mt-0">Projetos reais com identidade visual e fluxos blindados.</p>
+        </div>
 
-            <!-- Mobile: Carrossel Horizontal / Desktop: Grid Assimétrico -->
-            <div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar md:grid md:grid-cols-4 gap-4 md:gap-6 auto-rows-[250px]">
-                
-                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[400px] md:h-auto col-span-2 row-span-2 relative group overflow-hidden bg-noite border-2 border-luz/20 p-2 portfolio-item">
-                    <img src="image_21.png" alt="A&T Marcenaria" class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500">
-                    <div class="absolute top-4 left-4 bg-luz text-ametista font-mono text-[10px] px-2 py-1 font-semibold uppercase z-10">A&T Marcenaria</div>
-                </div>
-
-                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[250px] md:h-auto col-span-1 row-span-1 relative group overflow-hidden bg-noite border-2 border-luz/20 p-2 portfolio-item">
-                    <img src="image_26.png" alt="Biskie" class="w-full h-full object-cover">
-                </div>
-                
-                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[350px] md:h-auto col-span-1 row-span-2 relative group overflow-hidden bg-lavanda/20 border-2 border-luz/20 p-2 portfolio-item flex flex-col justify-center items-center text-center p-6">
-                     <p class="font-serif text-2xl mb-4 text-areia italic">"O cliente parou de pechinchar."</p>
-                     <p class="font-mono text-xs uppercase text-lavanda font-semibold">— O poder da organização</p>
-                </div>
-
-                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[250px] md:h-auto col-span-1 row-span-1 relative group overflow-hidden bg-noite border-2 border-luz/20 p-2 portfolio-item">
-                    <img src="image_28.png" alt="Garimpan.do" class="w-full h-full object-cover">
+        <!-- macOS Style Carousel Container -->
+        <div class="max-w-5xl mx-auto px-4">
+            <div id="macos-carousel" class="relative bg-noite border-2 border-luz/20 rounded-2xl shadow-macos overflow-hidden">
+                <!-- macOS window top bar -->
+                <div class="flex items-center justify-between px-4 py-3 bg-ametista/80 border-b border-luz/10">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                    </div>
+                    <div id="carousel-title" class="font-mono text-xs text-lavanda tracking-widest uppercase">Portfólio // KQ Estúdio</div>
+                    <div class="w-10"></div>
                 </div>
 
-                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[250px] md:h-auto col-span-1 row-span-1 relative group overflow-hidden bg-noite border-2 border-luz/20 p-2 portfolio-item">
-                    <img src="image_29.png" alt="VONA ID" class="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500">
+                <!-- Slide Track -->
+                <div class="relative w-full aspect-[4/3] sm:aspect-[16/9] bg-ametista flex items-center justify-center overflow-hidden">
+                    
+                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 flex items-center justify-center p-4">
+                        <img src="image_21.png" alt="A&T Marcenaria" class="max-w-full max-h-full object-contain rounded-lg">
+                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">A&T Marcenaria</div>
+                    </div>
+
+                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
+                        <img src="image_26.png" alt="Biskie" class="max-w-full max-h-full object-contain rounded-lg">
+                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">Biskie</div>
+                    </div>
+
+                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
+                        <img src="image_28.png" alt="Garimpan.do" class="max-w-full max-h-full object-contain rounded-lg">
+                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">Garimpan.do</div>
+                    </div>
+
+                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
+                        <img src="image_29.png" alt="VONA ID" class="max-w-full max-h-full object-contain rounded-lg">
+                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">VONA ID</div>
+                    </div>
+
+                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
+                        <img src="image_22.png" alt="Markie ID" class="max-w-full max-h-full object-contain rounded-lg">
+                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">Markie ID</div>
+                    </div>
+
+                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
+                        <img src="image_24.png" alt="Patrícia Alcântara" class="max-w-full max-h-full object-contain rounded-lg">
+                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">Patrícia Alcântara</div>
+                    </div>
+
                 </div>
-                
-                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[250px] md:h-auto col-span-2 row-span-1 relative group overflow-hidden bg-noite border-2 border-luz/20 p-2 portfolio-item">
-                    <img src="image_22.png" alt="Markie ID" class="w-full h-full object-cover object-top mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500">
-                    <div class="absolute top-4 right-4 bg-areia text-ametista font-mono text-[10px] px-2 py-1 font-semibold uppercase z-10">Destaque</div>
-                </div>
-                
-                <div class="snap-center shrink-0 w-[85vw] md:w-auto h-[250px] md:h-auto col-span-1 row-span-1 relative group overflow-hidden bg-noite border-2 border-luz/20 p-2 portfolio-item">
-                    <img src="image_24.png" alt="Patrícia Alcântara" class="w-full h-full object-cover">
+
+                <!-- Carousel Navigation Controls -->
+                <div class="flex items-center justify-between p-4 bg-ametista/80 border-t border-luz/10">
+                    <button onclick="prevSlide()" class="font-mono text-xs uppercase text-areia hover:text-luz transition-colors px-3 py-1 border border-areia/40">← Anterior</button>
+                    <div id="carousel-dots" class="flex gap-2">
+                        <span class="w-2 h-2 rounded-full bg-areia inline-block"></span>
+                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
+                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
+                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
+                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
+                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
+                    </div>
+                    <button onclick="nextSlide()" class="font-mono text-xs uppercase text-areia hover:text-luz transition-colors px-3 py-1 border border-areia/40">Próximo →</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- OFERTA (Blocos Limpos e Contornos Destacados) -->
     <section id="oferta" class="py-24 px-4 md:px-6 max-w-7xl mx-auto">
         
         <div class="mb-16">
-            <h2 class="font-serif text-4xl md:text-6xl leading-[1.0] text-ametista mb-6 max-w-4xl font-light">
-                O Sistema <br>
-                <span class="bg-areia px-4 inline-block transform -skew-x-6 font-semibold">Negócio Pronto</span>
+            <h2 class="font-serif text-4xl md:text-5xl leading-[1.05] text-ametista mb-6 max-w-4xl font-light">
+                O Arsenal de <br>
+                <span class="bg-areia px-4 inline-block transform -skew-x-6 font-semibold">Fechamento</span>
             </h2>
-            <p class="font-mono text-sm uppercase text-lavanda max-w-xl font-semibold">Não vendemos artes soltas. Entregamos a base visual que justifica o seu preço em 15 dias, estruturando todo o seu fluxo comercial.</p>
+            <p class="font-mono text-sm uppercase text-lavanda max-w-xl font-semibold">Não vendemos artes soltas. Entregamos a base visual e documental para você justificar o seu preço em 15 dias.</p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             <div class="lg:col-span-8 flex flex-col gap-6">
                 
-                <!-- Bloco 1: Identidade Visual -->
                 <div class="bg-ametista text-luz p-8 md:p-10 border-2 border-ametista shadow-[8px_8px_0px_0px_#C9B18A]">
                     <div class="flex justify-between items-start mb-6">
                         <h3 class="font-serif text-2xl md:text-3xl font-light">Identidade Visual Completa</h3>
                         <span class="font-mono text-lavanda line-through">R$ 1.500</span>
                     </div>
-                    <p class="font-sans font-light text-base md:text-lg mb-4 text-lavanda">Logo principal, paleta de cores estruturada, tipografia e todos os arquivos necessários para qualquer aplicação da sua marca.</p>
+                    <p class="font-sans font-light text-base md:text-lg mb-4 text-lavanda">Logo principal, paleta de cores estruturada, tipografia e todos os arquivos essenciais para qualquer aplicação da sua marca no mercado.</p>
                     <div class="inline-block bg-luz text-ametista font-mono text-[10px] font-semibold uppercase px-2 py-1">O Essencial</div>
                 </div>
 
-                <!-- Bloco 2: O Grande Destaque (Arsenal de Fechamento) -->
                 <div class="bg-noite text-luz p-8 md:p-10 border-2 border-areia shadow-[8px_8px_0px_0px_#8A7A94]">
                     <div class="flex justify-between items-start mb-6">
                         <h3 class="font-serif text-2xl md:text-3xl text-areia italic font-normal">Arsenal de Fechamento</h3>
                         <span class="font-mono text-lavanda line-through">R$ 1.200</span>
                     </div>
-                    <p class="font-sans font-light text-base md:text-lg mb-4 text-lavanda">Onde o dinheiro mora e o fluxo começa a rodar. Contrato impecável, modelo de orçamento e recibo. <strong class="text-luz font-bold">100% editáveis por você em PDF.</strong> Troque o nome, insira o preço e feche o negócio.</p>
+                    <p class="font-sans font-light text-base md:text-lg mb-4 text-lavanda">Onde o fluxo comercial acontece. Proposta comercial, contratos estruturados e recibos profissionais. <strong class="text-luz font-bold">100% editáveis por você.</strong></p>
                     <div class="inline-block bg-areia text-ametista font-mono text-[10px] font-semibold uppercase px-2 py-1">O Diferencial</div>
                 </div>
 
-                <!-- Bônus com Contornos Leves (Sem competir visualmente) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="border-2 border-ametista/40 p-6 bg-transparent relative overflow-hidden group hover:border-ametista transition-colors">
                         <p class="font-mono text-xs font-semibold uppercase text-ametista mb-2">Bônus Expresso</p>
-                        <h4 class="font-serif text-xl text-ametista mb-2 font-light">Orçamento Dia 3</h4>
-                        <p class="text-sm font-light text-ametista/80 mb-4">Modelo de orçamento ágil para você parar de perder clientes por demora na resposta.</p>
+                        <h4 class="font-serif text-xl text-ametista mb-2 font-light">Orçamento Ágil</h4>
+                        <p class="text-sm font-light text-ametista/80 mb-4">Modelo otimizado de orçamento para você parar de perder negócios por demora na resposta.</p>
                         <span class="font-mono text-xs text-lavanda line-through">R$ 400</span>
                     </div>
                     
                     <div class="border-2 border-ametista/40 p-6 bg-transparent relative overflow-hidden group hover:border-ametista transition-colors">
                         <p class="font-mono text-xs font-semibold uppercase text-ametista mb-2">Bônus Setup</p>
-                        <h4 class="font-serif text-xl text-ametista mb-2 font-light">WhatsApp Pró</h4>
-                        <p class="text-sm font-light text-ametista/80 mb-4">Configuração do perfil comercial e script de como enviar valores sem pedir desculpas.</p>
+                        <h4 class="font-serif text-xl text-ametista mb-2 font-light">WhatsApp Comercial Pró</h4>
+                        <p class="text-sm font-light text-ametista/80 mb-4">Configuração estratégica do perfil e script de abordagem comercial profissional.</p>
                         <span class="font-mono text-xs text-lavanda line-through">R$ 700</span>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Coluna de Preço Fixa -->
-            <div class="lg:col-span-4 lg:sticky lg:top-24 mt-8 lg:mt-0">
+            <!-- Pricing Box -->
+            <div class="lg:col-span-4 lg:sticky lg:top-24">
                 <div class="bg-areia border-4 border-ametista p-8 shadow-[12px_12px_0px_0px_#1B1020] transform md:rotate-1">
                     
                     <div class="flex justify-between items-center mb-6 border-b-2 border-ametista pb-4">
@@ -327,10 +331,10 @@
                     </div>
                     
                     <p class="font-sans text-xs text-ametista/80 font-bold mb-8">
-                        (Apenas 2 vagas por mês. 50% na reserva, 50% na entrega final).
+                        (Apenas 2 vagas por mês. 50% reserva, 50% na entrega final).
                     </p>
 
-                    <a href="https://wa.me/5512982544891?text=Olá%20Karoline!%20Gostaria%20de%20reservar%20uma%20vaga%20para%20o%20Sistema%20Negócio%20Pronto." target="_blank" class="w-full btn-brutal">
+                    <a href="https://wa.me/5512982544891?text=Olá%20Karoline!%20Gostaria%20de%20reservar%20uma%20vaga%20para%20o%20Arsenal%20de%20Fechamento." target="_blank" class="w-full btn-brutal">
                         Verificar Disponibilidade
                     </a>
                 </div>
@@ -339,7 +343,6 @@
         </div>
     </section>
 
-    <!-- GARANTIA & PROCESSO -->
     <section id="garantia" class="py-24 bg-luz border-t-2 border-ametista relative overflow-hidden">
         
         <div class="absolute top-0 left-0 w-full h-16 bg-ametista shape-tear"></div>
@@ -359,7 +362,7 @@
                     </div>
                     <div>
                         <h4 class="font-mono font-semibold text-sm text-luz uppercase mb-2">2. Satisfação</h4>
-                        <p class="font-sans text-lavanda text-sm font-light">Se após as rodadas de refinamento o caminho criativo estiver desconexo do que alinhamos, devolvo sua entrada.</p>
+                        <p class="font-sans text-lavanda text-sm font-light">Se após as rodadas de refinamento o caminho criativo estiver desconexo do alinhado, devolvo sua entrada.</p>
                     </div>
                 </div>
             </div>
@@ -371,17 +374,17 @@
                     <div class="relative">
                         <span class="absolute -left-12 top-0 font-mono font-semibold text-lg text-ametista bg-luz w-8 h-8 flex justify-center items-center border-2 border-ametista rounded-full">1</span>
                         <h4 class="font-mono font-semibold text-base text-ametista uppercase mb-2">Briefing Direto</h4>
-                        <p class="font-sans text-noite font-light">Você preenche o formulário enxuto pelo celular em poucos minutos. É a única exigência para começarmos.</p>
+                        <p class="font-sans text-noite font-light">Você preenche o formulário enxuto pelo celular em poucos minutos.</p>
                     </div>
                     <div class="relative">
                         <span class="absolute -left-12 top-0 font-mono font-semibold text-lg text-ametista bg-luz w-8 h-8 flex justify-center items-center border-2 border-ametista rounded-full">2</span>
                         <h4 class="font-mono font-semibold text-base text-ametista uppercase mb-2">Execução Silenciosa</h4>
-                        <p class="font-sans text-noite font-light">Sem reuniões intermináveis. Eu crio a identidade e os documentos sem interromper o seu dia a dia.</p>
+                        <p class="font-sans text-noite font-light">Eu crio a identidade e os documentos sem interromper o seu dia a dia operacional.</p>
                     </div>
                     <div class="relative">
                         <span class="absolute -left-12 top-0 font-mono font-semibold text-lg text-ametista bg-areia w-8 h-8 flex justify-center items-center border-2 border-ametista rounded-full shadow-[2px_2px_0px_0px_#1B1020]">3</span>
                         <h4 class="font-mono font-semibold text-base text-ametista uppercase mb-2">Dia 15: Ferramentas Prontas</h4>
-                        <p class="font-sans text-noite font-light">Você recebe os PDFs configurados e o novo fluxo de vendas pronto para rodar.</p>
+                        <p class="font-sans text-noite font-light">Você recebe os arquivos configurados e o novo fluxo comercial pronto para rodar.</p>
                     </div>
                 </div>
             </div>
@@ -389,47 +392,6 @@
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-24 px-4 md:px-6 max-w-4xl mx-auto">
-        <div class="mb-12 flex justify-between items-end border-b-4 border-ametista pb-4">
-            <h2 class="font-serif text-4xl md:text-5xl text-ametista font-light">Dúvidas<br>Frequentes</h2>
-            <span class="font-mono font-bold text-4xl text-lavanda">?</span>
-        </div>
-
-        <div class="space-y-4">
-            <details>
-                <summary class="flex justify-between items-center group">
-                    <span>O contrato do Arsenal tem validade jurídica?</span>
-                    <span class="text-xl group-open:rotate-45 transition-transform">+</span>
-                </summary>
-                <div class="p-6 pt-0 font-sans text-noite font-light text-sm bg-luz border-t-2 border-ametista mt-4">
-                    <p class="mt-4">Meu trabalho é organizar o layout, a tipografia e a hierarquia da informação para que a leitura passe extrema credibilidade. Eu diagramo a estrutura base, mas <strong class="font-semibold text-ametista">não presto consultoria jurídica</strong>. O texto deve sempre ser validado pelo seu advogado.</p>
-                </div>
-            </details>
-
-            <details>
-                <summary class="flex justify-between items-center group">
-                    <span>Ferramentas automáticas ou I.A. não fariam isso?</span>
-                    <span class="text-xl group-open:rotate-45 transition-transform">+</span>
-                </summary>
-                <div class="p-6 pt-0 font-sans text-noite font-light text-sm bg-luz border-t-2 border-ametista mt-4">
-                    <p class="mt-4">Elas geram desenhos genéricos, mas não constroem um sistema comercial. O cliente percebe quando o material é improvisado e passa a pechinchar. Nós criamos um ambiente visual onde o seu preço é respeitado por completo.</p>
-                </div>
-            </details>
-            
-            <details>
-                <summary class="flex justify-between items-center group">
-                    <span>É difícil de editar os arquivos entregues?</span>
-                    <span class="text-xl group-open:rotate-45 transition-transform">+</span>
-                </summary>
-                <div class="p-6 pt-0 font-sans text-noite font-light text-sm bg-luz border-t-2 border-ametista mt-4">
-                    <p class="mt-4">Não. Tudo é entregue em formatos acessíveis e editáveis (como PDF e templates limpos). Você só altera os campos de nome e valor quando fechar com um novo cliente.</p>
-                </div>
-            </details>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
     <footer class="bg-ametista text-luz border-t-4 border-areia py-20 px-4 md:px-6 relative overflow-hidden">
         
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
@@ -444,13 +406,49 @@
             <div class="text-left md:text-right font-mono text-xs uppercase text-lavanda space-y-2">
                 <p class="font-semibold text-luz mb-4">Karoline Queiroz</p>
                 <p>Design & Sistemas Comerciais</p>
-                <p>Criando fluxos funcionais, não apenas logotipos.</p>
+                <p>Criando fluxos funcionais e marcas de alto padrão.</p>
                 <p class="mt-8 pt-8 border-t border-lavanda/30 inline-block w-full md:w-auto">© 2026. Todos os direitos reservados.</p>
             </div>
         </div>
 
         <span class="absolute -bottom-20 -right-20 font-serif text-[20rem] text-noite opacity-20 font-bold pointer-events-none select-none">KQ</span>
     </footer>
+
+    <!-- Carousel Automation Script -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('#carousel-dots span');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+            dots.forEach((dot, i) => {
+                dot.style.backgroundColor = i === index ? '#C9B18A' : 'rgba(230, 220, 208, 0.3)';
+            });
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+        }
+
+        function prevSlide() {
+            let prev = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(prev);
+        }
+
+        // Auto play every 4 seconds
+        let carouselInterval = setInterval(nextSlide, 4000);
+
+        // Pause on hover
+        const carouselContainer = document.getElementById('macos-carousel');
+        carouselContainer.addEventListener('mouseenter', () => clearInterval(carouselInterval));
+        carouselContainer.addEventListener('mouseleave', () => carouselInterval = setInterval(nextSlide, 4000));
+    </script>
 
 </body>
 </html>
