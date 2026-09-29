@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- FONTES EDITORIAIS (Fraunces, Archio, IBM Plex Mono) -->
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- FONTES: Archivo e IBM Plex Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -18,73 +18,50 @@
                 extend: {
                     colors: {
                         ametista: '#1B1020',
-                        noite: '#2A1F2D',
+                        noite: '#3A2A4A',
                         lavanda: '#8A7A94',
                         areia: '#C9B18A',
                         luz: '#E6DCD0',
-                        destaque1: '#D9C8A9',
-                        destaque2: '#3A2A4A',
                     },
                     fontFamily: {
                         sans: ['Archivo', 'sans-serif'],
-                        serif: ['Fraunces', 'serif'],
                         mono: ['"IBM Plex Mono"', 'monospace'], 
-                    },
-                    boxShadow: {
-                        'brutal': '4px 4px 0px 0px rgba(27, 16, 32, 1)',
-                        'brutal-light': '4px 4px 0px 0px rgba(230, 220, 208, 1)',
-                        'macos': '0 20px 40px -15px rgba(27, 16, 32, 0.25)',
                     }
                 }
             }
         }
     </script>
     <style>
+        /* Fundo global claro com textura sutil */
         body { 
             background-color: #E6DCD0; 
             color: #1B1020; 
             overflow-x: hidden;
+            font-family: 'Archivo', sans-serif;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
         }
         
         ::selection { background-color: #1B1020; color: #C9B18A; }
 
-        details {
-            border: 2px solid #1B1020;
-            margin-bottom: 1rem;
-            background-color: #E6DCD0;
-            transition: all 0.3s ease;
-        }
-        details[open] {
-            background-color: #C9B18A;
-            box-shadow: 4px 4px 0px 0px rgba(27, 16, 32, 1);
-        }
-        details > summary { 
-            list-style: none; 
-            cursor: pointer; 
-            padding: 1.5rem;
-            font-family: "IBM Plex Mono", monospace;
-            font-weight: 600;
-            font-size: 0.9rem;
+        /* Tipografia Contida e Elegante */
+        .text-hero {
+            font-size: clamp(2rem, 3.5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
             text-transform: uppercase;
         }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] summary { border-bottom: 2px solid #1B1020; }
-        details[open] summary ~ * { animation: slideDown 0.3s ease-out forwards; }
-        
-        @keyframes slideDown { 
-            from { opacity: 0; transform: translateY(-4px); } 
-            to { opacity: 1; transform: translateY(0); } 
+
+        /* Cantos cortados (Chamfered) */
+        .chamfer-box {
+            clip-path: polygon(
+                15px 0, 100% 0, 
+                100% calc(100% - 15px), calc(100% - 15px) 100%, 
+                0 100%, 0 15px
+            );
         }
 
-        .shape-arch {
-            border-radius: 200px 200px 0 0;
-        }
-        
-        .badge-rotate {
-            animation: spin 20s linear infinite;
-        }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        
+        /* Botões Brutalistas */
         .btn-brutal {
             display: inline-flex;
             align-items: center;
@@ -93,334 +70,420 @@
             color: #E6DCD0;
             font-family: 'IBM Plex Mono', monospace;
             text-transform: uppercase;
-            font-weight: 600;
-            padding: 1rem 2rem;
-            border: 2px solid #1B1020;
-            box-shadow: 4px 4px 0px 0px rgba(201, 177, 138, 1);
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .btn-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .btn-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 100%;
+            height: 100%;
+            background-color: #C9B18A;
+            z-index: -1;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
             transition: all 0.2s ease;
         }
-        .btn-brutal:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px 0px rgba(201, 177, 138, 1);
-        }
+        .btn-wrapper:hover .btn-brutal { transform: translate(2px, 2px); }
+        .btn-wrapper:hover::after { transform: translate(-2px, -2px); }
+
         .btn-brutal-light {
             background-color: #C9B18A;
             color: #1B1020;
-            box-shadow: 4px 4px 0px 0px rgba(27, 16, 32, 1);
         }
-        .btn-brutal-light:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px 0px rgba(27, 16, 32, 1);
+        .wrapper-light::after { background-color: #E6DCD0; }
+
+        /* Tags Flutuantes Estilo Trendbook */
+        .float-tag {
+            border: 1px dashed #1B1020;
+            padding: 0.4rem 0.8rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            background: transparent;
+            display: inline-block;
+            color: #1B1020;
+            transform: rotate(-2deg);
+        }
+        .float-tag.alt {
+            transform: rotate(2deg);
+            background-color: #1B1020;
+            color: #E6DCD0;
+            border: none;
+        }
+
+        /* Starburst Animado (A Estrela) */
+        .starburst {
+            width: 120px;
+            height: 120px;
+            background-color: #8A7A94; /* Lavanda */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #E6DCD0;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            line-height: 1;
+            /* Polígono complexo para a estrela (aprox 16 pontas) */
+            clip-path: polygon(50% 0%, 61% 15%, 79% 10%, 83% 28%, 100% 35%, 93% 52%, 100% 70%, 84% 76%, 79% 94%, 60% 88%, 50% 100%, 38% 87%, 19% 93%, 15% 75%, 0% 68%, 6% 50%, 0% 32%, 16% 24%, 20% 6%, 38% 13%);
+            animation: pulse-spin 15s linear infinite;
         }
         
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+        @keyframes pulse-spin { 
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.05); }
+            100% { transform: rotate(360deg) scale(1); } 
         }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+
+        .badge-rotate { animation: spin-slow 20s linear infinite; }
+        @keyframes spin-slow { 100% { transform: rotate(360deg); } }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="antialiased font-sans selection:bg-ametista selection:text-areia relative">
+<body class="antialiased relative">
 
-    <nav class="fixed top-4 w-full z-50 px-4 md:px-6 pointer-events-none">
-        <div class="max-w-7xl mx-auto flex justify-between items-center pointer-events-auto">
+    <nav class="fixed top-4 w-full z-50 px-4 md:px-8 pointer-events-none">
+        <div class="max-w-[1200px] mx-auto flex justify-between items-center pointer-events-auto">
             
-            <a href="#" class="bg-ametista text-luz p-3 border-2 border-ametista flex items-center gap-2 hover:bg-luz hover:text-ametista transition-colors shadow-brutal">
-                <img src="logo.png" alt="Logótipo Karoline Queiroz" class="h-8 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span style="display:none;" class="font-serif font-semibold text-xl tracking-wider">KQ.</span>
+            <a href="#" class="flex items-center hover:opacity-70 transition-opacity p-2">
+                <img src="logo.png" alt="KQ" class="h-8 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none;" class="font-sans font-black text-2xl tracking-tight text-ametista">KQ.</span>
             </a>
 
-            <div class="hidden md:flex items-center bg-luz border-2 border-ametista rounded-full px-6 py-2 gap-8 shadow-brutal">
-                <a href="#trabalhos" class="font-mono text-xs uppercase font-semibold hover:text-areia transition-colors">Portfólio</a>
-                <a href="#oferta" class="font-mono text-xs uppercase font-semibold hover:text-areia transition-colors">O Arsenal</a>
-                <a href="#garantia" class="font-mono text-xs uppercase font-semibold hover:text-areia transition-colors">Garantia</a>
+            <div class="hidden md:flex items-center border border-ametista p-1 chamfer-box shadow-[4px_4px_0px_0px_#1B1020] bg-luz">
+                <a href="#trabalhos" class="font-mono text-[10px] uppercase font-bold hover:bg-ametista hover:text-luz transition-colors px-4 py-2 chamfer-box">Portfólio</a>
+                <a href="#oferta" class="font-mono text-[10px] uppercase font-bold hover:bg-ametista hover:text-luz transition-colors px-4 py-2 chamfer-box">O Arsenal</a>
+                <a href="#garantia" class="font-mono text-[10px] uppercase font-bold hover:bg-ametista hover:text-luz transition-colors px-4 py-2 chamfer-box">Garantia</a>
             </div>
-
-            <a href="https://wa.me/5512982544891" target="_blank" class="btn-brutal !py-2 !px-4 !text-xs !shadow-[2px_2px_0px_0px_rgba(201,177,138,1)] hover:!shadow-[1px_1px_0px_0px_rgba(201,177,138,1)] pointer-events-auto">
-                WhatsApp
-            </a>
+            
+            <div class="btn-wrapper md:hidden">
+                <a href="https://wa.me/5512982544891" target="_blank" class="btn-brutal !px-4 !py-2 !text-[10px]">
+                    WhatsApp
+                </a>
+            </div>
         </div>
     </nav>
 
-    <section class="pt-32 pb-20 px-4 md:px-6 max-w-7xl mx-auto relative min-h-[80vh] flex flex-col justify-center">
+    <!-- HERO SECTION - Recuperando os elementos soltos e a estrela -->
+    <section class="pt-32 pb-16 px-4 md:px-8 max-w-[1200px] mx-auto relative min-h-[70vh] flex flex-col justify-center border-b border-ametista/20">
         
-        <div class="absolute top-20 right-10 md:right-32 w-64 h-64 bg-areia rounded-full blur-3xl opacity-30 -z-10"></div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             
-            <div class="lg:col-span-7 relative z-10">
-                <div class="inline-block bg-ametista text-luz font-mono text-xs uppercase px-3 py-1 mb-6 border border-ametista shadow-[2px_2px_0px_0px_#C9B18A]">
+            <div class="relative z-10">
+                <div class="inline-block float-tag mb-8 bg-luz" style="transform: rotate(0deg);">
                     Para quem vende projetos sob medida
                 </div>
 
-                <h1 class="font-serif text-3xl md:text-5xl leading-[1.1] text-ametista mb-6 font-light">
-                    A sua entrega é impecável. <br>
-                    <span class="italic text-lavanda font-normal">A apresentação da sua empresa também deveria ser.</span>
+                <h1 class="text-hero text-ametista mb-6">
+                    A sua entrega é impecável.<br>
+                    <span class="text-lavanda">A apresentação também deveria ser.</span>
                 </h1>
                 
-                <p class="font-sans text-noite text-base md:text-lg max-w-xl font-light mb-8 border-l-4 border-areia pl-4">
-                    Sistematizamos a sua comunicação visual para você fechar contratos com a postura, a segurança e a organização de uma grande agência, transmitindo total confiança ao cliente.
+                <p class="font-mono text-xs uppercase text-ametista max-w-lg font-semibold leading-relaxed mb-8 border-l-2 border-ametista pl-4">
+                    Sistematizamos a sua comunicação visual para você fechar contratos com a postura, a segurança e a organização de uma agência, transmitindo autoridade ao cliente.
                 </p>
                 
-                <a href="https://wa.me/5512982544891?text=Olá%20Karoline!%20Quero%20saber%20mais%20sobre%20o%20Arsenal%20de%20Fechamento." target="_blank" class="btn-brutal text-sm">
-                    Estruturar minha empresa
-                </a>
+                <div class="btn-wrapper">
+                    <a href="https://wa.me/5512982544891" target="_blank" class="btn-brutal text-xs">
+                        Estruturar minha empresa [↗]
+                    </a>
+                </div>
             </div>
 
-            <div class="lg:col-span-5 relative flex justify-center">
-                <div class="relative w-full max-w-md aspect-[4/5] bg-noite shape-arch p-2 z-10 shadow-brutal-light border-2 border-ametista">
-                    <img src="image_21.png" alt="Projeto Destacado" class="w-full h-full object-cover shape-arch">
+            <!-- Graphic Elements Area (Replacing the broken image box) -->
+            <div class="relative flex flex-col items-center justify-center mt-12 lg:mt-0 min-h-[300px]">
+                
+                <div class="absolute top-0 right-10 md:right-20">
+                    <div class="starburst shadow-lg">KQ</div>
+                </div>
+
+                <div class="w-full max-w-sm relative mt-16 lg:mt-0">
+                    <div class="float-tag alt absolute -top-6 -left-4 z-20 shadow-md">
+                        Identidade Visual
+                    </div>
+                    
+                    <div class="float-tag absolute top-12 -right-2 z-10 bg-luz">
+                        Proposta Comercial
+                    </div>
+
+                    <div class="float-tag alt absolute bottom-8 left-4 z-20 shadow-md" style="background-color: #C9B18A; color: #1B1020; transform: rotate(-3deg);">
+                        Setup Comercial
+                    </div>
+                     <div class="float-tag absolute -bottom-4 right-8 z-10 bg-luz" style="transform: rotate(4deg);">
+                        Contratos
+                    </div>
+
+                    <!-- Decorative structure -->
+                    <div class="w-full h-48 border border-dashed border-ametista/40 chamfer-box flex items-center justify-center">
+                        <p class="font-mono text-[9px] uppercase text-ametista/40 tracking-widest text-center px-4">
+                            O ARSENAL DE FECHAMENTO<br><br>
+                            Estratégia · Design · Documentação
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MANIFESTO / FOTO -->
+    <section class="py-20 px-4 md:px-8 max-w-[1200px] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 relative group">
+                <div class="bg-ametista p-2 chamfer-box relative z-10 shadow-[6px_6px_0px_0px_#3A2A4A]">
+                    <img src="watermarked_img_6442803897890126839.jpg" alt="Karoline Queiroz" class="w-full h-auto object-cover chamfer-box grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700">
                 </div>
                 
-                <div class="absolute -bottom-8 -left-6 z-20 badge-rotate bg-areia text-ametista w-32 h-32 rounded-full border-2 border-ametista flex items-center justify-center p-2 text-center shadow-brutal">
+                <div class="absolute -bottom-3 -left-3 bg-luz text-ametista font-mono text-[10px] font-bold uppercase px-3 py-1.5 chamfer-box z-20 border border-ametista">
+                    Diretora Criativa
+                </div>
+                
+                 <!-- Sticker movido e protegido -->
+                <div class="absolute -top-6 -right-6 z-20 badge-rotate bg-areia text-ametista w-24 h-24 rounded-full border-2 border-ametista flex items-center justify-center p-1.5 text-center shadow-lg hidden md:flex">
                     <svg viewBox="0 0 100 100" class="w-full h-full overflow-visible">
-                        <path id="curve" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="transparent" />
-                        <text class="font-mono text-[9px] uppercase font-semibold tracking-wider" fill="currentColor">
-                            <textPath href="#curve" startOffset="0%">
-                                • Sistema Negócio Pronto • Zero Burocracia
+                        <path id="curve-manifesto" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="transparent" />
+                        <text class="font-mono text-[8px] uppercase font-bold tracking-widest" fill="currentColor">
+                            <textPath href="#curve-manifesto" startOffset="0%">
+                                • Design Gráfico • Estratégia
                             </textPath>
                         </text>
                     </svg>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="trabalhos" class="py-24 bg-ametista text-luz border-y-4 border-noite relative z-20 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 mb-12 flex flex-col md:flex-row justify-between items-start md:items-end">
-            <div>
-                <h2 class="font-serif text-4xl md:text-5xl font-light">Trabalhos <span class="italic text-areia">Selecionados</span></h2>
-            </div>
-            <p class="font-mono text-xs uppercase text-lavanda mt-2 md:mt-0">Projetos reais com identidade visual e fluxos blindados.</p>
-        </div>
-
-        <div class="max-w-5xl mx-auto px-4">
-            <div id="macos-carousel" class="relative bg-noite border-2 border-luz/20 rounded-2xl shadow-macos overflow-hidden">
-                <div class="flex items-center justify-between px-4 py-3 bg-ametista/80 border-b border-luz/10">
-                    <div class="flex items-center gap-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                    </div>
-                    <div id="carousel-title" class="font-mono text-xs text-lavanda tracking-widest uppercase">Portfólio // KQ Estúdio</div>
-                    <div class="w-10"></div>
-                </div>
-
-                <div class="relative w-full aspect-[4/3] sm:aspect-[16/9] bg-ametista flex items-center justify-center overflow-hidden">
-                    
-                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 flex items-center justify-center p-4">
-                        <img src="image_21.png" alt="A&T Marcenaria" class="max-w-full max-h-full object-contain rounded-lg">
-                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">A&T Marcenaria</div>
-                    </div>
-
-                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
-                        <img src="image_26.png" alt="Biskie" class="max-w-full max-h-full object-contain rounded-lg">
-                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">Biskie</div>
-                    </div>
-
-                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
-                        <img src="image_28.png" alt="Garimpan.do" class="max-w-full max-h-full object-contain rounded-lg">
-                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">Garimpan.do</div>
-                    </div>
-
-                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
-                        <img src="image_29.png" alt="VONA ID" class="max-w-full max-h-full object-contain rounded-lg">
-                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">VONA ID</div>
-                    </div>
-
-                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
-                        <img src="image_22.png" alt="Markie ID" class="max-w-full max-h-full object-contain rounded-lg">
-                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">Markie ID</div>
-                    </div>
-
-                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
-                        <img src="image_24.png" alt="Patrícia Alcântara" class="max-w-full max-h-full object-contain rounded-lg">
-                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">Patrícia Alcântara</div>
-                    </div>
-
-                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
-                        <img src="image_25.png" alt="Maiara" class="max-w-full max-h-full object-contain rounded-lg">
-                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">Maiara</div>
-                    </div>
-
-                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
-                        <img src="image_27.png" alt="Juliana" class="max-w-full max-h-full object-contain rounded-lg">
-                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">Juliana</div>
-                    </div>
-
-                    <div class="slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 flex items-center justify-center p-4">
-                        <img src="image_23.png" alt="JF" class="max-w-full max-h-full object-contain rounded-lg">
-                        <div class="absolute bottom-6 left-6 bg-ametista/90 text-luz px-4 py-2 border border-areia font-mono text-xs uppercase shadow-brutal">JF</div>
-                    </div>
-
-                </div>
-
-                <div class="flex items-center justify-between p-4 bg-ametista/80 border-t border-luz/10">
-                    <button onclick="prevSlide()" class="font-mono text-xs uppercase text-areia hover:text-luz transition-colors px-3 py-1 border border-areia/40">← Anterior</button>
-                    <div id="carousel-dots" class="flex gap-1.5 flex-wrap justify-center max-w-xs">
-                        <span class="w-2 h-2 rounded-full bg-areia inline-block"></span>
-                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
-                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
-                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
-                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
-                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
-                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
-                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
-                        <span class="w-2 h-2 rounded-full bg-luz/30 inline-block"></span>
-                    </div>
-                    <button onclick="nextSlide()" class="font-mono text-xs uppercase text-areia hover:text-luz transition-colors px-3 py-1 border border-areia/40">Próximo →</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="oferta" class="py-24 px-4 md:px-6 max-w-7xl mx-auto">
-        
-        <div class="mb-16">
-            <h2 class="font-serif text-4xl md:text-5xl leading-[1.05] text-ametista mb-6 max-w-4xl font-light">
-                O Arsenal de <br>
-                <span class="bg-areia px-4 inline-block transform -skew-x-6 font-semibold">Fechamento</span>
-            </h2>
-            <p class="font-mono text-sm uppercase text-lavanda max-w-xl font-semibold">Não vendemos artes soltas. Entregamos a base visual e documental para você justificar o seu preço em 15 dias.</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
-            <div class="lg:col-span-8 flex flex-col gap-6">
+            <div class="lg:col-span-7 flex flex-col gap-4">
+                <p class="font-mono text-ametista text-[10px] font-bold uppercase tracking-widest border-b border-ametista/30 pb-1.5 inline-block max-w-max">
+                    Por trás do Estúdio
+                </p>
+                <h2 class="font-sans text-2xl md:text-3xl font-black text-ametista uppercase leading-tight tracking-tight">
+                    O seu valor de mercado é medido <br>pela <span class="text-lavanda">qualidade da sua embalagem.</span>
+                </h2>
                 
-                <div class="bg-ametista text-luz p-8 md:p-10 border-2 border-ametista shadow-[8px_8px_0px_0px_#C9B18A]">
-                    <div class="flex justify-between items-start mb-6">
-                        <h3 class="font-serif text-2xl md:text-3xl font-light">Identidade Visual Completa</h3>
-                        <span class="font-mono text-lavanda line-through">R$ 1.500</span>
-                    </div>
-                    <p class="font-sans font-light text-base md:text-lg mb-4 text-lavanda">Logo principal, paleta de cores estruturada, tipografia e todos os arquivos essenciais para qualquer aplicação da sua marca no mercado.</p>
-                    <div class="inline-block bg-luz text-ametista font-mono text-[10px] font-semibold uppercase px-2 py-1">O Essencial</div>
+                <div class="space-y-4 mt-2 border-l border-lavanda/50 pl-4">
+                    <p class="font-sans text-ametista text-sm font-medium leading-relaxed">
+                        Sou <strong class="font-bold">Karoline Queiroz</strong>. Graduada em Design Gráfico, com foco exclusivo em Identidade Visual e Branding, unindo estética refinada à gestão comercial prática.
+                    </p>
+                    <p class="font-sans text-noite text-sm font-medium leading-relaxed">
+                        Se você entrega um serviço premium, mas ainda perde negócios ou precisa dar descontos, o ruído está na sua apresentação. Uma "marca Frankenstein" — feed desorganizado e orçamentos amadores — enfraquece a sua autoridade.
+                    </p>
+                    <p class="font-sans text-ametista text-sm font-bold leading-relaxed">
+                        Meu trabalho é construir a identidade visual e o arsenal documental exato para você justificar o seu preço e fechar contratos com segurança.
+                    </p>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="bg-noite text-luz p-8 md:p-10 border-2 border-areia shadow-[8px_8px_0px_0px_#8A7A94]">
-                    <div class="flex justify-between items-start mb-6">
-                        <h3 class="font-serif text-2xl md:text-3xl text-areia italic font-normal">Arsenal de Fechamento</h3>
-                        <span class="font-mono text-lavanda line-through">R$ 1.200</span>
-                    </div>
-                    <p class="font-sans font-light text-base md:text-lg mb-4 text-lavanda">Onde o fluxo comercial acontece. Proposta comercial, contratos estruturados e recibos profissionais. <strong class="text-luz font-bold">100% editáveis por você.</strong></p>
-                    <div class="inline-block bg-areia text-ametista font-mono text-[10px] font-semibold uppercase px-2 py-1">O Diferencial</div>
+    <!-- ÁREA ESCURA (Portfólio + Serviços) -->
+    <div class="bg-ametista text-luz pt-24 pb-32">
+        
+        <section id="trabalhos" class="px-4 md:px-8 mb-24 max-w-[1200px] mx-auto">
+            <div class="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end border-b-2 border-luz/20 pb-6">
+                <h2 class="text-3xl md:text-5xl font-black uppercase max-w-2xl leading-none tracking-tight">
+                    ESTRATÉGIA APLICADA
+                </h2>
+                <div class="flex flex-col items-start md:items-end mt-4 md:mt-0">
+                    <p class="font-mono text-[10px] uppercase text-areia font-bold">
+                        Identidades Visuais & Sistemas Comerciais
+                    </p>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="border-2 border-ametista/40 p-6 bg-transparent relative overflow-hidden group hover:border-ametista transition-colors">
-                        <p class="font-mono text-xs font-semibold uppercase text-ametista mb-2">Bônus Expresso</p>
-                        <h4 class="font-serif text-xl text-ametista mb-2 font-light">Orçamento Ágil</h4>
-                        <p class="text-sm font-light text-ametista/80 mb-4">Modelo otimizado de orçamento para você parar de perder negócios por demora na resposta.</p>
-                        <span class="font-mono text-xs text-lavanda line-through">R$ 400</span>
-                    </div>
-                    
-                    <div class="border-2 border-ametista/40 p-6 bg-transparent relative overflow-hidden group hover:border-ametista transition-colors">
-                        <p class="font-mono text-xs font-semibold uppercase text-ametista mb-2">Bônus Setup</p>
-                        <h4 class="font-serif text-xl text-ametista mb-2 font-light">WhatsApp Comercial Pró</h4>
-                        <p class="text-sm font-light text-ametista/80 mb-4">Configuração estratégica do perfil e script de abordagem comercial profissional.</p>
-                        <span class="font-mono text-xs text-lavanda line-through">R$ 700</span>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Pricing Box -->
-            <div class="lg:col-span-4 lg:sticky lg:top-24">
-                <div class="bg-areia border-4 border-ametista p-8 shadow-[12px_12px_0px_0px_#1B1020] transform md:rotate-1">
-                    
-                    <div class="flex justify-between items-center mb-6 border-b-2 border-ametista pb-4">
-                        <span class="font-mono text-xs font-semibold uppercase text-ametista">Valor de Mercado</span>
-                        <span class="font-mono text-lg font-semibold text-ametista line-through opacity-70">R$ 3.800</span>
+            <!-- Carrossel Brutalista -->
+            <div class="max-w-4xl mx-auto">
+                <div id="macos-carousel" class="relative bg-noite chamfer-box overflow-hidden shadow-[8px_8px_0px_0px_#C9B18A] border border-luz/10">
+                    <div class="flex items-center justify-between px-4 py-3 border-b border-luz/10">
+                        <div class="font-mono text-[10px] text-lavanda uppercase font-bold tracking-widest">Portfólio_KQ</div>
                     </div>
 
-                    <p class="font-mono text-xs font-semibold uppercase text-ametista mb-2">Seu Investimento</p>
-                    <div class="font-serif text-5xl xl:text-6xl text-ametista mb-4 relative inline-block font-semibold">
+                    <div class="relative w-full aspect-[4/3] sm:aspect-[16/9] bg-[#1a131f] flex items-center justify-center overflow-hidden p-4">
+                        
+                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100 flex items-center justify-center p-6 z-10">
+                            <img src="image_7.png" alt="A&T Marcenaria" class="max-w-full max-h-full object-contain chamfer-box">
+                            <div class="absolute bottom-4 left-4 bg-luz text-ametista px-3 py-1 chamfer-box font-mono text-[10px] uppercase font-bold">A&T Marcenaria</div>
+                        </div>
+                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center p-6 z-0">
+                            <img src="image_4.png" alt="Biskie" class="max-w-full max-h-full object-contain chamfer-box">
+                            <div class="absolute bottom-4 left-4 bg-luz text-ametista px-3 py-1 chamfer-box font-mono text-[10px] uppercase font-bold">Biskie</div>
+                        </div>
+                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center p-6 z-0">
+                            <img src="image_8.png" alt="Garimpan.do" class="max-w-full max-h-full object-contain chamfer-box">
+                            <div class="absolute bottom-4 left-4 bg-luz text-ametista px-3 py-1 chamfer-box font-mono text-[10px] uppercase font-bold">Garimpan.do</div>
+                        </div>
+                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center p-6 z-0">
+                            <img src="image_6.png" alt="VONA ID" class="max-w-full max-h-full object-contain chamfer-box">
+                            <div class="absolute bottom-4 left-4 bg-luz text-ametista px-3 py-1 chamfer-box font-mono text-[10px] uppercase font-bold">VONA ID</div>
+                        </div>
+                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center p-6 z-0">
+                            <img src="image_9.png" alt="Markie ID" class="max-w-full max-h-full object-contain chamfer-box">
+                            <div class="absolute bottom-4 left-4 bg-luz text-ametista px-3 py-1 chamfer-box font-mono text-[10px] uppercase font-bold">Markie ID</div>
+                        </div>
+                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center p-6 z-0">
+                            <img src="image_3.png" alt="Patrícia Alcântara" class="max-w-full max-h-full object-contain chamfer-box">
+                            <div class="absolute bottom-4 left-4 bg-luz text-ametista px-3 py-1 chamfer-box font-mono text-[10px] uppercase font-bold">Patrícia Alcântara</div>
+                        </div>
+                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center p-6 z-0">
+                            <img src="image_2.png" alt="Maiara" class="max-w-full max-h-full object-contain chamfer-box">
+                            <div class="absolute bottom-4 left-4 bg-luz text-ametista px-3 py-1 chamfer-box font-mono text-[10px] uppercase font-bold">Maiara</div>
+                        </div>
+                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center p-6 z-0">
+                            <img src="image_5.png" alt="Juliana" class="max-w-full max-h-full object-contain chamfer-box">
+                            <div class="absolute bottom-4 left-4 bg-luz text-ametista px-3 py-1 chamfer-box font-mono text-[10px] uppercase font-bold">Juliana</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 border-t border-luz/10">
+                        <button onclick="prevSlide()" class="font-mono text-[10px] uppercase font-bold text-areia hover:text-luz transition-colors">← Voltar</button>
+                        <div id="carousel-dots" class="flex gap-1.5 flex-wrap justify-center">
+                            <span class="w-2 h-2 rounded-full bg-areia"></span>
+                            <span class="w-2 h-2 rounded-full bg-lavanda/30"></span>
+                            <span class="w-2 h-2 rounded-full bg-lavanda/30"></span>
+                            <span class="w-2 h-2 rounded-full bg-lavanda/30"></span>
+                            <span class="w-2 h-2 rounded-full bg-lavanda/30"></span>
+                            <span class="w-2 h-2 rounded-full bg-lavanda/30"></span>
+                            <span class="w-2 h-2 rounded-full bg-lavanda/30"></span>
+                            <span class="w-2 h-2 rounded-full bg-lavanda/30"></span>
+                        </div>
+                        <button onclick="nextSlide()" class="font-mono text-[10px] uppercase font-bold text-areia hover:text-luz transition-colors">Avançar →</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oferta / Arsenal -->
+        <section id="oferta" class="px-4 md:px-8 max-w-[1200px] mx-auto">
+            
+            <div class="mb-12 text-center md:text-left">
+                <h2 class="text-3xl md:text-5xl font-black uppercase text-luz mb-3 tracking-tight">
+                    O ARSENAL DE FECHAMENTO
+                </h2>
+                <p class="font-mono text-xs uppercase text-lavanda max-w-xl font-bold">
+                    A base documental e visual para você ancorar o seu preço no mercado.
+                </p>
+            </div>
+
+            <!-- GRID 4 BLOCOS ESTILO REFERÊNCIA -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                
+                <div class="bg-luz text-ametista p-6 chamfer-box flex flex-col justify-between min-h-[280px]">
+                    <div>
+                        <div class="text-5xl font-black mb-3 tracking-tighter text-areia">01</div>
+                        <h3 class="font-black text-lg uppercase mb-2 leading-tight">Identidade Visual Premium</h3>
+                        <p class="font-sans text-xs opacity-90 leading-relaxed font-semibold">
+                            Logo, paleta estruturada, tipografia e todos os arquivos essenciais.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-luz text-ametista p-6 chamfer-box flex flex-col justify-between min-h-[280px]">
+                    <div>
+                        <div class="text-5xl font-black mb-3 tracking-tighter text-lavanda">02</div>
+                        <h3 class="font-black text-lg uppercase mb-2 leading-tight">Proposta Comercial</h3>
+                        <p class="font-sans text-xs opacity-90 leading-relaxed font-semibold">
+                            Apresentação blindada. 100% editável para você ancorar seu valor.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-luz text-ametista p-6 chamfer-box flex flex-col justify-between min-h-[280px]">
+                    <div>
+                        <div class="text-5xl font-black mb-3 tracking-tighter text-lavanda">03</div>
+                        <h3 class="font-black text-lg uppercase mb-2 leading-tight">Contratos e Recibos</h3>
+                        <p class="font-sans text-xs opacity-90 leading-relaxed font-semibold">
+                            Documentação com o peso visual da sua marca. Transmite segurança.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-luz text-ametista p-6 chamfer-box flex flex-col justify-between min-h-[280px]">
+                    <div>
+                        <div class="text-5xl font-black mb-3 tracking-tighter text-lavanda">04</div>
+                        <h3 class="font-black text-lg uppercase mb-2 leading-tight">Setup<br>WhatsApp Pró</h3>
+                        <p class="font-sans text-xs opacity-90 leading-relaxed font-semibold">
+                            Configuração estratégica do perfil e script de abordagem profissional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caixa de Preço Final -->
+            <div class="bg-areia text-ametista p-8 md:p-10 chamfer-box flex flex-col md:flex-row justify-between items-center gap-8 shadow-[8px_8px_0px_0px_#E6DCD0]">
+                <div>
+                    <div class="flex items-center gap-3 mb-1">
+                        <span class="font-mono text-[10px] font-bold uppercase text-ametista/70">Valor Original</span>
+                        <span class="font-mono text-xs font-bold text-ametista/70 line-through">R$ 3.800</span>
+                    </div>
+                    <p class="font-mono text-[10px] font-bold uppercase text-ametista mb-1">Investimento Fixo</p>
+                    <div class="text-4xl md:text-6xl font-black text-ametista tracking-tighter">
                         R$ 1.497
-                        <span class="absolute bottom-1 left-0 w-full h-4 bg-luz opacity-50 -z-10 transform -rotate-2"></span>
                     </div>
-                    
-                    <p class="font-sans text-xs text-ametista/80 font-bold mb-8">
-                        (Apenas 2 vagas por mês. 50% reserva, 50% na entrega final).
+                    <p class="font-mono text-[9px] uppercase text-ametista/80 mt-2 font-bold">
+                        Apenas 2 vagas mensais. 50% reserva, 50% entrega.
                     </p>
-
-                    <a href="https://wa.me/5512982544891?text=Olá%20Karoline!%20Gostaria%20de%20reservar%20uma%20vaga%20para%20o%20Arsenal%20de%20Fechamento." target="_blank" class="w-full btn-brutal">
-                        Verificar Disponibilidade
+                </div>
+                
+                <div class="btn-wrapper wrapper-light w-full md:w-auto">
+                    <a href="https://wa.me/5512982544891" target="_blank" class="bg-ametista text-luz btn-brutal w-full text-center text-sm hover:bg-noite">
+                        Verificar Disponibilidade [↗]
                     </a>
                 </div>
             </div>
+        </section>
+    </div>
 
-        </div>
-    </section>
-
-    <section id="garantia" class="py-24 bg-luz border-t-2 border-ametista relative overflow-hidden">
-        
-        <div class="absolute top-0 left-0 w-full h-16 bg-ametista"></div>
-
-        <div class="max-w-7xl mx-auto px-4 md:px-6 pt-16 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <!-- RODAPÉ E GARANTIA -->
+    <footer id="garantia" class="py-20 px-4 md:px-8 max-w-[1200px] mx-auto text-ametista">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             
-            <div class="bg-ametista p-10 border-4 border-areia shadow-[8px_8px_0px_0px_#2A1F2D] relative">
-                <span class="absolute top-4 right-4 font-serif text-[8rem] leading-none text-luz opacity-10 font-bold">G</span>
+            <div class="bg-ametista text-luz p-8 chamfer-box relative shadow-[6px_6px_0px_0px_#C9B18A]">
+                <span class="absolute top-4 right-6 font-sans text-6xl leading-none text-lavanda opacity-20 font-black">G</span>
+                <p class="font-mono text-areia text-[10px] font-bold uppercase tracking-widest mb-4 border-b border-areia/30 pb-2 inline-block">Acordo de Profissionalismo</p>
+                <h3 class="font-black text-xl text-luz mb-6 uppercase tracking-tight">Zero Risco<br>para você.</h3>
                 
-                <p class="font-mono text-areia text-xs font-semibold uppercase tracking-widest mb-4 border-b border-areia/30 pb-2 inline-block">Acordo de Responsabilidade</p>
-                <h3 class="font-serif text-3xl md:text-4xl text-luz mb-6 leading-tight font-light">O risco do projeto<br>fica do <span class="italic text-areia font-normal">meu lado.</span></h3>
-                
-                <div class="space-y-6">
+                <div class="space-y-4">
                     <div>
-                        <h4 class="font-mono font-semibold text-sm text-luz uppercase mb-2">1. Prazo é Lei</h4>
-                        <p class="font-sans text-lavanda text-sm font-light">Se o briefing for preenchido no prazo e eu atrasar a entrega além dos 15 dias úteis, <strong class="text-luz font-semibold">você não paga a segunda parcela.</strong></p>
+                        <h4 class="font-mono font-bold text-xs text-areia uppercase mb-1">1. Prazo Respeitado</h4>
+                        <p class="font-sans text-lavanda text-xs font-medium">Se eu atrasar a entrega além dos 15 dias úteis, você não paga a segunda parcela.</p>
                     </div>
                     <div>
-                        <h4 class="font-mono font-semibold text-sm text-luz uppercase mb-2">2. Satisfação</h4>
-                        <p class="font-sans text-lavanda text-sm font-light">Se após as rodadas de refinamento o caminho criativo estiver desconexo do alinhado, devolvo sua entrada.</p>
+                        <h4 class="font-mono font-bold text-xs text-areia uppercase mb-1">2. Alinhamento</h4>
+                        <p class="font-sans text-lavanda text-xs font-medium">Se o caminho criativo estiver fora do briefing alinhado, devolvo o seu investimento inicial.</p>
                     </div>
                 </div>
             </div>
 
             <div>
-                <h2 class="font-serif text-4xl md:text-5xl text-ametista mb-10 font-light">Zero burocracia <br><span class="bg-lavanda text-luz px-2 italic font-normal">para você.</span></h2>
+                <!-- Logo como assinatura d'água -->
+                <img src="logo.png" alt="KQ" class="h-12 mb-6 filter grayscale opacity-40 mix-blend-multiply" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none;" class="font-sans font-black text-4xl tracking-tight text-ametista block mb-6 opacity-50">KQ.</span>
                 
-                <div class="border-l-4 border-ametista pl-6 space-y-8 relative">
-                    <div class="relative">
-                        <span class="absolute -left-12 top-0 font-mono font-semibold text-lg text-ametista bg-luz w-8 h-8 flex justify-center items-center border-2 border-ametista rounded-full">1</span>
-                        <h4 class="font-mono font-semibold text-base text-ametista uppercase mb-2">Briefing Direto</h4>
-                        <p class="font-sans text-noite font-light">Você preenche o formulário enxuto pelo celular em poucos minutos.</p>
-                    </div>
-                    <div class="relative">
-                        <span class="absolute -left-12 top-0 font-mono font-semibold text-lg text-ametista bg-luz w-8 h-8 flex justify-center items-center border-2 border-ametista rounded-full">2</span>
-                        <h4 class="font-mono font-semibold text-base text-ametista uppercase mb-2">Execução Silenciosa</h4>
-                        <p class="font-sans text-noite font-light">Eu crio a identidade e os documentos sem interromper o seu dia a dia operacional.</p>
-                    </div>
-                    <div class="relative">
-                        <span class="absolute -left-12 top-0 font-mono font-semibold text-lg text-ametista bg-areia w-8 h-8 flex justify-center items-center border-2 border-ametista rounded-full shadow-[2px_2px_0px_0px_#1B1020]">3</span>
-                        <h4 class="font-mono font-semibold text-base text-ametista uppercase mb-2">Dia 15: Ferramentas Prontas</h4>
-                        <p class="font-sans text-noite font-light">Você recebe os arquivos configurados e o novo fluxo comercial pronto para rodar.</p>
-                    </div>
+                <h2 class="text-3xl md:text-4xl font-black uppercase max-w-sm leading-none tracking-tight mb-6">
+                    Pronto para se posicionar?
+                </h2>
+                
+                <div class="flex flex-col items-start font-mono text-[10px] uppercase font-bold text-lavanda gap-3">
+                    <a href="https://wa.me/5512982544891" class="text-ametista hover:text-areia transition-colors text-sm border-b border-ametista pb-1">WhatsApp [↗]</a>
+                    <a href="#" class="hover:text-ametista transition-colors">Behance [↗]</a>
+                    <p class="mt-6 pt-6 border-t border-ametista/10 w-full text-[9px] text-ametista/60">© 2026. Karoline Queiroz Estúdio.</p>
                 </div>
             </div>
-
         </div>
-    </section>
-
-    <footer class="bg-ametista text-luz border-t-4 border-areia py-20 px-4 md:px-6 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-            <div>
-                <h2 class="font-serif text-4xl md:text-[4.5rem] leading-[0.95] mb-8 font-light">Pronto para<br><span class="italic text-areia font-normal">cobrar o que<br>você vale?</span></h2>
-                <a href="https://wa.me/5512982544891" target="_blank" class="btn-brutal-light text-sm inline-flex items-center gap-4">
-                    Falar no WhatsApp
-                    <span class="text-xl font-mono">→</span>
-                </a>
-            </div>
-            
-            <div class="text-left md:text-right font-mono text-xs uppercase text-lavanda space-y-2">
-                <p class="font-semibold text-luz mb-4">Karoline Queiroz</p>
-                <p>Design & Sistemas Comerciais</p>
-                <p>Criando fluxos funcionais e marcas de alto padrão.</p>
-                <p class="mt-8 pt-8 border-t border-lavanda/30 inline-block w-full md:w-auto">© 2026. Todos os direitos reservados.</p>
-            </div>
-        </div>
-        <span class="absolute -bottom-20 -right-20 font-serif text-[20rem] text-noite opacity-20 font-bold pointer-events-none select-none">KQ</span>
     </footer>
 
     <script>
@@ -432,9 +495,10 @@
         function showSlide(index) {
             slides.forEach((slide, i) => {
                 slide.style.opacity = i === index ? '1' : '0';
+                slide.style.zIndex = i === index ? '10' : '0';
             });
             dots.forEach((dot, i) => {
-                dot.style.backgroundColor = i === index ? '#C9B18A' : 'rgba(230, 220, 208, 0.3)';
+                dot.style.backgroundColor = i === index ? '#C9B18A' : 'rgba(138, 122, 148, 0.3)';
             });
             currentSlide = index;
         }
@@ -456,6 +520,8 @@
             carouselContainer.addEventListener('mouseenter', () => clearInterval(carouselInterval));
             carouselContainer.addEventListener('mouseleave', () => carouselInterval = setInterval(nextSlide, 4000));
         }
+        
+        showSlide(0);
     </script>
 
 </body>
