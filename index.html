@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-PT" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karoline Queiroz | Sistema Comercial & Branding</title>
+    <title>Karoline Queiroz | Design para Negócios</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;800;900&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FONTES: Archivo (Sans editorial) e IBM Plex Mono (Detalhes) -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -15,19 +17,19 @@
             theme: {
                 extend: {
                     colors: {
-                        ametista: '#1B1020',
-                        noite: '#3A2A4A',
+                        ametista: '#1B1020', /* Roxo quase preto */
+                        noite: '#2D1F36',
                         lavanda: '#8A7A94',
-                        areia: '#C9B18A',
-                        luz: '#E6DCD0',
+                        areia: '#C9B18A', /* Dourado/Areia */
+                        luz: '#F2EBE3', /* Fundo off-white */
                     },
                     fontFamily: {
                         sans: ['Archivo', 'sans-serif'],
                         mono: ['"IBM Plex Mono"', 'monospace'], 
                     },
                     boxShadow: {
-                        'brutal': '6px 6px 0px 0px rgba(27, 16, 32, 1)',
-                        'brutal-light': '6px 6px 0px 0px rgba(230, 220, 208, 1)',
+                        'solid-dark': '6px 6px 0px 0px #1B1020',
+                        'solid-areia': '6px 6px 0px 0px #C9B18A',
                     }
                 }
             }
@@ -35,342 +37,388 @@
     </script>
     <style>
         body { 
-            background-color: #E6DCD0;
+            background-color: #F2EBE3; 
             color: #1B1020; 
             overflow-x: hidden;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+            /* Textura sutil */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
         }
         
         ::selection { background-color: #1B1020; color: #C9B18A; }
 
-        .chamfer-box {
-            clip-path: polygon(
-                20px 0, 100% 0, 
-                100% calc(100% - 20px), calc(100% - 20px) 100%, 
-                0 100%, 0 20px
-            );
-        }
-        
-        .chamfer-btn {
-            clip-path: polygon(
-                10px 0, 100% 0, 
-                100% calc(100% - 10px), calc(100% - 10px) 100%, 
-                0 100%, 0 10px
-            );
-        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        .split-text {
-            position: relative;
-            display: inline-block;
-            line-height: 0.9;
-        }
-        .split-text .top {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
+        /* Estilo Bento Box base preservado */
+        .bento-box {
+            border-radius: 1.5rem;
+            border: 3px solid #1B1020;
             overflow: hidden;
-            color: #C9B18A;
-        }
-        .split-text .bottom {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            overflow: hidden;
-            color: #1B1020;
-        }
-        .split-text .bottom span {
-            display: block;
-            transform: translateY(-50%);
-        }
-        .split-text .top span {
-            display: block;
         }
 
-        .split-text-invert .top { color: #1B1020; }
-        .split-text-invert .bottom { color: #C9B18A; }
-
-        .sticker {
-            position: absolute;
-            font-family: 'IBM Plex Mono', monospace;
-            font-weight: 700;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 8px 12px;
-            border: 2px solid currentColor;
-            transform: rotate(-6deg);
-            transition: transform 0.3s ease;
+        /* Utilidade para texto vertical */
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
         }
-        .sticker:hover { transform: rotate(0deg) scale(1.05); }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(-6deg); }
-            50% { transform: translateY(-6px) rotate(-4deg); }
-        }
-        .float-sticker { animation: float 4s ease-in-out infinite; }
     </style>
 </head>
-<body class="antialiased font-sans relative">
+<body class="antialiased font-sans relative w-full">
 
-    <!-- NAVEGAÇÃO (Estilo iOS / Brutalist Floating Bar) -->
-    <nav class="fixed top-6 w-full z-50 px-4 md:px-8 pointer-events-none">
-        <div class="max-w-[1400px] mx-auto flex justify-between items-center pointer-events-auto">
-            <div class="bg-ametista p-2 px-4 chamfer-btn shadow-[4px_4px_0px_0px_#C9B18A] flex items-center border border-luz/20 hover:-translate-y-1 transition-transform">
-                <a href="#" class="flex items-center">
-                    <span class="font-sans font-black text-xl tracking-tighter text-luz">KQ.</span>
-                </a>
-            </div>
+    <!-- NAVEGAÇÃO -->
+    <nav class="fixed top-4 w-full z-50 px-4 md:px-8 pointer-events-none flex justify-center">
+        <div class="bg-luz/95 backdrop-blur-md border-[3px] border-ametista rounded-full p-1.5 flex items-center justify-between w-full max-w-[1200px] pointer-events-auto shadow-solid-dark transition-transform">
+            
+            <!-- Logo (Iniciais) -->
+            <a href="#" class="bg-ametista text-luz rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+                <span class="font-sans font-black tracking-tighter text-lg">KQ</span>
+            </a>
 
-            <div class="hidden md:flex items-center bg-luz border-2 border-ametista px-2 py-1 chamfer-btn shadow-[4px_4px_0px_0px_#1B1020]">
-                <a href="#sobre" class="font-mono text-[10px] uppercase font-bold text-ametista hover:bg-ametista hover:text-luz px-4 py-2 transition-colors">Manifesto</a>
-                <a href="#trabalhos" class="font-mono text-[10px] uppercase font-bold text-ametista hover:bg-ametista hover:text-luz px-4 py-2 transition-colors">Portfólio</a>
-                <a href="#oferta" class="font-mono text-[10px] uppercase font-bold text-ametista hover:bg-ametista hover:text-luz px-4 py-2 transition-colors">Arsenal</a>
+            <!-- Links Desktop -->
+            <div class="hidden md:flex items-center px-4 gap-8 font-mono text-xs uppercase font-bold text-ametista">
+                <a href="#trabalhos" class="hover:text-areia transition-colors">Trabalhos</a>
+                <a href="#servicos" class="hover:text-areia transition-colors">Serviços</a>
+                <a href="#sobre" class="hover:text-areia transition-colors">Sobre</a>
+                <a href="#processo" class="hover:text-areia transition-colors">Processo</a>
             </div>
             
-            <a href="https://wa.me/5512982544891" target="_blank" class="bg-ametista text-luz font-mono text-[10px] uppercase font-bold px-5 py-3 chamfer-btn shadow-[4px_4px_0px_0px_#C9B18A] hover:-translate-y-1 transition-transform">
-                WhatsApp
+            <!-- CTA Button -->
+            <a href="https://wa.me/5512982544891" target="_blank" class="bg-areia text-ametista font-mono text-[10px] md:text-xs uppercase font-bold px-5 py-2.5 rounded-full hover:bg-ametista hover:text-luz transition-colors border-2 border-ametista shrink-0">
+                Falar no WhatsApp
             </a>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="pt-36 pb-24 px-4 md:px-8 max-w-[1400px] mx-auto relative">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div class="lg:col-span-7 relative z-10">
-                <div class="inline-block border-2 border-ametista px-3 py-1 mb-8 bg-luz font-mono text-[10px] uppercase font-bold text-ametista shadow-[2px_2px_0px_0px_#1B1020]">
-                    Para quem vende projetos sob medida
-                </div>
-
-                <h1 class="font-sans text-4xl md:text-5xl lg:text-6xl font-black text-ametista uppercase leading-[1.05] tracking-tight mb-8">
-                    A sua entrega é impecável.<br>
-                    <span class="text-lavanda">A apresentação</span><br>
-                    também deveria ser.
-                </h1>
-                
-                <p class="font-mono text-xs uppercase text-noite font-semibold leading-relaxed max-w-lg mb-10 border-l-2 border-ametista pl-4">
-                    Sistematizamos a sua comunicação visual para você fechar contratos com a postura, a segurança e a organização de uma agência.
-                </p>
-                
-                <a href="#oferta" class="inline-flex bg-ametista text-luz font-mono text-xs uppercase font-bold px-8 py-4 chamfer-btn shadow-[4px_4px_0px_0px_#C9B18A] hover:-translate-y-1 transition-transform">
-                    Estruturar minha empresa [↗]
-                </a>
-            </div>
-
-            <div class="lg:col-span-5 relative flex justify-center">
-                <div class="relative w-full max-w-sm bg-ametista p-8 chamfer-box shadow-[8px_8px_0px_0px_#C9B18A] z-10 border border-luz/10">
-                    <p class="font-mono text-areia text-[10px] uppercase font-bold tracking-widest mb-4 border-b border-areia/20 pb-2">O Arsenal de Fechamento</p>
-                    <h3 class="font-sans text-3xl font-black text-luz uppercase leading-none mb-8 tracking-tighter">Setup<br>Comercial</h3>
-                    
-                    <div class="space-y-4 font-mono text-[11px] text-luz/80 uppercase font-bold tracking-wide">
-                        <div class="flex items-center gap-3"><span class="text-areia text-lg leading-none">■</span> Identidade Visual</div>
-                        <div class="flex items-center gap-3"><span class="text-areia text-lg leading-none">■</span> Proposta Comercial</div>
-                        <div class="flex items-center gap-3"><span class="text-areia text-lg leading-none">■</span> Setup WhatsApp Pro</div>
-                        <div class="flex items-center gap-3"><span class="text-areia text-lg leading-none">■</span> Contratos</div>
-                    </div>
-                </div>
-                
-                <div class="absolute -bottom-4 -right-4 z-20 float-sticker">
-                    <div class="sticker bg-areia text-ametista border-ametista shadow-[3px_3px_0px_0px_#1B1020]">15 dias</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MANIFESTO & FORMAÇÃO (Com foto limpa em moldura editorial e dados de formação) -->
-    <section id="sobre" class="py-28 px-4 md:px-8 bg-ametista text-luz border-y-2 border-areia overflow-hidden relative">
-        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
-            <!-- Foto de perfil limpa com moldura e tag de formação -->
-            <div class="relative flex justify-center lg:justify-start">
-                <div class="relative w-72 h-80 md:w-80 md:h-96 chamfer-box border-2 border-areia p-2 bg-noite shadow-[8px_8px_0px_0px_#C9B18A]">
-                    <img src="IMG_0401.png" alt="Karoline Queiroz" class="w-full h-full object-cover chamfer-box">
-                    
-                    <!-- Selo de Formação Integrado -->
-                    <div class="absolute -bottom-6 -right-4 bg-areia text-ametista font-mono text-[10px] uppercase font-bold px-4 py-2 border-2 border-ametista shadow-[4px_4px_0px_0px_#1B1020] z-20">
-                        Graduada em Design Gráfico — Anhembi Morumbi
-                    </div>
-                </div>
-                
-                <div class="absolute top-4 -left-4 float-sticker" style="animation-delay: 1s;">
-                    <div class="sticker bg-luz text-ametista border-ametista">Especialista</div>
-                </div>
-            </div>
-
-            <!-- Texto do Manifesto -->
-            <div class="flex flex-col justify-center">
-                <p class="font-mono text-areia text-[10px] font-bold uppercase tracking-widest border-b border-areia/30 pb-2 inline-block max-w-max mb-6">
-                    A Estrategista
-                </p>
-                
-                <div class="mb-8">
-                    <div class="split-text split-text-invert text-4xl md:text-5xl font-black uppercase tracking-tighter">
-                        <div class="top"><span>O seu valor</span></div>
-                        <div class="bottom"><span>O seu valor</span></div>
-                        <span class="invisible">O seu valor</span>
-                    </div>
-                    <div class="split-text split-text-invert text-4xl md:text-5xl font-black uppercase tracking-tighter mt-1">
-                        <div class="top"><span>de mercado</span></div>
-                        <div class="bottom"><span>de mercado</span></div>
-                        <span class="invisible">de mercado</span>
-                    </div>
-                </div>
-                
-                <div class="space-y-6 font-mono text-sm md:text-base text-lavanda leading-relaxed max-w-xl">
-                    <p>
-                        Sou <strong class="text-luz">Karoline Queiroz</strong>. Graduada em Design Gráfico pela Universidade Anhembi Morumbi, com foco exclusivo em Identidade Visual e Branding.
-                    </p>
-                    <p>
-                        Trago para os meus projetos uma visão que une a estética ao marketing prático. Meu objetivo não é apenas criar algo bonito, mas organizar a sua estrutura comercial.
-                    </p>
-                    <p class="text-luz font-bold border-l-2 border-areia pl-4">
-                        Se você entrega um serviço de excelência, a sua comunicação visual precisa transmitir a mesma segurança e profissionalismo desde o primeiro contato.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFÓLIO (Janela macOS com todas as imagens dos projetos integradas) -->
-    <div class="bg-luz text-ametista pt-28 pb-32">
-        <section id="trabalhos" class="px-4 md:px-8 max-w-[1200px] mx-auto">
-            
-            <div class="mb-14 flex flex-col md:flex-row justify-between items-start md:items-end border-b-2 border-ametista/20 pb-6">
-                <div>
-                    <p class="font-mono text-[10px] uppercase text-noite font-bold mb-2">Estratégia Aplicada</p>
-                    <h2 class="font-sans text-4xl md:text-5xl font-black uppercase leading-none tracking-tight">
-                        Portfólio
-                    </h2>
-                </div>
-                <p class="font-mono text-[10px] uppercase text-noite font-bold mt-4 md:mt-0">
-                    Identidades Visuais & Sistemas Comerciais
-                </p>
-            </div>
-
-            <div class="max-w-4xl mx-auto relative">
-                <div id="macos-carousel" class="relative bg-ametista rounded-xl shadow-[12px_12px_0px_0px_#C9B18A] border-2 border-noite overflow-hidden">
-                    
-                    <div class="bg-[#2D1F36] px-4 py-3 flex items-center justify-between border-b border-luz/10">
-                        <div class="flex items-center gap-2">
-                            <div class="w-3 h-3 rounded-full bg-[#FF5F56] shadow-inner"></div>
-                            <div class="w-3 h-3 rounded-full bg-[#FFBD2E] shadow-inner"></div>
-                            <div class="w-3 h-3 rounded-full bg-[#27C93F] shadow-inner"></div>
-                        </div>
-                        <div class="font-mono text-[10px] text-luz/50 uppercase font-bold tracking-widest absolute left-1/2 transform -translate-x-1/2">
-                            Portfólio_KQ.app
-                        </div>
-                    </div>
-
-                    <!-- Carrossel Referenciando Todas as Imagens de Projetos -->
-                    <div class="relative w-full aspect-square md:aspect-[4/3] bg-[#1a131f] flex items-center justify-center overflow-hidden">
-                        
-                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100 flex items-center justify-center z-10">
-                            <img src="image_21.png" alt="A&T Marcenaria" class="w-full h-full object-cover">
-                            <div class="absolute bottom-6 left-6 bg-ametista text-luz px-4 py-2 font-mono text-[10px] uppercase font-bold border border-luz/10">A&T Marcenaria</div>
-                        </div>
-                        
-                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center z-0">
-                            <img src="image_26.png" alt="Biskie" class="w-full h-full object-cover">
-                            <div class="absolute bottom-6 left-6 bg-ametista text-luz px-4 py-2 font-mono text-[10px] uppercase font-bold border border-luz/10">Biskie</div>
-                        </div>
-
-                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center z-0">
-                            <img src="image_28.png" alt="Garimpan.do" class="w-full h-full object-cover">
-                            <div class="absolute bottom-6 left-6 bg-ametista text-luz px-4 py-2 font-mono text-[10px] uppercase font-bold border border-luz/10">Garimpan.do</div>
-                        </div>
-
-                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center z-0">
-                            <img src="image_29.png" alt="VONA ID" class="w-full h-full object-cover">
-                            <div class="absolute bottom-6 left-6 bg-ametista text-luz px-4 py-2 font-mono text-[10px] uppercase font-bold border border-luz/10">VONA ID</div>
-                        </div>
-
-                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center z-0">
-                            <img src="image_22.png" alt="Markie ID" class="w-full h-full object-cover">
-                            <div class="absolute bottom-6 left-6 bg-ametista text-luz px-4 py-2 font-mono text-[10px] uppercase font-bold border border-luz/10">Markie ID</div>
-                        </div>
-                        
-                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center z-0">
-                            <img src="image_24.png" alt="Patrícia Alcântara" class="w-full h-full object-cover">
-                            <div class="absolute bottom-6 left-6 bg-ametista text-luz px-4 py-2 font-mono text-[10px] uppercase font-bold border border-luz/10">Patrícia Alcântara</div>
-                        </div>
-
-                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center z-0">
-                            <img src="image_25.png" alt="Maiara" class="w-full h-full object-cover">
-                            <div class="absolute bottom-6 left-6 bg-ametista text-luz px-4 py-2 font-mono text-[10px] uppercase font-bold border border-luz/10">Maiara</div>
-                        </div>
-
-                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center z-0">
-                            <img src="image_27.png" alt="Juliana Landim" class="w-full h-full object-cover">
-                            <div class="absolute bottom-6 left-6 bg-ametista text-luz px-4 py-2 font-mono text-[10px] uppercase font-bold border border-luz/10">Juliana Landim</div>
-                        </div>
-                        
-                        <div class="slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 flex items-center justify-center z-0">
-                            <img src="image_23.png" alt="JF" class="w-full h-full object-cover">
-                            <div class="absolute bottom-6 left-6 bg-ametista text-luz px-4 py-2 font-mono text-[10px] uppercase font-bold border border-luz/10">JF</div>
-                        </div>
-
-                    </div>
-
-                    <div class="flex items-center justify-between p-4 bg-[#2D1F36] border-t border-luz/10">
-                        <button onclick="prevSlide()" class="font-mono text-[10px] uppercase font-bold text-areia hover:text-luz transition-colors px-3 py-1 bg-ametista rounded-sm">← Voltar</button>
-                        <div id="carousel-dots" class="flex gap-2 justify-center flex-wrap max-w-[150px]">
-                            <span class="w-1.5 h-1.5 rounded-full bg-areia"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-luz/20"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-luz/20"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-luz/20"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-luz/20"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-luz/20"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-luz/20"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-luz/20"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-luz/20"></span>
-                        </div>
-                        <button onclick="nextSlide()" class="font-mono text-[10px] uppercase font-bold text-areia hover:text-luz transition-colors px-3 py-1 bg-ametista rounded-sm">Avançar →</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- FIO CONDUTOR VERTICAL (MANTIDO DA IDENTIDADE AUTORAL) -->
+    <div class="fixed left-4 md:left-8 top-1/2 -translate-y-1/2 z-40 hidden xl:block pointer-events-none">
+        <p class="vertical-text font-mono text-[9px] uppercase font-bold text-ametista/40 tracking-[0.3em]">
+            DESIGN PARA NEGÓCIOS — KQ ESTÚDIO
+        </p>
     </div>
 
-    <!-- SCRIPT DO CARROSSEL -->
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('#carousel-dots span');
-        const totalSlides = slides.length;
+    <!-- 1. HERO -->
+    <section class="pt-40 pb-20 px-4 md:px-8 max-w-[1200px] mx-auto relative min-h-[80vh] flex flex-col justify-center">
+        <div class="max-w-4xl">
+            <span class="inline-block font-mono text-xs uppercase font-bold text-ametista border-[3px] border-ametista px-3 py-1 rounded-full mb-6 bg-ametista/5">
+                Design para Negócios
+            </span>
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.opacity = i === index ? '1' : '0';
-                slide.style.zIndex = i === index ? '10' : '0';
-            });
-            dots.forEach((dot, i) => {
-                dot.style.backgroundColor = i === index ? '#C9B18A' : 'rgba(230, 220, 208, 0.2)';
-            });
-            currentSlide = index;
-        }
+            <h1 class="font-sans text-5xl md:text-7xl lg:text-[5.5rem] font-black text-ametista uppercase leading-[0.9] tracking-tighter mb-8">
+                Seu negócio<br>
+                <span class="text-areia drop-shadow-[2px_2px_0px_#1B1020]">também merece</span><br>
+                uma boa apresentação.
+            </h1>
+            
+            <p class="font-mono text-sm md:text-base text-noite font-medium leading-relaxed max-w-xl mb-10 border-l-[3px] border-areia pl-6">
+                Identidade visual, artes e materiais gráficos para empresas que querem se comunicar melhor e apresentar seu trabalho com mais clareza.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                <a href="https://wa.me/5512982544891" target="_blank" class="bg-ametista text-luz border-[3px] border-ametista font-sans text-sm md:text-base uppercase font-black px-8 py-4 rounded-full shadow-solid-areia hover:-translate-y-1 transition-transform tracking-wide">
+                    Falar comigo no WhatsApp
+                </a>
+                <p class="font-mono text-[10px] uppercase font-bold text-lavanda max-w-[200px] leading-tight">
+                    Design gráfico para marcas que precisam sair da ideia e ganhar forma.
+                </p>
+            </div>
+        </div>
+    </section>
 
-        function nextSlide() {
-            let next = (currentSlide + 1) % totalSlides;
-            showSlide(next);
-        }
+    <!-- 2. PORTFÓLIO -->
+    <section id="trabalhos" class="py-24 px-4 md:px-8 bg-ametista text-luz border-y-[3px] border-ametista">
+        <div class="max-w-[1200px] mx-auto">
+            
+            <div class="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end border-b-[3px] border-luz/20 pb-6">
+                <div>
+                    <h2 class="font-sans text-5xl md:text-6xl font-black uppercase leading-none tracking-tighter mb-4">
+                        Alguns<br>Trabalhos
+                    </h2>
+                    <p class="font-mono text-sm text-luz/80 max-w-md">
+                        Projetos de identidade visual, peças gráficas e materiais desenvolvidos para diferentes negócios.
+                    </p>
+                </div>
+            </div>
 
-        function prevSlide() {
-            let prev = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(prev);
-        }
+            <!-- Grid de Projetos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Projeto 1 -->
+                <div class="group cursor-pointer">
+                    <div class="bento-box bg-noite aspect-[4/3] border-luz/30 group-hover:border-areia transition-colors relative mb-4 p-0">
+                        <img src="image_21.png" alt="A&T Marcenaria" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-full absolute inset-0 bg-noite text-areia flex items-center justify-center font-mono uppercase text-xs hidden">Imagem Indisponível</div>
+                    </div>
+                    <h3 class="font-sans text-xl font-black uppercase tracking-tight text-luz">A&T Marcenaria</h3>
+                    <p class="font-mono text-[10px] uppercase text-areia font-bold">Identidade Visual</p>
+                </div>
 
-        let carouselInterval = setInterval(nextSlide, 4500);
+                <!-- Projeto 2 -->
+                <div class="group cursor-pointer">
+                    <div class="bento-box bg-noite aspect-[4/3] border-luz/30 group-hover:border-areia transition-colors relative mb-4 p-0">
+                        <img src="image_26.png" alt="Biskie" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-full absolute inset-0 bg-noite text-areia flex items-center justify-center font-mono uppercase text-xs hidden">Imagem Indisponível</div>
+                    </div>
+                    <h3 class="font-sans text-xl font-black uppercase tracking-tight text-luz">Biskie</h3>
+                    <p class="font-mono text-[10px] uppercase text-areia font-bold">Artes para Redes Sociais</p>
+                </div>
 
-        const carouselContainer = document.getElementById('macos-carousel');
-        if (carouselContainer) {
-            carouselContainer.addEventListener('mouseenter', () => clearInterval(carouselInterval));
-            carouselContainer.addEventListener('mouseleave', () => carouselInterval = setInterval(nextSlide, 4500));
-        }
+                <!-- Projeto 3 -->
+                <div class="group cursor-pointer">
+                    <div class="bento-box bg-noite aspect-[4/3] border-luz/30 group-hover:border-areia transition-colors relative mb-4 p-0">
+                        <img src="image_28.png" alt="Garimpan.do" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-full absolute inset-0 bg-noite text-areia flex items-center justify-center font-mono uppercase text-xs hidden">Imagem Indisponível</div>
+                    </div>
+                    <h3 class="font-sans text-xl font-black uppercase tracking-tight text-luz">Garimpan.do</h3>
+                    <p class="font-mono text-[10px] uppercase text-areia font-bold">Identidade Visual</p>
+                </div>
+
+                <!-- Projeto 4 -->
+                <div class="group cursor-pointer">
+                    <div class="bento-box bg-noite aspect-[4/3] border-luz/30 group-hover:border-areia transition-colors relative mb-4 p-0">
+                        <img src="image_29.png" alt="VONA ID" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-full absolute inset-0 bg-noite text-areia flex items-center justify-center font-mono uppercase text-xs hidden">Imagem Indisponível</div>
+                    </div>
+                    <h3 class="font-sans text-xl font-black uppercase tracking-tight text-luz">VONA ID</h3>
+                    <p class="font-mono text-[10px] uppercase text-areia font-bold">Identidade & Materiais</p>
+                </div>
+
+                <!-- Projeto 5 -->
+                <div class="group cursor-pointer">
+                    <div class="bento-box bg-noite aspect-[4/3] border-luz/30 group-hover:border-areia transition-colors relative mb-4 p-0">
+                        <img src="image_22.png" alt="Markie ID" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-full absolute inset-0 bg-noite text-areia flex items-center justify-center font-mono uppercase text-xs hidden">Imagem Indisponível</div>
+                    </div>
+                    <h3 class="font-sans text-xl font-black uppercase tracking-tight text-luz">Markie ID</h3>
+                    <p class="font-mono text-[10px] uppercase text-areia font-bold">Apresentações Gráficas</p>
+                </div>
+
+                <!-- Projeto 6 -->
+                <div class="group cursor-pointer">
+                    <div class="bento-box bg-noite aspect-[4/3] border-luz/30 group-hover:border-areia transition-colors relative mb-4 p-0">
+                        <img src="image_24.png" alt="Patrícia Alcântara" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-full absolute inset-0 bg-noite text-areia flex items-center justify-center font-mono uppercase text-xs hidden">Imagem Indisponível</div>
+                    </div>
+                    <h3 class="font-sans text-xl font-black uppercase tracking-tight text-luz">Patrícia Alcântara</h3>
+                    <p class="font-mono text-[10px] uppercase text-areia font-bold">Identidade Visual</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. FRASE DE TRANSIÇÃO -->
+    <section class="py-32 px-4 md:px-8 max-w-[1000px] mx-auto text-center flex flex-col items-center justify-center">
+        <h2 class="font-sans text-4xl md:text-5xl lg:text-7xl font-black text-ametista uppercase leading-[0.9] tracking-tighter mb-6">
+            Cada negócio tem uma história.<br>
+            <span class="text-areia drop-shadow-[2px_2px_0px_#1B1020]">O design ajuda a dar forma a ela.</span>
+        </h2>
+        <p class="font-mono text-sm md:text-base text-lavanda font-medium max-w-2xl mt-4">
+            Do primeiro contato com seu cliente até a divulgação de um produto ou serviço, a comunicação visual faz parte da experiência da sua marca.
+        </p>
+    </section>
+
+    <!-- 4. SERVIÇOS -->
+    <section id="servicos" class="py-24 px-4 md:px-8 max-w-[1200px] mx-auto w-full relative">
+        <div class="mb-16 border-b-[3px] border-ametista pb-8 flex flex-col md:flex-row gap-8 justify-between items-end">
+            <div>
+                <h2 class="text-5xl md:text-6xl font-black uppercase text-ametista leading-[0.9] tracking-tighter mb-4">
+                    O que posso criar<br>para o seu negócio
+                </h2>
+                <p class="font-mono text-sm text-noite font-medium max-w-xl">
+                    Soluções de design para diferentes momentos da sua empresa — desde uma identidade nova até aquela arte que você precisa colocar no WhatsApp hoje.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr relative z-10">
+            
+            <!-- Serviço 1 -->
+            <div class="bento-box bg-areia p-8 flex flex-col shadow-solid-dark">
+                <h3 class="font-sans text-3xl font-black uppercase text-ametista leading-none tracking-tighter mb-4">Identidade Visual</h3>
+                <p class="font-mono text-xs text-ametista/80 font-medium mb-8">
+                    Para negócios que estão começando ou precisam organizar melhor sua apresentação.
+                </p>
+                <ul class="font-mono text-xs text-ametista font-bold space-y-2 mt-auto border-t-[3px] border-ametista/20 pt-6">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-ametista rounded-full"></span> Logo</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-ametista rounded-full"></span> Paleta de cores</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-ametista rounded-full"></span> Tipografia</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-ametista rounded-full"></span> Elementos visuais</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-ametista rounded-full"></span> Aplicações básicas</li>
+                </ul>
+            </div>
+
+            <!-- Serviço 2 -->
+            <div class="bento-box bg-ametista p-8 flex flex-col shadow-solid-areia">
+                <h3 class="font-sans text-3xl font-black uppercase text-luz leading-none tracking-tighter mb-4">Artes para Insta & WhatsApp</h3>
+                <p class="font-mono text-xs text-lavanda font-medium mb-8">
+                    Peças prontas para divulgar seu negócio sem precisar criar tudo do zero.
+                </p>
+                <ul class="font-mono text-xs text-areia font-bold space-y-2 mt-auto border-t-[3px] border-areia/20 pt-6">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-areia rounded-full"></span> Produtos</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-areia rounded-full"></span> Serviços</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-areia rounded-full"></span> Promoções</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-areia rounded-full"></span> Informativos</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-areia rounded-full"></span> Datas especiais</li>
+                </ul>
+            </div>
+
+            <!-- Serviço 3 -->
+            <div class="bento-box bg-luz p-8 flex flex-col shadow-solid-dark">
+                <h3 class="font-sans text-3xl font-black uppercase text-ametista leading-none tracking-tighter mb-4">Materiais<br>Gráficos</h3>
+                <p class="font-mono text-xs text-noite font-medium mb-8">
+                    Design para materiais que sua empresa utiliza no dia a dia.
+                </p>
+                <ul class="font-mono text-xs text-ametista font-bold space-y-2 mt-auto border-t-[3px] border-ametista/20 pt-6">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-ametista rounded-full"></span> Cartões</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-ametista rounded-full"></span> Flyers & Folders</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-ametista rounded-full"></span> Cardápios</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-ametista rounded-full"></span> Apresentações</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-ametista rounded-full"></span> Outros materiais</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PROCESSO -->
+    <section id="processo" class="py-24 px-4 md:px-8 border-y-[3px] border-ametista bg-areia text-ametista">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <div class="lg:col-span-4">
+                <h2 class="text-5xl md:text-6xl font-black uppercase leading-[0.9] tracking-tighter sticky top-24">
+                    Como<br>Funciona
+                </h2>
+            </div>
+            
+            <div class="lg:col-span-8 flex flex-col gap-6">
+                
+                <div class="bento-box bg-luz p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start border-2">
+                    <span class="font-sans text-4xl font-black text-areia">01</span>
+                    <div>
+                        <h3 class="font-sans text-2xl font-black uppercase tracking-tight mb-2">Você chama</h3>
+                        <p class="font-mono text-sm font-medium">Me conta o que sua empresa precisa.</p>
+                    </div>
+                </div>
+
+                <div class="bento-box bg-luz p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start border-2">
+                    <span class="font-sans text-4xl font-black text-areia">02</span>
+                    <div>
+                        <h3 class="font-sans text-2xl font-black uppercase tracking-tight mb-2">Conversamos</h3>
+                        <p class="font-mono text-sm font-medium">Entendo o negócio, o objetivo e o que você precisa comunicar.</p>
+                    </div>
+                </div>
+
+                <div class="bento-box bg-luz p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start border-2">
+                    <span class="font-sans text-4xl font-black text-areia">03</span>
+                    <div>
+                        <h3 class="font-sans text-2xl font-black uppercase tracking-tight mb-2">Orçamento</h3>
+                        <p class="font-mono text-sm font-medium">Você recebe uma proposta de acordo com o projeto.</p>
+                    </div>
+                </div>
+
+                <div class="bento-box bg-luz p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start border-2">
+                    <span class="font-sans text-4xl font-black text-areia">04</span>
+                    <div>
+                        <h3 class="font-sans text-2xl font-black uppercase tracking-tight mb-2">Criação</h3>
+                        <p class="font-mono text-sm font-medium">Desenvolvo as peças e envio para aprovação.</p>
+                    </div>
+                </div>
+
+                <div class="bento-box bg-ametista text-luz p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start border-[3px] border-ametista shadow-[6px_6px_0px_0px_#1B1020]">
+                    <span class="font-sans text-4xl font-black text-areia">05</span>
+                    <div>
+                        <h3 class="font-sans text-2xl font-black uppercase tracking-tight mb-2">Entrega</h3>
+                        <p class="font-mono text-sm font-medium text-lavanda">Você recebe tudo pronto para usar.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SOBRE -->
+    <section id="sobre" class="py-24 px-4 md:px-8 overflow-hidden w-full relative">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- MÁSCARA SVG EXATA DO LOGO (Mantida) -->
+            <div class="relative w-full max-w-[500px] mx-auto aspect-[1.41/1] drop-shadow-[15px_15px_0px_rgba(27,16,32,1)] hover:-translate-y-2 transition-transform duration-500">
+                <svg viewBox="0 0 1190.55 841.89" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <clipPath id="kq-logo-mask">
+                            <path d="M758.32,332.57c14.06,10.55,28.55,19.62,41.49,30.78c12.91,11.14,25.96,22.14,38.55,33.64c10.07,9.2,9.21,17.14-1.06,26.04c-17.76,15.4-34.19,32.25-52.99,46.54c-28.03,21.3-57.26,40.59-88.45,57c-25.69,13.52-52.38,24.84-79.72,34.19c-18.4,6.29-37.41,11.2-56.67,15.05c-23.15,4.62-46.54,7.64-69.91,7.93c-21.64,0.27-43.27-3.82-64.74-7.52c-33.84-5.84-66.2-16.48-97.85-29.44c-42.6-17.44-81.44-41.44-119.08-67.72c-22.33-15.58-43.66-32.35-64.67-49.57c-6.11-5.01-11.58-10.8-17.19-16.39c-4.94-4.93-3.35-10.26,0.47-14.65c5.66-6.52,11.56-12.96,18.09-18.59c25.68-22.17,52.34-43.21,81.09-61.19c27.86-17.42,56.34-33.78,87.27-45.81c26.5-10.31,53.07-20.32,80.48-27.62c18.33-4.88,37.07-8.75,56.15-10.36c11.31-0.96,22.41-3.62,33.94-3.04c22.28,1.13,44.11,4.8,66.04,8.69c22.09,3.92,43.15,11.02,64.17,18.07c41.65,13.97,80.81,33.52,118.01,56.9C740.5,321.01,749.19,326.64,758.32,332.57z M393.16,406.66c0-1.24,0-2.48,0-3.71c-0.03-10.55-0.11-10.84-10.3-9.11c-13.42,2.29-26.45,6.18-39.53,9.91c-5.03,1.44-6.71,4.21-6.63,9.09c0.19,12.66,2.37,24.85,5.3,37.24c5.02,21.24,15.08,39.58,27.99,56.57c19.33,25.44,44.92,41.94,75.55,50.82c13.84,4.01,27.96,4.29,42.3,4.97c20.5,0.96,39.36-1.98,58.14-10.33c20.44-9.08,38.79-20.04,52.82-38.01c28.36-36.32,39.11-77,32.69-122.46c-0.9-6.39-4.54-8.98-10.39-9.45c-4.44-0.36-9.05,0.09-13.3-0.96c-16.39-4.07-33.08-1.99-49.58-2.48c-22.5-0.68-44.98,1.57-67.45,3.21c-12.62,0.92-15.26,3.2-16.39,15.97c-2.08,23.38,6.09,43.21,22.96,58.41c18.75,16.89,40.86,24.52,66.65,16.88c5.99-1.77,11.53-5.43,18.11-5.68c-0.08,6-0.17,5.91-3.87,10.04c-15.27,17.08-33.88,28.37-56.25,33.95c-26.35,6.57-51.88,3.35-74.74-9.82C411.81,481.28,393.55,449.48,393.16,406.66z M615.86,298.8c12.1,17.87,22.08,36.8,28.09,57.6c1.73,5.98,4.42,9.26,11.06,11.06c16.31,4.44,33.21,7.51,47.31,18.23c11.37,8.64,13.98,27.65,2.57,38.34c-12.89,12.07-28.52,19.77-44.87,25.44c-8.68,3.02-11.79,8.42-13.94,16.21c-6.79,24.65-18.07,46.92-35.81,65.7c-3.19,3.37-7.24,6.49-7.94,11.87c25.95-6.2,49.71-16.26,72.91-28.16c18.93-9.71,37.97-19.22,55.6-31.08c30.6-20.58,59.23-43.71,85.86-69.27c4.45-4.27,4.82-7.06-0.31-11.18c-13.49-10.84-26.42-22.38-39.89-33.25c-18.29-14.76-37.59-28.31-57.88-40.06c-29.91-17.32-60.47-33.64-93-45.76c-8.12-3.03-16.14-6.64-27.07-7.88C604.97,284.87,610.07,291.43,615.86,298.8z M329.47,335.41c8.82-22.17,22.22-41.45,38.74-59.36c-4.55-1.05-7.96,0.14-11.07,1.23c-23.35,8.16-46.2,17.63-68.25,28.8c-26.06,13.21-51.04,28.28-75.1,44.89c-20.99,14.49-40.82,30.4-59.79,47.4c-4.79,4.29-5.48,8.43-0.39,13.08c21.21,19.4,43.43,37.58,67.22,53.69c38.19,25.86,77.96,48.94,120.78,66.42c10.25,4.19,20.39,8.97,32.47,9.88c-0.88-1.61-1.09-2.39-1.6-2.86c-17.81-16.26-31.08-35.8-41.64-57.3c-0.92-1.88-2.16-3.26-4.27-3.79c-4.55-1.13-9.13-2.15-13.61-3.49c-13.3-3.97-26.6-8.18-37.81-16.67c-7.72-5.85-15.34-12.21-14.34-23.56c0.84-9.6,6.41-16.2,13.46-22.14c10.64-8.96,23.68-13.18,36.06-18.68c4.56-2.03,6.7-4.81,7.23-10C319.17,366.96,321.92,351.14,329.47,335.41z M551.26,328.69c-24.16-1.56-44.12,6.59-59.4,25.6c-1.39,1.73-3.33,3.33-2.28,5.84c0.9,2.13,3.06,2.66,5.05,2.22c8.83-1.98,17.79-0.97,26.68-1.44c31.92-1.68,63.84-2.9,95.68,1.17c5.39,0.69,6.91-1.38,5.34-6.32c-2.84-8.94-6.32-17.54-10.73-25.91c-15.36-29.17-37.53-51.14-67.08-65.83c-12.56-6.24-25.79-10.29-39.61-11.83c-22.31-2.48-44.68-1.97-66.19,4.95c-22.75,7.31-42.15,20.46-58.87,37.54c-21.98,22.45-35.02,49.44-40.83,80.09c-1.41,7.42,0.77,9.04,7.77,7.16c12.16-3.25,24.35-6.99,36.93-7.6c9.5-0.46,13.85-4.8,17.18-13.18c14.93-37.59,55.07-64.17,95.53-63.98c23.46,0.11,43.81,9.32,62.87,21.88c3.88,2.56,7.5,6.1,9.98,11.13C563.02,331.54,557.87,329.36,551.26,328.69z M686.47,399.17c-7.87-6.11-17.36-8.25-26.7-10.6c-5.55-1.4-8.35,1.34-7.19,6.81c1.83,8.61,0.98,17.27,1.36,25.91c0.31,7,2.55,8.54,8.9,5.76c8.62-3.78,16.96-8.1,24.45-13.9C693.53,408.3,693.59,405.07,686.47,399.17z M283.45,435.76c3.63,7.39,25.35,18.92,33.9,18.13c3.14-0.29,3.69-2.23,3.2-4.62c-1.96-9.67-2.88-19.45-3.68-29.28c-0.47-5.77-4.37-7.51-9.56-4.86c-6.36,3.25-12.67,6.64-18.78,10.33C285.28,427.42,283.06,430.45,283.45,435.76z"/>
+                            <path d="M745.81,292.99c14.72,9.46,28.13,19.95,43,28.12c2.64-2.73,1.75-5.61,1.76-8.19c0.11-15.85-0.12-31.71,0.18-47.56c0.18-9.71,5.14-14.03,12.63-11.9c4.33,1.23,6.3,3.96,6.85,8.54c2.56,21.25,1.46,42.58,0.89,63.81c-0.31,11.66,3.69,18.92,12.91,25.17c7.93,5.38,14.67,12.38,21.06,19.63c4,4.54,4.07,9.28,0.34,13.36c-4.11,4.5-9.25,2.99-13.4-0.32c-7.35-5.86-14.52-11.96-21.49-18.26c-31.41-28.35-66.87-50.97-103.37-71.92c-31.79-18.24-65.55-32.16-100.28-44.12c-20.01-6.89-40.4-11.76-60.97-15.32c-36.93-6.39-74.22-7.58-111.56-2.08c-27.25,4.01-53.93,10.37-80.27,18.2c-24.71,7.35-48.39,17.17-71.62,28.52c-35.76,17.47-68.88,39-100.83,62.4c-12.73,9.32-24.16,20.42-36.19,30.7c-4.14,3.54-8.2,7.17-12.44,10.57c-3.72,2.98-7.7,3.49-11.38-0.11c-3.88-3.79-4.54-8.3-1.5-12.76c1.93-2.82,4.37-5.47,7.08-7.56c8.67-6.69,15.95-14.82,23.93-22.21c4.3-3.98,5.56-8.35,5.52-13.83c-0.13-19.07-0.04-38.15-0.07-57.22c-0.01-3.49,0.16-6.93,1.44-10.23c1.8-4.65,4.9-7.52,10.15-6.9c5.05,0.6,8.26,3.67,8.78,8.66c0.56,5.4,0.51,10.87,0.55,16.31c0.08,10.9-0.12,21.8,0.13,32.69c0.16,7.26,2.4,8.21,8.58,4.22c14.33-9.25,27.59-20.14,42.92-27.86c5.08-2.56,6.43-6.92,6.38-12.36c-0.16-19.07-0.06-38.15-0.05-57.22c0-3.46-0.23-6.98,1.41-10.2c2.1-4.12,5.5-6.4,10.16-6.21c4.45,0.18,6.24,3.43,7.49,7.16c2.82,8.45,1.73,17.18,1.9,25.81c0.19,9.16,0.01,18.33,0.31,27.49c0.17,5.2,2.05,7.8,8.03,4.97c15.21-7.19,29.78-15.72,45.62-21.58c4.43-1.64,4.01-5.78,4.02-9.5c0.01-22.29,0.02-44.59,0.01-66.88c0-6.23,0.67-12.34,2.96-18.21c1.76-4.53,4.99-6.38,9.86-6.12c4.81,0.26,6.97,3.11,8.27,7.21c1.14,3.6,1.26,7.3,1.25,11.02c-0.01,21.3-0.05,42.6,0.02,63.91c0.03,8.39,1.26,9.09,9.22,6.76c15.12-4.43,30.25-8.81,45.46-12.88c3.93-1.05,5.88-2.68,6.31-6.86c1.89-18.53,1.23-37,0.48-55.58c-0.72-17.75,0.52-35.6,1.16-53.39c0.16-4.35,2.57-7.49,7.48-7.65c4.83-0.16,9.13,1.11,10.68,6.16c0.92,3,1,6.34,1.01,9.52c0.07,30.71,0.02,61.43,0.06,92.14c0.01,9.95,0.07,9.69,9.68,9.49c13.14-0.27,25.97-4.02,39.23-3.07c6.27,0.45,6.11-4.37,6.11-8.73c-0.01-23.28-0.02-46.57-0.02-69.85c0-26.01,0.01-52.02,0.02-78.03c0-1.73-0.03-3.47,0.04-5.2c0.4-9.62,3.92-13.77,11.22-13.28c7.27,0.48,10.21,5.16,10.01,14.29c-0.67,30.69,0.1,61.37,0.85,92.06c0.47,19.51-1.64,39.06-1.11,58.62c0.25,9.07,1.28,9.78,10.46,10.34c12.3,0.76,24.62,1.72,36.83,3.31c5.7,0.74,7.21-1.34,7.1-6.3c-0.23-10.12-0.29-20.32-0.89-30.35c-1.18-19.81,2.67-39.5,0.27-59.28c-0.61-5.01,0.43-10.42,1.68-15.4c1.3-5.19,5.68-7.58,10.88-6.98c4.84,0.55,8.68,3.31,8.32,8.72c-1.39,21.07,2.34,42.05,0.97,63.07c-0.94,14.36,1,28.67,0.01,42.98c-0.42,6.12,2.1,9.24,7.73,10.61c16.12,3.92,32.15,8.09,47.68,14.05c3.34,1.28,4.9-0.65,5.82-3.79c1.23-4.24-0.01-8.36-0.03-12.53c-0.08-20.31-0.07-40.62,0.02-60.93c0.01-2.19,0.58-4.41,1.09-6.57c1.22-5.17,4.39-8.52,9.86-8.37c5.63,0.15,8.09,4.4,9.31,9.18c0.66,2.58,0.46,5.41,0.46,8.13c0.03,25.27,0.15,50.53-0.08,75.8c-0.06,5.95,1.78,9.4,7.42,12.01c17.45,8.06,34.61,16.74,51.85,25.16c2.62-2.4,1.76-5.3,1.78-7.89c0.09-15.11,0.01-30.22,0.08-45.33c0.01-2.96,0.27-5.93,0.64-8.87c0.72-5.77,3.31-9.96,9.8-10.02c6.21-0.06,8.51,4.41,9.8,9.44c0.66,2.59,0.65,5.4,0.66,8.11c0.05,18.58,0.46,37.17-0.15,55.73C733.71,282.74,736.46,289.23,745.81,292.99z"/>
+                            <path d="M484.05,756.35c0-45.3,0.01-89.89-0.01-134.48c0-12.12-0.17-12.3-12.61-12.37c-11.2-0.06-22.17-2.16-33.2-3.7c-8.01-1.12-9.17-0.34-9.2,7.88c-0.07,27.25-0.01,54.5-0.06,81.75c-0.01,3.2-0.01,6.49-0.68,9.59c-1.02,4.7-3.65,8.34-9.06,8.21c-5.28-0.13-8.99-2.94-10.31-8.07c-0.72-2.83-0.73-5.88-0.73-8.84c-0.05-28.98-0.17-57.97,0.07-86.95c0.05-6.46-1.87-9.78-8.51-11.5c-14.37-3.71-28.5-8.35-42.75-12.55c-2.81-0.83-5.67-1.92-8.65-0.56c-1.82,2.47-1.14,5.29-1.14,7.94c-0.06,21.06-0.02,42.11-0.06,63.17c-0.01,2.96-0.13,5.95-0.56,8.88c-0.79,5.4-4.02,8.51-9.56,8.47c-5.76-0.05-9.2-3.47-10.38-8.84c-0.62-2.85-0.36-5.92-0.36-8.88c-0.02-23.78-0.19-47.56,0.11-71.34c0.08-6.65-2.33-10.13-8.41-12.99c-15.88-7.49-32.3-13.91-47.46-22.9c-1.46-0.87-3-1.82-5.1-1.18c-2.45,2.27-1.46,5.43-1.48,8.25c-0.12,16.84-0.06,33.69-0.12,50.53c-0.02,5.19-0.87,10.03-6.82,11.84c-6.19,1.88-11.64-1.86-12.63-8.73c-2.66-18.49-1.05-37.09-1.25-55.64c-0.06-5.43-0.26-10.86-0.21-16.29c0.04-4.8-3.36-7.21-6.76-9.03c-15.1-8.1-28.87-18.19-42.95-27.84c-1.82-1.25-3.73-2.49-6.22-2.36c-2.94,1.78-1.98,4.79-2.01,7.34c-0.12,10.65,0.01,21.3-0.11,31.95c-0.04,3.2-0.5,6.4-0.98,9.57c-0.87,5.75-4.74,7.84-10.09,7.61c-5.21-0.23-8.01-2.96-8.65-8.31c-1.97-16.55-1.79-33.24-0.71-49.72c0.86-13.09-4.15-21.25-14.12-28.43c-8.21-5.91-15.65-12.92-23.21-19.67c-1.96-1.75-3.39-4.25-4.6-6.64c-2.02-3.99-1.2-7.94,1.97-10.88c3.24-3.02,7.27-3.26,10.95-0.66c3.22,2.28,6.17,4.94,9.14,7.55c36.99,32.42,76.94,60.78,119.92,84.58c28.97,16.04,58.81,30.25,90.37,41.27c28.65,10.01,57.62,17.73,87.34,22.69c12.52,2.09,25.17,4.07,38.31,2.93c18.69-1.62,37.56,0.33,56.39-1.56c8.69-0.87,17.12-2.89,25.43-4.69c27.28-5.91,54.14-13.47,80.23-23.77c17.53-6.92,34.42-15,51.17-23.47c30.32-15.33,58.41-34.17,85.24-54.94c18.59-14.39,36.59-29.49,53.79-45.52c3.55-3.31,7.77-7.02,12.91-2.05c4.13,3.99,4.41,11.54-0.13,16.19c-6.39,6.54-12.88,13.18-20.22,18.56c-8.87,6.5-13.51,13.58-12.68,25.31c1.15,16.26,0.4,32.68,0.12,49.02c-0.16,8.98-3.76,13.35-9.7,13.03c-6.59-0.35-9.43-4.25-9.58-13.24c-0.18-11.63-0.27-23.27-0.52-34.9c-0.06-2.91,0.2-6.44-2.98-7.82c-2.86-1.24-4.97,1.39-7.17,2.92c-11.99,8.33-23.17,17.82-36.08,24.83c-5.94,3.22-8.52,7.92-8.35,15.09c0.47,20.3,0.21,40.62,0.14,60.94c-0.04,10.75-3.53,16.43-9.93,16.59c-5.96,0.16-10.02-5.85-10.29-16.35c-0.41-16.08-0.38-32.18-0.63-48.26c-0.12-7.65-1.44-8.46-8.29-5.12c-15.58,7.57-31.06,15.34-46.69,22.78c-4.67,2.22-4.47,6.03-4.48,10.01c-0.01,24.77-0.01,49.54,0,74.32c0,3.48-0.09,6.92-1.15,10.29c-1.39,4.43-4.38,6.37-8.94,6.21c-4.28-0.15-6.9-2.24-8.01-6.39c-1.03-3.87-1.36-7.78-1.35-11.77c0.02-21.06,0.03-42.11-0.05-63.17c-0.03-8.63-1.64-10.06-9.64-7.11c-13.24,4.89-26.79,8.71-40.38,12.4c-6.08,1.65-8.04,4.99-7.99,11.21c0.27,30.47,0.1,60.94,0.11,91.41c0,4.88-0.42,9.4-5.63,11.9c-6.73,3.24-12.77,0.44-13.75-6.92c-0.79-5.87-1.36-11.82-1.4-17.74c-0.16-24.52-0.26-49.05,0.01-73.57c0.08-7.08-2.87-9.61-9.4-8.45c-12.94,2.28-25.83,4.84-39.07,4.46c-3.84-0.11-5.98,2.13-6.28,5.91c-0.21,2.71-0.21,5.44-0.22,8.17c-0.01,45.33,0,90.67-0.02,136c0,3.45,0.36,6.95-1.05,10.27c-1.75,4.12-4.8,6.12-9.33,5.92c-4.4-0.2-7.63-1.9-8.91-6.4C484.61,765.44,483.9,761.31,484.05,756.35z"/>
+                        </clipPath>
+                    </defs>
+                    <!-- Fundo sólido na cor areia limitando o logo -->
+                    <rect width="100%" height="100%" fill="#C9B18A" clip-path="url(#kq-logo-mask)" />
+                    <!-- Imagem da Karoline com a máscara aplicada -->
+                    <image href="image_5.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" clip-path="url(#kq-logo-mask)" />
+                </svg>
+            </div>
+
+            <!-- Texto de Apresentação -->
+            <div class="flex flex-col justify-center text-ametista">
+                <h2 class="font-sans text-5xl md:text-6xl font-black uppercase leading-[0.9] tracking-tighter mb-8">
+                    Oi, eu sou a Karoline.
+                </h2>
+                
+                <div class="space-y-6 font-mono text-sm md:text-base text-noite font-medium leading-relaxed max-w-xl">
+                    <p>
+                        Sou designer gráfica e trabalho criando identidades visuais, artes e materiais gráficos para negócios.
+                    </p>
+                    <p>
+                        Gosto de transformar ideias em uma comunicação visual que faça sentido para cada empresa — seja para começar uma marca do zero, divulgar um serviço ou simplesmente deixar a apresentação do negócio mais organizada.
+                    </p>
+                    <p class="font-bold border-l-[3px] border-areia pl-4 text-ametista">
+                        Meu trabalho é entender o que você precisa e transformar isso em design pronto para usar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CTA FINAL -->
+    <section class="py-24 px-4 md:px-8 border-t-[3px] border-ametista bg-luz text-ametista text-center flex flex-col items-center justify-center">
+        <h2 class="font-sans text-4xl md:text-5xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter mb-6">
+            Tem algo que<br>precisa ser criado?
+        </h2>
+        <p class="font-mono text-sm md:text-base text-noite font-medium mb-10 max-w-lg">
+            Me conte o que você precisa e vamos conversar.
+        </p>
         
-        showSlide(0);
-    </script>
+        <a href="https://wa.me/5512982544891" target="_blank" class="bg-ametista text-luz border-[3px] border-ametista font-sans text-base md:text-xl uppercase font-black px-10 py-5 rounded-full shadow-solid-areia hover:-translate-y-1 transition-transform tracking-wide mb-6">
+            Falar comigo pelo WhatsApp
+        </a>
+        
+        <p class="font-mono text-[10px] uppercase font-bold text-lavanda max-w-xs">
+            Você não precisa saber exatamente qual serviço contratar. Pode simplesmente me explicar o que precisa.
+        </p>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <footer class="bg-ametista text-luz pt-16 pb-8 px-4 md:px-8 border-t-[3px] border-areia">
+        <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
+            
+            <div>
+                <h3 class="font-sans font-black text-3xl uppercase tracking-tighter mb-2">Karoline Queiroz</h3>
+                <p class="font-mono text-xs uppercase text-areia font-bold">Design Gráfico</p>
+                <p class="font-mono text-[10px] text-lavanda mt-2">São José dos Campos — SP</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4 md:gap-8 font-mono text-xs uppercase font-bold">
+                <a href="#trabalhos" class="hover:text-areia transition-colors">Trabalhos</a>
+                <a href="#servicos" class="hover:text-areia transition-colors">Serviços</a>
+                <a href="#sobre" class="hover:text-areia transition-colors">Sobre</a>
+                <a href="#processo" class="hover:text-areia transition-colors">Processo</a>
+                <a href="https://wa.me/5512982544891" target="_blank" class="text-areia hover:text-luz transition-colors">WhatsApp</a>
+            </div>
+        </div>
+        
+        <div class="max-w-[1200px] mx-auto border-t-[3px] border-luz/10 pt-6 text-center font-mono text-[9px] uppercase text-lavanda/60 font-bold">
+            © 2026. Karoline Queiroz. Design Gráfico.
+        </div>
+    </footer>
+
 </body>
 </html>
