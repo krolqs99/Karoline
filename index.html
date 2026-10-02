@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karoline Queiroz | Design para Negócios</title>
+    <title>Karoline Queiroz | Design gráfico para negócios</title>
+    <meta name="description" content="Identidade visual, artes para redes sociais e materiais gráficos para negócios que querem se comunicar melhor.">
+    <meta name="theme-color" content="#1B1020">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,6 +44,13 @@
         }
         
         ::selection { background-color: #C9B18A; color: #1B1020; }
+        html { scroll-padding-top: 7rem; }
+        img { display: block; }
+        a, button { -webkit-tap-highlight-color: transparent; }
+        :focus-visible { outline: 3px solid #C9B18A; outline-offset: 4px; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+        }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
@@ -66,13 +75,16 @@
     </style>
 </head>
 <body class="antialiased font-sans relative w-full">
+    <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-ametista focus:px-4 focus:py-3 focus:text-luz">Pular para o conteúdo</a>
 
     <!-- NAVEGAÇÃO -->
-    <nav class="fixed top-6 w-full z-50 px-4 md:px-8 pointer-events-none flex justify-center">
+    <nav aria-label="Navegação principal" class="fixed top-6 w-full z-50 px-4 md:px-8 pointer-events-none flex justify-center">
         <div class="bg-luz/80 backdrop-blur-md rounded-full px-6 py-3 flex items-center justify-between w-full max-w-[1000px] pointer-events-auto border border-ametista/10 shadow-sm transition-transform">
             
-            <a href="#" class="font-sans font-black text-xl tracking-tighter text-ametista hover:text-areia transition-colors">
-                KQ.
+            <a href="#" class="flex items-center hover:opacity-70 transition-opacity">
+                <!-- Usando o logo.png com fallback para texto -->
+                <img src="logo.png" alt="Karoline Queiroz — início" width="96" height="32" class="h-6 w-auto object-contain filter invert brightness-0 saturate-100" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+                <span hidden class="font-sans font-black text-xl tracking-tighter text-ametista">KQ.</span>
             </a>
 
             <div class="hidden md:flex items-center gap-8 font-mono text-[10px] uppercase font-bold text-ametista/70">
@@ -82,12 +94,13 @@
                 <a href="#processo" class="hover:text-ametista transition-colors">Processo</a>
             </div>
             
-            <a href="https://wa.me/5512982544891" target="_blank" class="bg-ametista text-luz font-mono text-[10px] md:text-xs uppercase font-bold px-5 py-2.5 rounded-full hover:bg-areia hover:text-ametista transition-colors shrink-0">
+            <a href="https://wa.me/5512982544891" target="_blank" rel="noopener noreferrer" class="bg-ametista text-luz font-mono text-[10px] md:text-xs uppercase font-bold px-5 py-2.5 rounded-full hover:bg-areia hover:text-ametista transition-colors shrink-0">
                 Falar comigo
             </a>
         </div>
     </nav>
 
+    <main id="conteudo">
     <!-- 1. HERO -->
     <section class="pt-40 pb-20 px-4 md:px-8 max-w-[1200px] mx-auto relative min-h-[85vh] flex flex-col justify-center">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
@@ -113,7 +126,7 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                    <a href="https://wa.me/5512982544891" target="_blank" class="bg-ametista text-luz font-sans text-sm md:text-base uppercase font-bold px-8 py-4 rounded-full hover:bg-areia hover:text-ametista transition-colors tracking-wide flex items-center gap-2">
+                    <a href="https://wa.me/5512982544891" target="_blank" rel="noopener noreferrer" class="bg-ametista text-luz font-sans text-sm md:text-base uppercase font-bold px-8 py-4 rounded-full hover:bg-areia hover:text-ametista transition-colors tracking-wide flex items-center gap-2">
                         Falar comigo no WhatsApp <span>→</span>
                     </a>
                 </div>
@@ -151,48 +164,48 @@
             <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 auto-rows-[300px] md:auto-rows-[400px]">
                 
                 <!-- Projeto 1 (Grande) -->
-                <a href="#" class="md:col-span-8 group relative overflow-hidden rounded-2xl bg-ametista">
-                    <img src="image_21.png" alt="A&T Marcenaria" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <article class="md:col-span-8 group relative overflow-hidden rounded-2xl bg-ametista">
+                    <img src="image_21.png" alt="A&T Marcenaria" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
                     <div class="w-full h-full absolute inset-0 bg-noite flex items-center justify-center font-mono uppercase text-xs text-luz hidden">Indisponível</div>
                     
                     <div class="absolute bottom-6 left-6 flex flex-col gap-2">
                         <span class="bg-luz text-ametista font-mono text-[9px] uppercase font-bold px-2 py-1 rounded-sm w-fit">Identidade Visual</span>
                         <h3 class="font-sans text-2xl md:text-3xl font-black uppercase text-luz tracking-tighter drop-shadow-md">A&T Marcenaria</h3>
                     </div>
-                </a>
+                </article>
 
                 <!-- Projeto 2 (Pequeno) -->
-                <a href="#" class="md:col-span-4 group relative overflow-hidden rounded-2xl bg-lavanda">
-                    <img src="image_26.png" alt="Biskie" class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <article class="md:col-span-4 group relative overflow-hidden rounded-2xl bg-lavanda">
+                    <img src="image_26.png" alt="Biskie" class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
                     <div class="w-full h-full absolute inset-0 bg-noite flex items-center justify-center font-mono uppercase text-xs text-luz hidden">Indisponível</div>
                     
                     <div class="absolute bottom-6 left-6 flex flex-col gap-2">
                         <span class="bg-areia text-ametista font-mono text-[9px] uppercase font-bold px-2 py-1 rounded-sm w-fit">Artes (Redes Sociais)</span>
                         <h3 class="font-sans text-xl font-black uppercase text-luz tracking-tighter drop-shadow-md">Biskie</h3>
                     </div>
-                </a>
+                </article>
 
                 <!-- Projeto 3 (Médio) -->
-                <a href="#" class="md:col-span-5 group relative overflow-hidden rounded-2xl bg-noite">
-                    <img src="image_28.png" alt="Garimpan.do" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <article class="md:col-span-5 group relative overflow-hidden rounded-2xl bg-noite">
+                    <img src="image_28.png" alt="Garimpan.do" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
                     <div class="w-full h-full absolute inset-0 bg-noite flex items-center justify-center font-mono uppercase text-xs text-luz hidden">Indisponível</div>
                     
                     <div class="absolute bottom-6 left-6 flex flex-col gap-2">
                         <span class="bg-luz text-ametista font-mono text-[9px] uppercase font-bold px-2 py-1 rounded-sm w-fit">Identidade Visual</span>
                         <h3 class="font-sans text-xl font-black uppercase text-luz tracking-tighter drop-shadow-md">Garimpan.do</h3>
                     </div>
-                </a>
+                </article>
 
                 <!-- Projeto 4 (Médio-Largo) -->
-                <a href="#" class="md:col-span-7 group relative overflow-hidden rounded-2xl bg-areia">
-                    <img src="image_29.png" alt="VONA ID" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500 mix-blend-luminosity hover:mix-blend-normal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <article class="md:col-span-7 group relative overflow-hidden rounded-2xl bg-areia">
+                    <img src="image_29.png" alt="VONA ID" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500 mix-blend-luminosity hover:mix-blend-normal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
                     <div class="w-full h-full absolute inset-0 bg-noite flex items-center justify-center font-mono uppercase text-xs text-luz hidden">Indisponível</div>
                     
                     <div class="absolute bottom-6 left-6 flex flex-col gap-2">
                         <span class="bg-ametista text-luz font-mono text-[9px] uppercase font-bold px-2 py-1 rounded-sm w-fit">Identidade & Materiais</span>
                         <h3 class="font-sans text-2xl md:text-3xl font-black uppercase text-ametista tracking-tighter">VONA ID</h3>
                     </div>
-                </a>
+                </article>
             </div>
         </div>
     </section>
@@ -335,7 +348,7 @@
         </div>
     </section>
 
-    <!-- 6. SOBRE (Ref 21 - Editorial Poster Style com mix-blend) -->
+    <!-- 6. SOBRE -->
     <section id="sobre" class="py-24 px-4 md:px-8 bg-areia text-ametista overflow-hidden">
         <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             
@@ -369,7 +382,7 @@
                     
                     <!-- Lado Esquerdo do Poster: A Foto -->
                     <div class="w-[60%] h-full relative bg-noite">
-                        <img src="image_5.png" alt="Karoline Queiroz" class="w-full h-full object-cover object-center grayscale-[20%] contrast-110" onerror="this.style.display='none';">
+                        <img src="image_5.png" alt="Karoline Queiroz" class="w-full h-full object-cover object-center grayscale-[20%] contrast-110" onerror="this.style.display='none';" loading="lazy" decoding="async">
                         <!-- Sombra interna para integrar a foto -->
                         <div class="absolute inset-0 bg-gradient-to-r from-transparent to-noite/30"></div>
                     </div>
@@ -390,7 +403,7 @@
                         
                         <!-- Topo do Pôster -->
                         <div class="flex justify-between items-start">
-                            <!-- Círculo abstrato (Estilo ref 21) -->
+                            <!-- Círculo abstrato -->
                             <div class="w-6 h-6 rounded-full bg-luz mix-blend-difference"></div>
                             
                             <!-- Bloco de texto superior direito -->
@@ -435,19 +448,19 @@
     </section>
 
     <!-- 7. CTA FINAL -->
-    <section class="py-32 px-4 md:px-8 bg-luz text-ametista text-center flex flex-col items-center justify-center relative overflow-hidden">
+    <section id="contato" aria-labelledby="titulo-contato" class="py-32 px-4 md:px-8 bg-luz text-ametista text-center flex flex-col items-center justify-center relative overflow-hidden">
         <div class="absolute top-10 left-10 w-24 h-24 rounded-full border border-ametista/10"></div>
         <div class="absolute bottom-10 right-10 w-32 h-32 rounded-full border border-ametista/10"></div>
         
         <p class="font-mono text-[10px] uppercase font-bold text-areia mb-4 tracking-widest relative z-10">— Vamos Trabalhar Juntos</p>
         <h2 class="font-sans text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter mb-6 relative z-10">
-            Tem algo que<br>precisa ser criado?
+            <span id="titulo-contato">Tem algo que<br>precisa ser criado?</span>
         </h2>
         <p class="font-mono text-sm text-noite font-medium mb-12 max-w-md relative z-10">
             Me conte o que você precisa e vamos conversar.
         </p>
         
-        <a href="https://wa.me/5512982544891" target="_blank" class="bg-ametista text-luz font-sans text-base md:text-lg uppercase font-black px-12 py-5 rounded-full hover:bg-areia hover:text-ametista transition-all tracking-wide mb-6 relative z-10 flex items-center gap-3">
+        <a href="https://wa.me/5512982544891" target="_blank" rel="noopener noreferrer" class="bg-ametista text-luz font-sans text-base md:text-lg uppercase font-black px-12 py-5 rounded-full hover:bg-areia hover:text-ametista transition-all tracking-wide mb-6 relative z-10 flex items-center gap-3">
             Falar comigo pelo WhatsApp <span>→</span>
         </a>
         
@@ -455,6 +468,7 @@
             Você não precisa saber exatamente qual serviço contratar. Pode simplesmente me explicar o que precisa.
         </p>
     </section>
+    </main>
 
     <!-- 8. FOOTER -->
     <footer class="bg-noite text-luz pt-16 pb-8 px-4 md:px-8">
@@ -471,16 +485,15 @@
                 <a href="#servicos" class="hover:text-areia transition-colors">Serviços</a>
                 <a href="#sobre" class="hover:text-areia transition-colors">Sobre</a>
                 <a href="#processo" class="hover:text-areia transition-colors">Processo</a>
-                <a href="https://wa.me/5512982544891" target="_blank" class="text-areia hover:text-luz transition-colors">WhatsApp ↗</a>
+                <a href="https://wa.me/5512982544891" target="_blank" rel="noopener noreferrer" class="text-areia hover:text-luz transition-colors">WhatsApp ↗</a>
             </div>
         </div>
         
         <div class="max-w-[1200px] mx-auto border-t border-luz/10 pt-6 flex justify-between items-center font-mono text-[9px] uppercase text-luz/40 font-bold">
-            <span>© 2026. Karoline Queiroz.</span>
+            <small>© 2026 Karoline Queiroz. Todos os direitos reservados.</small>
             <span>Design Gráfico</span>
         </div>
     </footer>
 
 </body>
 </html>
-```eof
