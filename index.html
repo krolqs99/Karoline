@@ -1,579 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karoline Queiroz | Design gráfico para negócios</title>
-    <meta name="description" content="Identidade visual, artes para redes sociais e materiais gráficos para negócios que querem se comunicar melhor.">
-    <meta name="theme-color" content="#1B1020">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ametista: '#1B1020',
-                        noite: '#2D1F36',
-                        lavanda: '#8A7A94',
-                        areia: '#C9B18A',
-                        luz: '#F2EBE3',
-                    },
-                    fontFamily: {
-                        sans: ['Archivo', 'sans-serif'],
-                        mono: ['"IBM Plex Mono"', 'monospace'], 
-                    },
-                    boxShadow: {
-                        'editorial': '4px 4px 0px 0px rgba(27, 16, 32, 0.1)',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { 
-            background-color: #F2EBE3; 
-            color: #1B1020; 
-            overflow-x: hidden;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-        }
-        
-        ::selection { background-color: #C9B18A; color: #1B1020; }
-        html { scroll-padding-top: 7rem; }
-        img { display: block; }
-        a, button { -webkit-tap-highlight-color: transparent; }
-        :focus-visible { outline: 3px solid #C9B18A; outline-offset: 4px; }
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
-        }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* Utilidade para texto vertical perfeito */
-        .vertical-text {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            /* Rotate para ler de cima para baixo */
-            transform: rotate(180deg); 
-        }
-
-        /* Badge giratório discreto */
-        .badge-spin {
-            animation: spin-slow 15s linear infinite;
-        }
-        @keyframes spin-slow { 100% { transform: rotate(360deg); } }
-        
-        /* Efeito de mesclagem para o poster */
-        .blend-diff {
-            mix-blend-mode: difference;
-        }
-
-        /* Cartões de serviço com linguagem visual de janela macOS */
-        .service-card {
-            position: relative;
-            isolation: isolate;
-            overflow: hidden;
-            min-height: 390px;
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-            transition: transform 300ms ease, box-shadow 300ms ease;
-        }
-        .service-card::before {
-            content: "";
-            position: absolute;
-            width: 190px;
-            height: 190px;
-            right: -70px;
-            top: -80px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.22);
-            filter: blur(4px);
-            z-index: -1;
-        }
-        .service-card:hover {
-            transform: translateY(-8px) rotate(-0.5deg);
-            box-shadow: 0 26px 55px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.45);
-        }
-        .window-dots { display: flex; gap: 6px; align-items: center; }
-        .window-dots span { width: 9px; height: 9px; border-radius: 999px; display: block; }
-        /* A foto permanece original; apenas a palavra DESIGN recebe a transparência roxa. */
-        .design-purple-text {
-            color: rgba(138, 122, 148, 0.72);
-            opacity: 0.88;
-            mix-blend-mode: normal;
-        }
-
-        @media (max-width: 1023px) {
-            .service-card { min-height: 350px; }
-        }
-        @media (max-width: 767px) {
-            html { scroll-padding-top: 5rem; }
-            .service-card { min-height: auto; }
-            .service-card:hover { transform: translateY(-4px); }
-            .vertical-text { font-size: clamp(4.5rem, 23vw, 7rem); }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Karoline Queiroz | Design visual para pequenos negócios</title>
+  <meta name="description" content="Identidade visual, peças para redes sociais e materiais gráficos para pequenos negócios que querem parecer tão bons quanto são.">
+  <meta name="theme-color" content="#1B1020">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Karoline Queiroz | Design visual para negócios">
+  <meta property="og:description" content="Identidade visual e materiais gráficos para negócios que querem se apresentar melhor.">
+  <meta property="og:url" content="https://kqdesign.vercel.app/">
+  <meta property="og:image" content="https://kqdesign.vercel.app/image_21.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kqdesign.vercel.app/">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { ametista:'#1B1020', noite:'#2D1F36', lavanda:'#8A7A94', areia:'#C9B18A', luz:'#F2EBE3' },
+        fontFamily: { sans:['Archivo','sans-serif'], mono:['"IBM Plex Mono"','monospace'] }
+      }}
+    }
+  </script>
+  <style>
+    :root { --ink:#1B1020; --night:#2D1F36; --muted:#8A7A94; --sand:#C9B18A; --paper:#F2EBE3; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); overflow-x:hidden; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E"); }
+    img { display:block; max-width:100%; }
+    a,button { -webkit-tap-highlight-color:transparent; }
+    :focus-visible { outline:3px solid var(--sand); outline-offset:4px; }
+    html { scroll-padding-top:6rem; }
+    .eyebrow { letter-spacing:.12em; }
+    .project-card { position:relative; min-height:300px; overflow:hidden; border-radius:1.25rem; isolation:isolate; }
+    .project-card img { transition:transform .5s ease, opacity .5s ease; }
+    .project-card:hover img, .project-card:focus-visible img { transform:scale(1.035); opacity:1; }
+    .project-card::after { content:""; position:absolute; inset:42% 0 0; z-index:1; background:linear-gradient(transparent,rgba(27,16,32,.82)); pointer-events:none; }
+    .project-label { position:absolute; z-index:2; left:1.25rem; bottom:1.15rem; }
+    .service-card { border-top:3px solid var(--sand); transition:transform .25s ease, box-shadow .25s ease; }
+    .service-card:hover { transform:translateY(-4px); box-shadow:0 16px 30px rgba(27,16,32,.14); }
+    .portrait-frame { position:relative; overflow:hidden; }
+    .portrait-frame::before { content:""; position:absolute; top:1rem; right:1rem; width:3rem; height:3rem; border:2px solid var(--sand); border-radius:50%; z-index:2; }
+    .portrait-word { writing-mode:vertical-rl; transform:rotate(180deg); }
+    @media (max-width:767px) {
+      html { scroll-padding-top:5rem; }
+      .project-card { min-height:270px; }
+      .hero-title { font-size:clamp(3.1rem, 15vw, 5rem); }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      *,*:before,*:after { scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important; }
+    }
+  </style>
 </head>
-<body class="antialiased font-sans relative w-full">
-    <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-ametista focus:px-4 focus:py-3 focus:text-luz">Pular para o conteúdo</a>
+<body class="font-sans antialiased">
+  <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-ametista focus:px-4 focus:py-3 focus:text-luz">Pular para o conteúdo</a>
 
-    <!-- NAVEGAÇÃO -->
-    <nav aria-label="Navegação principal" class="fixed top-3 md:top-6 w-full z-50 px-3 md:px-8 pointer-events-none flex justify-center">
-        <div class="relative bg-ametista/95 backdrop-blur-md rounded-full px-4 md:px-6 py-3 flex items-center justify-between w-full max-w-[1000px] pointer-events-auto border border-luz/20 shadow-sm transition-transform">
-            
-            <a href="#conteudo" class="flex items-center hover:opacity-70 transition-opacity">
-                <!-- Usando o logo.png com fallback para texto -->
-                <img src="logo.png" alt="Karoline Queiroz — início" width="96" height="32" class="h-6 w-auto object-contain" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
-                <span hidden class="font-sans font-black text-xl tracking-tighter text-luz">KQ.</span>
-            </a>
-
-            <div class="hidden md:flex items-center gap-8 font-mono text-[10px] uppercase font-bold text-luz/80">
-                <a href="#trabalhos" class="hover:text-luz transition-colors">Trabalhos</a>
-                <a href="#servicos" class="hover:text-luz transition-colors">Serviços</a>
-                <a href="#sobre" class="hover:text-luz transition-colors">Sobre</a>
-                <a href="#processo" class="hover:text-luz transition-colors">Processo</a>
-            </div>
-            
-            <button type="button" id="menu-toggle" class="md:hidden text-luz p-2 rounded-full" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-                <span class="block w-5 h-px bg-current mb-1.5"></span>
-                <span class="block w-5 h-px bg-current mb-1.5"></span>
-                <span class="block w-5 h-px bg-current"></span>
-            </button>
-
-            <a href="https://wa.me/5512982544891" target="_blank" rel="noopener noreferrer" class="bg-luz text-ametista font-mono text-[10px] md:text-xs uppercase font-bold px-5 py-2.5 rounded-full hover:bg-areia transition-colors shrink-0">
-                Falar comigo
-            </a>
-            <div id="mobile-menu" class="hidden absolute left-0 right-0 top-full mt-3 rounded-3xl bg-ametista/95 backdrop-blur-md border border-luz/20 p-5 shadow-xl md:hidden">
-                <div class="flex flex-col gap-4 font-mono text-xs uppercase font-bold text-luz/85">
-                    <a href="#trabalhos" class="hover:text-luz transition-colors">Trabalhos</a>
-                    <a href="#servicos" class="hover:text-luz transition-colors">Serviços</a>
-                    <a href="#sobre" class="hover:text-luz transition-colors">Sobre</a>
-                    <a href="#processo" class="hover:text-luz transition-colors">Processo</a>
-                </div>
-            </div>
+  <nav aria-label="Navegação principal" class="fixed top-3 md:top-5 z-50 w-full px-3 md:px-8">
+    <div class="mx-auto flex max-w-[1080px] items-center justify-between gap-3 rounded-full border border-luz/20 bg-ametista/95 px-4 py-2.5 shadow-lg backdrop-blur-md md:px-5">
+      <a href="#conteudo" class="shrink-0" aria-label="Voltar ao início">
+        <img src="logo.png" alt="Karoline Queiroz" width="96" height="32" class="h-6 w-auto">
+      </a>
+      <div class="hidden items-center gap-7 font-mono text-[11px] font-bold uppercase text-luz/80 md:flex">
+        <a href="#trabalhos" class="transition-colors hover:text-luz">Trabalhos</a>
+        <a href="#servicos" class="transition-colors hover:text-luz">Serviços</a>
+        <a href="#sobre" class="transition-colors hover:text-luz">Sobre</a>
+        <a href="#processo" class="transition-colors hover:text-luz">Processo</a>
+      </div>
+      <a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="shrink-0 rounded-full bg-luz px-4 py-2.5 font-mono text-[10px] font-bold uppercase text-ametista transition-colors hover:bg-areia md:px-5">Falar comigo</a>
+      <button id="menu-toggle" type="button" class="rounded-full p-2 text-luz md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="mb-1.5 block h-px w-5 bg-current"></span><span class="mb-1.5 block h-px w-5 bg-current"></span><span class="block h-px w-5 bg-current"></span>
+      </button>
+      <div id="mobile-menu" class="absolute left-0 right-0 top-full mt-3 hidden rounded-3xl border border-luz/20 bg-ametista p-5 shadow-xl md:hidden">
+        <div class="flex flex-col gap-4 font-mono text-xs font-bold uppercase text-luz">
+          <a href="#trabalhos">Trabalhos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#processo">Processo</a>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
-    <main id="conteudo">
-    <!-- 1. HERO -->
-    <section class="pt-24 md:pt-32 pb-10 md:pb-14 px-4 md:px-8 max-w-[1200px] mx-auto relative min-h-0 flex flex-col justify-center">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            
-            <div class="lg:col-span-8 relative">
-                <!-- Eyebrow "Sticker" -->
-                <div class="inline-flex items-center gap-2 bg-areia text-ametista px-3 py-1 rounded-sm font-mono text-[9px] md:text-[10px] uppercase font-bold mb-5 md:mb-8 transform -rotate-2">
-                    <span class="w-1.5 h-1.5 bg-ametista rounded-full"></span> Design para Negócios
-                </div>
-
-                <h1 class="font-sans text-4xl sm:text-5xl md:text-7xl lg:text-[6.5rem] font-black text-ametista uppercase leading-[0.88] tracking-tighter mb-6 md:mb-8 relative z-10">
-                    Seu negócio<br>
-                    merece <span class="text-transparent" style="-webkit-text-stroke: 2px #1B1020;">uma</span><br>
-                    <span class="relative">
-                        boa apresentação.
-                        <!-- Detalhe decorativo embaixo do texto -->
-                        <svg class="absolute -bottom-4 left-0 w-full h-4 text-areia" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0,5 Q50,15 100,5" stroke="currentColor" stroke-width="4" fill="none"/></svg>
-                    </span>
-                </h1>
-                
-                <p class="font-mono text-xs sm:text-sm md:text-base text-noite/80 font-medium leading-relaxed max-w-lg mb-7 md:mb-10">
-                    Identidade visual, artes e materiais gráficos para empresas que querem se comunicar melhor e apresentar seu trabalho com mais clareza.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                    <a href="https://wa.me/5512982544891" target="_blank" rel="noopener noreferrer" class="bg-ametista text-luz font-sans text-xs sm:text-sm md:text-base uppercase font-bold px-6 md:px-8 py-3.5 md:py-4 rounded-full hover:bg-areia hover:text-ametista transition-colors tracking-wide flex items-center gap-2">
-                        Falar comigo no WhatsApp <span>→</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Coluna Direita - Elemento visual abstrato/Decorativo -->
-            <div class="hidden lg:flex lg:col-span-4 justify-end relative h-full">
-                <div class="self-end pb-12">
-                    <p class="font-mono text-[9px] uppercase text-ametista/40 font-bold leading-relaxed max-w-[150px] text-right">
-                        Design gráfico para marcas que precisam sair da ideia e ganhar forma.
-                    </p>
-                </div>
-            </div>
+  <main id="conteudo">
+    <section class="mx-auto max-w-[1240px] px-5 pb-16 pt-32 md:px-8 md:pb-24 md:pt-40">
+      <div class="grid items-end gap-12 lg:grid-cols-12">
+        <div class="lg:col-span-8">
+          <p class="eyebrow mb-6 inline-flex items-center gap-2 rounded-sm bg-areia px-3 py-1.5 font-mono text-[10px] font-bold uppercase text-ametista"><span class="h-1.5 w-1.5 rounded-full bg-ametista"></span>Design visual para negócios</p>
+          <h1 class="hero-title mb-7 max-w-5xl text-6xl font-black uppercase leading-[.88] tracking-[-.07em] text-ametista md:text-8xl lg:text-[6.6rem]">Seu negócio<br>merece <span class="font-normal text-transparent" style="-webkit-text-stroke:2px #1B1020">uma</span><br><span class="relative">boa apresentação.<svg class="absolute -bottom-3 left-0 h-3 w-full text-areia" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5Q50 15 100 5" fill="none" stroke="currentColor" stroke-width="4"/></svg></span></h1>
+          <p class="mb-8 max-w-xl font-mono text-sm leading-relaxed text-noite/80 md:text-base">Eu crio identidades visuais, peças para redes sociais e materiais gráficos para pequenos negócios que querem parecer tão bons quanto são.</p>
+          <a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 rounded-full bg-ametista px-6 py-4 text-sm font-bold uppercase tracking-wide text-luz transition-colors hover:bg-areia hover:text-ametista">Conversar sobre meu projeto <span aria-hidden="true">→</span></a>
         </div>
+        <div class="hidden border-l border-ametista/20 pb-2 pl-7 lg:col-span-4 lg:block">
+          <p class="mb-4 font-mono text-xs font-bold uppercase leading-relaxed text-ametista/55">Para quem tem um bom produto, mas sente que a marca ainda não mostra isso.</p>
+          <p class="font-mono text-[11px] uppercase leading-relaxed text-lavanda">Identidade, clareza e materiais prontos para usar.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- 2. PORTFÓLIO -->
-    <section id="trabalhos" class="py-24 px-4 md:px-8 border-t border-ametista/10">
-        <div class="max-w-[1200px] mx-auto">
-            
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-                <h2 class="font-sans text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-none tracking-tighter text-ametista">
-                    Alguns<br>Trabalhos
-                </h2>
-                <p class="font-mono text-[10px] md:text-xs uppercase text-lavanda font-bold max-w-xs md:text-right mt-4 md:mt-0">
-                    Projetos de identidade visual, peças gráficas e materiais desenvolvidos para diferentes negócios.
-                </p>
-            </div>
-
-            <!-- Grid Assimétrico -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 auto-rows-[300px] md:auto-rows-[400px]">
-                
-                <!-- Projeto 1 (Grande) -->
-                <article class="md:col-span-8 group relative overflow-hidden rounded-2xl bg-ametista">
-                    <img src="image_21.png" alt="A&T Marcenaria" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
-                    <div class="w-full h-full absolute inset-0 bg-noite flex items-center justify-center font-mono uppercase text-xs text-luz hidden">Indisponível</div>
-                    
-                    <div class="absolute bottom-6 left-6 flex flex-col gap-2">
-                        <span class="bg-luz text-ametista font-mono text-[9px] uppercase font-bold px-2 py-1 rounded-sm w-fit">Identidade Visual</span>
-                        <h3 class="font-sans text-2xl md:text-3xl font-black uppercase text-luz tracking-tighter drop-shadow-md">A&T Marcenaria</h3>
-                    </div>
-                </article>
-
-                <!-- Projeto 2 (Pequeno) -->
-                <article class="md:col-span-4 group relative overflow-hidden rounded-2xl bg-lavanda">
-                    <img src="image_26.png" alt="Biskie" class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
-                    <div class="w-full h-full absolute inset-0 bg-noite flex items-center justify-center font-mono uppercase text-xs text-luz hidden">Indisponível</div>
-                    
-                    <div class="absolute bottom-6 left-6 flex flex-col gap-2">
-                        <span class="bg-areia text-ametista font-mono text-[9px] uppercase font-bold px-2 py-1 rounded-sm w-fit">Artes (Redes Sociais)</span>
-                        <h3 class="font-sans text-xl font-black uppercase text-luz tracking-tighter drop-shadow-md">Biskie</h3>
-                    </div>
-                </article>
-
-                <!-- Projeto 3 (Médio) -->
-                <article class="md:col-span-5 group relative overflow-hidden rounded-2xl bg-noite">
-                    <img src="image_28.png" alt="Garimpan.do" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
-                    <div class="w-full h-full absolute inset-0 bg-noite flex items-center justify-center font-mono uppercase text-xs text-luz hidden">Indisponível</div>
-                    
-                    <div class="absolute bottom-6 left-6 flex flex-col gap-2">
-                        <span class="bg-luz text-ametista font-mono text-[9px] uppercase font-bold px-2 py-1 rounded-sm w-fit">Identidade Visual</span>
-                        <h3 class="font-sans text-xl font-black uppercase text-luz tracking-tighter drop-shadow-md">Garimpan.do</h3>
-                    </div>
-                </article>
-
-                <!-- Projeto 4 (Médio-Largo) -->
-                <article class="md:col-span-7 group relative overflow-hidden rounded-2xl bg-areia">
-                    <img src="image_29.png" alt="VONA ID" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500 mix-blend-luminosity hover:mix-blend-normal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" decoding="async">
-                    <div class="w-full h-full absolute inset-0 bg-noite flex items-center justify-center font-mono uppercase text-xs text-luz hidden">Indisponível</div>
-                    
-                    <div class="absolute bottom-6 left-6 flex flex-col gap-2">
-                        <span class="bg-ametista text-luz font-mono text-[9px] uppercase font-bold px-2 py-1 rounded-sm w-fit">Identidade & Materiais</span>
-                        <h3 class="font-sans text-2xl md:text-3xl font-black uppercase text-ametista tracking-tighter">VONA ID</h3>
-                    </div>
-                </article>
-            </div>
+    <section id="trabalhos" class="border-t border-ametista/10 px-5 py-20 md:px-8 md:py-28">
+      <div class="mx-auto max-w-[1200px]">
+        <div class="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end md:gap-10">
+          <div><p class="eyebrow mb-3 font-mono text-[10px] font-bold uppercase text-areia">Portfólio selecionado</p><h2 class="text-5xl font-black uppercase leading-[.9] tracking-[-.06em] md:text-7xl">Alguns<br>trabalhos</h2></div>
+          <p class="max-w-sm font-mono text-sm leading-relaxed text-lavanda md:text-right">Projetos pensados para transformar uma ideia de marca em uma presença visual consistente.</p>
         </div>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-12">
+          <a href="#contato" class="project-card group bg-ametista md:col-span-8" aria-label="Conversar sobre o projeto A&T Marcenaria"><img src="image_21.png" alt="Aplicações da identidade visual da A&T Marcenaria" class="h-full w-full object-cover opacity-90" loading="lazy" width="1200" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-luz px-2 py-1 font-mono text-[10px] font-bold uppercase text-ametista">Identidade visual</span><h3 class="text-2xl font-black uppercase tracking-tight text-luz md:text-3xl">A&T Marcenaria</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-luz/75">Ver resumo do projeto →</span></div></a>
+          <a href="#contato" class="project-card group bg-lavanda md:col-span-4" aria-label="Conversar sobre o projeto Biskie"><img src="image_26.png" alt="Embalagens e identidade visual da Biskie" class="h-full w-full object-cover opacity-90 mix-blend-multiply" loading="lazy" width="800" height="1000"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-areia px-2 py-1 font-mono text-[10px] font-bold uppercase text-ametista">Conteúdo para redes</span><h3 class="text-2xl font-black uppercase tracking-tight text-luz">Biskie</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-luz/75">Ver resumo do projeto →</span></div></a>
+          <a href="#contato" class="project-card group bg-noite md:col-span-5" aria-label="Conversar sobre o projeto Garimpan.do"><img src="image_28.png" alt="Aplicações da identidade visual da Garimpan.do" class="h-full w-full object-cover opacity-90" loading="lazy" width="1000" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-luz px-2 py-1 font-mono text-[10px] font-bold uppercase text-ametista">Identidade visual</span><h3 class="text-2xl font-black uppercase tracking-tight text-luz">Garimpan.do</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-luz/75">Ver resumo do projeto →</span></div></a>
+          <a href="#contato" class="project-card group bg-areia md:col-span-7" aria-label="Conversar sobre o projeto VONA ID"><img src="image_29.png" alt="Aplicações da identidade e materiais da VONA ID" class="h-full w-full object-cover opacity-90" loading="lazy" width="1200" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-ametista px-2 py-1 font-mono text-[10px] font-bold uppercase text-luz">Identidade e materiais</span><h3 class="text-2xl font-black uppercase tracking-tight text-ametista md:text-3xl">VONA ID</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-ametista/70">Ver resumo do projeto →</span></div></a>
+        </div>
+        <p class="mt-6 font-mono text-xs leading-relaxed text-ametista/60">Quer entender o que pode ser criado para sua marca? Me conte o momento do seu negócio.</p>
+      </div>
     </section>
 
-    <!-- 3. FRASE DE TRANSIÇÃO -->
-    <section class="py-32 px-4 md:px-8 max-w-[900px] mx-auto text-center border-t border-ametista/10">
-        <p class="font-mono text-[10px] uppercase font-bold text-areia mb-4 tracking-widest">— O Papel do Design</p>
-        <h2 class="font-sans text-3xl md:text-5xl lg:text-6xl font-black text-ametista uppercase leading-[1.1] tracking-tight">
-            Cada negócio tem uma história. <span class="text-lavanda">O design ajuda a dar forma a ela.</span>
-        </h2>
-        <p class="font-mono text-xs md:text-sm text-ametista/60 font-medium max-w-xl mx-auto mt-8">
-            Do primeiro contato com seu cliente até a divulgação de um produto ou serviço, a comunicação visual faz parte da experiência da sua marca.
-        </p>
+    <section class="mx-auto max-w-[980px] border-t border-ametista/10 px-5 py-24 text-center md:px-8 md:py-32">
+      <p class="eyebrow mb-5 font-mono text-[10px] font-bold uppercase text-areia">O papel do design</p>
+      <h2 class="text-4xl font-black uppercase leading-[.98] tracking-[-.045em] md:text-6xl">Cada negócio tem uma história.<br><span class="text-lavanda">O design ajuda a mostrar isso.</span></h2>
+      <p class="mx-auto mt-8 max-w-2xl font-mono text-sm leading-relaxed text-ametista/70">Da primeira impressão à divulgação de um produto, a comunicação visual participa da experiência que seu cliente tem com a sua marca.</p>
     </section>
 
-    <!-- 4. SERVIÇOS -->
-    <section id="servicos" class="py-24 px-4 md:px-8 bg-ametista text-luz">
-        <div class="max-w-[1200px] mx-auto">
-            
-            <div class="mb-16">
-                <h2 class="text-4xl md:text-5xl font-black uppercase leading-none tracking-tighter mb-4">
-                    O que posso criar<br>para o seu negócio
-                </h2>
-                <p class="font-mono text-sm text-lavanda max-w-lg">
-                    Soluções de design para diferentes momentos da sua empresa — desde uma identidade nova até aquela arte que você precisa colocar no WhatsApp hoje.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <div class="service-card bg-luz text-ametista p-7 md:p-8 rounded-[2rem] flex flex-col">
-                    <div class="flex items-center justify-between mb-7">
-                        <div class="window-dots" aria-hidden="true"><span class="bg-[#FF605C]"></span><span class="bg-[#FFBD44]"></span><span class="bg-[#00CA4E]"></span></div>
-                        <div class="font-mono text-xs font-bold text-areia">01</div>
-                    </div>
-                    <h3 class="font-sans text-2xl font-black uppercase tracking-tighter mb-4">Identidade Visual</h3>
-                    <p class="font-mono text-[11px] text-ametista/70 font-medium mb-8 flex-grow">
-                        Para negócios que estão começando ou precisam organizar melhor sua apresentação.
-                    </p>
-                    <ul class="font-mono text-[10px] uppercase font-bold space-y-3 pt-6 border-t border-ametista/10">
-                        <li>— Logo</li>
-                        <li>— Paleta de cores</li>
-                        <li>— Tipografia</li>
-                        <li>— Elementos visuais</li>
-                        <li>— Aplicações básicas</li>
-                    </ul>
-                </div>
-
-                <div class="service-card bg-areia text-ametista p-7 md:p-8 rounded-[2rem] flex flex-col">
-                    <div class="flex items-center justify-between mb-7">
-                        <div class="window-dots" aria-hidden="true"><span class="bg-[#FF605C]"></span><span class="bg-[#FFBD44]"></span><span class="bg-[#00CA4E]"></span></div>
-                        <div class="font-mono text-xs font-bold text-luz">02</div>
-                    </div>
-                    <h3 class="font-sans text-2xl font-black uppercase tracking-tighter mb-4">Artes para Redes Sociais</h3>
-                    <p class="font-mono text-[11px] text-ametista/70 font-medium mb-8 flex-grow">
-                        Peças prontas para divulgar seu negócio no Instagram e WhatsApp sem precisar criar tudo do zero.
-                    </p>
-                    <ul class="font-mono text-[10px] uppercase font-bold space-y-3 pt-6 border-t border-ametista/10">
-                        <li>— Produtos e Serviços</li>
-                        <li>— Promoções</li>
-                        <li>— Informativos</li>
-                        <li>— Datas especiais</li>
-                        <li>— Divulgação geral</li>
-                    </ul>
-                </div>
-
-                <div class="service-card bg-lavanda text-luz p-7 md:p-8 rounded-[2rem] flex flex-col">
-                    <div class="flex items-center justify-between mb-7">
-                        <div class="window-dots" aria-hidden="true"><span class="bg-[#FF605C]"></span><span class="bg-[#FFBD44]"></span><span class="bg-[#00CA4E]"></span></div>
-                        <div class="font-mono text-xs font-bold text-noite">03</div>
-                    </div>
-                    <h3 class="font-sans text-2xl font-black uppercase tracking-tighter mb-4">Materiais Gráficos</h3>
-                    <p class="font-mono text-[11px] text-luz/80 font-medium mb-8 flex-grow">
-                        Design para materiais físicos e digitais que sua empresa utiliza no dia a dia.
-                    </p>
-                    <ul class="font-mono text-[10px] uppercase font-bold space-y-3 pt-6 border-t border-luz/20">
-                        <li>— Cartões de visita</li>
-                        <li>— Flyers e Folders</li>
-                        <li>— Cardápios</li>
-                        <li>— Apresentações (PDF)</li>
-                        <li>— Timbrados e recibos</li>
-                    </ul>
-                </div>
-            </div>
+    <section id="servicos" class="bg-ametista px-5 py-20 text-luz md:px-8 md:py-28">
+      <div class="mx-auto max-w-[1200px]">
+        <div class="mb-12 max-w-2xl"><p class="eyebrow mb-4 font-mono text-[10px] font-bold uppercase text-areia">O que posso criar</p><h2 class="text-4xl font-black uppercase leading-[.92] tracking-[-.05em] md:text-6xl">Design para o momento<br>que sua empresa está vivendo.</h2><p class="mt-6 max-w-xl font-mono text-sm leading-relaxed text-luz/70">Você não precisa chegar sabendo o nome do serviço. Pode me explicar o que precisa e eu ajudo a organizar o projeto.</p></div>
+        <div class="grid gap-5 md:grid-cols-3">
+          <article class="service-card rounded-2xl bg-luz p-7 text-ametista"><div class="mb-10 flex items-center justify-between"><span class="font-mono text-xs font-bold text-areia">01 / 03</span><span class="font-mono text-[10px] uppercase text-ametista/50">Base da marca</span></div><h3 class="mb-4 text-2xl font-black uppercase tracking-tight">Identidade visual</h3><p class="mb-8 font-mono text-sm leading-relaxed text-ametista/70">Para começar com direção ou organizar uma marca que cresceu sem uma apresentação consistente.</p><ul class="space-y-3 border-t border-ametista/10 pt-5 font-mono text-xs font-bold uppercase"><li>Logo e variações</li><li>Paleta e tipografia</li><li>Elementos visuais</li><li>Aplicações básicas</li></ul></article>
+          <article class="service-card rounded-2xl bg-areia p-7 text-ametista"><div class="mb-10 flex items-center justify-between"><span class="font-mono text-xs font-bold text-luz">02 / 03</span><span class="font-mono text-[10px] uppercase text-ametista/60">Presença diária</span></div><h3 class="mb-4 text-2xl font-black uppercase tracking-tight">Conteúdo para redes</h3><p class="mb-8 font-mono text-sm leading-relaxed text-ametista/75">Peças para divulgar produtos, serviços e novidades sem depender de layouts genéricos.</p><ul class="space-y-3 border-t border-ametista/15 pt-5 font-mono text-xs font-bold uppercase"><li>Posts e stories</li><li>Campanhas e promoções</li><li>Informativos</li><li>Datas especiais</li></ul></article>
+          <article class="service-card rounded-2xl bg-lavanda p-7 text-luz"><div class="mb-10 flex items-center justify-between"><span class="font-mono text-xs font-bold text-noite">03 / 03</span><span class="font-mono text-[10px] uppercase text-luz/70">Materiais</span></div><h3 class="mb-4 text-2xl font-black uppercase tracking-tight">Materiais gráficos</h3><p class="mb-8 font-mono text-sm leading-relaxed text-luz/80">Materiais físicos e digitais para deixar os pontos de contato da empresa mais profissionais.</p><ul class="space-y-3 border-t border-luz/20 pt-5 font-mono text-xs font-bold uppercase"><li>Cartões e papelaria</li><li>Flyers e folders</li><li>Cardápios</li><li>Apresentações em PDF</li></ul></article>
         </div>
+      </div>
     </section>
 
-    <!-- 5. PROCESSO -->
-    <section id="processo" class="py-24 px-4 md:px-8 bg-luz text-ametista">
-        <div class="max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
-            
-            <div class="md:col-span-5">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tighter md:sticky md:top-32">
-                    Como<br>Funciona
-                </h2>
-                <div class="mt-8 hidden md:block">
-                    <!-- Ilustração decorativa abstrata -->
-                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="49" stroke="#C9B18A" stroke-width="2"/>
-                        <circle cx="50" cy="50" r="30" fill="#1B1020"/>
-                        <path d="M50 20 L50 80 M20 50 L80 50" stroke="#C9B18A" stroke-width="2"/>
-                    </svg>
-                </div>
-            </div>
-            
-            <div class="md:col-span-7 flex flex-col gap-10">
-                
-                <div class="flex gap-6 items-start">
-                    <span class="font-sans text-3xl md:text-4xl font-black text-lavanda shrink-0">01</span>
-                    <div class="border-t-2 border-ametista pt-2 w-full">
-                        <h3 class="font-sans text-xl font-black uppercase tracking-tight mb-2">Você chama</h3>
-                        <p class="font-mono text-xs md:text-sm text-noite/80 font-medium">Me conta o que sua empresa precisa, sem complicação.</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-6 items-start">
-                    <span class="font-sans text-3xl md:text-4xl font-black text-lavanda shrink-0">02</span>
-                    <div class="border-t-2 border-ametista pt-2 w-full">
-                        <h3 class="font-sans text-xl font-black uppercase tracking-tight mb-2">Conversamos</h3>
-                        <p class="font-mono text-xs md:text-sm text-noite/80 font-medium">Entendo o seu negócio, seu objetivo e exatamente o que você precisa comunicar.</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-6 items-start">
-                    <span class="font-sans text-3xl md:text-4xl font-black text-lavanda shrink-0">03</span>
-                    <div class="border-t-2 border-ametista pt-2 w-full">
-                        <h3 class="font-sans text-xl font-black uppercase tracking-tight mb-2">Orçamento</h3>
-                        <p class="font-mono text-xs md:text-sm text-noite/80 font-medium">Você recebe uma proposta clara e direta de acordo com o projeto, prazos e entregas.</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-6 items-start">
-                    <span class="font-sans text-3xl md:text-4xl font-black text-lavanda shrink-0">04</span>
-                    <div class="border-t-2 border-ametista pt-2 w-full">
-                        <h3 class="font-sans text-xl font-black uppercase tracking-tight mb-2">Criação</h3>
-                        <p class="font-mono text-xs md:text-sm text-noite/80 font-medium">Desenvolvo as peças baseadas no que conversamos e envio para sua aprovação.</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-6 items-start">
-                    <span class="font-sans text-3xl md:text-4xl font-black text-areia shrink-0">05</span>
-                    <div class="border-t-2 border-areia pt-2 w-full">
-                        <h3 class="font-sans text-xl font-black uppercase tracking-tight mb-2">Entrega</h3>
-                        <p class="font-mono text-xs md:text-sm text-noite/80 font-medium">Você recebe todos os arquivos finais, prontos para usar e aplicar no seu negócio.</p>
-                    </div>
-                </div>
-
-            </div>
+    <section id="processo" class="bg-luz px-5 py-20 md:px-8 md:py-28">
+      <div class="mx-auto grid max-w-[1100px] gap-12 md:grid-cols-12 md:gap-16">
+        <div class="md:col-span-4"><p class="eyebrow mb-4 font-mono text-[10px] font-bold uppercase text-areia">Sem complicação</p><h2 class="text-5xl font-black uppercase leading-[.88] tracking-[-.06em] md:sticky md:top-28 md:text-7xl">Como<br>funciona</h2></div>
+        <div class="space-y-9 md:col-span-8">
+          <div class="flex gap-5"><span class="font-mono text-sm font-bold text-lavanda">01</span><div class="w-full border-t-2 border-ametista pt-3"><h3 class="text-xl font-black uppercase">Você me chama</h3><p class="mt-2 max-w-xl font-mono text-sm leading-relaxed text-noite/75">Você explica o momento do negócio e o que gostaria de melhorar.</p></div></div>
+          <div class="flex gap-5"><span class="font-mono text-sm font-bold text-lavanda">02</span><div class="w-full border-t-2 border-ametista pt-3"><h3 class="text-xl font-black uppercase">A gente conversa</h3><p class="mt-2 max-w-xl font-mono text-sm leading-relaxed text-noite/75">Entendo seu objetivo, público, referências e o que precisa ser entregue.</p></div></div>
+          <div class="flex gap-5"><span class="font-mono text-sm font-bold text-lavanda">03</span><div class="w-full border-t-2 border-ametista pt-3"><h3 class="text-xl font-black uppercase">Você recebe o orçamento</h3><p class="mt-2 max-w-xl font-mono text-sm leading-relaxed text-noite/75">A proposta vem com escopo, prazo, entregas e condições de forma direta.</p></div></div>
+          <div class="flex gap-5"><span class="font-mono text-sm font-bold text-lavanda">04</span><div class="w-full border-t-2 border-ametista pt-3"><h3 class="text-xl font-black uppercase">Eu desenvolvo</h3><p class="mt-2 max-w-xl font-mono text-sm leading-relaxed text-noite/75">Crio as peças com base no que combinamos e envio para sua aprovação.</p></div></div>
+          <div class="flex gap-5"><span class="font-mono text-sm font-bold text-areia">05</span><div class="w-full border-t-2 border-areia pt-3"><h3 class="text-xl font-black uppercase">Você recebe tudo pronto</h3><p class="mt-2 max-w-xl font-mono text-sm leading-relaxed text-noite/75">Arquivos finais organizados para você usar na rotina do negócio.</p></div></div>
         </div>
+      </div>
     </section>
 
-    <!-- 6. SOBRE -->
-    <section id="sobre" class="py-24 px-4 md:px-8 bg-ametista text-luz overflow-hidden">
-        <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
-            <!-- Texto de Apresentação (Esquerda) -->
-            <div class="lg:col-span-5 flex flex-col justify-center">
-                <div class="font-mono text-[9px] uppercase font-bold bg-lavanda text-luz px-3 py-1 rounded-full w-fit mb-6 border border-luz/20 shadow-sm">
-                    A Designer
-                </div>
-
-                <h2 class="font-sans text-5xl md:text-6xl font-black uppercase leading-[0.9] tracking-tighter mb-8">
-                    Oi, eu sou a Karoline.
-                </h2>
-                
-                <div class="space-y-6 font-mono text-sm text-luz/85 font-medium leading-relaxed">
-                    <p>
-                        Sou designer gráfica e trabalho criando identidades visuais, artes e materiais gráficos para negócios.
-                    </p>
-                    <p>
-                        Gosto de transformar ideias em uma comunicação visual que faça sentido para cada empresa — seja para começar uma marca do zero, divulgar um serviço ou simplesmente deixar a apresentação do negócio mais organizada e profissional.
-                    </p>
-                    <p class="font-bold border-l-2 border-areia pl-4 text-luz text-base">
-                        Meu trabalho é entender o que você precisa e transformar isso em design pronto para usar.
-                    </p>
-                </div>
-            </div>
-
-            <!-- "O Pôster" Composição Gráfica (Direita) -->
-            <div class="lg:col-span-7 w-full flex justify-center lg:justify-end">
-                
-                <div class="relative w-full max-w-[480px] aspect-[4/5] bg-noite overflow-hidden rounded-xl shadow-2xl border border-lavanda/30 flex">
-                    
-                    <!-- Lado Esquerdo do Poster: A Foto -->
-                    <div class="w-[60%] h-full relative bg-noite">
-                        <!-- A imagem IMG_0401.png deve ficar na mesma pasta deste HTML no GitHub. -->
-                        <img src="IMG_0401.png" alt="Karoline Queiroz" class="w-full h-full object-cover object-center" onerror="this.style.display='none';" loading="lazy" decoding="async">
-                        <!-- Sombra interna para integrar a foto -->
-                        <div class="absolute inset-0 bg-gradient-to-r from-transparent to-noite/30"></div>
-                    </div>
-                    
-                    <!-- Lado Direito do Poster: Espaço em Branco (Bg Luz) -->
-                    <div class="w-[40%] h-full bg-luz"></div>
-
-                    <!-- TIPOGRAFIA GIGANTE (Efeito Blend / Cortado) -->
-                    <!-- O mix-blend-difference faz o texto branco (#F2EBE3 - luz) virar escuro no fundo branco e ficar visível no fundo escuro (foto) -->
-                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10 pl-12">
-                        <h3 class="design-purple-text font-sans text-[7rem] md:text-[9.5rem] font-black uppercase tracking-tighter vertical-text leading-[0.75] select-none">
-                            DESIGN
-                        </h3>
-                    </div>
-
-                    <!-- ELEMENTOS EDITORIAIS (As marcações de revista) -->
-                    <div class="absolute inset-0 p-6 flex flex-col justify-between pointer-events-none z-20">
-                        
-                        <!-- Topo do Pôster -->
-                        <div class="flex justify-between items-start">
-                            <!-- Círculo abstrato -->
-                            <div class="w-6 h-6 rounded-full bg-luz mix-blend-difference"></div>
-                            
-                            <!-- Bloco de texto superior direito -->
-                            <div class="w-28 pt-2">
-                                <div class="border-t-[3px] border-ametista pt-1 pb-2 mb-2">
-                                    <p class="font-mono text-[7px] uppercase font-bold text-ametista tracking-widest text-right leading-none">Designed By</p>
-                                    <p class="font-mono text-[9px] uppercase font-black text-ametista tracking-tight text-right mt-1">Karoline</p>
-                                </div>
-                                <div class="border-t-[3px] border-ametista pt-1 pb-2">
-                                    <p class="font-mono text-[7px] uppercase font-bold text-ametista tracking-widest text-right leading-none">Portfolio</p>
-                                    <p class="font-mono text-[9px] uppercase font-black text-ametista tracking-tight text-right mt-1">Design</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Rodapé do Pôster -->
-                        <div class="flex justify-between items-end w-full">
-                            <!-- Texto corrido canto inferior esquerdo (Blend) -->
-                            <p class="font-mono text-[6px] md:text-[7px] uppercase font-bold text-luz mix-blend-difference max-w-[140px] leading-relaxed pb-1 text-justify">
-                                Transformando ideias em comunicação visual que faz sentido para a sua empresa. Da criação ao resultado.
-                            </p>
-                            
-                            <!-- O Código de Barras (CSS puro) -->
-                            <div class="flex h-12 md:h-16 items-end justify-end bg-ametista p-2 mix-blend-normal">
-                                <div class="w-1.5 h-full bg-luz mr-[2px]"></div>
-                                <div class="w-[2px] h-full bg-luz mr-[3px]"></div>
-                                <div class="w-2 h-full bg-luz mr-[2px]"></div>
-                                <div class="w-[1px] h-full bg-luz mr-[4px]"></div>
-                                <div class="w-1.5 h-full bg-luz mr-[2px]"></div>
-                                <div class="w-3 h-full bg-luz mr-[3px]"></div>
-                                <div class="w-[2px] h-full bg-luz mr-[2px]"></div>
-                                <div class="w-1.5 h-full bg-luz mr-[1px]"></div>
-                                <div class="w-2 h-full bg-luz"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
+    <section id="sobre" class="bg-ametista px-5 py-20 text-luz md:px-8 md:py-28">
+      <div class="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-12 lg:gap-20">
+        <div class="lg:col-span-5"><p class="eyebrow mb-5 inline-block rounded-full bg-lavanda px-3 py-1 font-mono text-[10px] font-bold uppercase">Sobre a designer</p><h2 class="mb-8 text-5xl font-black uppercase leading-[.9] tracking-[-.06em] md:text-6xl">Oi, eu sou<br>a Karoline.</h2><div class="space-y-5 font-mono text-sm leading-relaxed text-luz/80"><p>Sou designer gráfica e gosto de ajudar negócios a traduzirem melhor o valor que já entregam.</p><p>Trabalho com identidades visuais, peças para redes sociais e materiais gráficos — principalmente para quem está começando, se reposicionando ou cansou de parecer improvisado.</p><p class="border-l-2 border-areia pl-4 font-bold text-luz">Meu trabalho é entender o que você precisa e transformar isso em design claro, bonito e pronto para usar.</p></div></div>
+        <div class="lg:col-span-7"><div class="portrait-frame mx-auto flex aspect-[4/5] max-w-[500px] bg-noite"><div class="w-[62%] bg-noite"><img src="IMG_0401.png" alt="Karoline Queiroz, designer gráfica" class="h-full w-full object-cover" loading="lazy" width="800" height="1000"></div><div class="flex w-[38%] items-center justify-center bg-luz"><span class="portrait-word font-sans text-[5.5rem] font-black leading-none tracking-[-.08em] text-lavanda md:text-[8rem]">DESIGN</span></div><div class="absolute bottom-5 left-5 right-5 flex items-end justify-between"><p class="max-w-[180px] font-mono text-[10px] font-bold uppercase leading-relaxed text-luz">Design com intenção para marcas em movimento.</p><span class="rounded-sm bg-ametista px-2 py-1 font-mono text-[10px] font-bold uppercase text-luz">KQ / 2026</span></div></div></div>
+      </div>
     </section>
 
-    <!-- 7. CTA FINAL -->
-    <section id="contato" aria-labelledby="titulo-contato" class="py-32 px-4 md:px-8 bg-luz text-ametista text-center flex flex-col items-center justify-center relative overflow-hidden">
-        <div class="absolute top-10 left-10 w-24 h-24 rounded-full border border-ametista/10"></div>
-        <div class="absolute bottom-10 right-10 w-32 h-32 rounded-full border border-ametista/10"></div>
-        
-        <p class="font-mono text-[10px] uppercase font-bold text-areia mb-4 tracking-widest relative z-10">— Vamos Trabalhar Juntos</p>
-        <h2 class="font-sans text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter mb-6 relative z-10">
-            <span id="titulo-contato">Tem algo que<br>precisa ser criado?</span>
-        </h2>
-        <p class="font-mono text-sm text-noite font-medium mb-12 max-w-md relative z-10">
-            Me conte o que você precisa e vamos conversar.
-        </p>
-        
-        <a href="https://wa.me/5512982544891" target="_blank" rel="noopener noreferrer" class="bg-ametista text-luz font-sans text-base md:text-lg uppercase font-black px-12 py-5 rounded-full hover:bg-areia hover:text-ametista transition-all tracking-wide mb-6 relative z-10 flex items-center gap-3">
-            Falar comigo pelo WhatsApp <span>→</span>
-        </a>
-        
-        <p class="font-mono text-[9px] uppercase font-bold text-lavanda max-w-xs relative z-10 leading-relaxed">
-            Você não precisa saber exatamente qual serviço contratar. Pode simplesmente me explicar o que precisa.
-        </p>
+    <section id="contato" class="relative overflow-hidden bg-luz px-5 py-24 text-center md:px-8 md:py-32">
+      <div class="relative z-10 mx-auto max-w-3xl"><p class="eyebrow mb-5 font-mono text-[10px] font-bold uppercase text-areia">Vamos conversar</p><h2 class="text-5xl font-black uppercase leading-[.9] tracking-[-.06em] md:text-7xl">Tem algo que<br>precisa ser criado?</h2><p class="mx-auto mt-7 max-w-md font-mono text-sm leading-relaxed text-noite/75">Me conte o que você precisa. Você não precisa saber exatamente qual serviço contratar — eu ajudo a organizar o próximo passo.</p><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="mt-10 inline-flex items-center gap-3 rounded-full bg-ametista px-8 py-5 text-base font-black uppercase tracking-wide text-luz transition-colors hover:bg-areia hover:text-ametista">Falar pelo WhatsApp <span aria-hidden="true">→</span></a><p class="mt-5 font-mono text-xs text-lavanda">Resposta inicial pelo WhatsApp para entender o projeto.</p></div>
     </section>
-    </main>
+  </main>
 
-    <!-- 8. FOOTER -->
-    <footer class="bg-noite text-luz pt-16 pb-8 px-4 md:px-8">
-        <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
-            
-            <div>
-                <h3 class="font-sans font-black text-2xl uppercase tracking-tighter mb-1 text-luz">Karoline Queiroz</h3>
-                <p class="font-mono text-[10px] uppercase text-areia font-bold">Design Gráfico</p>
-                <p class="font-mono text-[9px] text-luz/50 mt-2 uppercase tracking-widest">São José dos Campos — SP</p>
-            </div>
+  <footer class="bg-noite px-5 py-14 text-luz md:px-8 md:py-16">
+    <div class="mx-auto flex max-w-[1200px] flex-col justify-between gap-10 md:flex-row md:items-end"><div><h2 class="text-2xl font-black uppercase tracking-tight">Karoline Queiroz</h2><p class="mt-1 font-mono text-xs font-bold uppercase text-areia">Design gráfico</p><p class="mt-3 font-mono text-xs uppercase text-luz/50">São José dos Campos — SP</p></div><div class="flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs font-bold uppercase text-luz/70"><a href="#trabalhos" class="hover:text-areia">Trabalhos</a><a href="#servicos" class="hover:text-areia">Serviços</a><a href="#sobre" class="hover:text-areia">Sobre</a><a href="#processo" class="hover:text-areia">Processo</a><a href="https://wa.me/5512982544891" target="_blank" rel="noopener noreferrer" class="text-areia hover:text-luz">WhatsApp ↗</a></div></div>
+    <div class="mx-auto mt-12 flex max-w-[1200px] justify-between gap-4 border-t border-luz/10 pt-5 font-mono text-[10px] uppercase text-luz/40"><small>© 2026 Karoline Queiroz</small><span>Design visual para negócios</span></div>
+  </footer>
 
-            <div class="flex flex-wrap gap-4 md:gap-8 font-mono text-[10px] uppercase font-bold text-luz/70">
-                <a href="#trabalhos" class="hover:text-areia transition-colors">Trabalhos</a>
-                <a href="#servicos" class="hover:text-areia transition-colors">Serviços</a>
-                <a href="#sobre" class="hover:text-areia transition-colors">Sobre</a>
-                <a href="#processo" class="hover:text-areia transition-colors">Processo</a>
-                <a href="https://wa.me/5512982544891" target="_blank" rel="noopener noreferrer" class="text-areia hover:text-luz transition-colors">WhatsApp ↗</a>
-            </div>
-        </div>
-        
-        <div class="max-w-[1200px] mx-auto border-t border-luz/10 pt-6 flex justify-between items-center font-mono text-[9px] uppercase text-luz/40 font-bold">
-            <small>© 2026 Karoline Queiroz. Todos os direitos reservados.</small>
-            <span>Design Gráfico</span>
-        </div>
-    </footer>
-
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (menuToggle && mobileMenu) {
-            menuToggle.addEventListener('click', () => {
-                const isOpen = !mobileMenu.classList.toggle('hidden');
-                menuToggle.setAttribute('aria-expanded', String(isOpen));
-                menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
-            });
-            mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuToggle.setAttribute('aria-expanded', 'false');
-                menuToggle.setAttribute('aria-label', 'Abrir menu');
-            }));
-        }
-    </script>
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('hidden') === false;
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      });
+      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Abrir menu');
+      }));
+    }
+  </script>
 </body>
 </html>
