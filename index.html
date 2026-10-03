@@ -100,7 +100,12 @@
         }
         .window-dots { display: flex; gap: 6px; align-items: center; }
         .window-dots span { width: 9px; height: 9px; border-radius: 999px; display: block; }
-        .poster-purple-tint { filter: grayscale(12%) sepia(16%) hue-rotate(220deg) saturate(92%) contrast(1.06); }
+        /* A foto permanece original; apenas a palavra DESIGN recebe a transparência roxa. */
+        .design-purple-text {
+            color: rgba(138, 122, 148, 0.72);
+            opacity: 0.88;
+            mix-blend-mode: normal;
+        }
 
         @media (max-width: 1023px) {
             .service-card { min-height: 350px; }
@@ -117,7 +122,7 @@
     <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-ametista focus:px-4 focus:py-3 focus:text-luz">Pular para o conteúdo</a>
 
     <!-- NAVEGAÇÃO -->
-    <nav aria-label="Navegação principal" class="fixed top-6 w-full z-50 px-4 md:px-8 pointer-events-none flex justify-center">
+    <nav aria-label="Navegação principal" class="fixed top-3 md:top-6 w-full z-50 px-3 md:px-8 pointer-events-none flex justify-center">
         <div class="relative bg-ametista/95 backdrop-blur-md rounded-full px-4 md:px-6 py-3 flex items-center justify-between w-full max-w-[1000px] pointer-events-auto border border-luz/20 shadow-sm transition-transform">
             
             <a href="#conteudo" class="flex items-center hover:opacity-70 transition-opacity">
@@ -155,16 +160,16 @@
 
     <main id="conteudo">
     <!-- 1. HERO -->
-    <section class="pt-32 md:pt-36 pb-14 md:pb-16 px-4 md:px-8 max-w-[1200px] mx-auto relative min-h-[68vh] flex flex-col justify-center">
+    <section class="pt-24 md:pt-32 pb-10 md:pb-14 px-4 md:px-8 max-w-[1200px] mx-auto relative min-h-0 flex flex-col justify-center">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             
             <div class="lg:col-span-8 relative">
                 <!-- Eyebrow "Sticker" -->
-                <div class="inline-flex items-center gap-2 bg-areia text-ametista px-3 py-1 rounded-sm font-mono text-[10px] uppercase font-bold mb-8 transform -rotate-2">
+                <div class="inline-flex items-center gap-2 bg-areia text-ametista px-3 py-1 rounded-sm font-mono text-[9px] md:text-[10px] uppercase font-bold mb-5 md:mb-8 transform -rotate-2">
                     <span class="w-1.5 h-1.5 bg-ametista rounded-full"></span> Design para Negócios
                 </div>
 
-                <h1 class="font-sans text-5xl md:text-7xl lg:text-[6.5rem] font-black text-ametista uppercase leading-[0.85] tracking-tighter mb-8 relative z-10">
+                <h1 class="font-sans text-4xl sm:text-5xl md:text-7xl lg:text-[6.5rem] font-black text-ametista uppercase leading-[0.88] tracking-tighter mb-6 md:mb-8 relative z-10">
                     Seu negócio<br>
                     merece <span class="text-transparent" style="-webkit-text-stroke: 2px #1B1020;">uma</span><br>
                     <span class="relative">
@@ -174,12 +179,12 @@
                     </span>
                 </h1>
                 
-                <p class="font-mono text-sm md:text-base text-noite/80 font-medium leading-relaxed max-w-lg mb-10">
+                <p class="font-mono text-xs sm:text-sm md:text-base text-noite/80 font-medium leading-relaxed max-w-lg mb-7 md:mb-10">
                     Identidade visual, artes e materiais gráficos para empresas que querem se comunicar melhor e apresentar seu trabalho com mais clareza.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                    <a href="https://wa.me/5512982544891" target="_blank" rel="noopener noreferrer" class="bg-ametista text-luz font-sans text-sm md:text-base uppercase font-bold px-8 py-4 rounded-full hover:bg-areia hover:text-ametista transition-colors tracking-wide flex items-center gap-2">
+                    <a href="https://wa.me/5512982544891" target="_blank" rel="noopener noreferrer" class="bg-ametista text-luz font-sans text-xs sm:text-sm md:text-base uppercase font-bold px-6 md:px-8 py-3.5 md:py-4 rounded-full hover:bg-areia hover:text-ametista transition-colors tracking-wide flex items-center gap-2">
                         Falar comigo no WhatsApp <span>→</span>
                     </a>
                 </div>
@@ -441,7 +446,7 @@
                     <!-- Lado Esquerdo do Poster: A Foto -->
                     <div class="w-[60%] h-full relative bg-noite">
                         <!-- A imagem IMG_0401.png deve ficar na mesma pasta deste HTML no GitHub. -->
-                        <img src="IMG_0401.png" alt="Karoline Queiroz" class="poster-purple-tint w-full h-full object-cover object-center" onerror="this.style.display='none';" loading="lazy" decoding="async">
+                        <img src="IMG_0401.png" alt="Karoline Queiroz" class="w-full h-full object-cover object-center" onerror="this.style.display='none';" loading="lazy" decoding="async">
                         <!-- Sombra interna para integrar a foto -->
                         <div class="absolute inset-0 bg-gradient-to-r from-transparent to-noite/30"></div>
                     </div>
@@ -451,8 +456,8 @@
 
                     <!-- TIPOGRAFIA GIGANTE (Efeito Blend / Cortado) -->
                     <!-- O mix-blend-difference faz o texto branco (#F2EBE3 - luz) virar escuro no fundo branco e ficar visível no fundo escuro (foto) -->
-                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10 pl-12 mix-blend-difference">
-                        <h3 class="font-sans text-[7rem] md:text-[9.5rem] font-black uppercase tracking-tighter text-luz vertical-text leading-[0.75] select-none">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10 pl-12">
+                        <h3 class="design-purple-text font-sans text-[7rem] md:text-[9.5rem] font-black uppercase tracking-tighter vertical-text leading-[0.75] select-none">
                             DESIGN
                         </h3>
                     </div>
