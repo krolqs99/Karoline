@@ -27,7 +27,7 @@
     .photo-hero{position:relative;min-height:560px;overflow:hidden;background:var(--night)}.photo-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;filter:grayscale(.18) contrast(1.02)}.photo-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,16,32,.94) 0%,rgba(27,16,32,.62) 42%,rgba(27,16,32,.18) 100%);z-index:1}.photo-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(27,16,32,.7),transparent 35%);z-index:1}.photo-copy{position:relative;z-index:2}
     dialog{border:0;padding:0;background:transparent;max-width:min(92vw,920px);width:100%;color:var(--ink)}dialog::backdrop{background:rgba(27,16,32,.72);backdrop-filter:blur(5px)}.modal-panel{max-height:88vh;overflow:auto;border:1px solid rgba(242,235,227,.2);border-radius:1.5rem;background:var(--paper);box-shadow:0 24px 80px rgba(0,0,0,.35)}
     .sim-option{transition:all .2s ease}.sim-option.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-    @media(max-width:767px){html{scroll-padding-top:5rem}.nav-cta{display:none}.project-card{flex-basis:78vw}.photo-hero{min-height:520px}.photo-hero:before{background:linear-gradient(0deg,rgba(27,16,32,.94),rgba(27,16,32,.2) 75%)}.hero-title{max-width:100%;font-size:clamp(2rem,7vw,3rem)!important;line-height:.9;letter-spacing:-.06em;overflow-wrap:break-word}.hero-title span{white-space:normal}}
+    @media(max-width:767px){html{scroll-padding-top:5rem}.nav-cta{display:none}.project-card{flex-basis:78vw}.photo-hero{min-height:520px}.photo-hero:before{background:linear-gradient(0deg,rgba(27,16,32,.94),rgba(27,16,32,.2) 75%)}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
   </style>
 </head>
@@ -36,33 +36,19 @@
   <nav aria-label="Navegação principal" class="fixed top-3 md:top-5 z-50 w-full px-3 md:px-8"><div class="mx-auto flex max-w-[1080px] items-center justify-between gap-3 rounded-full border border-luz/20 bg-ametista/95 px-4 py-2.5 shadow-lg backdrop-blur-md md:px-5"><a href="#conteudo" aria-label="Voltar ao início" class="shrink-0"><img src="logo.png" alt="Karoline Queiroz" width="96" height="32" class="h-6 w-auto"></a><div class="hidden items-center gap-7 font-mono text-[11px] font-bold uppercase text-luz/80 md:flex"><a href="#trabalhos" class="hover:text-luz">Trabalhos</a><a href="#servicos" class="hover:text-luz">Serviços</a><a href="#simulador" class="hover:text-luz">Simulador</a><a href="#sobre" class="hover:text-luz">Sobre</a><a href="#processo" class="hover:text-luz">Processo</a></div><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="nav-cta shrink-0 rounded-full bg-luz px-4 py-2.5 font-mono text-[10px] font-bold uppercase text-ametista hover:bg-areia md:px-5">Falar comigo</a><button id="menu-toggle" type="button" class="rounded-full p-2 text-luz md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span class="mb-1.5 block h-px w-5 bg-current"></span><span class="mb-1.5 block h-px w-5 bg-current"></span><span class="block h-px w-5 bg-current"></span></button><div id="mobile-menu" class="absolute left-0 right-0 top-full mt-3 hidden rounded-3xl border border-luz/20 bg-ametista p-5 shadow-xl md:hidden"><div class="flex flex-col gap-4 font-mono text-xs font-bold uppercase text-luz"><a href="#trabalhos">Trabalhos</a><a href="#servicos">Serviços</a><a href="#simulador">Simulador</a><a href="#sobre">Sobre</a><a href="#processo">Processo</a></div></div></div></nav>
 
   <main id="conteudo">
-    <!-- HERO COM DIVISÃO VERTICAL E AMPLO RESPIRO -->
-    <section class="mx-auto max-w-[1240px] px-5 pb-24 pt-36 md:px-12 md:pb-36 md:pt-48">
-      <div class="grid items-center gap-16 lg:grid-cols-12 lg:gap-12">
-        
-        <!-- Lado Esquerdo: Texto explicativo -->
-        <div class="flex flex-col justify-center lg:col-span-5 lg:pr-8">
-          <p class="font-mono text-xs leading-relaxed text-ametista/70">
-            Para quem tem um bom produto, mas sente que a marca ainda não mostra isso. Identidade, clareza e materiais prontos para usar.
-          </p>
-        </div>
-
-        <!-- Lado Direito: Hero principal ajustada para o mesmo tamanho dos títulos das outras seções -->
-        <div class="lg:col-span-7 lg:pl-4">
-          <p class="eyebrow mb-6 inline-flex items-center gap-2 rounded-sm bg-areia px-3 py-1.5 font-mono text-[10px] font-bold uppercase text-ametista">
-            <span class="h-1.5 w-1.5 rounded-full bg-ametista"></span>Design visual para negócios
-          </p>
-          <h1 class="hero-title mb-8 max-w-xl text-5xl font-black uppercase leading-[.9] tracking-[-.06em] text-ametista md:text-7xl">
-            Seu negócio<br>merece uma<br><span class="relative">boa apresentação.<svg class="absolute -bottom-2 left-0 h-2 w-full text-areia" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5Q50 15 100 5" fill="none" stroke="currentColor" stroke-width="3.5"/></svg></span>
-          </h1>
-          <p class="mb-10 max-w-md font-mono text-xs leading-relaxed text-noite/75 md:text-sm">
-            Eu crio identidades visuais, peças para redes sociais e materiais gráficos para pequenos negócios que querem parecer tão bons quanto são.
-          </p>
-          <a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 rounded-full bg-ametista px-7 py-4 text-xs font-bold uppercase tracking-widest text-luz hover:bg-areia hover:text-ametista transition-colors">
-            Conversar sobre meu projeto <span aria-hidden="true">→</span>
-          </a>
-        </div>
-
+    <!-- HERO UNIFICADA COM O MESMO PADRÃO DAS OUTRAS SEÇÕES -->
+    <section class="mx-auto max-w-[1200px] px-5 pb-20 pt-36 md:px-8 md:py-32">
+      <div class="max-w-2xl">
+        <p class="eyebrow mb-4 font-mono text-[10px] font-bold uppercase text-areia">Design visual para negócios</p>
+        <h1 class="mb-6 text-5xl font-black uppercase leading-[.9] tracking-[-.06em] md:text-7xl">
+          Seu negócio<br>merece uma<br><span class="relative">boa apresentação.<svg class="absolute -bottom-2 left-0 h-2 w-full text-areia" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5Q50 15 100 5" fill="none" stroke="currentColor" stroke-width="3.5"/></svg></span>
+        </h1>
+        <p class="mb-8 font-mono text-xs leading-relaxed text-ametista/75 md:text-sm">
+          Identidade visual, peças para redes sociais e materiais gráficos para pequenos negócios que querem parecer tão bons quanto são.
+        </p>
+        <a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 rounded-full bg-ametista px-7 py-4 text-xs font-bold uppercase tracking-widest text-luz hover:bg-areia hover:text-ametista transition-colors">
+          Conversar sobre meu projeto <span aria-hidden="true">→</span>
+        </a>
       </div>
     </section>
 
