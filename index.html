@@ -27,7 +27,7 @@
     .photo-hero{position:relative;min-height:560px;overflow:hidden;background:var(--night)}.photo-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;filter:grayscale(.18) contrast(1.02)}.photo-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,16,32,.94) 0%,rgba(27,16,32,.62) 42%,rgba(27,16,32,.18) 100%);z-index:1}.photo-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(27,16,32,.7),transparent 35%);z-index:1}.photo-copy{position:relative;z-index:2}
     dialog{border:0;padding:0;background:transparent;max-width:min(92vw,920px);width:100%;color:var(--ink)}dialog::backdrop{background:rgba(27,16,32,.72);backdrop-filter:blur(5px)}.modal-panel{max-height:88vh;overflow:auto;border:1px solid rgba(242,235,227,.2);border-radius:1.5rem;background:var(--paper);box-shadow:0 24px 80px rgba(0,0,0,.35)}
     .sim-option{transition:all .2s ease}.sim-option.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-    @media(max-width:767px){html{scroll-padding-top:5rem}.nav-cta{display:none}.project-card{flex-basis:78vw}.photo-hero{min-height:520px}.photo-hero:before{background:linear-gradient(0deg,rgba(27,16,32,.94),rgba(27,16,32,.2) 75%)}.hero-title{max-width:100%;font-size:clamp(2.35rem,10.5vw,4.3rem)!important;line-height:.9;letter-spacing:-.08em;overflow-wrap:break-word}.hero-title span{white-space:normal}}
+    @media(max-width:767px){html{scroll-padding-top:5rem}.nav-cta{display:none}.project-card{flex-basis:78vw}.photo-hero{min-height:520px}.photo-hero:before{background:linear-gradient(0deg,rgba(27,16,32,.94),rgba(27,16,32,.2) 75%)}.hero-title{max-width:100%;font-size:clamp(2.2rem,9.5vw,3.8rem)!important;line-height:.9;letter-spacing:-.07em;overflow-wrap:break-word}.hero-title span{white-space:normal}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
   </style>
 </head>
@@ -36,7 +36,35 @@
   <nav aria-label="Navegação principal" class="fixed top-3 md:top-5 z-50 w-full px-3 md:px-8"><div class="mx-auto flex max-w-[1080px] items-center justify-between gap-3 rounded-full border border-luz/20 bg-ametista/95 px-4 py-2.5 shadow-lg backdrop-blur-md md:px-5"><a href="#conteudo" aria-label="Voltar ao início" class="shrink-0"><img src="logo.png" alt="Karoline Queiroz" width="96" height="32" class="h-6 w-auto"></a><div class="hidden items-center gap-7 font-mono text-[11px] font-bold uppercase text-luz/80 md:flex"><a href="#trabalhos" class="hover:text-luz">Trabalhos</a><a href="#servicos" class="hover:text-luz">Serviços</a><a href="#simulador" class="hover:text-luz">Simulador</a><a href="#sobre" class="hover:text-luz">Sobre</a><a href="#processo" class="hover:text-luz">Processo</a></div><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="nav-cta shrink-0 rounded-full bg-luz px-4 py-2.5 font-mono text-[10px] font-bold uppercase text-ametista hover:bg-areia md:px-5">Falar comigo</a><button id="menu-toggle" type="button" class="rounded-full p-2 text-luz md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span class="mb-1.5 block h-px w-5 bg-current"></span><span class="mb-1.5 block h-px w-5 bg-current"></span><span class="block h-px w-5 bg-current"></span></button><div id="mobile-menu" class="absolute left-0 right-0 top-full mt-3 hidden rounded-3xl border border-luz/20 bg-ametista p-5 shadow-xl md:hidden"><div class="flex flex-col gap-4 font-mono text-xs font-bold uppercase text-luz"><a href="#trabalhos">Trabalhos</a><a href="#servicos">Serviços</a><a href="#simulador">Simulador</a><a href="#sobre">Sobre</a><a href="#processo">Processo</a></div></div></div></nav>
 
   <main id="conteudo">
-    <section class="mx-auto max-w-[1240px] px-5 pb-16 pt-32 md:px-8 md:pb-24 md:pt-40"><div class="grid items-end gap-12 lg:grid-cols-12"><div class="lg:col-span-8"><p class="eyebrow mb-6 inline-flex items-center gap-2 rounded-sm bg-areia px-3 py-1.5 font-mono text-[10px] font-bold uppercase text-ametista"><span class="h-1.5 w-1.5 rounded-full bg-ametista"></span>Design visual para negócios</p><h1 class="hero-title mb-7 max-w-5xl text-6xl font-black uppercase leading-[.88] tracking-[-.07em] text-ametista md:text-8xl lg:text-[6.6rem]">Seu negócio<br>merece <span class="font-normal text-transparent" style="-webkit-text-stroke:2px #1B1020">uma</span><br><span class="relative">boa apresentação.<svg class="absolute -bottom-3 left-0 h-3 w-full text-areia" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5Q50 15 100 5" fill="none" stroke="currentColor" stroke-width="4"/></svg></span></h1><p class="mb-8 max-w-xl font-mono text-sm leading-relaxed text-noite/80 md:text-base">Eu crio identidades visuais, peças para redes sociais e materiais gráficos para pequenos negócios que querem parecer tão bons quanto são.</p><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 rounded-full bg-ametista px-6 py-4 text-sm font-bold uppercase tracking-wide text-luz hover:bg-areia hover:text-ametista">Conversar sobre meu projeto <span aria-hidden="true">→</span></a></div><div class="hidden border-l border-ametista/20 pb-2 pl-7 lg:col-span-4 lg:block"><p class="mb-4 font-mono text-xs font-bold uppercase leading-relaxed text-ametista/55">Para quem tem um bom produto, mas sente que a marca ainda não mostra isso.</p><p class="font-mono text-[11px] uppercase leading-relaxed text-lavanda">Identidade, clareza e materiais prontos para usar.</p></div></div></section>
+    <!-- HERO COM DIVISÃO VERTICAL -->
+    <section class="mx-auto max-w-[1240px] px-5 pb-16 pt-32 md:px-8 md:pb-24 md:pt-40">
+      <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
+        
+        <!-- Lado Esquerdo: Substituto com fonte bem pequena no meio -->
+        <div class="flex flex-col justify-center lg:col-span-5 lg:pr-6">
+          <p class="font-mono text-[10px] font-bold uppercase leading-relaxed text-ametista/60 tracking-wider">
+            Para quem tem um bom produto, mas sente que a marca ainda não mostra isso. Identidade, clareza e materiais prontos para usar.
+          </p>
+        </div>
+
+        <!-- Lado Direito: Hero principal e Botão CTA abaixo -->
+        <div class="lg:col-span-7">
+          <p class="eyebrow mb-5 inline-flex items-center gap-2 rounded-sm bg-areia px-3 py-1.5 font-mono text-[10px] font-bold uppercase text-ametista">
+            <span class="h-1.5 w-1.5 rounded-full bg-ametista"></span>Design visual para negócios
+          </p>
+          <h1 class="hero-title mb-6 max-w-2xl text-5xl font-black uppercase leading-[.9] tracking-[-.06em] text-ametista md:text-7xl lg:text-[5.5rem]">
+            Seu negócio<br>merece <span class="font-normal text-transparent" style="-webkit-text-stroke:2px #1B1020">uma</span><br><span class="relative">boa apresentação.<svg class="absolute -bottom-2 left-0 h-2.5 w-full text-areia" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5Q50 15 100 5" fill="none" stroke="currentColor" stroke-width="4"/></svg></span>
+          </h1>
+          <p class="mb-8 max-w-lg font-mono text-sm leading-relaxed text-noite/80 md:text-base">
+            Eu crio identidades visuais, peças para redes sociais e materiais gráficos para pequenos negócios que querem parecer tão bons quanto são.
+          </p>
+          <a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 rounded-full bg-ametista px-6 py-4 text-sm font-bold uppercase tracking-wide text-luz hover:bg-areia hover:text-ametista">
+            Conversar sobre meu projeto <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
 
     <section id="trabalhos" class="border-t border-ametista/10 px-5 py-20 md:px-8 md:py-28"><div class="mx-auto max-w-[1200px]"><div class="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p class="eyebrow mb-3 font-mono text-[10px] font-bold uppercase text-areia">Portfólio selecionado</p><h2 class="text-5xl font-black uppercase leading-[.9] tracking-[-.06em] md:text-7xl">Projetos<br>por pasta</h2></div><p class="max-w-sm font-mono text-sm leading-relaxed text-lavanda md:text-right">Cada quadrado é um projeto. Clique para abrir a pasta e ver o que foi desenvolvido.</p></div><div class="mb-4 flex items-center justify-between"><p class="font-mono text-xs uppercase text-ametista/55">Deslize para explorar <span aria-hidden="true">→</span></p><p class="font-mono text-xs text-ametista/45">10 projetos</p></div><div class="project-rail" aria-label="Projetos do portfólio">
       <button class="project-card group bg-ametista text-left" data-project="at" aria-label="Abrir projeto A&T Marcenaria"><img src="image_21.png" alt="A&T Marcenaria" class="h-full w-full object-cover opacity-90" loading="lazy" width="800" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-luz px-2 py-1 font-mono text-[10px] font-bold uppercase text-ametista">Identidade visual</span><h3 class="text-2xl font-black uppercase tracking-tight text-luz">A&T Marcenaria</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-luz/75">Abrir pasta →</span></div></button>
@@ -55,7 +83,6 @@
 
     <section id="servicos" class="bg-ametista px-5 py-20 text-luz md:px-8 md:py-28"><div class="mx-auto max-w-[1200px]"><div class="mb-12 max-w-2xl"><p class="eyebrow mb-4 font-mono text-[10px] font-bold uppercase text-areia">O que posso criar</p><h2 class="text-4xl font-black uppercase leading-[.92] tracking-[-.05em] md:text-6xl">Design para o momento<br>que sua empresa está vivendo.</h2><p class="mt-6 max-w-xl font-mono text-sm leading-relaxed text-luz/70">Você não precisa chegar sabendo o nome do serviço. Pode me explicar o que precisa e eu ajudo a organizar o projeto.</p></div><div class="grid gap-5 md:grid-cols-3"><article class="service-card rounded-2xl bg-luz p-7 text-ametista"><div class="mb-10 flex items-center justify-between"><span class="font-mono text-xs font-bold text-areia">01 / 03</span><span class="font-mono text-[10px] uppercase text-ametista/50">Base da marca</span></div><h3 class="mb-4 text-2xl font-black uppercase tracking-tight">Identidade visual</h3><p class="mb-8 font-mono text-sm leading-relaxed text-ametista/70">Para começar com direção ou organizar uma marca que cresceu sem uma apresentação consistente.</p><ul class="space-y-3 border-t border-ametista/10 pt-5 font-mono text-xs font-bold uppercase"><li>Logo e variações</li><li>Paleta e tipografia</li><li>Elementos visuais</li><li>Aplicações básicas</li></ul></article><article class="service-card rounded-2xl bg-areia p-7 text-ametista"><div class="mb-10 flex items-center justify-between"><span class="font-mono text-xs font-bold text-luz">02 / 03</span><span class="font-mono text-[10px] uppercase text-ametista/60">Presença diária</span></div><h3 class="mb-4 text-2xl font-black uppercase tracking-tight">Conteúdo para redes</h3><p class="mb-8 font-mono text-sm leading-relaxed text-ametista/75">Peças para divulgar produtos, serviços e novidades sem depender de layouts genéricos.</p><ul class="space-y-3 border-t border-ametista/15 pt-5 font-mono text-xs font-bold uppercase"><li>Posts e stories</li><li>Campanhas e promoções</li><li>Informativos</li><li>Datas especiais</li></ul></article><article class="service-card rounded-2xl bg-lavanda p-7 text-luz"><div class="mb-10 flex items-center justify-between"><span class="font-mono text-xs font-bold text-noite">03 / 03</span><span class="font-mono text-[10px] uppercase text-luz/70">Materiais</span></div><h3 class="mb-4 text-2xl font-black uppercase tracking-tight">Materiais gráficos</h3><p class="mb-8 font-mono text-sm leading-relaxed text-luz/80">Materiais físicos e digitais para deixar os pontos de contato da empresa mais profissionais.</p><ul class="space-y-3 border-t border-luz/20 pt-5 font-mono text-xs font-bold uppercase"><li>Cartões e papelaria</li><li>Flyers e folders</li><li>Cardápios</li><li>Apresentações em PDF</li></ul></article></div></div></section>
 
-    <!-- NOVO: Simulador de Projeto / Orçamento -->
     <section id="simulador" class="bg-noite px-5 py-20 text-luz md:px-8 md:py-28 border-t border-luz/10">
       <div class="mx-auto max-w-[900px]">
         <div class="mb-12 text-center">
@@ -65,7 +92,6 @@
         </div>
 
         <div class="rounded-3xl border border-luz/15 bg-ametista p-6 md:p-10 shadow-2xl">
-          <!-- Passo 1 -->
           <div class="mb-8">
             <label class="block font-mono text-xs font-bold uppercase text-areia mb-3">1. Qual o foco principal do seu negócio agora?</label>
             <div class="grid gap-3 sm:grid-cols-3">
@@ -75,7 +101,6 @@
             </div>
           </div>
 
-          <!-- Passo 2 -->
           <div class="mb-8">
             <label class="block font-mono text-xs font-bold uppercase text-areia mb-3">2. Qual o estágio atual da sua empresa?</label>
             <div class="grid gap-3 sm:grid-cols-2">
@@ -84,7 +109,6 @@
             </div>
           </div>
 
-          <!-- Resumo e Ação -->
           <div class="rounded-2xl border border-areia/30 bg-night/50 p-6 text-center">
             <p class="font-mono text-xs uppercase text-luz/60 mb-2">Resumo da seleção:</p>
             <p id="simulador-resumo" class="font-mono text-sm font-bold text-areia mb-6">Criar ou organizar a Identidade Visual • Estou começando agora</p>
@@ -122,15 +146,10 @@
     document.getElementById('modal-close').addEventListener('click',()=>modal.close());modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});
     const toggle=document.getElementById('menu-toggle'),menu=document.getElementById('mobile-menu');if(toggle&&menu){toggle.addEventListener('click',()=>{const open=menu.classList.toggle('hidden')===false;toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu')});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.add('hidden');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir menu')}))}
 
-    // Lógica do Simulador
     const simOptions = document.querySelectorAll('.sim-option');
     const simResumo = document.getElementById('simulador-resumo');
     const simCta = document.getElementById('simulador-cta');
-
-    let simState = {
-      foco: 'Criar ou organizar a Identidade Visual',
-      estagio: 'Estou começando agora'
-    };
+    let simState = {foco: 'Criar ou organizar a Identidade Visual', estagio: 'Estou começando agora'};
 
     function updateSimulator() {
       simResumo.textContent = `${simState.foco} • ${simState.estagio}`;
