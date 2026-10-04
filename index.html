@@ -1,155 +1,86 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karoline Queiroz — Visual Identity & Brand Strategy</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#0a0a0a',
-                        cardBg: '#121212',
-                        goldAccent: '#d4af37',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @keyframes orbit {
-            0% { transform: rotate(0deg) translateX(70px) rotate(0deg); }
-            100% { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
-        }
-        .orbiting-element {
-            animation: orbit 12s linear infinite;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Karoline Queiroz | Design visual para pequenos negócios</title>
+  <meta name="description" content="Identidade visual, peças para redes sociais e materiais gráficos para pequenos negócios que querem parecer tão bons quanto são.">
+  <meta name="theme-color" content="#1B1020">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Karoline Queiroz | Design visual para negócios">
+  <meta property="og:description" content="Identidade visual e materiais gráficos para negócios que querem se apresentar melhor.">
+  <meta property="og:url" content="https://kqdesign.vercel.app/">
+  <meta property="og:image" content="https://kqdesign.vercel.app/image_21.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kqdesign.vercel.app/">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{ametista:'#1B1020',noite:'#2D1F36',lavanda:'#8A7A94',areia:'#C9B18A',luz:'#F2EBE3'},fontFamily:{sans:['Archivo','sans-serif'],mono:['"IBM Plex Mono"','monospace']}}}}</script>
+  <style>
+    :root{--ink:#1B1020;--night:#2D1F36;--muted:#8A7A94;--sand:#C9B18A;--paper:#F2EBE3}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);overflow-x:hidden;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E")}
+    img{display:block;max-width:100%}a,button{-webkit-tap-highlight-color:transparent}:focus-visible{outline:3px solid var(--sand);outline-offset:4px}html{scroll-padding-top:6rem}.eyebrow{letter-spacing:.12em}
+    .project-rail{display:flex;gap:1rem;overflow-x:auto;padding:1rem .25rem 1.5rem;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--sand) transparent}.project-rail::-webkit-scrollbar{height:8px}.project-rail::-webkit-scrollbar-thumb{background:var(--sand);border-radius:99px}.project-card{position:relative;flex:0 0 min(72vw,300px);aspect-ratio:1;overflow:hidden;border-radius:1.2rem;scroll-snap-align:start;isolation:isolate;cursor:pointer}.project-card img{transition:transform .45s ease,opacity .45s ease}.project-card:hover img,.project-card:focus-visible img{transform:scale(1.045);opacity:1}.project-card:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(27,16,32,.88));z-index:1;pointer-events:none}.project-label{position:absolute;z-index:2;left:1.2rem;right:1.2rem;bottom:1.1rem}.service-card{border-top:3px solid var(--sand);transition:transform .25s ease,box-shadow .25s ease}.service-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(27,16,32,.14)}
+    .photo-hero{position:relative;min-height:560px;overflow:hidden;background:var(--night)}.photo-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;filter:grayscale(.18) contrast(1.02)}.photo-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,16,32,.94) 0%,rgba(27,16,32,.62) 42%,rgba(27,16,32,.18) 100%);z-index:1}.photo-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(27,16,32,.7),transparent 35%);z-index:1}.photo-copy{position:relative;z-index:2}
+    dialog{border:0;padding:0;background:transparent;max-width:min(92vw,920px);width:100%;color:var(--ink)}dialog::backdrop{background:rgba(27,16,32,.72);backdrop-filter:blur(5px)}.modal-panel{max-height:88vh;overflow:auto;border:1px solid rgba(242,235,227,.2);border-radius:1.5rem;background:var(--paper);box-shadow:0 24px 80px rgba(0,0,0,.35)}
+    @media(max-width:767px){html{scroll-padding-top:5rem}.nav-cta{display:none}.project-card{flex-basis:78vw}.photo-hero{min-height:520px}.photo-hero:before{background:linear-gradient(0deg,rgba(27,16,32,.94),rgba(27,16,32,.2) 75%)}.hero-title{max-width:100%;font-size:clamp(2.35rem,10.5vw,4.3rem)!important;line-height:.9;letter-spacing:-.08em;overflow-wrap:break-word}.hero-title span{white-space:normal}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
 </head>
-<body class="bg-darkBg text-neutral-300 font-sans antialiased selection:bg-neutral-800 selection:text-white">
+<body class="font-sans antialiased">
+  <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-ametista focus:px-4 focus:py-3 focus:text-luz">Pular para o conteúdo</a>
+  <nav aria-label="Navegação principal" class="fixed top-3 md:top-5 z-50 w-full px-3 md:px-8"><div class="mx-auto flex max-w-[1080px] items-center justify-between gap-3 rounded-full border border-luz/20 bg-ametista/95 px-4 py-2.5 shadow-lg backdrop-blur-md md:px-5"><a href="#conteudo" aria-label="Voltar ao início" class="shrink-0"><img src="logo.png" alt="Karoline Queiroz" width="96" height="32" class="h-6 w-auto"></a><div class="hidden items-center gap-7 font-mono text-[11px] font-bold uppercase text-luz/80 md:flex"><a href="#trabalhos" class="hover:text-luz">Trabalhos</a><a href="#servicos" class="hover:text-luz">Serviços</a><a href="#sobre" class="hover:text-luz">Sobre</a><a href="#processo" class="hover:text-luz">Processo</a></div><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="nav-cta shrink-0 rounded-full bg-luz px-4 py-2.5 font-mono text-[10px] font-bold uppercase text-ametista hover:bg-areia md:px-5">Falar comigo</a><button id="menu-toggle" type="button" class="rounded-full p-2 text-luz md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span class="mb-1.5 block h-px w-5 bg-current"></span><span class="mb-1.5 block h-px w-5 bg-current"></span><span class="block h-px w-5 bg-current"></span></button><div id="mobile-menu" class="absolute left-0 right-0 top-full mt-3 hidden rounded-3xl border border-luz/20 bg-ametista p-5 shadow-xl md:hidden"><div class="flex flex-col gap-4 font-mono text-xs font-bold uppercase text-luz"><a href="#trabalhos">Trabalhos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#processo">Processo</a></div></div></div></nav>
 
-    <!-- HEADER / NAVEGAÇÃO -->
-    <header class="w-full px-8 py-6 flex justify-between items-center border-b border-neutral-900">
-        <div class="flex items-center gap-3">
-            <!-- Logotipo Minimalista (Olho/Sol) -->
-            <svg class="w-6 h-6 text-neutral-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="4"></circle>
-                <path d="M12 2v2m0 16v2M2 12h2m16 0h2m-3.17-6.83l-1.42 1.42m-9.9 9.9l-1.42 1.42m0-12.72l1.42 1.42m9.9 9.9l1.42 1.42"></path>
-            </svg>
-            <span class="text-xs uppercase tracking-[0.25em] font-medium text-neutral-400">Studio</span>
-        </div>
-        <nav class="hidden md:flex gap-8 text-xs uppercase tracking-[0.2em] text-neutral-400">
-            <a href="#portfolio" class="hover:text-white transition-colors">Projetos</a>
-            <a href="#about" class="hover:text-white transition-colors">Sobre</a>
-            <a href="#contact" class="hover:text-white transition-colors">Contato</a>
-        </nav>
-    </header>
+  <main id="conteudo">
+    <section class="mx-auto max-w-[1240px] px-5 pb-16 pt-32 md:px-8 md:pb-24 md:pt-40"><div class="grid items-end gap-12 lg:grid-cols-12"><div class="lg:col-span-8"><p class="eyebrow mb-6 inline-flex items-center gap-2 rounded-sm bg-areia px-3 py-1.5 font-mono text-[10px] font-bold uppercase text-ametista"><span class="h-1.5 w-1.5 rounded-full bg-ametista"></span>Design visual para negócios</p><h1 class="hero-title mb-7 max-w-5xl text-6xl font-black uppercase leading-[.88] tracking-[-.07em] text-ametista md:text-8xl lg:text-[6.6rem]">Seu negócio<br>merece <span class="font-normal text-transparent" style="-webkit-text-stroke:2px #1B1020">uma</span><br><span class="relative">boa apresentação.<svg class="absolute -bottom-3 left-0 h-3 w-full text-areia" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5Q50 15 100 5" fill="none" stroke="currentColor" stroke-width="4"/></svg></span></h1><p class="mb-8 max-w-xl font-mono text-sm leading-relaxed text-noite/80 md:text-base">Eu crio identidades visuais, peças para redes sociais e materiais gráficos para pequenos negócios que querem parecer tão bons quanto são.</p><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 rounded-full bg-ametista px-6 py-4 text-sm font-bold uppercase tracking-wide text-luz hover:bg-areia hover:text-ametista">Conversar sobre meu projeto <span aria-hidden="true">→</span></a></div><div class="hidden border-l border-ametista/20 pb-2 pl-7 lg:col-span-4 lg:block"><p class="mb-4 font-mono text-xs font-bold uppercase leading-relaxed text-ametista/55">Para quem tem um bom produto, mas sente que a marca ainda não mostra isso.</p><p class="font-mono text-[11px] uppercase leading-relaxed text-lavanda">Identidade, clareza e materiais prontos para usar.</p></div></div></section>
 
-    <!-- HERO SECTION (Tipográfica Desconstruída) -->
-    <main class="max-w-7xl mx-auto px-6 pt-16 pb-24">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-            
-            <!-- Bloco de Título Desalinhado (Esquerda) -->
-            <div class="md:col-span-7 space-y-6 pt-8">
-                <p class="text-[11px] uppercase tracking-[0.3em] text-neutral-500 font-mono">Brand Strategy & Visual Identity</p>
-                <h1 class="text-3xl md:text-5xl font-light tracking-tight text-neutral-100 leading-tight">
-                    Arquitetura de marcas com <span class="italic font-normal text-neutral-400">essência editorial</span> e presença marcante.
-                </h1>
-                <p class="text-xs md:text-sm text-neutral-400 max-w-md font-light leading-relaxed">
-                    Transformando ideias em identidades visuais de alto impacto, minimalistas e atemporais.
-                </p>
-            </div>
+    <section id="trabalhos" class="border-t border-ametista/10 px-5 py-20 md:px-8 md:py-28"><div class="mx-auto max-w-[1200px]"><div class="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p class="eyebrow mb-3 font-mono text-[10px] font-bold uppercase text-areia">Portfólio selecionado</p><h2 class="text-5xl font-black uppercase leading-[.9] tracking-[-.06em] md:text-7xl">Projetos<br>por pasta</h2></div><p class="max-w-sm font-mono text-sm leading-relaxed text-lavanda md:text-right">Cada quadrado é um projeto. Clique para abrir a pasta e ver o que foi desenvolvido.</p></div><div class="mb-4 flex items-center justify-between"><p class="font-mono text-xs uppercase text-ametista/55">Deslize para explorar <span aria-hidden="true">→</span></p><p class="font-mono text-xs text-ametista/45">10 projetos</p></div><div class="project-rail" aria-label="Projetos do portfólio">
+      <button class="project-card group bg-ametista text-left" data-project="at" aria-label="Abrir projeto A&T Marcenaria"><img src="image_21.png" alt="A&T Marcenaria" class="h-full w-full object-cover opacity-90" loading="lazy" width="800" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-luz px-2 py-1 font-mono text-[10px] font-bold uppercase text-ametista">Identidade visual</span><h3 class="text-2xl font-black uppercase tracking-tight text-luz">A&T Marcenaria</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-luz/75">Abrir pasta →</span></div></button>
+      <button class="project-card group bg-lavanda text-left" data-project="markie" aria-label="Abrir projeto Markie Papelaria Criativa"><img src="image_22.png" alt="Markie Papelaria Criativa" class="h-full w-full object-cover opacity-90" loading="lazy" width="800" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-areia px-2 py-1 font-mono text-[10px] font-bold uppercase text-ametista">Identidade completa</span><h3 class="text-2xl font-black uppercase tracking-tight text-luz">Markie</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-luz/75">Abrir pasta →</span></div></button>
+      <button class="project-card group bg-noite text-left" data-project="maira" aria-label="Abrir projeto Maiara Cristina Psicóloga"><img src="image_23.png" alt="Maiara Cristina Psicóloga" class="h-full w-full object-cover opacity-90" loading="lazy" width="800" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-luz px-2 py-1 font-mono text-[10px] font-bold uppercase text-ametista">Identidade completa</span><h3 class="text-2xl font-black uppercase tracking-tight text-luz">Maiara Cristina</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-luz/75">Abrir pasta →</span></div></button>
+      <button class="project-card group bg-areia text-left" data-project="patricia" aria-label="Abrir projeto Patrícia Alcântara Nail Designer"><img src="image_24.png" alt="Patrícia Alcântara Nail Designer" class="h-full w-full object-cover opacity-90" loading="lazy" width="800" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-ametista px-2 py-1 font-mono text-[10px] font-bold uppercase text-luz">Identidade simples</span><h3 class="text-2xl font-black uppercase tracking-tight text-ametista">Patrícia Alcântara</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-ametista/70">Abrir pasta →</span></div></button>
+      <button class="project-card group bg-lavanda text-left" data-project="jf" aria-label="Abrir projeto JF Acessórios"><img src="image_25.png" alt="JF Acessórios" class="h-full w-full object-cover opacity-90" loading="lazy" width="800" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-areia px-2 py-1 font-mono text-[10px] font-bold uppercase text-ametista">Identidade simples</span><h3 class="text-2xl font-black uppercase tracking-tight text-luz">JF Acessórios</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-luz/75">Abrir pasta →</span></div></button>
+      <button class="project-card group bg-noite text-left" data-project="biskie" aria-label="Abrir projeto Biskie"><img src="image_26.png" alt="Biskie" class="h-full w-full object-cover opacity-90" loading="lazy" width="800" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-luz px-2 py-1 font-mono text-[10px] font-bold uppercase text-ametista">Conteúdo para redes</span><h3 class="text-2xl font-black uppercase tracking-tight text-luz">Biskie</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-luz/75">Abrir pasta →</span></div></button>
+      <button class="project-card group bg-areia text-left" data-project="comile" aria-label="Abrir projeto Comile Brigadeiros Gourmet"><img src="image_27.png" alt="Comile Brigadeiros Gourmet" class="h-full w-full object-cover opacity-90" loading="lazy" width="800" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-ametista px-2 py-1 font-mono text-[10px] font-bold uppercase text-luz">Identidade simples</span><h3 class="text-2xl font-black uppercase tracking-tight text-ametista">Comile</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-ametista/70">Abrir pasta →</span></div></button>
+      <button class="project-card group bg-noite text-left" data-project="garimpan" aria-label="Abrir projeto Garimpan.do"><img src="image_28.png" alt="Garimpan.do" class="h-full w-full object-cover opacity-90" loading="lazy" width="800" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-luz px-2 py-1 font-mono text-[10px] font-bold uppercase text-ametista">Identidade visual</span><h3 class="text-2xl font-black uppercase tracking-tight text-luz">Garimpan.do</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-luz/75">Abrir pasta →</span></div></button>
+      <button class="project-card group bg-areia text-left" data-project="vona" aria-label="Abrir projeto VONA ID"><img src="image_29.png" alt="VONA ID" class="h-full w-full object-cover opacity-90" loading="lazy" width="800" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-ametista px-2 py-1 font-mono text-[10px] font-bold uppercase text-luz">Identidade e materiais</span><h3 class="text-2xl font-black uppercase tracking-tight text-ametista">VONA ID</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-ametista/70">Abrir pasta →</span></div></button>
+      <button class="project-card group bg-lavanda text-left" data-project="juliana" aria-label="Abrir projeto Juliana Landim Psicóloga"><img src="image_30.png" alt="Juliana Landim Psicóloga" class="h-full w-full object-cover opacity-90" loading="lazy" width="800" height="800"><div class="project-label"><span class="mb-2 inline-block rounded-sm bg-areia px-2 py-1 font-mono text-[10px] font-bold uppercase text-ametista">Identidade e MIV</span><h3 class="text-2xl font-black uppercase tracking-tight text-luz">Juliana Landim</h3><span class="mt-2 block font-mono text-[10px] font-bold uppercase text-luz/75">Abrir pasta →</span></div></button>
+    </div><p class="mt-5 font-mono text-xs leading-relaxed text-ametista/60">Os projetos são apresentados individualmente para deixar claro o tipo de trabalho e a solução desenvolvida.</p></div></section>
 
-            <!-- Bloco de Foto / Destaque Visual (Direita superior assimétrica) -->
-            <div class="md:col-span-5 md:translate-y-12">
-                <div class="w-full h-80 bg-neutral-900 border border-neutral-800 relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-neutral-950/40 z-10"></div>
-                    <!-- Substituir pela imagem de hero desejada -->
-                    <div class="w-full h-full flex items-center justify-center text-xs text-neutral-600 uppercase tracking-widest">[ Foto / Editorial Hero ]</div>
-                </div>
-            </div>
-        </div>
+    <section class="mx-auto max-w-[980px] border-t border-ametista/10 px-5 py-24 text-center md:px-8 md:py-32"><p class="eyebrow mb-5 font-mono text-[10px] font-bold uppercase text-areia">O papel do design</p><h2 class="text-4xl font-black uppercase leading-[.98] tracking-[-.045em] md:text-6xl">Cada negócio tem uma história.<br><span class="text-lavanda">O design ajuda a mostrar isso.</span></h2><p class="mx-auto mt-8 max-w-2xl font-mono text-sm leading-relaxed text-ametista/70">Da primeira impressão à divulgação de um produto, a comunicação visual participa da experiência que seu cliente tem com a sua marca.</p></section>
 
-        <!-- SEÇÃO DE PORTFÓLIO / CARROSSEL CENTRAL -->
-        <section id="portfolio" class="mt-36">
-            <div class="flex justify-between items-end mb-8 border-b border-neutral-900 pb-4">
-                <h2 class="text-xs uppercase tracking-[0.3em] text-neutral-400">Seleção de Projetos</h2>
-                <div class="flex gap-4 text-xs text-neutral-500">
-                    <button class="hover:text-white transition-colors">&larr; Prev</button>
-                    <button class="hover:text-white transition-colors">Next &rarr;</button>
-                </div>
-            </div>
+    <section id="servicos" class="bg-ametista px-5 py-20 text-luz md:px-8 md:py-28"><div class="mx-auto max-w-[1200px]"><div class="mb-12 max-w-2xl"><p class="eyebrow mb-4 font-mono text-[10px] font-bold uppercase text-areia">O que posso criar</p><h2 class="text-4xl font-black uppercase leading-[.92] tracking-[-.05em] md:text-6xl">Design para o momento<br>que sua empresa está vivendo.</h2><p class="mt-6 max-w-xl font-mono text-sm leading-relaxed text-luz/70">Você não precisa chegar sabendo o nome do serviço. Pode me explicar o que precisa e eu ajudo a organizar o projeto.</p></div><div class="grid gap-5 md:grid-cols-3"><article class="service-card rounded-2xl bg-luz p-7 text-ametista"><div class="mb-10 flex items-center justify-between"><span class="font-mono text-xs font-bold text-areia">01 / 03</span><span class="font-mono text-[10px] uppercase text-ametista/50">Base da marca</span></div><h3 class="mb-4 text-2xl font-black uppercase tracking-tight">Identidade visual</h3><p class="mb-8 font-mono text-sm leading-relaxed text-ametista/70">Para começar com direção ou organizar uma marca que cresceu sem uma apresentação consistente.</p><ul class="space-y-3 border-t border-ametista/10 pt-5 font-mono text-xs font-bold uppercase"><li>Logo e variações</li><li>Paleta e tipografia</li><li>Elementos visuais</li><li>Aplicações básicas</li></ul></article><article class="service-card rounded-2xl bg-areia p-7 text-ametista"><div class="mb-10 flex items-center justify-between"><span class="font-mono text-xs font-bold text-luz">02 / 03</span><span class="font-mono text-[10px] uppercase text-ametista/60">Presença diária</span></div><h3 class="mb-4 text-2xl font-black uppercase tracking-tight">Conteúdo para redes</h3><p class="mb-8 font-mono text-sm leading-relaxed text-ametista/75">Peças para divulgar produtos, serviços e novidades sem depender de layouts genéricos.</p><ul class="space-y-3 border-t border-ametista/15 pt-5 font-mono text-xs font-bold uppercase"><li>Posts e stories</li><li>Campanhas e promoções</li><li>Informativos</li><li>Datas especiais</li></ul></article><article class="service-card rounded-2xl bg-lavanda p-7 text-luz"><div class="mb-10 flex items-center justify-between"><span class="font-mono text-xs font-bold text-noite">03 / 03</span><span class="font-mono text-[10px] uppercase text-luz/70">Materiais</span></div><h3 class="mb-4 text-2xl font-black uppercase tracking-tight">Materiais gráficos</h3><p class="mb-8 font-mono text-sm leading-relaxed text-luz/80">Materiais físicos e digitais para deixar os pontos de contato da empresa mais profissionais.</p><ul class="space-y-3 border-t border-luz/20 pt-5 font-mono text-xs font-bold uppercase"><li>Cartões e papelaria</li><li>Flyers e folders</li><li>Cardápios</li><li>Apresentações em PDF</li></ul></article></div></div></section>
 
-            <!-- Card Principal do Carrossel -->
-            <div class="w-full h-[450px] bg-neutral-900 border border-neutral-800 relative flex items-center justify-center overflow-hidden">
-                <div class="text-center space-y-2">
-                    <span class="text-[10px] uppercase tracking-[0.3em] text-neutral-500">Featured Work</span>
-                    <h3 class="text-xl font-light text-neutral-200 tracking-wide">Projeto Destaque</h3>
-                </div>
-            </div>
-        </section>
+    <section id="processo" class="bg-luz px-5 py-20 md:px-8 md:py-28"><div class="mx-auto grid max-w-[1100px] gap-12 md:grid-cols-12 md:gap-16"><div class="md:col-span-4"><p class="eyebrow mb-4 font-mono text-[10px] font-bold uppercase text-areia">Sem complicação</p><h2 class="text-5xl font-black uppercase leading-[.88] tracking-[-.06em] md:sticky md:top-28 md:text-7xl">Como<br>funciona</h2></div><div class="space-y-9 md:col-span-8"><div class="flex gap-5"><span class="font-mono text-sm font-bold text-lavanda">01</span><div class="w-full border-t-2 border-ametista pt-3"><h3 class="text-xl font-black uppercase">Você me chama</h3><p class="mt-2 max-w-xl font-mono text-sm leading-relaxed text-noite/75">Você explica o momento do negócio e o que gostaria de melhorar.</p></div></div><div class="flex gap-5"><span class="font-mono text-sm font-bold text-lavanda">02</span><div class="w-full border-t-2 border-ametista pt-3"><h3 class="text-xl font-black uppercase">A gente conversa</h3><p class="mt-2 max-w-xl font-mono text-sm leading-relaxed text-noite/75">Entendo seu objetivo, público, referências e o que precisa ser entregue.</p></div></div><div class="flex gap-5"><span class="font-mono text-sm font-bold text-lavanda">03</span><div class="w-full border-t-2 border-ametista pt-3"><h3 class="text-xl font-black uppercase">Você recebe o orçamento</h3><p class="mt-2 max-w-xl font-mono text-sm leading-relaxed text-noite/75">A proposta vem com escopo, prazo, entregas e condições de forma direta.</p></div></div><div class="flex gap-5"><span class="font-mono text-sm font-bold text-lavanda">04</span><div class="w-full border-t-2 border-ametista pt-3"><h3 class="text-xl font-black uppercase">Eu desenvolvo</h3><p class="mt-2 max-w-xl font-mono text-sm leading-relaxed text-noite/75">Crio as peças com base no que combinamos e envio para sua aprovação.</p></div></div><div class="flex gap-5"><span class="font-mono text-sm font-bold text-areia">05</span><div class="w-full border-t-2 border-areia pt-3"><h3 class="text-xl font-black uppercase">Você recebe tudo pronto</h3><p class="mt-2 max-w-xl font-mono text-sm leading-relaxed text-noite/75">Arquivos finais organizados para você usar na rotina do negócio.</p></div></div></div></div></section>
 
-        <!-- NOME EM GRANDE DESTAQUE TIPOGRÁFICO -->
-        <section class="py-28 text-center overflow-hidden">
-            <h2 class="text-[12vw] font-bold tracking-tighter uppercase text-neutral-900 select-none leading-none">
-                Karoline Queiroz
-            </h2>
-        </section>
+    <section id="sobre" class="bg-ametista px-5 py-20 text-luz md:px-8 md:py-28"><div class="mx-auto max-w-[1200px]"><div class="mb-10 max-w-xl"><p class="eyebrow mb-5 inline-block rounded-full bg-lavanda px-3 py-1 font-mono text-[10px] font-bold uppercase">Sobre a designer</p><h2 class="mb-7 text-5xl font-black uppercase leading-[.9] tracking-[-.06em] md:text-6xl">Oi, eu sou<br>a Karoline.</h2><div class="space-y-5 font-mono text-sm leading-relaxed text-luz/80"><p>Sou designer gráfica e gosto de ajudar negócios a traduzirem melhor o valor que já entregam.</p><p>Trabalho com identidades visuais, peças para redes sociais e materiais gráficos — principalmente para quem está começando, se reposicionando ou cansou de parecer improvisado.</p><p class="border-l-2 border-areia pl-4 font-bold text-luz">Meu trabalho é entender o que você precisa e transformar isso em design claro, bonito e pronto para usar.</p></div></div><div class="photo-hero rounded-2xl"><img src="IMG_0401.png" alt="Karoline Queiroz, designer gráfica" loading="lazy" width="1200" height="800"><div class="photo-copy absolute inset-0 flex flex-col justify-end p-7 md:p-12"><p class="eyebrow mb-4 font-mono text-[10px] font-bold uppercase text-areia">Design com intenção</p><h3 class="max-w-2xl text-4xl font-black uppercase leading-[.9] tracking-[-.05em] text-luz md:text-7xl">Marcas mais claras.<br>Negócios mais confiantes.</h3><div class="mt-6 flex flex-wrap items-center gap-4"><span class="font-mono text-xs uppercase text-luz/70">Karoline Queiroz / 2026</span><span class="h-px w-16 bg-areia"></span><span class="font-mono text-xs uppercase text-luz/70">São José dos Campos — SP</span></div></div></div></div></section>
 
-        <!-- SEÇÃO SOBRE MIM (A Lua & O Olho Orbitando) -->
-        <section id="about" class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center pt-12 border-t border-neutral-900">
-            
-            <!-- Coluna da Lua (Foto de Perfil + Ícone Orbitando) -->
-            <div class="md:col-span-5 flex justify-center py-12 relative">
-                <!-- Container da Lua -->
-                <div class="relative w-64 h-64 rounded-full bg-neutral-900 border border-neutral-800 overflow-hidden flex items-center justify-center shadow-2xl">
-                    <!-- Substituir pelo src da sua foto de perfil -->
-                    <div class="absolute inset-0 bg-neutral-800 flex items-center justify-center text-xs text-neutral-500 uppercase tracking-widest">
-                        [ Foto Perfil ]
-                    </div>
-                </div>
+    <section id="contato" class="relative overflow-hidden bg-luz px-5 py-24 text-center md:px-8 md:py-32"><div class="relative z-10 mx-auto max-w-3xl"><p class="eyebrow mb-5 font-mono text-[10px] font-bold uppercase text-areia">Vamos conversar</p><h2 class="text-5xl font-black uppercase leading-[.9] tracking-[-.06em] md:text-7xl">Tem algo que<br>precisa ser criado?</h2><p class="mx-auto mt-7 max-w-md font-mono text-sm leading-relaxed text-noite/75">Me conte o que você precisa. Você não precisa saber exatamente qual serviço contratar — eu ajudo a organizar o próximo passo.</p><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="mt-10 inline-flex items-center gap-3 rounded-full bg-ametista px-8 py-5 text-base font-black uppercase tracking-wide text-luz hover:bg-areia hover:text-ametista">Falar pelo WhatsApp <span aria-hidden="true">→</span></a><p class="mt-5 font-mono text-xs text-lavanda">Resposta inicial pelo WhatsApp para entender o projeto.</p></div></section>
+  </main>
+  <footer class="bg-noite px-5 py-14 text-luz md:px-8 md:py-16"><div class="mx-auto flex max-w-[1200px] flex-col justify-between gap-10 md:flex-row md:items-end"><div><h2 class="text-2xl font-black uppercase tracking-tight">Karoline Queiroz</h2><p class="mt-1 font-mono text-xs font-bold uppercase text-areia">Design gráfico</p><p class="mt-3 font-mono text-xs uppercase text-luz/50">São José dos Campos — SP</p></div><div class="flex flex-wrap gap-x-6 gap-y-3 font-mono text-xs font-bold uppercase text-luz/70"><a href="#trabalhos" class="hover:text-areia">Trabalhos</a><a href="#servicos" class="hover:text-areia">Serviços</a><a href="#sobre" class="hover:text-areia">Sobre</a><a href="#processo" class="hover:text-areia">Processo</a><a href="https://wa.me/5512982544891" target="_blank" rel="noopener noreferrer" class="text-areia hover:text-luz">WhatsApp ↗</a></div></div><div class="mx-auto mt-12 flex max-w-[1200px] justify-between gap-4 border-t border-luz/10 pt-5 font-mono text-[10px] uppercase text-luz/40"><small>© 2026 Karoline Queiroz</small><span>Design visual para negócios</span></div></footer>
 
-                <!-- Elemento do Logotipo Orbitando o Olho -->
-                <div class="absolute w-full h-full flex items-center justify-center pointer-events-none">
-                    <div class="orbiting-element">
-                        <div class="w-10 h-10 bg-neutral-950 border border-neutral-700 rounded-full flex items-center justify-center shadow-lg">
-                            <!-- Ícone do Olho/Sol do Logo -->
-                            <svg class="w-5 h-5 text-neutral-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="12" cy="12" r="3"></circle>
-                                <path d="M12 2v2m0 16v2"></path>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <dialog id="project-modal" aria-labelledby="modal-title"><div class="modal-panel"><div class="flex items-center justify-between border-b border-ametista/10 px-5 py-4 md:px-7"><p class="font-mono text-[10px] font-bold uppercase text-lavanda">Pasta do projeto</p><button id="modal-close" type="button" aria-label="Fechar projeto" class="rounded-full bg-ametista px-3 py-1.5 font-mono text-xs font-bold uppercase text-luz hover:bg-areia hover:text-ametista">Fechar ×</button></div><div class="grid gap-0 md:grid-cols-2"><div class="bg-ametista"><img id="modal-image" src="" alt="" class="aspect-square h-full w-full object-cover"></div><div class="p-6 md:p-9"><p id="modal-category" class="eyebrow mb-4 font-mono text-[10px] font-bold uppercase text-areia"></p><h2 id="modal-title" class="mb-5 text-4xl font-black uppercase leading-[.92] tracking-[-.05em]"></h2><p id="modal-description" class="mb-7 font-mono text-sm leading-relaxed text-noite/75"></p><div class="border-t border-ametista/10 pt-5"><p class="mb-3 font-mono text-[10px] font-bold uppercase text-lavanda">O que foi desenvolvido</p><p id="modal-deliverables" class="font-mono text-sm leading-relaxed text-ametista"></p></div><a id="modal-cta" href="" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-3 rounded-full bg-ametista px-5 py-3.5 text-xs font-bold uppercase text-luz hover:bg-areia hover:text-ametista">Conversar sobre um projeto <span aria-hidden="true">→</span></a></div></div></div></dialog>
 
-            <!-- Coluna de Textos Pequenos / Bio -->
-            <div class="md:col-span-7 space-y-6">
-                <span class="text-[11px] uppercase tracking-[0.3em] text-neutral-500 font-mono">Sobre a Criadora</span>
-                <h3 class="text-xl font-light text-neutral-200 leading-snug">
-                    Design focado em clareza, atmosfera e exclusividade.
-                </h3>
-                <p class="text-xs md:text-sm text-neutral-400 font-light leading-relaxed">
-                    Cada marca é tratada como uma entidade viva. Meu processo une estratégia de posicionamento e direção de arte refinada para criar universos visuais que conversam diretamente com o público de alto padrão.
-                </p>
-                <div class="pt-4">
-                    <a href="#contact" class="inline-block text-xs uppercase tracking-[0.2em] border-b border-neutral-700 pb-1 text-neutral-200 hover:border-white transition-all">
-                        Iniciar um Projeto &rarr;
-                    </a>
-                </div>
-            </div>
-
-        </section>
-    </main>
-
-    <!-- RODAPÉ -->
-    <footer id="contact" class="border-t border-neutral-900 py-12 px-6 text-center text-xs text-neutral-600 uppercase tracking-widest">
-        <p>&copy; 2026 Karoline Queiroz. Todos os direitos reservados.</p>
-    </footer>
-
+  <script>
+    const projects={
+      at:{name:'A&T Marcenaria',category:'Identidade visual',image:'image_21.png',description:'Uma identidade visual pensada para uma marcenaria que valoriza o trabalho artesanal, o acabamento e a presença de materiais bem feitos.',deliverables:'Logo, paleta de cores, tipografia e aplicações da marca.'},
+      markie:{name:'Markie Papelaria Criativa',category:'Identidade visual completa',image:'image_22.png',description:'Uma identidade completa para uma papelaria criativa que precisava organizar sua presença e deixar a marca mais reconhecível.',deliverables:'Identidade visual completa, elementos gráficos e aplicações.'},
+      maira:{name:'Maiara Cristina Psicóloga',category:'Identidade visual completa',image:'image_23.png',description:'Uma identidade visual acolhedora e profissional para comunicar confiança no trabalho da psicóloga.',deliverables:'Identidade visual completa, paleta, tipografia e aplicações.'},
+      patricia:{name:'Patrícia Alcântara Nail Designer',category:'Identidade visual simples',image:'image_24.png',description:'Uma identidade simples e delicada para uma profissional de beleza que queria apresentar seu trabalho com mais consistência.',deliverables:'Logo, cores, tipografia e aplicações essenciais.'},
+      jf:{name:'JF Acessórios',category:'Identidade visual simples',image:'image_25.png',description:'Uma identidade visual direta para destacar a marca e criar uma base consistente para suas comunicações.',deliverables:'Logo, paleta, tipografia e elementos de apoio.'},
+      biskie:{name:'Biskie',category:'Conteúdo para redes',image:'image_26.png',description:'Peças e direção visual para apresentar produtos de forma apetitiva, reconhecível e pronta para circular nas redes.',deliverables:'Artes para redes sociais e aplicações visuais da marca.'},
+      comile:{name:'Comile Brigadeiros Gourmet',category:'Identidade visual simples',image:'image_27.png',description:'Uma identidade simples para uma marca de doces que precisava comunicar cuidado, sabor e personalidade.',deliverables:'Logo, cores, tipografia e aplicações essenciais.'},
+      garimpan:{name:'Garimpan.do',category:'Identidade visual',image:'image_28.png',description:'Uma identidade com presença e personalidade para uma marca que precisava transformar sua proposta em um sistema visual.',deliverables:'Identidade visual, elementos gráficos e aplicações.'},
+      vona:{name:'VONA ID',category:'Identidade e materiais',image:'image_29.png',description:'Uma identidade e materiais de apoio para apresentar a marca de forma sofisticada em diferentes pontos de contato.',deliverables:'Identidade visual, materiais gráficos, tipografia e aplicações.'},
+      juliana:{name:'Juliana Landim Psicóloga',category:'Identidade visual e MIV',image:'image_30.png',description:'Um sistema visual completo para uma psicóloga, com uma base clara para manter a comunicação consistente no dia a dia.',deliverables:'Identidade visual, materiais gráficos, tipografia, elementos de apoio e MIV completo.'}
+    };
+    const modal=document.getElementById('project-modal'),modalImage=document.getElementById('modal-image'),modalTitle=document.getElementById('modal-title'),modalCategory=document.getElementById('modal-category'),modalDescription=document.getElementById('modal-description'),modalDeliverables=document.getElementById('modal-deliverables'),modalCta=document.getElementById('modal-cta');
+    document.querySelectorAll('[data-project]').forEach(card=>card.addEventListener('click',()=>{const p=projects[card.dataset.project];if(!p)return;modalImage.src=p.image;modalImage.alt=p.name;modalTitle.textContent=p.name;modalCategory.textContent=p.category;modalDescription.textContent=p.description;modalDeliverables.textContent=p.deliverables;modalCta.href='https://wa.me/5512982544891?text='+encodeURIComponent('Olá, Karoline! Vi o projeto '+p.name+' no seu portfólio e gostaria de conversar sobre um projeto.');modal.showModal()}));
+    document.getElementById('modal-close').addEventListener('click',()=>modal.close());modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});
+    const toggle=document.getElementById('menu-toggle'),menu=document.getElementById('mobile-menu');if(toggle&&menu){toggle.addEventListener('click',()=>{const open=menu.classList.toggle('hidden')===false;toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu')});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.add('hidden');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir menu')}))}
+  </script>
 </body>
 </html>
