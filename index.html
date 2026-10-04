@@ -75,9 +75,15 @@
     </header>
 
     <main>
+        <!-- HERO SECTION COM FOTO CIRCULAR AO FUNDO E TEXTOS SOBREPOSTOS -->
         <section class="max-w-6xl mx-auto px-6 pt-20 pb-28 md:pt-32 md:pb-36 relative overflow-hidden">
+            <!-- Foto de perfil circular sutilmente posicionada ao fundo como elemento de direção de arte -->
+            <div class="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 w-72 h-72 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] rounded-full overflow-hidden opacity-25 md:opacity-20 pointer-events-none -z-10 flex items-center justify-center border border-base-line bg-base-surface">
+                <img src="https://placehold.co/800x800/f2efea/1c1b1a?text=Karoline+Quiroz" alt="Karoline Quiroz Designer" class="w-full h-full object-cover object-center rounded-full">
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
-                <div class="md:col-span-8">
+                <div class="md:col-span-9 lg:col-span-8">
                     <span class="text-xs uppercase tracking-widest text-base-muted block mb-6 font-medium">Design gráfico independente</span>
                     <h1 class="serif-title text-6xl sm:text-7xl md:text-8xl font-normal leading-[0.92] text-base-dark mb-8">
                         Seu negócio merece uma apresentação clara e profissional.
@@ -94,19 +100,10 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Foto de perfil circular integrada ao fundo com sobreposição elegante -->
-                <div class="md:col-span-4 flex justify-center md:justify-end relative">
-                    <div class="absolute -inset-4 bg-base-surface/60 rounded-full blur-2xl -z-10"></div>
-                    <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-base-line bg-base-surface relative shadow-lg flex items-center justify-center">
-                        <!-- Substitua o src abaixo pela URL real da foto da Karoline -->
-                        <img src="https://placehold.co/600x600/f2efea/1c1b1a?text=Karoline+Quiroz" alt="Karoline Quiroz Designer" class="w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-500">
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- PORTFÓLIO EDITORIAL (PROTAGONISTA - TÍTULOS E NOMES 100% BRANCOS SOBRE AS CAPAS) -->
+        <!-- PORTFÓLIO EDITORIAL COM TÍTULOS TOTALMENTE BRANCOS -->
         <section id="portfolio" class="border-t border-base-line py-24 md:py-32">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
@@ -119,48 +116,44 @@
                     </p>
                 </div>
 
-                <!-- Grade Editorial com ritmo assimétrico intencional -->
+                <!-- Grade Editorial com ritmo assimétrico, capas escuras e nomes brancos sem poluição -->
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
                     <!-- Projeto 1 (8 colunas) -->
                     <div class="md:col-span-8 group cursor-pointer" onclick="abrirProjeto('Café Bistrô & Confeitaria')">
                         <div class="bg-[#1c1b1a] border border-base-line aspect-[16/10] mb-4 overflow-hidden relative flex flex-col justify-end p-8 md:p-12 transition-all group-hover:border-base-dark">
-                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                            <span class="text-xs uppercase tracking-widest text-white/80 relative z-10 mb-2">Café Bistrô & Confeitaria</span>
-                            <h3 class="serif-title text-4xl md:text-5xl text-white relative z-10">Café Bistrô</h3>
+                            <div class="absolute inset-0 bg-black/20 transition-colors"></div>
+                            <h3 class="serif-title text-4xl md:text-5xl text-white relative z-10 font-normal">Café Bistrô & Confeitaria</h3>
                         </div>
                     </div>
 
                     <!-- Projeto 2 (4 colunas) -->
                     <div class="md:col-span-4 group cursor-pointer pt-0 md:pt-16" onclick="abrirProjeto('Studio Ana Luz')">
                         <div class="bg-[#1c1b1a] border border-base-line aspect-[4/5] mb-4 overflow-hidden relative flex flex-col justify-end p-8 transition-all group-hover:border-base-dark">
-                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                            <span class="text-xs uppercase tracking-widest text-white/80 relative z-10 mb-2">Studio de Arquitetura</span>
-                            <h3 class="serif-title text-4xl text-white relative z-10">Studio Ana Luz</h3>
+                            <div class="absolute inset-0 bg-black/20 transition-colors"></div>
+                            <h3 class="serif-title text-4xl text-white relative z-10 font-normal">Studio Ana Luz</h3>
                         </div>
                     </div>
 
                     <!-- Projeto 3 (4 colunas) -->
                     <div class="md:col-span-4 group cursor-pointer" onclick="abrirProjeto('Boutique Sorelle')">
                         <div class="bg-[#1c1b1a] border border-base-line aspect-[4/5] mb-4 overflow-hidden relative flex flex-col justify-end p-8 transition-all group-hover:border-base-dark">
-                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                            <span class="text-xs uppercase tracking-widest text-white/80 relative z-10 mb-2">Loja de Roupas</span>
-                            <h3 class="serif-title text-4xl text-white relative z-10">Boutique Sorelle</h3>
+                            <div class="absolute inset-0 bg-black/20 transition-colors"></div>
+                            <h3 class="serif-title text-4xl text-white relative z-10 font-normal">Boutique Sorelle</h3>
                         </div>
                     </div>
 
                     <!-- Projeto 4 (8 colunas) -->
                     <div class="md:col-span-8 group cursor-pointer pt-0 md:pt-16" onclick="abrirProjeto('Clínica Sorrir')">
                         <div class="bg-[#1c1b1a] border border-base-line aspect-[16/10] mb-4 overflow-hidden relative flex flex-col justify-end p-8 md:p-12 transition-all group-hover:border-base-dark">
-                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                            <span class="text-xs uppercase tracking-widest text-white/80 relative z-10 mb-2">Clínica Odontológica</span>
-                            <h3 class="serif-title text-4xl md:text-5xl text-white relative z-10">Clínica Sorrir</h3>
+                            <div class="absolute inset-0 bg-black/20 transition-colors"></div>
+                            <h3 class="serif-title text-4xl md:text-5xl text-white relative z-10 font-normal">Clínica Sorrir</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- O PAPEL DO DESIGN (HUMANO E ESPAÇADO) -->
+        <!-- O PAPEL DO DESIGN -->
         <section class="border-t border-base-line py-24 bg-base-surface/50">
             <div class="max-w-4xl mx-auto px-6 text-center">
                 <span class="text-xs uppercase tracking-wider text-base-muted block mb-4">Direção Clara</span>
@@ -173,7 +166,7 @@
             </div>
         </section>
 
-        <!-- SERVIÇOS (ESTRUTURA EDITORIAL / LISTA) -->
+        <!-- SERVIÇOS -->
         <section id="servicos" class="border-t border-base-line py-24 md:py-32">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="mb-16">
@@ -207,13 +200,13 @@
             </div>
         </section>
 
-        <!-- CALCULADORA / BRIEFING INTERATIVO E REALISTA DE MERCADO -->
+        <!-- CALCULADORA / BRIEFING INTERATIVO -->
         <section id="calculadora" class="border-t border-base-line py-24 md:py-32 bg-base-surface/30">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="mb-12">
-                    <span class="text-xs uppercase tracking-wider text-base-muted block mb-2">Simulador de Projeto & Estimativa</span>
+                    <span class="text-xs uppercase tracking-wider text-base-muted block mb-2">Simulador de Projeto & Briefing</span>
                     <h2 class="serif-title text-4xl md:text-5xl text-base-dark mb-3">Quanto custa o seu projeto?</h2>
-                    <p class="text-base-muted text-sm">Responda às etapas abaixo para simular uma faixa de investimento alinhada aos preços médios de mercado para negócios locais.</p>
+                    <p class="text-base-muted text-sm">Responda às etapas abaixo para simular uma faixa de investimento alinhada aos preços médios praticados no mercado por designers independentes.</p>
                 </div>
 
                 <div class="bg-white border border-base-line p-8 md:p-12 shadow-sm space-y-10">
@@ -293,7 +286,7 @@
             </div>
         </section>
 
-        <!-- PROCESSO (RITMO EDITORIAL) -->
+        <!-- PROCESSO -->
         <section class="border-t border-base-line py-24 md:py-32">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="mb-16">
@@ -331,12 +324,13 @@
             </div>
         </section>
 
-        <!-- SOBRE (PESSOAL E ASSÉTRICO) -->
-        <section id="sobre" class="border-t border-base-line py-24 md:py-32 bg-base-surface/30">
-            <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-                <div class="md:col-span-5 flex justify-center">
-                    <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border border-base-line shadow-md bg-white flex items-center justify-center">
-                        <img src="https://placehold.co/600x600/f2efea/1c1b1a?text=Karoline+Quiroz" alt="Karoline Quiroz" class="w-full h-full object-cover">
+        <!-- SOBRE COM FOTO CIRCULAR PERFEITA AO FUNDO -->
+        <section id="sobre" class="border-t border-base-line py-24 md:py-32 bg-base-surface/30 relative overflow-hidden">
+            <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
+                <div class="md:col-span-5 flex justify-center relative">
+                    <!-- Foto circular sem cortes e integrada organicamente -->
+                    <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden border border-base-line shadow-sm bg-white flex items-center justify-center p-2 relative">
+                        <img src="https://placehold.co/600x600/f2efea/1c1b1a?text=Karoline+Quiroz" alt="Karoline Quiroz" class="w-full h-full object-cover object-center rounded-full">
                     </div>
                 </div>
                 <div class="md:col-span-7">
@@ -381,7 +375,7 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DA CALCULADORA INTELIGENTE & MODAL DE PROJETOS -->
+    <!-- SCRIPT DA CALCULADORA E INTERAÇÕES -->
     <script>
         function calcularOrcamento() {
             const escopoSel = document.querySelector('input[name="escopo"]:checked');
@@ -401,7 +395,8 @@
         }
 
         function abrirProjeto(nome) {
-            alert(`Abrindo detalhes do projeto: ${nome}`);
+            const urlWhats = `https://wa.me/5500000000000?text=` + encodeURIComponent(`Olá, gostaria de saber mais detalhes sobre o projeto "${nome}".`);
+            window.open(urlWhats, '_blank');
         }
     </script>
 </body>
