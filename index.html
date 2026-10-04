@@ -27,7 +27,7 @@
                         },
                         brand: {
                             DEFAULT: '#262422',
-                            accent: '#8c4a32' // Mantendo tom terroso/quente autoral sutil existente
+                            accent: '#8c4a32'
                         }
                     },
                     fontFamily: {
@@ -40,7 +40,6 @@
     </script>
     
     <style>
-        /* Ajustes finos de tipografia editorial */
         body {
             background-color: #f9f8f6;
             color: #1c1b1a;
@@ -60,13 +59,13 @@
     <header class="w-full border-b border-base-line bg-base/90 backdrop-blur-sm sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="font-medium text-lg tracking-tight text-base-dark flex items-center gap-2">
-                <span class="inline-block w-2.5 h-2.5 rounded-full bg-base-dark"></span>
+                <span class="inline-block w-2 h-2 bg-base-dark"></span>
                 KQ Design
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm text-base-muted">
                 <a href="#portfolio" class="hover:text-base-dark transition-colors">Portfólio</a>
                 <a href="#servicos" class="hover:text-base-dark transition-colors">Serviços</a>
-                <a href="#calculadora" class="hover:text-base-dark transition-colors">Calculadora</a>
+                <a href="#calculadora" class="hover:text-base-dark transition-colors">Simulador</a>
                 <a href="#sobre" class="hover:text-base-dark transition-colors">Sobre</a>
             </nav>
             <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="text-sm font-medium border border-base-dark/20 px-4 py-2 hover:bg-base-dark hover:text-white transition-all">
@@ -76,28 +75,38 @@
     </header>
 
     <main>
-        <!-- HERO EDITORIAL -->
-        <section class="max-w-6xl mx-auto px-6 pt-20 pb-28 md:pt-32 md:pb-36">
-            <div class="max-w-3xl">
-                <p class="text-sm uppercase tracking-widest text-base-muted mb-6 font-medium">Design gráfico independente</p>
-                <h1 class="serif-title text-6xl sm:text-7xl md:text-8xl font-normal leading-[0.95] text-base-dark mb-8">
-                    Seu negócio merece uma apresentação clara e profissional.
-                </h1>
-                <p class="text-lg md:text-xl text-base-muted leading-relaxed max-w-2xl mb-12">
-                    Ajudo negócios locais e profissionais a construírem uma presença visual sólida, sem excessos ou fórmulas prontas.
-                </p>
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                    <a href="#portfolio" class="inline-flex justify-center items-center px-6 py-3.5 bg-base-dark text-white text-sm font-medium hover:bg-opacity-90 transition-all">
-                        Ver trabalhos recentes
-                    </a>
-                    <a href="#calculadora" class="inline-flex justify-center items-center px-6 py-3.5 border border-base-line text-base-dark text-sm font-medium hover:border-base-dark transition-all">
-                        Simular projeto
-                    </a>
+        <section class="max-w-6xl mx-auto px-6 pt-20 pb-28 md:pt-32 md:pb-36 relative overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
+                <div class="md:col-span-8">
+                    <span class="text-xs uppercase tracking-widest text-base-muted block mb-6 font-medium">Design gráfico independente</span>
+                    <h1 class="serif-title text-6xl sm:text-7xl md:text-8xl font-normal leading-[0.92] text-base-dark mb-8">
+                        Seu negócio merece uma apresentação clara e profissional.
+                    </h1>
+                    <p class="text-lg md:text-xl text-base-muted leading-relaxed max-w-2xl mb-12">
+                        Ajudo negócios locais e profissionais a construírem uma presença visual sólida, sem excessos ou fórmulas prontas.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                        <a href="#portfolio" class="inline-flex justify-center items-center px-6 py-3.5 bg-base-dark text-white text-sm font-medium hover:bg-opacity-90 transition-all">
+                            Ver trabalhos recentes
+                        </a>
+                        <a href="#calculadora" class="inline-flex justify-center items-center px-6 py-3.5 border border-base-line text-base-dark text-sm font-medium hover:border-base-dark transition-all">
+                            Simular projeto
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Foto de perfil circular integrada ao fundo com sobreposição elegante -->
+                <div class="md:col-span-4 flex justify-center md:justify-end relative">
+                    <div class="absolute -inset-4 bg-base-surface/60 rounded-full blur-2xl -z-10"></div>
+                    <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-base-line bg-base-surface relative shadow-lg flex items-center justify-center">
+                        <!-- Substitua o src abaixo pela URL real da foto da Karoline -->
+                        <img src="https://placehold.co/600x600/f2efea/1c1b1a?text=Karoline+Quiroz" alt="Karoline Quiroz Designer" class="w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-500">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- PORTFÓLIO EDITORIAL (PROTAGONISTA) -->
+        <!-- PORTFÓLIO EDITORIAL (PROTAGONISTA - TÍTULOS E NOMES 100% BRANCOS SOBRE AS CAPAS) -->
         <section id="portfolio" class="border-t border-base-line py-24 md:py-32">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
@@ -112,59 +121,39 @@
 
                 <!-- Grade Editorial com ritmo assimétrico intencional -->
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-                    <!-- Projeto 1 (Destaque principal - 8 colunas) -->
-                    <div class="md:col-span-8 group cursor-pointer" onclick="abrirProjeto('Café Bistrô')">
-                        <div class="bg-base-surface border border-base-line aspect-[16/10] mb-4 overflow-hidden relative flex items-center justify-center">
-                            <span class="text-base-muted text-sm">[ Imagem do Projeto: Café Bistrô ]</span>
-                        </div>
-                        <div class="flex items-baseline justify-between">
-                            <div>
-                                <span class="text-xs text-base-muted uppercase tracking-wider">Identidade Visual & Impressos</span>
-                                <h3 class="serif-title text-3xl text-base-dark mt-1">Café Bistrô & Confeitaria</h3>
-                            </div>
-                            <span class="text-sm text-base-muted group-hover:text-base-dark transition-colors">Ver projeto →</span>
+                    <!-- Projeto 1 (8 colunas) -->
+                    <div class="md:col-span-8 group cursor-pointer" onclick="abrirProjeto('Café Bistrô & Confeitaria')">
+                        <div class="bg-[#1c1b1a] border border-base-line aspect-[16/10] mb-4 overflow-hidden relative flex flex-col justify-end p-8 md:p-12 transition-all group-hover:border-base-dark">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                            <span class="text-xs uppercase tracking-widest text-white/80 relative z-10 mb-2">Café Bistrô & Confeitaria</span>
+                            <h3 class="serif-title text-4xl md:text-5xl text-white relative z-10">Café Bistrô</h3>
                         </div>
                     </div>
 
                     <!-- Projeto 2 (4 colunas) -->
-                    <div class="md:col-span-4 group cursor-pointer pt-0 md:pt-16" onclick="abrirProjeto('Studio de Arquitetura')">
-                        <div class="bg-base-surface border border-base-line aspect-[4/5] mb-4 overflow-hidden relative flex items-center justify-center">
-                            <span class="text-base-muted text-sm">[ Imagem: Studio de Arquitetura ]</span>
-                        </div>
-                        <div class="flex items-baseline justify-between">
-                            <div>
-                                <span class="text-xs text-base-muted uppercase tracking-wider">Identidade Visual</span>
-                                <h3 class="serif-title text-3xl text-base-dark mt-1">Studio Ana Luz</h3>
-                            </div>
-                            <span class="text-sm text-base-muted group-hover:text-base-dark transition-colors">Ver →</span>
+                    <div class="md:col-span-4 group cursor-pointer pt-0 md:pt-16" onclick="abrirProjeto('Studio Ana Luz')">
+                        <div class="bg-[#1c1b1a] border border-base-line aspect-[4/5] mb-4 overflow-hidden relative flex flex-col justify-end p-8 transition-all group-hover:border-base-dark">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                            <span class="text-xs uppercase tracking-widest text-white/80 relative z-10 mb-2">Studio de Arquitetura</span>
+                            <h3 class="serif-title text-4xl text-white relative z-10">Studio Ana Luz</h3>
                         </div>
                     </div>
 
                     <!-- Projeto 3 (4 colunas) -->
-                    <div class="md:col-span-4 group cursor-pointer" onclick="abrirProjeto('Loja de Roupas')">
-                        <div class="bg-base-surface border border-base-line aspect-[4/5] mb-4 overflow-hidden relative flex items-center justify-center">
-                            <span class="text-base-muted text-sm">[ Imagem: Loja de Roupas ]</span>
-                        </div>
-                        <div class="flex items-baseline justify-between">
-                            <div>
-                                <span class="text-xs text-base-muted uppercase tracking-wider">Artes para Redes Sociais</span>
-                                <h3 class="serif-title text-3xl text-base-dark mt-1">Boutique Sorelle</h3>
-                            </div>
-                            <span class="text-sm text-base-muted group-hover:text-base-dark transition-colors">Ver →</span>
+                    <div class="md:col-span-4 group cursor-pointer" onclick="abrirProjeto('Boutique Sorelle')">
+                        <div class="bg-[#1c1b1a] border border-base-line aspect-[4/5] mb-4 overflow-hidden relative flex flex-col justify-end p-8 transition-all group-hover:border-base-dark">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                            <span class="text-xs uppercase tracking-widest text-white/80 relative z-10 mb-2">Loja de Roupas</span>
+                            <h3 class="serif-title text-4xl text-white relative z-10">Boutique Sorelle</h3>
                         </div>
                     </div>
 
                     <!-- Projeto 4 (8 colunas) -->
-                    <div class="md:col-span-8 group cursor-pointer pt-0 md:pt-16" onclick="abrirProjeto('Clínica Odontológica')">
-                        <div class="bg-base-surface border border-base-line aspect-[16/10] mb-4 overflow-hidden relative flex items-center justify-center">
-                            <span class="text-base-muted text-sm">[ Imagem do Projeto: Clínica Odontológica ]</span>
-                        </div>
-                        <div class="flex items-baseline justify-between">
-                            <div>
-                                <span class="text-xs text-base-muted uppercase tracking-wider">Identidade Completa & Sinalização</span>
-                                <h3 class="serif-title text-3xl text-base-dark mt-1">Clínica Sorrir</h3>
-                            </div>
-                            <span class="text-sm text-base-muted group-hover:text-base-dark transition-colors">Ver projeto →</span>
+                    <div class="md:col-span-8 group cursor-pointer pt-0 md:pt-16" onclick="abrirProjeto('Clínica Sorrir')">
+                        <div class="bg-[#1c1b1a] border border-base-line aspect-[16/10] mb-4 overflow-hidden relative flex flex-col justify-end p-8 md:p-12 transition-all group-hover:border-base-dark">
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                            <span class="text-xs uppercase tracking-widest text-white/80 relative z-10 mb-2">Clínica Odontológica</span>
+                            <h3 class="serif-title text-4xl md:text-5xl text-white relative z-10">Clínica Sorrir</h3>
                         </div>
                     </div>
                 </div>
@@ -218,49 +207,85 @@
             </div>
         </section>
 
-        <!-- CALCULADORA DE PROJETOS (SEM CARINHA DE WIDGET DE SAAS) -->
+        <!-- CALCULADORA / BRIEFING INTERATIVO E REALISTA DE MERCADO -->
         <section id="calculadora" class="border-t border-base-line py-24 md:py-32 bg-base-surface/30">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="mb-12">
-                    <span class="text-xs uppercase tracking-wider text-base-muted block mb-2">Simulador Direto</span>
+                    <span class="text-xs uppercase tracking-wider text-base-muted block mb-2">Simulador de Projeto & Estimativa</span>
                     <h2 class="serif-title text-4xl md:text-5xl text-base-dark mb-3">Quanto custa o seu projeto?</h2>
-                    <p class="text-base-muted text-sm">Selecione o que você precisa para visualizar uma estimativa de investimento.</p>
+                    <p class="text-base-muted text-sm">Responda às etapas abaixo para simular uma faixa de investimento alinhada aos preços médios de mercado para negócios locais.</p>
                 </div>
 
-                <div class="bg-white border border-base-line p-8 md:p-12 shadow-sm">
-                    <div class="space-y-6 mb-10">
-                        <p class="text-xs uppercase tracking-wider font-semibold text-base-dark">1. Escolha o serviço principal:</p>
+                <div class="bg-white border border-base-line p-8 md:p-12 shadow-sm space-y-10">
+                    <!-- Passo 1: Escopo Principal -->
+                    <div>
+                        <p class="text-xs uppercase tracking-wider font-semibold text-base-dark mb-4">1. Qual é a principal necessidade do seu negócio?</p>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             <label class="border border-base-line p-4 cursor-pointer hover:border-base-dark transition-all flex flex-col justify-between">
-                                <input type="radio" name="servico" value="1200" class="mb-4 accent-base-dark" checked onchange="calcularOrcamento()">
+                                <input type="radio" name="escopo" value="1200" class="mb-4 accent-base-dark" checked onchange="calcularOrcamento()">
                                 <div>
                                     <span class="block font-medium text-sm text-base-dark">Identidade Visual</span>
-                                    <span class="text-xs text-base-muted">A partir de R$ 1.200</span>
+                                    <span class="text-xs text-base-muted block mt-1">Logo, cores, tipografia e manual básico.</span>
                                 </div>
                             </label>
                             <label class="border border-base-line p-4 cursor-pointer hover:border-base-dark transition-all flex flex-col justify-between">
-                                <input type="radio" name="servico" value="800" class="mb-4 accent-base-dark" onchange="calcularOrcamento()">
+                                <input type="radio" name="escopo" value="850" class="mb-4 accent-base-dark" onchange="calcularOrcamento()">
                                 <div>
                                     <span class="block font-medium text-sm text-base-dark">Redes Sociais (Kit)</span>
-                                    <span class="text-xs text-base-muted">A partir de R$ 800</span>
+                                    <span class="text-xs text-base-muted block mt-1">Templates editáveis, capas e orientações.</span>
                                 </div>
                             </label>
                             <label class="border border-base-line p-4 cursor-pointer hover:border-base-dark transition-all flex flex-col justify-between">
-                                <input type="radio" name="servico" value="1800" class="mb-4 accent-base-dark" onchange="calcularOrcamento()">
+                                <input type="radio" name="escopo" value="2100" class="mb-4 accent-base-dark" onchange="calcularOrcamento()">
                                 <div>
                                     <span class="block font-medium text-sm text-base-dark">Pacote Completo</span>
-                                    <span class="text-xs text-base-muted">A partir de R$ 1.800</span>
+                                    <span class="text-xs text-base-muted block mt-1">Identidade Visual + Redes Sociais + Impressos.</span>
                                 </div>
                             </label>
                         </div>
                     </div>
 
+                    <!-- Passo 2: Momento / Porte do Negócio -->
+                    <div class="border-t border-base-line pt-8">
+                        <p class="text-xs uppercase tracking-wider font-semibold text-base-dark mb-4">2. Qual o momento atual da sua empresa?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <label class="border border-base-line p-4 cursor-pointer hover:border-base-dark transition-all">
+                                <input type="radio" name="momento" value="0" class="mr-2 accent-base-dark" checked onchange="calcularOrcamento()">
+                                <span class="text-sm font-medium text-base-dark">Negócio novo / Começando agora</span>
+                            </label>
+                            <label class="border border-base-line p-4 cursor-pointer hover:border-base-dark transition-all">
+                                <input type="radio" name="momento" value="400" class="mr-2 accent-base-dark" onchange="calcularOrcamento()">
+                                <span class="text-sm font-medium text-base-dark">Negócio ativo precisando de rebranding</span>
+                            </label>
+                            <label class="border border-base-line p-4 cursor-pointer hover:border-base-dark transition-all">
+                                <input type="radio" name="momento" value="800" class="mr-2 accent-base-dark" onchange="calcularOrcamento()">
+                                <span class="text-sm font-medium text-base-dark">Empresa consolidada / Demanda intensa</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Passo 3: Prazo / Urgência -->
+                    <div class="border-t border-base-line pt-8">
+                        <p class="text-xs uppercase tracking-wider font-semibold text-base-dark mb-4">3. Qual a sua urgência para entrega?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <label class="border border-base-line p-4 cursor-pointer hover:border-base-dark transition-all">
+                                <input type="radio" name="prazo" value="0" class="mr-2 accent-base-dark" checked onchange="calcularOrcamento()">
+                                <span class="text-sm font-medium text-base-dark">No prazo padrão de agenda (tranquilo)</span>
+                            </label>
+                            <label class="border border-base-line p-4 cursor-pointer hover:border-base-dark transition-all">
+                                <input type="radio" name="prazo" value="350" class="mr-2 accent-base-dark" onchange="calcularOrcamento()">
+                                <span class="text-sm font-medium text-base-dark">Prioridade / Curto prazo (+ taxa de urgência)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Rodapé do Simulador / Resultado Customizado -->
                     <div class="border-t border-base-line pt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                         <div>
-                            <span class="text-xs uppercase tracking-wider text-base-muted block">Estimativa aproximada</span>
+                            <span class="text-xs uppercase tracking-wider text-base-muted block">Estimativa de investimento de mercado</span>
                             <div id="resultado-valor" class="serif-title text-4xl text-base-dark mt-1">R$ 1.200</div>
                         </div>
-                        <a id="whatsapp-link" href="https://wa.me/5500000000000?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" class="inline-flex justify-center items-center px-6 py-3 bg-base-dark text-white text-sm font-medium hover:bg-opacity-90 transition-all">
+                        <a id="whatsapp-link" href="https://wa.me/5500000000000?text=Olá,%20simulei%20um%20projeto%20no%20site%20no%20valor%20de%20R$%201.200%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener" class="inline-flex justify-center items-center px-6 py-3.5 bg-base-dark text-white text-sm font-medium hover:bg-opacity-90 transition-all">
                             Conversar sobre este projeto →
                         </a>
                     </div>
@@ -309,9 +334,9 @@
         <!-- SOBRE (PESSOAL E ASSÉTRICO) -->
         <section id="sobre" class="border-t border-base-line py-24 md:py-32 bg-base-surface/30">
             <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-                <div class="md:col-span-5">
-                    <div class="bg-base-surface border border-base-line aspect-[4/5] flex items-center justify-center text-base-muted text-sm">
-                        [ Foto da Designer ]
+                <div class="md:col-span-5 flex justify-center">
+                    <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden border border-base-line shadow-md bg-white flex items-center justify-center">
+                        <img src="https://placehold.co/600x600/f2efea/1c1b1a?text=Karoline+Quiroz" alt="Karoline Quiroz" class="w-full h-full object-cover">
                     </div>
                 </div>
                 <div class="md:col-span-7">
@@ -356,15 +381,22 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DA CALCULADORA -->
+    <!-- SCRIPT DA CALCULADORA INTELIGENTE & MODAL DE PROJETOS -->
     <script>
         function calcularOrcamento() {
-            const radioSelecionado = document.querySelector('input[name="servico"]:checked');
-            const valorBase = radioSelecionado ? parseInt(radioSelecionado.value) : 1200;
+            const escopoSel = document.querySelector('input[name="escopo"]:checked');
+            const momentoSel = document.querySelector('input[name="momento"]:checked');
+            const prazoSel = document.querySelector('input[name="prazo"]:checked');
+
+            const valEscopo = escopoSel ? parseInt(escopoSel.value) : 1200;
+            const valMomento = momentoSel ? parseInt(momentoSel.value) : 0;
+            const valPrazo = prazoSel ? parseInt(prazoSel.value) : 0;
+
+            const total = valEscopo + valMomento + valPrazo;
             
-            document.getElementById('resultado-valor').innerText = `R$ ${valorBase.toLocaleString('pt-BR')}`;
+            document.getElementById('resultado-valor').innerText = `R$ ${total.toLocaleString('pt-BR')}`;
             
-            const textoWhats = encodeURIComponent(`Olá, vi seu site e simulei um projeto no valor aproximado de R$ ${valorBase.toLocaleString('pt-BR')}. Gostaria de conversar.`);
+            const textoWhats = encodeURIComponent(`Olá, simulei um projeto no site com base nas minhas necessidades e o valor estimado ficou em R$ ${total.toLocaleString('pt-BR')}. Gostaria de conversar.`);
             document.getElementById('whatsapp-link').href = `https://wa.me/5500000000000?text=${textoWhats}`;
         }
 
