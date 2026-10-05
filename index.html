@@ -54,7 +54,7 @@
     .dark .lede,.mid .lede{color:rgba(230,220,208,.82)}
     .light .lede{color:var(--noite)}
 
-    /* folhas empilhadas: cada seção cobre a anterior com cantos arredondados */
+    /* folhas empilhadas */
     .sheet{position:relative;margin-top:calc(var(--lift) * -1);border-radius:var(--lift) var(--lift) 0 0;padding-block:var(--space) calc(var(--space) + var(--lift))}
     .sheet.last{padding-bottom:var(--space)}
 
@@ -83,21 +83,18 @@
     .mobile-menu .btn{margin-top:1.25rem;width:100%}
     @media(min-width:860px){.nav-links{display:flex}.nav-cta{display:inline-flex}.menu-btn{display:none}}
 
-    /* 01 hero */
-    .hero{padding-block:clamp(2.5rem,6vw,5.5rem) calc(var(--space) + var(--lift))}
+    /* 01 hero (estilo imagem 3: tipografia marcante, tom editorial escuro e imagem recortada integrada) */
+    .hero{padding-block:clamp(3rem,7vw,6rem) calc(var(--space) + var(--lift))}
     .hero-grid{display:grid;gap:3rem;align-items:center}
-    @media(min-width:900px){.hero-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:5rem}}
+    @media(min-width:900px){.hero-grid{grid-template-columns:minmax(0,65fr) minmax(0,35fr);gap:4rem}}
     .brand-line{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;color:var(--areia);font-weight:600;font-size:.95rem}
     .brand-line::before{content:"";width:2rem;height:1px;background:var(--areia)}
-    .hero h1{font-size:clamp(2.1rem,1.4rem + 3vw,3.8rem);max-width:15em}
+    .hero h1{font-size:clamp(2.4rem,1.6rem + 3.5vw,4.2rem);max-width:14em}
     .hero .lede{font-size:1.125rem}
     .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
     .hero-note{margin-top:2.25rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--areia)}
-    .portrait{position:relative;width:100%;max-width:440px;margin-inline:auto;aspect-ratio:4/5;overflow:hidden;border-radius:var(--lift);border:1px solid rgba(201,177,138,.4);background:var(--noite);animation:fade .9s ease both}
-    @media(min-width:900px){.portrait{margin-inline:auto 0}}
-    .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
-    .kq-mark{position:absolute;left:1rem;bottom:1rem;padding:.4rem .85rem;border-radius:10px;background:var(--areia);color:var(--ametista);font-family:var(--serif);font-weight:600;font-size:1.15rem;line-height:1.2;letter-spacing:.05em}
-    @keyframes fade{from{opacity:0}to{opacity:1}}
+    .hero-portrait-wrapper{position:relative;width:100%;max-width:360px;margin-inline:auto;aspect-ratio:1/1;border-radius:50%;overflow:hidden;border:2px solid rgba(201,177,138,0.4);background:linear-gradient(135deg, var(--noite), var(--ametista))}
+    .hero-portrait-wrapper img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:contrast(1.1) brightness(0.95);transform:scale(1.15)}
 
     /* 02 problema */
     .problem-grid{display:grid;gap:2.5rem}
@@ -128,7 +125,7 @@
       .system li::after{left:14px;right:0;top:6px;bottom:auto;width:auto;height:2px}
     }
 
-    /* 04 serviços (grid modular) */
+    /* 04 serviços */
     .bento{display:grid;gap:1rem;margin-top:3rem}
     @media(min-width:900px){.bento{grid-template-columns:repeat(12,1fr)}.bx.b1{grid-column:span 7}.bx.b2{grid-column:span 5}.bx.b3,.bx.b4{grid-column:span 6}}
     .bx{display:flex;flex-direction:column;border-radius:var(--r);padding:1.75rem}
@@ -146,34 +143,38 @@
     .bx.small p.d{color:var(--noite)}
     .bx.b1 p.d,.bx.b2 p.d{color:rgba(230,220,208,.88)}
 
-    /* 05 projetos (pastas) */
+    /* 05 PROJETOS EM PÍLULAS (Estilo imagem 2: cápsulas verticais com imagem e texto integrado) */
     .proj-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:2.5rem}
     .proj-count{max-width:28rem;font-size:.95rem;color:rgba(230,220,208,.78)}
     .rail-nav{display:flex;gap:.5rem}
     .rail-nav button{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(230,220,208,.45);background:transparent;color:var(--creme);font-size:1.4rem;line-height:1;cursor:pointer;transition:border-color .2s,color .2s}
     .rail-nav button:hover{border-color:var(--areia);color:var(--areia)}
-    .rail{display:flex;gap:1rem;margin:1rem calc(var(--pad) * -1) 0;padding:.5rem var(--pad) 1.25rem;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-inline:var(--pad);scrollbar-width:none}
+    
+    .rail{display:flex;gap:1.5rem;margin:1.5rem calc(var(--pad) * -1) 0;padding:.5rem var(--pad) 1.5rem;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-inline:var(--pad);scrollbar-width:none}
     .rail::-webkit-scrollbar{display:none}
-    .folder{flex:0 0 min(64vw,230px);position:relative;display:block;padding:26px 0 0;border:0;background:none;color:var(--creme);text-align:left;cursor:pointer;scroll-snap-align:start}
-    .folder-tab{position:absolute;top:0;left:0;height:28px;min-width:64px;padding:0 1rem;border-radius:10px 10px 0 0;background:rgba(230,220,208,.16);font-size:.8rem;font-weight:600;line-height:28px;transition:background-color .2s,color .2s}
-    .folder-body{display:block;padding:.75rem .75rem 1rem;border-radius:0 var(--r) var(--r) var(--r);background:rgba(230,220,208,.1);border:1px solid rgba(230,220,208,.14);transition:background-color .2s,color .2s}
-    .folder-img{display:block;aspect-ratio:1;overflow:hidden;border-radius:10px;background:var(--noite)}
-    .folder-img img{width:100%;height:100%;object-fit:cover}
-    .folder-cat{display:block;margin-top:.8rem;font-size:.8rem;font-weight:600;line-height:1.3;color:var(--areia)}
-    .folder-name{display:block;margin-top:.15rem;font-family:var(--serif);font-size:1.15rem;line-height:1.2}
-    .folder:hover .folder-body{background:rgba(230,220,208,.16)}
-    .folder[aria-pressed="true"] .folder-tab{background:var(--areia);color:var(--ametista)}
-    .folder[aria-pressed="true"] .folder-body{background:var(--areia);color:var(--ametista);border-color:var(--areia)}
-    .folder[aria-pressed="true"] .folder-cat{color:var(--noite)}
-    .rail-progress{height:4px;overflow:hidden;border-radius:999px;background:rgba(230,220,208,.18)}
+
+    /* Pílula vertical estilo syndicate */
+    .pill-card{flex:0 0 240px;height:420px;position:relative;display:flex;flex-direction:column;justify-content:flex-end;border-radius:999px;overflow:hidden;border:1.5px solid rgba(230,220,208,.25);background:var(--noite);cursor:pointer;transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;scroll-snap-align:start;text-align:left;padding:2rem 1.5rem}
+    .pill-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;filter:grayscale(30%) brightness(0.85);transition:transform .5s ease, filter .5s ease}
+    .pill-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(27,16,32,0.95) 10%, rgba(27,16,32,0.3) 60%, transparent 100%);z-index:2}
+    .pill-content{position:relative;z-index:3;transition:transform .3s ease}
+    .pill-cat{display:block;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--areia);margin-bottom:.3rem}
+    .pill-name{font-family:var(--serif);font-size:1.4rem;line-height:1.2;color:var(--creme)}
+    
+    .pill-card:hover{transform:translateY(-8px);border-color:var(--areia);box-shadow:0 12px 30px rgba(0,0,0,0.4)}
+    .pill-card:hover img{transform:scale(1.06);filter:grayscale(0%) brightness(0.95)}
+    .pill-card[aria-pressed="true"]{border-color:var(--areia);box-shadow:0 0 0 3px var(--areia)}
+
+    .rail-progress{height:4px;overflow:hidden;border-radius:999px;background:rgba(230,220,208,.18);margin-top:1rem}
     .rail-progress span{display:block;width:20%;height:100%;border-radius:inherit;background:var(--areia);transition:width .15s linear}
-    .panel{display:grid;gap:1.5rem;margin-top:2rem;padding:1.5rem;border-radius:var(--r);background:var(--creme);color:var(--ametista)}
+    
+    .panel{display:grid;gap:1.5rem;margin-top:2.5rem;padding:1.5rem;border-radius:var(--r);background:var(--creme);color:var(--ametista)}
     @media(min-width:760px){.panel{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:2.5rem;padding:2rem}}
     .panel-img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;background:var(--noite)}
     .panel .cat{font-size:.95rem;font-weight:600;color:var(--lavanda)}
     .panel h3{margin-top:.3rem;font-size:clamp(1.6rem,1.3rem + 1vw,2.2rem)}
     .panel .desc{margin-top:.8rem;max-width:34rem;color:var(--noite)}
-    .panel .deliv{margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--line-l);max-width:34rem}
+    .panel .deliv{margin-top:1.25rem;padding-top:1.0rem;border-top:1px solid var(--line-l);max-width:34rem}
     .panel .deliv strong{display:block;margin-bottom:.3rem;font-size:.9rem;color:var(--lavanda)}
     .panel .btn{margin-top:1.5rem}
 
@@ -187,18 +188,25 @@
     .steps h3{margin-top:1rem;font-size:1.5rem}
     .steps p{margin-top:.5rem;max-width:22rem;color:var(--noite)}
 
-    /* 07 sobre */
+    /* 07 SOBRE MIM COM MÁSCARA DE FOCO INTERATIVA (Estilo imagem 1) */
     .about-grid{display:grid;gap:3rem;align-items:center}
     @media(min-width:900px){.about-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:5rem}}
-    .about-photo{position:relative;width:100%;max-width:440px;margin-inline:auto;aspect-ratio:1/1;overflow:hidden;border-radius:var(--lift);border:1px solid rgba(201,177,138,.4);background:var(--ametista)}
-    .about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transform:scale(1.5);transform-origin:50% 22%}
+    
+    .focus-container{position:relative;width:100%;max-width:400px;margin-inline:auto;aspect-ratio:4/5;border-radius:24px;overflow:hidden;cursor:crosshair;box-shadow:0 20px 40px rgba(0,0,0,0.5);border:1px solid rgba(201,177,138,0.3);background:var(--ametista);user-select:none;}
+    .focus-base{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(8px) grayscale(40%) brightness(0.6);transform:scale(1.05);}
+    .focus-sharp-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:inset(10% 40% 10% 20%);transition:clip-path 0.05s ease-out;}
+    
+    /* Retângulo interativo de foco com mira e indicador */
+    .focus-lens{position:absolute;border:2px solid var(--areia);box-shadow:0 0 0 9999px rgba(0,0,0,0.45);pointer-events:none;transition:border-color 0.2s;}
+    .focus-crosshair{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--areia);font-family:var(--sans);font-size:1.2rem;font-weight:300;}
+    
     .about-text h2{margin-bottom:1.5rem}
     .about-text>p{max-width:36rem;color:rgba(230,220,208,.9)}
     .about-text>p+p{margin-top:1.1rem}
     .about-text>p.about-id{margin-top:2rem;padding-top:1.25rem;border-top:1px solid rgba(201,177,138,.4);font-size:.95rem;color:rgba(230,220,208,.85)}
     .about-id strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.25rem;color:var(--creme)}
 
-    /* 08 para quem é + 09 faq (mesma folha) */
+    /* 08 para quem é + 09 faq */
     .tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-top:2.5rem}
     @media(min-width:900px){.tiles{grid-template-columns:repeat(4,1fr);gap:1rem}}
     .tiles li{display:flex;align-items:flex-end;min-height:130px;padding:1.1rem;border:1px solid var(--line-l);border-radius:var(--r);font-family:var(--serif);font-size:clamp(1.15rem,1rem + .6vw,1.5rem);line-height:1.2}
@@ -259,7 +267,7 @@
 
   <main id="conteudo">
 
-    <!-- 01 HERO -->
+    <!-- 01 HERO (Inspirado na imagem 3: tipografia marcante e foto circular com tom ajustado) -->
     <section id="inicio" class="hero dark" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div>
@@ -272,9 +280,8 @@
           </div>
           <p class="hero-note">Design para negócios que levam o próprio trabalho a sério.</p>
         </div>
-        <div class="portrait">
+        <div class="hero-portrait-wrapper">
           <img src="IMG_0401.png" alt="Karoline Queiroz, designer gráfica da KQ Design" fetchpriority="high" decoding="async">
-          <span class="kq-mark" aria-hidden="true">KQ</span>
         </div>
       </div>
     </section>
@@ -357,29 +364,89 @@
       </div>
     </section>
 
-    <!-- 05 PROJETOS -->
+    <!-- 05 PROJETOS (Em pílulas verticais - Estilo imagem 2) -->
     <section id="projetos" class="sheet dark" aria-labelledby="projetos-title">
       <div class="wrap">
         <h2 id="projetos-title">Projetos que ganharam forma e organização.</h2>
         <p class="lede">Cada projeto parte de uma necessidade diferente. O objetivo é encontrar uma solução visual que faça sentido para aquele negócio.</p>
         <div class="proj-top">
-          <p class="proj-count">10 projetos. Escolha uma pasta para ver o que foi desenvolvido.</p>
+          <p class="proj-count">10 projetos. Escolha uma pílula para ver a descrição completa.</p>
           <div class="rail-nav">
             <button type="button" id="rail-prev" aria-label="Pastas anteriores">&#8249;</button>
             <button type="button" id="rail-next" aria-label="Próximas pastas">&#8250;</button>
           </div>
         </div>
-        <div class="rail" id="rail" role="group" aria-label="Pastas de projetos">
-        <button type="button" class="folder" data-project="at" aria-pressed="true" aria-label="Abrir pasta do projeto A&amp;T Marcenaria"><span class="folder-tab" aria-hidden="true">01</span><span class="folder-body"><span class="folder-img"><img src="image_21.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual</span><span class="folder-name">A&amp;T Marcenaria</span></span></button>
-        <button type="button" class="folder" data-project="markie" aria-pressed="false" aria-label="Abrir pasta do projeto Markie Papelaria Criativa"><span class="folder-tab" aria-hidden="true">02</span><span class="folder-body"><span class="folder-img"><img src="image_22.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual completa</span><span class="folder-name">Markie Papelaria Criativa</span></span></button>
-        <button type="button" class="folder" data-project="maira" aria-pressed="false" aria-label="Abrir pasta do projeto Maiara Cristina Psicóloga"><span class="folder-tab" aria-hidden="true">03</span><span class="folder-body"><span class="folder-img"><img src="image_23.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual completa</span><span class="folder-name">Maiara Cristina Psicóloga</span></span></button>
-        <button type="button" class="folder" data-project="patricia" aria-pressed="false" aria-label="Abrir pasta do projeto Patrícia Alcântara Nail Designer"><span class="folder-tab" aria-hidden="true">04</span><span class="folder-body"><span class="folder-img"><img src="image_24.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual simples</span><span class="folder-name">Patrícia Alcântara Nail Designer</span></span></button>
-        <button type="button" class="folder" data-project="jf" aria-pressed="false" aria-label="Abrir pasta do projeto JF Acessórios"><span class="folder-tab" aria-hidden="true">05</span><span class="folder-body"><span class="folder-img"><img src="image_25.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual simples</span><span class="folder-name">JF Acessórios</span></span></button>
-        <button type="button" class="folder" data-project="biskie" aria-pressed="false" aria-label="Abrir pasta do projeto Biskie"><span class="folder-tab" aria-hidden="true">06</span><span class="folder-body"><span class="folder-img"><img src="image_26.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Conteúdo para redes</span><span class="folder-name">Biskie</span></span></button>
-        <button type="button" class="folder" data-project="comile" aria-pressed="false" aria-label="Abrir pasta do projeto Comile Brigadeiros Gourmet"><span class="folder-tab" aria-hidden="true">07</span><span class="folder-body"><span class="folder-img"><img src="image_27.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual simples</span><span class="folder-name">Comile Brigadeiros Gourmet</span></span></button>
-        <button type="button" class="folder" data-project="garimpan" aria-pressed="false" aria-label="Abrir pasta do projeto Garimpan.do"><span class="folder-tab" aria-hidden="true">08</span><span class="folder-body"><span class="folder-img"><img src="image_28.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual</span><span class="folder-name">Garimpan.do</span></span></button>
-        <button type="button" class="folder" data-project="vona" aria-pressed="false" aria-label="Abrir pasta do projeto VONA ID"><span class="folder-tab" aria-hidden="true">09</span><span class="folder-body"><span class="folder-img"><img src="image_29.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade e materiais</span><span class="folder-name">VONA ID</span></span></button>
-        <button type="button" class="folder" data-project="juliana" aria-pressed="false" aria-label="Abrir pasta do projeto Juliana Landim Psicóloga"><span class="folder-tab" aria-hidden="true">10</span><span class="folder-body"><span class="folder-img"><img src="image_30.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual e MIV</span><span class="folder-name">Juliana Landim Psicóloga</span></span></button>
+        <div class="rail" id="rail" role="group" aria-label="Pílulas de projetos">
+          <button type="button" class="pill-card" data-project="at" aria-pressed="true" aria-label="Abrir projeto A&amp;T Marcenaria">
+            <img src="image_21.png" alt="" width="600" height="800" loading="lazy" decoding="async">
+            <div class="pill-content">
+              <span class="pill-cat">Identidade visual</span>
+              <span class="pill-name">A&amp;T Marcenaria</span>
+            </div>
+          </button>
+          <button type="button" class="pill-card" data-project="markie" aria-pressed="false" aria-label="Abrir projeto Markie Papelaria Criativa">
+            <img src="image_22.png" alt="" width="600" height="800" loading="lazy" decoding="async">
+            <div class="pill-content">
+              <span class="pill-cat">Identidade completa</span>
+              <span class="pill-name">Markie Papelaria</span>
+            </div>
+          </button>
+          <button type="button" class="pill-card" data-project="maira" aria-pressed="false" aria-label="Abrir projeto Maiara Cristina Psicóloga">
+            <img src="image_23.png" alt="" width="600" height="800" loading="lazy" decoding="async">
+            <div class="pill-content">
+              <span class="pill-cat">Identidade completa</span>
+              <span class="pill-name">Maiara Cristina</span>
+            </div>
+          </button>
+          <button type="button" class="pill-card" data-project="patricia" aria-pressed="false" aria-label="Abrir projeto Patrícia Alcântara Nail Designer">
+            <img src="image_24.png" alt="" width="600" height="800" loading="lazy" decoding="async">
+            <div class="pill-content">
+              <span class="pill-cat">Identidade simples</span>
+              <span class="pill-name">Patrícia Alcântara</span>
+            </div>
+          </button>
+          <button type="button" class="pill-card" data-project="jf" aria-pressed="false" aria-label="Abrir projeto JF Acessórios">
+            <img src="image_25.png" alt="" width="600" height="800" loading="lazy" decoding="async">
+            <div class="pill-content">
+              <span class="pill-cat">Identidade simples</span>
+              <span class="pill-name">JF Acessórios</span>
+            </div>
+          </button>
+          <button type="button" class="pill-card" data-project="biskie" aria-pressed="false" aria-label="Abrir projeto Biskie">
+            <img src="image_26.png" alt="" width="600" height="800" loading="lazy" decoding="async">
+            <div class="pill-content">
+              <span class="pill-cat">Redes sociais</span>
+              <span class="pill-name">Biskie</span>
+            </div>
+          </button>
+          <button type="button" class="pill-card" data-project="comile" aria-pressed="false" aria-label="Abrir projeto Comile Brigadeiros Gourmet">
+            <img src="image_27.png" alt="" width="600" height="800" loading="lazy" decoding="async">
+            <div class="pill-content">
+              <span class="pill-cat">Identidade simples</span>
+              <span class="pill-name">Comile Brigadeiros</span>
+            </div>
+          </button>
+          <button type="button" class="pill-card" data-project="garimpan" aria-pressed="false" aria-label="Abrir projeto Garimpan.do">
+            <img src="image_28.png" alt="" width="600" height="800" loading="lazy" decoding="async">
+            <div class="pill-content">
+              <span class="pill-cat">Identidade visual</span>
+              <span class="pill-name">Garimpan.do</span>
+            </div>
+          </button>
+          <button type="button" class="pill-card" data-project="vona" aria-pressed="false" aria-label="Abrir projeto VONA ID">
+            <img src="image_29.png" alt="" width="600" height="800" loading="lazy" decoding="async">
+            <div class="pill-content">
+              <span class="pill-cat">Identidade e materiais</span>
+              <span class="pill-name">VONA ID</span>
+            </div>
+          </button>
+          <button type="button" class="pill-card" data-project="juliana" aria-pressed="false" aria-label="Abrir projeto Juliana Landim Psicóloga">
+            <img src="image_30.png" alt="" width="600" height="800" loading="lazy" decoding="async">
+            <div class="pill-content">
+              <span class="pill-cat">Identidade e MIV</span>
+              <span class="pill-name">Juliana Landim</span>
+            </div>
+          </button>
         </div>
         <div class="rail-progress" aria-hidden="true"><span id="rail-fill"></span></div>
         <div class="panel" id="panel" aria-live="polite">
@@ -409,11 +476,15 @@
       </div>
     </section>
 
-    <!-- 07 SOBRE A KQ -->
+    <!-- 07 SOBRE A KQ COM MÁSCARA DE FOCO INTERATIVA (Estilo imagem 1) -->
     <section id="sobre" class="sheet mid" aria-labelledby="sobre-title">
       <div class="wrap about-grid">
-        <div class="about-photo">
-          <img src="IMG_0401.png" alt="Retrato de Karoline Queiroz, fundadora da KQ Design" loading="lazy" decoding="async">
+        <div class="focus-container" id="focusContainer" aria-label="Foto interativa com máscara de foco">
+          <img class="focus-base" src="IMG_0401.png" alt="" loading="lazy" decoding="async">
+          <img class="focus-sharp-layer" id="focusSharp" src="IMG_0401.png" alt="" loading="lazy" decoding="async">
+          <div class="focus-lens" id="focusLens">
+            <span class="focus-crosshair" aria-hidden="true">+</span>
+          </div>
         </div>
         <div class="about-text">
           <h2 id="sobre-title">Por trás da KQ, Karoline.</h2>
@@ -513,77 +584,77 @@
   <script>
     (function () {
       var projects = {
-  "at": {
-    "name": "A&T Marcenaria",
-    "category": "Identidade visual",
-    "image": "image_21.png",
-    "description": "Uma identidade visual pensada para uma marcenaria que valoriza o trabalho artesanal, o acabamento e a presença de materiais bem feitos.",
-    "deliverables": "Logo, paleta de cores, tipografia e aplicações da marca."
-  },
-  "markie": {
-    "name": "Markie Papelaria Criativa",
-    "category": "Identidade visual completa",
-    "image": "image_22.png",
-    "description": "Uma identidade completa para uma papelaria criativa que precisava organizar sua presença e deixar a marca mais reconhecível.",
-    "deliverables": "Identidade visual completa, elementos gráficos e aplicações."
-  },
-  "maira": {
-    "name": "Maiara Cristina Psicóloga",
-    "category": "Identidade visual completa",
-    "image": "image_23.png",
-    "description": "Uma identidade visual acolhedora e profissional para comunicar confiança no trabalho da psicóloga.",
-    "deliverables": "Identidade visual completa, paleta, tipografia e aplicações."
-  },
-  "patricia": {
-    "name": "Patrícia Alcântara Nail Designer",
-    "category": "Identidade visual simples",
-    "image": "image_24.png",
-    "description": "Uma identidade simples e delicada para uma profissional de beleza que queria apresentar seu trabalho com mais consistência.",
-    "deliverables": "Logo, cores, tipografia e aplicações essenciais."
-  },
-  "jf": {
-    "name": "JF Acessórios",
-    "category": "Identidade visual simples",
-    "image": "image_25.png",
-    "description": "Uma identidade visual direta para destacar a marca e criar uma base consistente para suas comunicações.",
-    "deliverables": "Logo, paleta, tipografia e elementos de apoio."
-  },
-  "biskie": {
-    "name": "Biskie",
-    "category": "Conteúdo para redes",
-    "image": "image_26.png",
-    "description": "Peças e direção visual para apresentar produtos de forma apetitiva, reconhecível e pronta para circular nas redes.",
-    "deliverables": "Artes para redes sociais e aplicações visuais da marca."
-  },
-  "comile": {
-    "name": "Comile Brigadeiros Gourmet",
-    "category": "Identidade visual simples",
-    "image": "image_27.png",
-    "description": "Uma identidade simples para uma marca de doces que precisava comunicar cuidado, sabor e personalidade.",
-    "deliverables": "Logo, cores, tipografia e aplicações essenciais."
-  },
-  "garimpan": {
-    "name": "Garimpan.do",
-    "category": "Identidade visual",
-    "image": "image_28.png",
-    "description": "Uma identidade com presença e personalidade para uma marca que precisava transformar sua proposta em um sistema visual.",
-    "deliverables": "Identidade visual, elementos gráficos e aplicações."
-  },
-  "vona": {
-    "name": "VONA ID",
-    "category": "Identidade e materiais",
-    "image": "image_29.png",
-    "description": "Uma identidade e materiais de apoio para apresentar a marca de forma sofisticada em diferentes pontos de contato.",
-    "deliverables": "Identidade visual, materiais gráficos, tipografia e aplicações."
-  },
-  "juliana": {
-    "name": "Juliana Landim Psicóloga",
-    "category": "Identidade visual e MIV",
-    "image": "image_30.png",
-    "description": "Um sistema visual completo para uma psicóloga, com uma base clara para manter a comunicação consistente no dia a dia.",
-    "deliverables": "Identidade visual, materiais gráficos, tipografia, elementos de apoio e MIV completo."
-  }
-};
+        "at": {
+          "name": "A&T Marcenaria",
+          "category": "Identidade visual",
+          "image": "image_21.png",
+          "description": "Uma identidade visual pensada para uma marcenaria que valoriza o trabalho artesanal, o acabamento e a presença de materiais bem feitos.",
+          "deliverables": "Logo, paleta de cores, tipografia e aplicações da marca."
+        },
+        "markie": {
+          "name": "Markie Papelaria Criativa",
+          "category": "Identidade visual completa",
+          "image": "image_22.png",
+          "description": "Uma identidade completa para uma papelaria criativa que precisava organizar sua presença e deixar a marca mais reconhecível.",
+          "deliverables": "Identidade visual completa, elementos gráficos e aplicações."
+        },
+        "maira": {
+          "name": "Maiara Cristina Psicóloga",
+          "category": "Identidade visual completa",
+          "image": "image_23.png",
+          "description": "Uma identidade visual acolhedora e profissional para comunicar confiança no trabalho da psicóloga.",
+          "deliverables": "Identidade visual completa, paleta, tipografia e aplicações."
+        },
+        "patricia": {
+          "name": "Patrícia Alcântara Nail Designer",
+          "category": "Identidade visual simples",
+          "image": "image_24.png",
+          "description": "Uma identidade simples e delicada para uma profissional de beleza que queria apresentar seu trabalho com mais consistência.",
+          "deliverables": "Logo, cores, tipografia e aplicações essenciais."
+        },
+        "jf": {
+          "name": "JF Acessórios",
+          "category": "Identidade visual simples",
+          "image": "image_25.png",
+          "description": "Uma identidade visual direta para destacar a marca e criar uma base consistente para suas comunicações.",
+          "deliverables": "Logo, paleta, tipografia e elementos de apoio."
+        },
+        "biskie": {
+          "name": "Biskie",
+          "category": "Conteúdo para redes",
+          "image": "image_26.png",
+          "description": "Peças e direção visual para apresentar produtos de forma apetitiva, reconhecível e pronta para circular nas redes.",
+          "deliverables": "Artes para redes sociais e aplicações visuais da marca."
+        },
+        "comile": {
+          "name": "Comile Brigadeiros Gourmet",
+          "category": "Identidade visual simples",
+          "image": "image_27.png",
+          "description": "Uma identidade simples para uma marca de doces que precisava comunicar cuidado, sabor e personalidade.",
+          "deliverables": "Logo, cores, tipografia e aplicações essenciais."
+        },
+        "garimpan": {
+          "name": "Garimpan.do",
+          "category": "Identidade visual",
+          "image": "image_28.png",
+          "description": "Uma identidade com presença e personalidade para uma marca que precisava transformar sua proposta em um sistema visual.",
+          "deliverables": "Identidade visual, elements gráficos e aplicações."
+        },
+        "vona": {
+          "name": "VONA ID",
+          "category": "Identidade e materiais",
+          "image": "image_29.png",
+          "description": "Uma identidade e materiais de apoio para apresentar a marca de forma sofisticada em diferentes pontos de contato.",
+          "deliverables": "Identidade visual, materiais gráficos, tipografia e aplicações."
+        },
+        "juliana": {
+          "name": "Juliana Landim Psicóloga",
+          "category": "Identidade visual e MIV",
+          "image": "image_30.png",
+          "description": "Um sistema visual completo para uma psicóloga, com uma base clara para manter a comunicação consistente no dia a dia.",
+          "deliverables": "Identidade visual, materiais gráficos, tipografia, elementos de apoio e MIV completo."
+        }
+      };
       var WA = "https://wa.me/5512982544891";
 
       // menu mobile
@@ -599,14 +670,14 @@
       document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && !menu.hidden) { setMenu(false); toggle.focus(); } });
       window.addEventListener("resize", function () { if (window.innerWidth >= 860) setMenu(false); });
 
-      // pastas de projetos
+      // Pílulas de projetos
       var rail = document.getElementById("rail");
       var fill = document.getElementById("rail-fill");
-      var folders = rail.querySelectorAll("[data-project]");
+      var pills = rail.querySelectorAll("[data-project]");
       function select(key) {
         var p = projects[key];
         if (!p) return;
-        folders.forEach(function (f) { f.setAttribute("aria-pressed", String(f.getAttribute("data-project") === key)); });
+        pills.forEach(function (f) { f.setAttribute("aria-pressed", String(f.getAttribute("data-project") === key)); });
         document.getElementById("panel-name").textContent = p.name;
         document.getElementById("panel-cat").textContent = p.category;
         document.getElementById("panel-desc").textContent = p.description;
@@ -630,12 +701,68 @@
       window.addEventListener("resize", progress);
       progress();
       function scrollRail(dir) {
-        var first = rail.querySelector(".folder");
-        var step = first ? first.getBoundingClientRect().width + 16 : 240;
+        var first = rail.querySelector(".pill-card");
+        var step = first ? first.getBoundingClientRect().width + 24 : 260;
         rail.scrollBy({ left: dir * step * 2, behavior: reduce ? "auto" : "smooth" });
       }
       document.getElementById("rail-prev").addEventListener("click", function () { scrollRail(-1); });
       document.getElementById("rail-next").addEventListener("click", function () { scrollRail(1); });
+
+      // Interatividade da Lente de Foco na Seção "Sobre"
+      const container = document.getElementById("focusContainer");
+      const sharpLayer = document.getElementById("focusSharp");
+      const lens = document.getElementById("focusLens");
+
+      if (container && sharpLayer && lens) {
+        const lensWidth = 110;  // largura do retângulo em px
+        const lensHeight = 160; // altura do retângulo em px
+
+        function updateLens(clientX, clientY) {
+          const rect = container.getBoundingClientRect();
+          let x = clientX - rect.left;
+          let y = clientY - rect.top;
+
+          // Limites do container
+          x = Math.max(0, Math.min(x, rect.width));
+          y = Math.max(0, Math.min(y, rect.height));
+
+          // Posição do elemento visual da lente
+          let lensLeft = x - lensWidth / 2;
+          let lensTop = y - lensHeight / 2;
+
+          lensLeft = Math.max(0, Math.min(lensLeft, rect.width - lensWidth));
+          lensTop = Math.max(0, Math.min(lensTop, rect.height - lensHeight));
+
+          lens.style.width = lensWidth + "px";
+          lens.style.height = lensHeight + "px";
+          lens.style.left = lensLeft + "px";
+          lens.style.top = lensTop + "px";
+
+          // Atualizar o clip-path da camada nítida para coincidir exatamente com a lente
+          const topPct = (lensTop / rect.height) * 100;
+          const rightPct = 100 - ((lensLeft + lensWidth) / rect.width) * 100;
+          const bottomPct = 100 - ((lensTop + lensHeight) / rect.height) * 100;
+          const leftPct = (lensLeft / rect.width) * 100;
+
+          sharpLayer.style.clipPath = `inset(${topPct}% ${rightPct}% ${bottomPct}% ${leftPct}%)`;
+        }
+
+        // Posição inicial no centro
+        window.addEventListener("load", () => {
+          const rect = container.getBoundingClientRect();
+          updateLens(rect.left + rect.width / 2, rect.top + rect.height / 2);
+        });
+
+        container.addEventListener("mousemove", (e) => {
+          updateLens(e.clientX, e.clientY);
+        });
+
+        container.addEventListener("touchmove", (e) => {
+          if (e.touches.length > 0) {
+            updateLens(e.touches[0].clientX, e.touches[0].clientY);
+          }
+        }, { passive: true });
+      }
     })();
   </script>
 </body>
