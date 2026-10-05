@@ -1,192 +1,642 @@
-<!DOCTYPE html>
-<html lang="pt" class="scroll-smooth">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riana Izsietova — Graphic Designer Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        amethyst: '#0c0a10',
-                        deepDark: '#050507',
-                        limeAccent: '#D4FF00',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body class="bg-amethyst text-white font-sans antialiased selection:bg-limeAccent selection:text-black">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KQ Design — Comunicação Visual para Pequenos Negócios</title>
+  <meta name="description" content="A KQ Design organiza a comunicação visual de pequenos negócios com identidade visual, materiais e sites institucionais.">
+  <meta name="theme-color" content="#1B1020">
+  <link rel="canonical" href="https://kqdesign.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="KQ Design">
+  <meta property="og:title" content="KQ Design — Comunicação Visual para Pequenos Negócios">
+  <meta property="og:description" content="A KQ Design organiza a comunicação visual de pequenos negócios com identidade visual, materiais e sites institucionais.">
+  <meta property="og:url" content="https://kqdesign.vercel.app/">
+  <meta property="og:image" content="https://kqdesign.vercel.app/image_21.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KQ Design — Comunicação Visual para Pequenos Negócios">
+  <meta name="twitter:description" content="A KQ Design organiza a comunicação visual de pequenos negócios com identidade visual, materiais e sites institucionais.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ametista:#1B1020;--noite:#3A2A4A;--lavanda:#6A5874;--areia:#C9B18A;--creme:#E6DCD0;
+      --serif:"Newsreader",Georgia,"Times New Roman",serif;
+      --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      --wrap:1160px;--pad:clamp(1.25rem,5vw,3rem);--space:clamp(4.5rem,9vw,8rem);
+      --lift:28px;--r:18px;
+      --line-l:rgba(27,16,32,.2);--line-d:rgba(230,220,208,.2);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--ametista);color:var(--ametista);font-family:var(--sans);font-size:1.0625rem;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%;height:auto}
+    h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;margin:0;text-wrap:balance}
+    p{margin:0}
+    ul,ol{margin:0;padding:0;list-style:none}
+    a{color:inherit}
+    button{font:inherit}
+    [hidden]{display:none!important}
+    :focus-visible{outline:3px solid var(--lavanda);outline-offset:3px}
+    .dark :focus-visible,.mid :focus-visible,.site-header :focus-visible{outline-color:var(--areia)}
+    .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ametista);color:var(--creme);padding:.9rem 1.2rem}
+    .skip:focus{left:1rem;top:1rem}
 
-    <!-- TECHNICAL GRID OVERLAY (Inspirado na imagem 12) -->
-    <div class="fixed inset-0 pointer-events-none z-50 border-[1px] border-white/[0.03] grid grid-cols-4 md:grid-cols-12">
-        <div class="border-r border-white/[0.03] h-full"></div>
-        <div class="border-r border-white/[0.03] h-full hidden md:block"></div>
-        <div class="border-r border-white/[0.03] h-full hidden md:block"></div>
-        <div class="border-r border-white/[0.03] h-full hidden md:block"></div>
-        <div class="border-r border-white/[0.03] h-full hidden md:block"></div>
-        <div class="border-r border-white/[0.03] h-full hidden md:block"></div>
-        <div class="border-r border-white/[0.03] h-full hidden md:block"></div>
-        <div class="border-r border-white/[0.03] h-full hidden md:block"></div>
-        <div class="border-r border-white/[0.03] h-full hidden md:block"></div>
-        <div class="border-r border-white/[0.03] h-full hidden md:block"></div>
-        <div class="border-r border-white/[0.03] h-full hidden md:block"></div>
-        <div class="h-full"></div>
+    .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+    h2{font-size:clamp(1.8rem,1.3rem + 2vw,2.9rem)}
+    .dark{background:var(--ametista);color:var(--creme)}
+    .mid{background:var(--noite);color:var(--creme)}
+    .light{background:var(--creme);color:var(--ametista)}
+    .lede{margin-top:1.25rem;max-width:36rem}
+    .dark .lede,.mid .lede{color:rgba(230,220,208,.82)}
+    .light .lede{color:var(--noite)}
+
+    /* folhas empilhadas: cada seção cobre a anterior com cantos arredondados */
+    .sheet{position:relative;margin-top:calc(var(--lift) * -1);border-radius:var(--lift) var(--lift) 0 0;padding-block:var(--space) calc(var(--space) + var(--lift))}
+    .sheet.last{padding-bottom:var(--space)}
+
+    /* botões */
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.5rem;border-radius:999px;border:1.5px solid transparent;font-weight:600;font-size:1rem;line-height:1.2;text-align:center;text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+    .btn-primary{background:var(--areia);color:var(--ametista)}
+    .btn-primary:hover{background:var(--creme)}
+    .btn-ghost{border-color:rgba(230,220,208,.55);color:var(--creme);background:transparent}
+    .btn-ghost:hover{border-color:var(--areia);color:var(--areia)}
+    .btn-dark{background:var(--ametista);color:var(--creme)}
+    .btn-dark:hover{background:var(--noite)}
+
+    /* cabeçalho */
+    .site-header{position:sticky;top:0;z-index:50;background:var(--ametista);color:var(--creme);border-bottom:1px solid rgba(201,177,138,.22)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px}
+    .nav-logo{display:inline-flex;align-items:center;min-height:44px}
+    .nav-logo img{height:28px;width:auto}
+    .nav-links{display:none;align-items:center;gap:.25rem}
+    .nav-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 .9rem;font-size:.95rem;font-weight:500;text-decoration:none}
+    .nav-links a:hover{color:var(--areia)}
+    .nav-cta{display:none;min-height:44px;padding:.5rem 1.25rem;font-size:.95rem}
+    .menu-btn{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 10px;background:none;border:0;color:var(--creme);cursor:pointer}
+    .menu-btn span{display:block;height:1.5px;background:currentColor}
+    .mobile-menu{border-top:1px solid rgba(201,177,138,.22);padding:.5rem var(--pad) 1.5rem}
+    .mobile-menu a:not(.btn){display:flex;align-items:center;min-height:48px;text-decoration:none;font-weight:500;border-bottom:1px solid rgba(230,220,208,.12)}
+    .mobile-menu .btn{margin-top:1.25rem;width:100%}
+    @media(min-width:860px){.nav-links{display:flex}.nav-cta{display:inline-flex}.menu-btn{display:none}}
+
+    /* 01 hero */
+    .hero{padding-block:clamp(2.5rem,6vw,5.5rem) calc(var(--space) + var(--lift))}
+    .hero-grid{display:grid;gap:3rem;align-items:center}
+    @media(min-width:900px){.hero-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:5rem}}
+    .brand-line{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;color:var(--areia);font-weight:600;font-size:.95rem}
+    .brand-line::before{content:"";width:2rem;height:1px;background:var(--areia)}
+    .hero h1{font-size:clamp(2.1rem,1.4rem + 3vw,3.8rem);max-width:15em}
+    .hero .lede{font-size:1.125rem}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+    .hero-note{margin-top:2.25rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--areia)}
+    .portrait{position:relative;width:100%;max-width:440px;margin-inline:auto;aspect-ratio:4/5;overflow:hidden;border-radius:var(--lift);border:1px solid rgba(201,177,138,.4);background:var(--noite);animation:fade .9s ease both}
+    @media(min-width:900px){.portrait{margin-inline:auto 0}}
+    .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+    .kq-mark{position:absolute;left:1rem;bottom:1rem;padding:.4rem .85rem;border-radius:10px;background:var(--areia);color:var(--ametista);font-family:var(--serif);font-weight:600;font-size:1.15rem;line-height:1.2;letter-spacing:.05em}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+
+    /* 02 problema */
+    .problem-grid{display:grid;gap:2.5rem}
+    @media(min-width:900px){.problem-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:5rem;align-items:start}.problem-head{position:sticky;top:6rem}}
+    .nem-sempre{margin-top:1.25rem;font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--lavanda)}
+    .rows{border-top:1px solid var(--line-l)}
+    .row{padding:1.9rem 0;border-bottom:1px solid var(--line-l)}
+    .row h3{font-size:clamp(1.4rem,1.2rem + .8vw,1.8rem)}
+    .row p{margin-top:.6rem;max-width:32rem;color:var(--noite)}
+
+    /* 03 solução */
+    .metodo-top{display:grid;gap:2.5rem}
+    @media(min-width:900px){.metodo-top{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:5rem;align-items:start}}
+    .metodo-text h2{margin-bottom:1.5rem}
+    .metodo-text p{max-width:36rem;color:rgba(230,220,208,.9)}
+    .metodo-text p+p{margin-top:1.1rem}
+    .highlight{padding-left:1.5rem;border-left:3px solid var(--areia);font-family:var(--serif);font-size:clamp(1.5rem,1.2rem + 1.3vw,2.2rem);line-height:1.3}
+    .system{display:grid;margin-top:4rem;padding-top:2.5rem;border-top:1px solid var(--line-d)}
+    .system li{position:relative;padding:0 0 1.75rem 2rem;font-family:var(--serif);font-size:1.25rem;line-height:1.3}
+    .system li::before{content:"";position:absolute;left:0;top:.5rem;width:14px;height:14px;border-radius:50%;background:var(--areia)}
+    .system li::after{content:"";position:absolute;left:6px;top:calc(.5rem + 14px);bottom:0;width:2px;background:rgba(201,177,138,.4)}
+    .system li:last-child{padding-bottom:0}
+    .system li:last-child::after{display:none}
+    @media(min-width:760px){
+      .system{grid-template-columns:repeat(5,1fr)}
+      .system li{padding:2rem 1rem 0 0}
+      .system li::before{top:0}
+      .system li::after{left:14px;right:0;top:6px;bottom:auto;width:auto;height:2px}
+    }
+
+    /* 04 serviços (grid modular) */
+    .bento{display:grid;gap:1rem;margin-top:3rem}
+    @media(min-width:900px){.bento{grid-template-columns:repeat(12,1fr)}.bx.b1{grid-column:span 7}.bx.b2{grid-column:span 5}.bx.b3,.bx.b4{grid-column:span 6}}
+    .bx{display:flex;flex-direction:column;border-radius:var(--r);padding:1.75rem}
+    .bx .num{font-size:.95rem;font-weight:600;opacity:.8}
+    .bx h3{margin-top:auto;padding-top:2rem}
+    .bx p.d{margin-top:.8rem;max-width:30rem}
+    .tags{display:flex;flex-wrap:wrap;gap:.4rem .5rem;margin-top:1.4rem}
+    .tags li{padding:.2rem .75rem;border:1px solid currentColor;border-radius:999px;font-size:.85rem;line-height:1.5;opacity:.9}
+    .bx.big{min-height:330px}
+    .bx.big h3{font-size:clamp(1.8rem,1.4rem + 1.2vw,2.3rem)}
+    .bx.b1{background:var(--ametista);color:var(--creme)}
+    .bx.b2{background:var(--noite);color:var(--creme)}
+    .bx.small{border:1px solid var(--line-l);color:var(--ametista)}
+    .bx.small h3{font-size:1.5rem;padding-top:1.25rem}
+    .bx.small p.d{color:var(--noite)}
+    .bx.b1 p.d,.bx.b2 p.d{color:rgba(230,220,208,.88)}
+
+    /* 05 projetos (pastas) */
+    .proj-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:2.5rem}
+    .proj-count{max-width:28rem;font-size:.95rem;color:rgba(230,220,208,.78)}
+    .rail-nav{display:flex;gap:.5rem}
+    .rail-nav button{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(230,220,208,.45);background:transparent;color:var(--creme);font-size:1.4rem;line-height:1;cursor:pointer;transition:border-color .2s,color .2s}
+    .rail-nav button:hover{border-color:var(--areia);color:var(--areia)}
+    .rail{display:flex;gap:1rem;margin:1rem calc(var(--pad) * -1) 0;padding:.5rem var(--pad) 1.25rem;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-inline:var(--pad);scrollbar-width:none}
+    .rail::-webkit-scrollbar{display:none}
+    .folder{flex:0 0 min(64vw,230px);position:relative;display:block;padding:26px 0 0;border:0;background:none;color:var(--creme);text-align:left;cursor:pointer;scroll-snap-align:start}
+    .folder-tab{position:absolute;top:0;left:0;height:28px;min-width:64px;padding:0 1rem;border-radius:10px 10px 0 0;background:rgba(230,220,208,.16);font-size:.8rem;font-weight:600;line-height:28px;transition:background-color .2s,color .2s}
+    .folder-body{display:block;padding:.75rem .75rem 1rem;border-radius:0 var(--r) var(--r) var(--r);background:rgba(230,220,208,.1);border:1px solid rgba(230,220,208,.14);transition:background-color .2s,color .2s}
+    .folder-img{display:block;aspect-ratio:1;overflow:hidden;border-radius:10px;background:var(--noite)}
+    .folder-img img{width:100%;height:100%;object-fit:cover}
+    .folder-cat{display:block;margin-top:.8rem;font-size:.8rem;font-weight:600;line-height:1.3;color:var(--areia)}
+    .folder-name{display:block;margin-top:.15rem;font-family:var(--serif);font-size:1.15rem;line-height:1.2}
+    .folder:hover .folder-body{background:rgba(230,220,208,.16)}
+    .folder[aria-pressed="true"] .folder-tab{background:var(--areia);color:var(--ametista)}
+    .folder[aria-pressed="true"] .folder-body{background:var(--areia);color:var(--ametista);border-color:var(--areia)}
+    .folder[aria-pressed="true"] .folder-cat{color:var(--noite)}
+    .rail-progress{height:4px;overflow:hidden;border-radius:999px;background:rgba(230,220,208,.18)}
+    .rail-progress span{display:block;width:20%;height:100%;border-radius:inherit;background:var(--areia);transition:width .15s linear}
+    .panel{display:grid;gap:1.5rem;margin-top:2rem;padding:1.5rem;border-radius:var(--r);background:var(--creme);color:var(--ametista)}
+    @media(min-width:760px){.panel{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:2.5rem;padding:2rem}}
+    .panel-img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;background:var(--noite)}
+    .panel .cat{font-size:.95rem;font-weight:600;color:var(--lavanda)}
+    .panel h3{margin-top:.3rem;font-size:clamp(1.6rem,1.3rem + 1vw,2.2rem)}
+    .panel .desc{margin-top:.8rem;max-width:34rem;color:var(--noite)}
+    .panel .deliv{margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--line-l);max-width:34rem}
+    .panel .deliv strong{display:block;margin-bottom:.3rem;font-size:.9rem;color:var(--lavanda)}
+    .panel .btn{margin-top:1.5rem}
+
+    /* 06 como funciona */
+    .steps{display:grid;gap:2rem;margin-top:3.5rem}
+    @media(min-width:760px){.steps{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1000px){.steps{grid-template-columns:repeat(4,1fr)}}
+    .steps li{position:relative;padding-top:1.5rem;border-top:1px solid var(--line-l)}
+    .steps li::before{content:"";position:absolute;left:0;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--ametista)}
+    .steps .n{display:block;font-family:var(--serif);font-size:2.4rem;line-height:1;color:var(--lavanda)}
+    .steps h3{margin-top:1rem;font-size:1.5rem}
+    .steps p{margin-top:.5rem;max-width:22rem;color:var(--noite)}
+
+    /* 07 sobre */
+    .about-grid{display:grid;gap:3rem;align-items:center}
+    @media(min-width:900px){.about-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:5rem}}
+    .about-photo{position:relative;width:100%;max-width:440px;margin-inline:auto;aspect-ratio:1/1;overflow:hidden;border-radius:var(--lift);border:1px solid rgba(201,177,138,.4);background:var(--ametista)}
+    .about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transform:scale(1.5);transform-origin:50% 22%}
+    .about-text h2{margin-bottom:1.5rem}
+    .about-text>p{max-width:36rem;color:rgba(230,220,208,.9)}
+    .about-text>p+p{margin-top:1.1rem}
+    .about-text>p.about-id{margin-top:2rem;padding-top:1.25rem;border-top:1px solid rgba(201,177,138,.4);font-size:.95rem;color:rgba(230,220,208,.85)}
+    .about-id strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.25rem;color:var(--creme)}
+
+    /* 08 para quem é + 09 faq (mesma folha) */
+    .tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-top:2.5rem}
+    @media(min-width:900px){.tiles{grid-template-columns:repeat(4,1fr);gap:1rem}}
+    .tiles li{display:flex;align-items:flex-end;min-height:130px;padding:1.1rem;border:1px solid var(--line-l);border-radius:var(--r);font-family:var(--serif);font-size:clamp(1.15rem,1rem + .6vw,1.5rem);line-height:1.2}
+    .quem-end{margin-top:2rem;max-width:36rem;color:var(--noite)}
+    .faq-block{margin-top:clamp(4rem,8vw,6rem);padding-top:clamp(3.5rem,7vw,5rem);border-top:1px solid var(--line-l)}
+    .faq{max-width:760px;margin-top:2rem}
+    .faq details{border-bottom:1px solid var(--line-l)}
+    .faq details:first-child{border-top:1px solid var(--line-l)}
+    .faq summary{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:60px;padding:.9rem 0;cursor:pointer;list-style:none;font-weight:600}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";flex:none;font-size:1.6rem;font-weight:400;line-height:1;color:var(--lavanda)}
+    .faq details[open] summary::after{content:"\2212"}
+    .faq details p{padding:0 3rem 1.4rem 0;max-width:38rem;color:var(--noite)}
+
+    /* 10 cta final + 11 rodapé */
+    .cta-box{max-width:40rem;margin-inline:auto;text-align:center}
+    .cta-box .lede{margin-inline:auto}
+    .cta-box .hero-actions{justify-content:center;margin-top:2rem}
+    .emblem{width:72px;height:auto;margin:0 auto 1.75rem}
+    .footer{padding-block:3.5rem 2rem}
+    .footer-grid{display:grid;gap:2rem}
+    @media(min-width:800px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr}}
+    .footer .brand{font-family:var(--serif);font-size:1.5rem}
+    .footer .tag{margin-top:.5rem;max-width:20rem;color:rgba(230,220,208,.8);font-size:.95rem}
+    .footer h2{font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--areia);margin-bottom:.5rem}
+    .footer li a{display:inline-flex;align-items:center;min-height:40px;text-decoration:none;font-size:.95rem}
+    .footer li a:hover{color:var(--areia)}
+    .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(230,220,208,.15);font-size:.85rem;color:rgba(230,220,208,.68)}
+
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="nav-logo" href="#inicio" aria-label="KQ Design, voltar ao início"><img src="logo.png" alt="KQ Design" width="96" height="32"></a>
+        <ul class="nav-links">
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a class="btn btn-primary nav-cta" href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Vim%20pelo%20site%20da%20KQ%20Design%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">Falar com a KQ</a>
+        <button id="menu-toggle" class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <a href="#projetos">Projetos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-primary" href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Vim%20pelo%20site%20da%20KQ%20Design%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">Falar com a KQ</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- 01 HERO -->
+    <section id="inicio" class="hero dark" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="brand-line">KQ Design</p>
+          <h1 id="hero-title">Quem organiza a comunicação visual da sua empresa.</h1>
+          <p class="lede">Identidade visual, materiais e sites institucionais para pequenos negócios que querem se apresentar de forma mais organizada, consistente e profissional.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Vim%20pelo%20site%20da%20KQ%20Design%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">Falar com a KQ</a>
+            <a class="btn btn-ghost" href="#projetos">Ver projetos</a>
+          </div>
+          <p class="hero-note">Design para negócios que levam o próprio trabalho a sério.</p>
+        </div>
+        <div class="portrait">
+          <img src="IMG_0401.png" alt="Karoline Queiroz, designer gráfica da KQ Design" fetchpriority="high" decoding="async">
+          <span class="kq-mark" aria-hidden="true">KQ</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 O PROBLEMA -->
+    <section id="problema" class="sheet light" aria-labelledby="problema-title">
+      <div class="wrap problem-grid">
+        <div class="problem-head">
+          <h2 id="problema-title">Seu negócio mudou. A comunicação acompanhou?</h2>
+          <p class="nem-sempre">Nem sempre.</p>
+        </div>
+        <div class="rows">
+          <div class="row">
+            <h3>Cada coisa parece de um jeito.</h3>
+            <p>Logo, documentos, apresentações, redes e site não conversam entre si.</p>
+          </div>
+          <div class="row">
+            <h3>O negócio perde clareza.</h3>
+            <p>O cliente precisa se esforçar para entender quem você é e o que oferece.</p>
+          </div>
+          <div class="row">
+            <h3>A percepção não acompanha o trabalho.</h3>
+            <p>Você sabe a qualidade do que entrega. Seu cliente precisa conseguir perceber isso também.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 A SOLUÇÃO / MÉTODO KQ -->
+    <section id="metodo" class="sheet mid" aria-labelledby="metodo-title">
+      <div class="wrap">
+        <div class="metodo-top">
+          <div class="metodo-text">
+            <h2 id="metodo-title">É aqui que a KQ entra.</h2>
+            <p>A KQ organiza a comunicação visual do seu negócio para que os diferentes pontos de contato tenham coerência entre si.</p>
+            <p>Não se trata apenas de criar peças bonitas. É entender o que precisa ser organizado, definir um padrão e transformar isso em uma comunicação que faça sentido para a empresa.</p>
+          </div>
+          <p class="highlight">Da identidade à presença digital, tudo precisa conversar.</p>
+        </div>
+        <ol class="system" aria-label="Pontos de contato que a KQ organiza">
+          <li>Identidade visual</li>
+          <li>Materiais</li>
+          <li>Documentos</li>
+          <li>Presença digital</li>
+          <li>Site</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 04 SERVIÇOS -->
+    <section id="servicos" class="sheet light" aria-labelledby="servicos-title">
+      <div class="wrap">
+        <h2 id="servicos-title">O que podemos organizar</h2>
+        <div class="bento">
+          <article class="bx big b1">
+            <span class="num">01</span>
+            <h3>Identidade visual</h3>
+            <p class="d">A base visual da sua empresa, construída para ser reconhecida e aplicada de forma consistente.</p>
+            <ul class="tags"><li>Logo</li><li>Cores</li><li>Tipografia</li><li>Elementos visuais</li><li>Aplicações</li></ul>
+          </article>
+          <article class="bx big b2">
+            <span class="num">02</span>
+            <h3>Site institucional</h3>
+            <p class="d">Um espaço próprio para apresentar sua empresa, seus serviços e a forma como você trabalha com clareza e profissionalismo.</p>
+            <ul class="tags"><li>Estrutura</li><li>Direção visual</li><li>Conteúdo</li><li>Desenvolvimento</li></ul>
+          </article>
+          <article class="bx small b3">
+            <span class="num">03</span>
+            <h3>Materiais de comunicação</h3>
+            <p class="d">Documentos e materiais que também fazem parte da imagem da sua empresa.</p>
+            <ul class="tags"><li>Apresentações</li><li>Documentos</li><li>Materiais comerciais</li><li>Peças institucionais</li></ul>
+          </article>
+          <article class="bx small b4">
+            <span class="num">04</span>
+            <h3>Artes prontas</h3>
+            <p class="d">Materiais visuais prontos para você divulgar seu negócio no Instagram e no WhatsApp, mantendo o padrão da sua marca.</p>
+            <ul class="tags"><li>Pacotes de artes</li><li>Materiais promocionais</li><li>Comunicação visual</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 PROJETOS -->
+    <section id="projetos" class="sheet dark" aria-labelledby="projetos-title">
+      <div class="wrap">
+        <h2 id="projetos-title">Projetos que ganharam forma e organização.</h2>
+        <p class="lede">Cada projeto parte de uma necessidade diferente. O objetivo é encontrar uma solução visual que faça sentido para aquele negócio.</p>
+        <div class="proj-top">
+          <p class="proj-count">10 projetos. Escolha uma pasta para ver o que foi desenvolvido.</p>
+          <div class="rail-nav">
+            <button type="button" id="rail-prev" aria-label="Pastas anteriores">&#8249;</button>
+            <button type="button" id="rail-next" aria-label="Próximas pastas">&#8250;</button>
+          </div>
+        </div>
+        <div class="rail" id="rail" role="group" aria-label="Pastas de projetos">
+        <button type="button" class="folder" data-project="at" aria-pressed="true" aria-label="Abrir pasta do projeto A&amp;T Marcenaria"><span class="folder-tab" aria-hidden="true">01</span><span class="folder-body"><span class="folder-img"><img src="image_21.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual</span><span class="folder-name">A&amp;T Marcenaria</span></span></button>
+        <button type="button" class="folder" data-project="markie" aria-pressed="false" aria-label="Abrir pasta do projeto Markie Papelaria Criativa"><span class="folder-tab" aria-hidden="true">02</span><span class="folder-body"><span class="folder-img"><img src="image_22.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual completa</span><span class="folder-name">Markie Papelaria Criativa</span></span></button>
+        <button type="button" class="folder" data-project="maira" aria-pressed="false" aria-label="Abrir pasta do projeto Maiara Cristina Psicóloga"><span class="folder-tab" aria-hidden="true">03</span><span class="folder-body"><span class="folder-img"><img src="image_23.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual completa</span><span class="folder-name">Maiara Cristina Psicóloga</span></span></button>
+        <button type="button" class="folder" data-project="patricia" aria-pressed="false" aria-label="Abrir pasta do projeto Patrícia Alcântara Nail Designer"><span class="folder-tab" aria-hidden="true">04</span><span class="folder-body"><span class="folder-img"><img src="image_24.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual simples</span><span class="folder-name">Patrícia Alcântara Nail Designer</span></span></button>
+        <button type="button" class="folder" data-project="jf" aria-pressed="false" aria-label="Abrir pasta do projeto JF Acessórios"><span class="folder-tab" aria-hidden="true">05</span><span class="folder-body"><span class="folder-img"><img src="image_25.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual simples</span><span class="folder-name">JF Acessórios</span></span></button>
+        <button type="button" class="folder" data-project="biskie" aria-pressed="false" aria-label="Abrir pasta do projeto Biskie"><span class="folder-tab" aria-hidden="true">06</span><span class="folder-body"><span class="folder-img"><img src="image_26.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Conteúdo para redes</span><span class="folder-name">Biskie</span></span></button>
+        <button type="button" class="folder" data-project="comile" aria-pressed="false" aria-label="Abrir pasta do projeto Comile Brigadeiros Gourmet"><span class="folder-tab" aria-hidden="true">07</span><span class="folder-body"><span class="folder-img"><img src="image_27.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual simples</span><span class="folder-name">Comile Brigadeiros Gourmet</span></span></button>
+        <button type="button" class="folder" data-project="garimpan" aria-pressed="false" aria-label="Abrir pasta do projeto Garimpan.do"><span class="folder-tab" aria-hidden="true">08</span><span class="folder-body"><span class="folder-img"><img src="image_28.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual</span><span class="folder-name">Garimpan.do</span></span></button>
+        <button type="button" class="folder" data-project="vona" aria-pressed="false" aria-label="Abrir pasta do projeto VONA ID"><span class="folder-tab" aria-hidden="true">09</span><span class="folder-body"><span class="folder-img"><img src="image_29.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade e materiais</span><span class="folder-name">VONA ID</span></span></button>
+        <button type="button" class="folder" data-project="juliana" aria-pressed="false" aria-label="Abrir pasta do projeto Juliana Landim Psicóloga"><span class="folder-tab" aria-hidden="true">10</span><span class="folder-body"><span class="folder-img"><img src="image_30.png" alt="" width="800" height="800" loading="lazy" decoding="async"></span><span class="folder-cat">Identidade visual e MIV</span><span class="folder-name">Juliana Landim Psicóloga</span></span></button>
+        </div>
+        <div class="rail-progress" aria-hidden="true"><span id="rail-fill"></span></div>
+        <div class="panel" id="panel" aria-live="polite">
+          <img class="panel-img" id="panel-img" src="image_21.png" alt="Projeto A&amp;T Marcenaria" width="800" height="800" decoding="async">
+          <div>
+            <p class="cat" id="panel-cat">Identidade visual</p>
+            <h3 id="panel-name">A&amp;T Marcenaria</h3>
+            <p class="desc" id="panel-desc">Uma identidade visual pensada para uma marcenaria que valoriza o trabalho artesanal, o acabamento e a presença de materiais bem feitos.</p>
+            <div class="deliv"><strong>O que foi desenvolvido</strong><p id="panel-deliv">Logo, paleta de cores, tipografia e aplicações da marca.</p></div>
+            <a class="btn btn-dark" id="panel-cta" href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Vi%20o%20projeto%20A%26T%20Marcenaria%20no%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">Conversar sobre um projeto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 COMO FUNCIONA -->
+    <section id="como-funciona" class="sheet light" aria-labelledby="como-title">
+      <div class="wrap">
+        <h2 id="como-title">Organização começa antes do design.</h2>
+        <p class="lede">Antes de criar qualquer coisa, precisamos entender o que sua empresa precisa.</p>
+        <ol class="steps">
+          <li><span class="n" aria-hidden="true">01</span><h3>Entender</h3><p>Conhecemos o negócio, o momento atual e o que precisa ser resolvido.</p></li>
+          <li><span class="n" aria-hidden="true">02</span><h3>Organizar</h3><p>Definimos o que precisa ser criado, ajustado ou padronizado.</p></li>
+          <li><span class="n" aria-hidden="true">03</span><h3>Criar</h3><p>Desenvolvemos a solução visual de acordo com o que foi definido.</p></li>
+          <li><span class="n" aria-hidden="true">04</span><h3>Entregar</h3><p>Você recebe os materiais organizados e prontos para utilizar.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 07 SOBRE A KQ -->
+    <section id="sobre" class="sheet mid" aria-labelledby="sobre-title">
+      <div class="wrap about-grid">
+        <div class="about-photo">
+          <img src="IMG_0401.png" alt="Retrato de Karoline Queiroz, fundadora da KQ Design" loading="lazy" decoding="async">
+        </div>
+        <div class="about-text">
+          <h2 id="sobre-title">Por trás da KQ, Karoline.</h2>
+          <p>A KQ nasceu da vontade de fazer o design ir além da estética.</p>
+          <p>Meu trabalho é entender o que uma empresa precisa comunicar e organizar isso visualmente de uma forma clara, consistente e funcional.</p>
+          <p>Gosto de transformar informação, identidade e necessidade em soluções que realmente possam ser usadas no dia a dia.</p>
+          <p class="about-id"><strong>Karoline Queiroz</strong>Design gráfico<br>CNPJ 47.906.373/0001-90</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 PARA QUEM É + 09 FAQ -->
+    <div class="sheet light">
+      <section id="para-quem" class="wrap" aria-labelledby="quem-title">
+        <h2 id="quem-title">Para negócios que querem colocar a comunicação em ordem.</h2>
+        <p class="lede">A KQ trabalha principalmente com pequenos negócios e serviços que precisam apresentar melhor aquilo que já fazem.</p>
+        <ul class="tiles">
+          <li>Marcenarias</li>
+          <li>Móveis sob medida</li>
+          <li>Beleza</li>
+          <li>Comércio e serviços</li>
+        </ul>
+        <p class="quem-end">Seu negócio não precisa estar nessa lista. Se a comunicação precisa de mais organização, podemos conversar.</p>
+      </section>
+
+      <section id="faq" class="wrap faq-block" aria-labelledby="faq-title">
+        <h2 id="faq-title">Perguntas frequentes</h2>
+        <div class="faq">
+          <details>
+            <summary>A KQ faz gestão de Instagram?</summary>
+            <p>Não. A KQ cria e organiza os materiais visuais. A publicação e gestão das redes ficam por conta do próprio negócio.</p>
+          </details>
+          <details>
+            <summary>Posso contratar apenas um serviço?</summary>
+            <p>Sim. Cada projeto é avaliado de acordo com a necessidade da empresa.</p>
+          </details>
+          <details>
+            <summary>A KQ atende apenas empresas da região?</summary>
+            <p>Não. O atendimento pode ser realizado de forma remota.</p>
+          </details>
+          <details>
+            <summary>Como funciona o orçamento?</summary>
+            <p>Primeiro entendemos o que sua empresa precisa. Depois definimos a solução e enviamos uma proposta de acordo com o projeto.</p>
+          </details>
+          <details>
+            <summary>Vocês fazem sites institucionais?</summary>
+            <p>Sim. O site é uma das principais soluções da KQ para empresas que precisam apresentar seus serviços e informações de forma mais profissional.</p>
+          </details>
+        </div>
+      </section>
     </div>
 
-    <!-- HEADER / NAVEGAÇÃO -->
-    <header class="relative z-40 max-w-7xl mx-auto px-6 py-8 flex justify-between items-center border-b border-white/10">
-        <div class="font-mono text-xs tracking-widest text-zinc-400">
-            [ PORTFOLIO_RIANA ]
+    <!-- 10 CTA FINAL -->
+    <section id="contato" class="sheet dark" aria-labelledby="contato-title">
+      <div class="wrap">
+        <div class="cta-box">
+          <img class="emblem" src="olho.png" alt="" width="72" height="73" loading="lazy">
+          <h2 id="contato-title">Vamos organizar a comunicação da sua empresa?</h2>
+          <p class="lede">Me conte o que você precisa colocar em ordem e vamos entender qual solução faz sentido para o seu negócio.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Vim%20pelo%20site%20da%20KQ%20Design%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">Falar com a KQ no WhatsApp</a>
+            <a class="btn btn-ghost" href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Vim%20pelo%20site%20da%20KQ%20Design%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer">Solicitar orçamento</a>
+          </div>
         </div>
-        <nav class="hidden md:flex gap-8 font-mono text-xs text-zinc-300">
-            <a href="#work" class="hover:text-limeAccent transition-colors">[ 01. TRABALHO ]</a>
-            <a href="#about" class="hover:text-limeAccent transition-colors">[ 02. SOBRE ]</a>
-            <a href="#contact" class="hover:text-limeAccent transition-colors">[ 03. CONTACTO ]</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 11 RODAPÉ -->
+  <footer class="footer sheet mid">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="brand">KQ Design</p>
+          <p class="tag">Quem organiza a comunicação visual da sua empresa.</p>
+        </div>
+        <nav aria-label="Rodapé">
+          <h2>Navegação</h2>
+          <ul>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
         </nav>
-        <div class="font-mono text-xs bg-white/5 border border-white/10 px-3 py-1 rounded-full text-limeAccent">
-            ● AVAILABLE 2026
+        <div>
+          <h2>Contato</h2>
+          <ul>
+            <li><a href="https://wa.me/5512982544891?text=Ol%C3%A1%2C%20Karoline%21%20Vim%20pelo%20site%20da%20KQ%20Design%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          </ul>
         </div>
-    </header>
+      </div>
+      <p class="legal">© 2026 KQ Design · CNPJ 47.906.373/0001-90</p>
+    </div>
+  </footer>
 
-    <!-- HERO SECTION -->
-    <section class="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-28">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <!-- Título Massivo Editorial -->
-            <div class="lg:col-span-7 space-y-6">
-                <div class="inline-block font-mono text-xs tracking-widest text-zinc-400 border-l-2 border-limeAccent pl-3">
-                    GRAPHIC DESIGNER & ART DIRECTOR — HAMBURG
-                </div>
-                <h1 class="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9]">
-                    Design that <span class="text-transparent" style="-webkit-text-stroke: 1px #fff;">breaks</span> the grid.
-                </h1>
-                <p class="text-zinc-400 text-lg max-w-xl font-light">
-                    Combinando estética ousada e propósito visual. Transformo conceitos complexos em identidades visuais de alto impacto que fazem a concorrência suar.
-                </p>
-                <div class="flex items-center gap-4 pt-4">
-                    <a href="#work" class="bg-limeAccent text-black font-mono text-xs font-bold px-6 py-4 rounded-full hover:bg-white transition-colors">
-                        EXPLORAR TRABALHOS ↗
-                    </a>
-                </div>
-            </div>
+  <script>
+    (function () {
+      var projects = {
+  "at": {
+    "name": "A&T Marcenaria",
+    "category": "Identidade visual",
+    "image": "image_21.png",
+    "description": "Uma identidade visual pensada para uma marcenaria que valoriza o trabalho artesanal, o acabamento e a presença de materiais bem feitos.",
+    "deliverables": "Logo, paleta de cores, tipografia e aplicações da marca."
+  },
+  "markie": {
+    "name": "Markie Papelaria Criativa",
+    "category": "Identidade visual completa",
+    "image": "image_22.png",
+    "description": "Uma identidade completa para uma papelaria criativa que precisava organizar sua presença e deixar a marca mais reconhecível.",
+    "deliverables": "Identidade visual completa, elementos gráficos e aplicações."
+  },
+  "maira": {
+    "name": "Maiara Cristina Psicóloga",
+    "category": "Identidade visual completa",
+    "image": "image_23.png",
+    "description": "Uma identidade visual acolhedora e profissional para comunicar confiança no trabalho da psicóloga.",
+    "deliverables": "Identidade visual completa, paleta, tipografia e aplicações."
+  },
+  "patricia": {
+    "name": "Patrícia Alcântara Nail Designer",
+    "category": "Identidade visual simples",
+    "image": "image_24.png",
+    "description": "Uma identidade simples e delicada para uma profissional de beleza que queria apresentar seu trabalho com mais consistência.",
+    "deliverables": "Logo, cores, tipografia e aplicações essenciais."
+  },
+  "jf": {
+    "name": "JF Acessórios",
+    "category": "Identidade visual simples",
+    "image": "image_25.png",
+    "description": "Uma identidade visual direta para destacar a marca e criar uma base consistente para suas comunicações.",
+    "deliverables": "Logo, paleta, tipografia e elementos de apoio."
+  },
+  "biskie": {
+    "name": "Biskie",
+    "category": "Conteúdo para redes",
+    "image": "image_26.png",
+    "description": "Peças e direção visual para apresentar produtos de forma apetitiva, reconhecível e pronta para circular nas redes.",
+    "deliverables": "Artes para redes sociais e aplicações visuais da marca."
+  },
+  "comile": {
+    "name": "Comile Brigadeiros Gourmet",
+    "category": "Identidade visual simples",
+    "image": "image_27.png",
+    "description": "Uma identidade simples para uma marca de doces que precisava comunicar cuidado, sabor e personalidade.",
+    "deliverables": "Logo, cores, tipografia e aplicações essenciais."
+  },
+  "garimpan": {
+    "name": "Garimpan.do",
+    "category": "Identidade visual",
+    "image": "image_28.png",
+    "description": "Uma identidade com presença e personalidade para uma marca que precisava transformar sua proposta em um sistema visual.",
+    "deliverables": "Identidade visual, elementos gráficos e aplicações."
+  },
+  "vona": {
+    "name": "VONA ID",
+    "category": "Identidade e materiais",
+    "image": "image_29.png",
+    "description": "Uma identidade e materiais de apoio para apresentar a marca de forma sofisticada em diferentes pontos de contato.",
+    "deliverables": "Identidade visual, materiais gráficos, tipografia e aplicações."
+  },
+  "juliana": {
+    "name": "Juliana Landim Psicóloga",
+    "category": "Identidade visual e MIV",
+    "image": "image_30.png",
+    "description": "Um sistema visual completo para uma psicóloga, com uma base clara para manter a comunicação consistente no dia a dia.",
+    "deliverables": "Identidade visual, materiais gráficos, tipografia, elementos de apoio e MIV completo."
+  }
+};
+      var WA = "https://wa.me/5512982544891";
 
-            <!-- Bloco de Imagem com Recorte Editorial (Inspiração Imagem 11) -->
-            <div class="lg:col-span-5 relative flex justify-center">
-                <div class="relative w-full max-w-sm aspect-[4/5] bg-zinc-900 border border-white/10 overflow-hidden rounded-2xl group">
-                    <!-- Placeholder de Imagem P&B (Podes substituir pelo link da tua foto) -->
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" alt="Riana Izsietova" class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-amethyst via-transparent to-transparent opacity-80"></div>
-                    
-                    <!-- Rótulo técnico flutuante -->
-                    <div class="absolute bottom-6 left-6 font-mono text-[10px] text-zinc-400 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
-                        LOC: HAMBURG / DE — 04.20.26
-                    </div>
-                </div>
-            </div>
+      // menu mobile
+      var toggle = document.getElementById("menu-toggle");
+      var menu = document.getElementById("mobile-menu");
+      function setMenu(open) {
+        menu.hidden = !open;
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+      }
+      toggle.addEventListener("click", function () { setMenu(menu.hidden); });
+      menu.addEventListener("click", function (ev) { if (ev.target.closest("a")) setMenu(false); });
+      document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && !menu.hidden) { setMenu(false); toggle.focus(); } });
+      window.addEventListener("resize", function () { if (window.innerWidth >= 860) setMenu(false); });
 
-        </div>
-    </section>
+      // pastas de projetos
+      var rail = document.getElementById("rail");
+      var fill = document.getElementById("rail-fill");
+      var folders = rail.querySelectorAll("[data-project]");
+      function select(key) {
+        var p = projects[key];
+        if (!p) return;
+        folders.forEach(function (f) { f.setAttribute("aria-pressed", String(f.getAttribute("data-project") === key)); });
+        document.getElementById("panel-name").textContent = p.name;
+        document.getElementById("panel-cat").textContent = p.category;
+        document.getElementById("panel-desc").textContent = p.description;
+        document.getElementById("panel-deliv").textContent = p.deliverables;
+        var img = document.getElementById("panel-img");
+        img.src = p.image;
+        img.alt = "Projeto " + p.name;
+        document.getElementById("panel-cta").href = WA + "?text=" + encodeURIComponent("Olá, Karoline! Vi o projeto " + p.name + " no seu portfólio e gostaria de conversar sobre um projeto.");
+      }
+      rail.addEventListener("click", function (ev) {
+        var f = ev.target.closest("[data-project]");
+        if (f) select(f.getAttribute("data-project"));
+      });
 
-    <!-- SEÇÃO DE PROJETOS (Pílulas Verticais - Inspiração Imagem 13) -->
-    <section id="work" class="relative z-10 max-w-7xl mx-auto px-6 py-20 border-t border-white/10">
-        <div class="flex justify-between items-end mb-16">
-            <div>
-                <span class="font-mono text-xs text-limeAccent tracking-widest">[ SELEÇÃO ]</span>
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mt-2">Selected Projects</h2>
-            </div>
-            <span class="font-mono text-xs text-zinc-500 hidden md:block">01 — 04</span>
-        </div>
-
-        <!-- Grid de Cápsulas Verticais -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <!-- Projeto 01 -->
-            <div class="group relative h-[480px] bg-zinc-900 rounded-[40px] border border-white/10 overflow-hidden flex flex-col justify-between p-8 hover:border-limeAccent/50 transition-all">
-                <div class="absolute inset-0 z-0">
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600" alt="Project" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                </div>
-                <div class="relative z-10 flex justify-between items-center">
-                    <span class="font-mono text-xs bg-white/10 backdrop-blur-md px-3 py-1 rounded-full">BRANDING</span>
-                    <span class="font-mono text-xs text-limeAccent">01</span>
-                </div>
-                <div class="relative z-10 space-y-2">
-                    <h3 class="text-2xl font-bold">Reel Riot</h3>
-                    <p class="text-zinc-400 text-sm">Identidade visual e direção de arte para marca independente.</p>
-                </div>
-            </div>
-
-            <!-- Projeto 02 -->
-            <div class="group relative h-[480px] bg-zinc-900 rounded-[40px] border border-white/10 overflow-hidden flex flex-col justify-between p-8 hover:border-limeAccent/50 transition-all">
-                <div class="absolute inset-0 z-0">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600" alt="Project" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                </div>
-                <div class="relative z-10 flex justify-between items-center">
-                    <span class="font-mono text-xs bg-white/10 backdrop-blur-md px-3 py-1 rounded-full">UI/UX DESIGN</span>
-                    <span class="font-mono text-xs text-limeAccent">02</span>
-                </div>
-                <div class="relative z-10 space-y-2">
-                    <h3 class="text-2xl font-bold">Tandem App</h3>
-                    <p class="text-zinc-400 text-sm">Interface mobile com foco em minimalismo e conversão.</p>
-                </div>
-            </div>
-
-            <!-- Projeto 03 -->
-            <div class="group relative h-[480px] bg-zinc-900 rounded-[40px] border border-white/10 overflow-hidden flex flex-col justify-between p-8 hover:border-limeAccent/50 transition-all">
-                <div class="absolute inset-0 z-0">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600" alt="Project" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                </div>
-                <div class="relative z-10 flex justify-between items-center">
-                    <span class="font-mono text-xs bg-white/10 backdrop-blur-md px-3 py-1 rounded-full">AI CREATING</span>
-                    <span class="font-mono text-xs text-limeAccent">03</span>
-                </div>
-                <div class="relative z-10 space-y-2">
-                    <h3 class="text-2xl font-bold">Loewe Concept</h3>
-                    <p class="text-zinc-400 text-sm">Narrativa visual avançada gerada por inteligência artificial.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- RODAPÉ / CONTACTO -->
-    <footer id="contact" class="relative z-10 border-t border-white/10 bg-deepDark py-24">
-        <div class="max-w-7xl mx-auto px-6 text-center space-y-8">
-            <span class="font-mono text-xs text-limeAccent tracking-widest">[ VAMOS TRABALHAR JUNTOS ]</span>
-            <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tight">
-                Let's create <span class="text-limeAccent">something bold.</span>
-            </h2>
-            <p class="text-zinc-400 max-w-md mx-auto">
-                Estou sempre aberta a novos desafios em branding, web design e direção de arte.
-            </p>
-            <div class="pt-4">
-                <a href="mailto:riana.izzietova@gmail.com" class="inline-block bg-white text-black font-mono text-xs font-bold px-8 py-4 rounded-full hover:bg-limeAccent transition-colors">
-                    RIANA.IZZIETOVA@GMAIL.COM ↗
-                </a>
-            </div>
-            
-            <div class="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs font-mono text-zinc-500 gap-4">
-                <p>© 2026 Riana Izsietova. All rights reserved.</p>
-                <div class="flex gap-6">
-                    <a href="https://instagram.com" class="hover:text-white transition-colors">INSTAGRAM</a>
-                    <a href="https://behance.net" class="hover:text-white transition-colors">BEHANCE</a>
-                    <a href="https://linkedin.com" class="hover:text-white transition-colors">LINKEDIN</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+      // carrossel + barra de progresso
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      function progress() {
+        fill.style.width = Math.min(100, ((rail.scrollLeft + rail.clientWidth) / rail.scrollWidth) * 100) + "%";
+      }
+      rail.addEventListener("scroll", progress, { passive: true });
+      window.addEventListener("resize", progress);
+      progress();
+      function scrollRail(dir) {
+        var first = rail.querySelector(".folder");
+        var step = first ? first.getBoundingClientRect().width + 16 : 240;
+        rail.scrollBy({ left: dir * step * 2, behavior: reduce ? "auto" : "smooth" });
+      }
+      document.getElementById("rail-prev").addEventListener("click", function () { scrollRail(-1); });
+      document.getElementById("rail-next").addEventListener("click", function () { scrollRail(1); });
+    })();
+  </script>
 </body>
 </html>
