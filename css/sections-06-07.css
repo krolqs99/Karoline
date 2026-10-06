@@ -1,0 +1,195 @@
+/* ==========================================================================
+   ESTILOS DAS SEÇÕES 06 (COMO FUNCIONA) E 07 (SOBRE A KQ)
+   ========================================================================== */
+
+/* --- SEÇÃO 06 — COMO FUNCIONA (TIMELINE) --- */
+.how-it-works-section {
+  padding: var(--section-padding-desktop);
+  background-color: var(--bg-dark);
+  border-top: 1px solid rgba(106, 88, 116, 0.2);
+}
+
+.how-it-works-header {
+  margin-bottom: 64px;
+  max-width: 680px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--bg-light);
+  opacity: 0.85;
+  margin-top: 12px;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-marker {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.step-number {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--accent-gold);
+  background-color: var(--bg-dark);
+  padding-right: 16px;
+  line-height: 1;
+}
+
+.step-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgba(106, 88, 116, 0.35);
+}
+
+.step-content {
+  padding-right: 16px;
+}
+
+.step-title {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  color: var(--bg-light);
+}
+
+.step-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--bg-light);
+  opacity: 0.8;
+}
+
+/* --- SEÇÃO 07 — SOBRE A KQ --- */
+.about-section {
+  padding: var(--section-padding-desktop);
+  background-color: #160D1A;
+  border-top: 1px solid rgba(106, 88, 116, 0.2);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-header-mobile {
+  display: none;
+}
+
+.about-header-desktop {
+  margin-bottom: 32px;
+}
+
+.about-text-body p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.about-quote {
+  margin-top: 32px;
+  padding-left: 20px;
+  border-left: 2px solid var(--accent-gold);
+}
+
+.about-quote p {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--accent-gold);
+}
+
+.about-media {
+  display: flex;
+  justify-content: center;
+}
+
+.about-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(106, 88, 116, 0.3);
+}
+
+.about-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4/5;
+}
+
+.about-image-caption {
+  padding: 16px 20px;
+  background-color: var(--bg-card);
+  border-top: 1px solid rgba(106, 88, 116, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.about-image-caption span {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--bg-light);
+}
+
+.about-image-caption small {
+  font-size: 0.8rem;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* Adaptabilidade Responsiva Mobile */
+@media (max-width: 900px) {
+  .timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .step-marker {
+    margin-bottom: 12px;
+  }
+
+  .step-line {
+    display: none;
+  }
+
+  .timeline-step {
+    padding-left: 16px;
+    border-left: 2px solid rgba(106, 88, 116, 0.3);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-header-desktop {
+    display: none;
+  }
+
+  .about-header-mobile {
+    display: block;
+  }
+}
