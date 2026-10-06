@@ -1,0 +1,242 @@
+/* ==========================================================================
+   ESTILOS DAS SEÇÕES 08 (PARA QUEM É), 09 (FAQ), 10 (CTA) E 11 (RODAPÉ)
+   ========================================================================== */
+
+/* --- SEÇÃO 08 — PARA QUEM É --- */
+.target-section {
+  padding: var(--section-padding-desktop);
+  background-color: var(--bg-dark);
+  border-top: 1px solid rgba(106, 88, 116, 0.2);
+}
+
+.target-header {
+  margin-bottom: 56px;
+  max-width: 720px;
+}
+
+.target-segments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.target-segment-item {
+  background-color: var(--bg-card);
+  padding: 32px;
+  border-radius: var(--border-radius);
+  border-top: 2px solid var(--accent-gold);
+}
+
+.segment-number {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.segment-title {
+  font-size: 1.25rem;
+  color: var(--bg-light);
+}
+
+.target-closing-note {
+  padding-top: 32px;
+  border-top: 1px solid rgba(106, 88, 116, 0.25);
+  max-width: 680px;
+}
+
+.target-closing-note p {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--accent-gold);
+}
+
+/* --- SEÇÃO 09 — FAQ (ACORDEÃO ELEGANTE) --- */
+.faq-section {
+  padding: var(--section-padding-desktop);
+  background-color: #160D1A;
+  border-top: 1px solid rgba(106, 88, 116, 0.2);
+}
+
+.faq-header {
+  margin-bottom: 56px;
+  max-width: 680px;
+}
+
+.faq-accordion {
+  max-width: 840px;
+  border-top: 1px solid rgba(106, 88, 116, 0.3);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(106, 88, 116, 0.3);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  color: var(--bg-light);
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  min-height: 48px;
+}
+
+.faq-icon {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+  margin-left: 16px;
+  transition: transform 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-answer p {
+  padding-bottom: 24px;
+  font-size: 1rem;
+  color: var(--bg-light);
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* --- SEÇÃO 10 — CTA FINAL --- */
+.final-cta-section {
+  padding: 100px 0;
+  background-color: var(--bg-dark);
+}
+
+.final-cta-box {
+  background-color: var(--bg-card);
+  padding: 64px 48px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(106, 88, 116, 0.3);
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.final-cta-title {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.final-cta-subtitle {
+  font-size: 1.15rem;
+  opacity: 0.85;
+  margin-bottom: 36px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* --- SEÇÃO 11 — RODAPÉ --- */
+.main-footer {
+  padding: 80px 0 32px 0;
+  background-color: #120A16;
+  border-top: 1px solid rgba(106, 88, 116, 0.2);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.footer-logo {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.footer-tagline {
+  font-size: 0.95rem;
+  color: var(--bg-light);
+  opacity: 0.75;
+  max-width: 320px;
+}
+
+.main-footer h4 {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-gold);
+  margin-bottom: 20px;
+}
+
+.main-footer ul {
+  list-style: none;
+}
+
+.main-footer ul li {
+  margin-bottom: 10px;
+}
+
+.main-footer ul a {
+  color: var(--bg-light);
+  opacity: 0.8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.main-footer ul a:hover {
+  opacity: 1;
+  color: var(--accent-gold);
+}
+
+.footer-bottom {
+  padding-top: 32px;
+  border-top: 1px solid rgba(106, 88, 116, 0.15);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 900px) {
+  .target-segments-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .final-cta-box {
+    padding: 40px 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
